@@ -1,0 +1,1269 @@
+<div class=WordSection10>
+
+<h1><a name="_Toc364255786"></a><a name="_Ref333577525"><span lang=EN-US>8<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Classes</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-US>TypeScript supports classes that are
+closely aligned with those proposed for ECMAScript 6, and includes extensions
+for instance and static member declarations and properties declared and
+initialized from constructor parameters.</span></p>
+
+<p class=MsoNormal><i><span lang=EN-US>NOTE: TypeScript currently doesn’t support
+class expressions or nested class declarations from the ECMAScript 6 proposal.</span></i></p>
+
+<h2><a name="_Toc364255787"></a><a name="_Ref325089073"><span lang=EN-US>8.1<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Class Declarations</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>Class declarations introduce named types
+and provide implementations of those types. Classes support inheritance, allowing
+derived classes to extend and specialize base classes.</span></p>
+
+<p class=Grammar><span lang=EN-US>ClassDeclaration:<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>class</span></span><span
+		lang=EN-US>   Identifier   TypeParameters<sub>opt</sub>   ClassHeritage   </span><span
+		class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
+		lang=EN-US>   ClassBody   </span><span class=Terminal><span lang=EN-US
+																	style='font-style:normal'>}</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US>A <span class=Production>ClassDeclaration</span>
+declares a <b><i>class type</i></b> and a <b><i>constructor function</i></b>,
+both with the name given by <span class=Production>Identifier</span>, in the
+containing module. The class type is created from the instance members declared
+in the class body and the instance members inherited from the base class. The
+constructor function is created from the constructor declaration, the static member
+declarations in the class body, and the static members inherited from the base
+class. The constructor function initializes and returns an instance of the
+class type.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The <span class=Production>Identifier</span>
+of a class declaration may not be one of the predefined type names (section </span><span lang=EN-US>3.6.1</span><span lang=EN-US>).</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A class may optionally have type parameters
+(section </span><span lang=EN-US>3.5.1</span><span lang=EN-US>) that serve as
+placeholders for actual types to be provided when the class is referenced in
+type references. A class with type parameters is called a <b><i>generic class</i></b>.
+The type parameters of a generic class declaration are in scope in the entire
+declaration and may be referenced in the <span class=Production>ClassHeritage</span>
+and <span class=Production>ClassBody</span>.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The following example introduces both a named
+type called ‘Point’ (the class type) and a member called ‘Point’ (the
+constructor function) in the containing module.</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US style='background:white'> Point {<br>
+    <span style='color:blue'>constructor</span>(<span style='color:blue'>public</span>
+x: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
+y: <span style='color:blue'>number</span>) { }<br>
+    <span style='color:blue'>public</span> length() { <span style='color:blue'>return</span>
+Math.sqrt(<span style='color:blue'>this</span>.x * <span style='color:blue'>this</span>.x
++ <span style='color:blue'>this</span>.y * <span style='color:blue'>this</span>.y);<br>
+    <span style='color:blue'>static</span> origin = <span style='color:blue'>new</span>
+Point(<span style='color:maroon'>0</span>, <span style='color:maroon'>0</span>);<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The ‘Point’ type is exactly equivalent to</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
+		lang=EN-US> Point {<br>
+    x: <span style='color:blue;background:white'>number</span>;<br>
+    y: <span style='color:blue;background:white'>number</span>;<br>
+    length(): <span style='color:blue;background:white'>number</span>;<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The ‘Point’ member is a constructor
+function whose type corresponds to the declaration</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+		lang=EN-US> Point: {<br>
+    <span style='color:blue;background:white'>new</span>(x: <span
+			style='color:blue;background:white'>number</span>, y: <span style='color:blue;
+background:white'>number</span>): Point;<br>
+    origin: Point;<br>
+};</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The context in which a class is referenced
+distinguishes between the class instance type and the constructor function. For
+example, in the assignment statement</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+		lang=EN-US> p: Point = <span style='color:blue;background:white'>new</span> Point(<span
+		style='color:maroon;background:white'>10</span>, <span style='color:maroon;
+background:white'>20</span>);</span></p>
+
+<p class=MsoNormal><span lang=EN-US>the identifier ‘Point’ in the type
+annotation refers to the class instance type, whereas the identifier ‘Point’ in
+the </span><span class=CodeFragment><span lang=EN-US>new</span></span><span
+		lang=EN-US> expression refers to the constructor function object.</span></p>
+
+<h3><a name="_Toc364255788"><span lang=EN-US>8.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Class Heritage Specification</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>The heritage specification of a class
+consists of optional </span><span class=CodeFragment><span lang=EN-US>extends</span></span><span
+		lang=EN-US> and </span><span class=CodeFragment><span lang=EN-US>implements</span></span><span
+		lang=EN-US> clauses. The </span><span class=CodeFragment><span lang=EN-US>extends</span></span><span
+		lang=EN-US> clause specifies the base class of the class and the </span><span
+		class=CodeFragment><span lang=EN-US>implements</span></span><span lang=EN-US>
+clause specifies a set of interfaces for which to validate the class provides
+an implementation.</span></p>
+
+<p class=Grammar><span lang=EN-US>ClassHeritage:<br>
+ClassExtendsClause<sub>opt</sub>   ImplementsClause<sub>opt</sub></span></p>
+
+<p class=Grammar><span lang=EN-US>ClassExtendsClause:<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>extends</span></span><span
+		lang=EN-US>    ClassType</span></p>
+
+<p class=Grammar><span lang=EN-US>ClassType:<br>
+TypeReference</span></p>
+
+<p class=Grammar><span lang=EN-US>ImplementsClause:<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>implements</span></span><span
+		lang=EN-US>   ClassOrInterfaceTypeList</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A class that includes an </span><span
+		class=CodeFragment><span lang=EN-US>extends</span></span><span lang=EN-US>
+clause is called a <b><i>derived class</i></b>, and the class specified in the </span><span
+		class=CodeFragment><span lang=EN-US>extends</span></span><span lang=EN-US>
+clause is called the <b><i>base class</i></b> of the derived class. When a class
+heritage specification omits the </span><span class=CodeFragment><span
+		lang=EN-US>extends</span></span><span lang=EN-US> clause, the class does not
+have a base class. However, as is the case with every object type, type
+references (section </span><span lang=EN-US>3.3.1</span><span lang=EN-US>) to
+the class will appear to have the members of the global interface type named ‘Object’
+unless those members are hidden by members with the same name in the class.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The following constraints must be satisfied
+by the class heritage specification or otherwise a compile-time error occurs:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>If present, the type reference specified in the </span><span
+		class=CodeFragment><span lang=EN-US>extends</span></span><span lang=EN-US> clause
+must denote a class type. Furthermore, the <span class=Production>TypeName</span>
+part of the type reference is required to be a reference to the class
+constructor function when evaluated as an expression.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>A class declaration may not, directly or
+indirectly, specify a base class that originates in the same declaration. In
+other words a class cannot, directly or indirectly, be a base class of itself,
+regardless of type arguments.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>The instance type (section </span><span lang=EN-US>3.5.3</span><span lang=EN-US>) of the declared class must be a
+subtype (section </span><span lang=EN-US>3.8.2</span><span lang=EN-US>) of the
+base type reference and each of the type references listed in the </span><span
+		class=CodeFragment><span lang=EN-US>implements</span></span><span lang=EN-US>
+clause.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>The constructor function type created by the
+class declaration must be a subtype of the base class constructor function
+type, ignoring construct signatures.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The following example illustrates a
+situation in which the second rule above would be violated:</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-autospace:none'><span
+		lang=EN-US style='font-family:Consolas;color:blue;background:white'>class</span><span
+		lang=EN-US style='font-family:Consolas;color:black;background:white'> A { a: </span><span
+		lang=EN-US style='font-family:Consolas;color:blue;background:white'>number</span><span
+		lang=EN-US style='font-family:Consolas;color:black;background:white'>; }</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-autospace:none'><span
+		lang=EN-US style='font-family:Consolas;color:blue;background:white'>module</span><span
+		lang=EN-US style='font-family:Consolas;color:black;background:white'> Foo {<br>
+&nbsp;&nbsp;&nbsp; </span><span lang=EN-US style='font-family:Consolas;
+color:blue;background:white'>var</span><span lang=EN-US style='font-family:
+Consolas;color:black;background:white'> A = 1;<br>
+&nbsp;&nbsp;&nbsp; </span><span lang=EN-US style='font-family:Consolas;
+color:blue;background:white'>class</span><span lang=EN-US style='font-family:
+Consolas;color:black;background:white'> B </span><span lang=EN-US
+													   style='font-family:Consolas;color:blue;background:white'>extends</span><span
+		lang=EN-US style='font-family:Consolas;color:black;background:white'> A { b: </span><span
+		lang=EN-US style='font-family:Consolas;color:blue;background:white'>string</span><span
+		lang=EN-US style='font-family:Consolas;color:black;background:white'>; }<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>When evaluated as an expression, the type
+reference ‘A’ in the </span><span class=CodeFragment><span lang=EN-US>extends</span></span><span
+		lang=EN-US> clause doesn’t reference the class constructor function of ‘A’
+(instead it references the local variable ‘A’).</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The only situation in which the last two constraints
+above are violated is when a class overrides one or more base class members
+with incompatible new members.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Note that because TypeScript has a
+structural type system, a class doesn’t need to explicitly state that it
+implements an interface—it suffices for the class to simply contain the
+appropriate set of instance members. The </span><span class=CodeFragment><span
+		lang=EN-US>implements</span></span><span lang=EN-US> clause of a class provides
+a mechanism to assert and validate that the class contains the appropriate sets
+of instance members, but otherwise it has no effect on the class type.</span></p>
+
+<h3><a name="_Toc364255789"><span lang=EN-US>8.1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Class Body</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>The class body consists of zero or more constructor
+or member declarations. Statements are not allowed in the body of a class—they
+must be placed in the constructor or in members.</span></p>
+
+<p class=Grammar><a name="_Ref307750365"><span lang=EN-US>ClassBody:<br>
+ClassElements<sub>opt</sub></span></a></p>
+
+<p class=Grammar><span lang=EN-US>ClassElements:<br>
+ClassElement<br>
+ClassElements   ClassElement</span></p>
+
+<p class=Grammar><span lang=EN-US>ClassElement:<br>
+ConstructorDeclaration<br>
+MemberDeclaration<br>
+IndexSignature</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The body of class may optionally contain a
+single constructor declaration. Constructor declarations are described in
+section </span><span lang=EN-US>8.3</span><span lang=EN-US>.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Member declarations are used to declare
+instance and static members of the class. Member declarations are described in
+section </span><span lang=EN-US>8.4</span><span lang=EN-US>.</span></p>
+
+<h2><a name="_Toc364255790"><span lang=EN-US>8.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Members</span></a></h2>
+
+<p class=MsoNormal><a name="_Ref327182104"><span lang=EN-US>The members of a
+class consist of the members introduced through member declarations in the
+class body and the members inherited from the base class.</span></a></p>
+
+<h3><a name="_Toc364255791"><span lang=EN-US>8.2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Instance and Static Members</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>Members are either <b><i>instance members</i></b>
+or <b><i>static members</i></b>.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Instance members are members of the class
+type (section </span><span lang=EN-US>8.2.4</span><span lang=EN-US>) and its
+associated instance type. Within constructors, instance member functions, and
+instance member accessors, the type of </span><span class=CodeFragment><span
+		lang=EN-US>this</span></span><span lang=EN-US> is the instance type (section </span><span lang=EN-US>3.5.3</span><span lang=EN-US>) of the class.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Static members are declared using the </span><span
+		class=CodeFragment><span lang=EN-US>static</span></span><span lang=EN-US>
+modifier and are members of the constructor function type (section </span><span lang=EN-US>8.2.5</span><span lang=EN-US>). Within static member functions and
+static member accessors, the type of </span><span class=CodeFragment><span
+		lang=EN-US>this</span></span><span lang=EN-US> is the constructor function type
+excluding construct signatures.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Type parameters cannot be referenced in
+static member declarations.</span></p>
+
+<h3><a name="_Toc364255792"></a><a name="_Ref330633039"><span lang=EN-US>8.2.2<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Accessibility</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>Members have either <b><i>public</i></b> or
+<b><i>private</i></b> accessibility. The default is public accessibility, but
+member declarations may include a </span><span class=CodeFragment><span
+		lang=EN-US>public</span></span><span lang=EN-US> or </span><span
+		class=CodeFragment><span lang=EN-US>private</span></span><span lang=EN-US>
+modifier to explicitly specify the desired accessibility.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Public members can be accessed everywhere, but
+private members can be accessed only within the class body that contains their
+declaration. Any attempt to access a private member outside the class body that
+contains its declaration results in a compile-time error.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Private accessibility is enforced only at
+compile-time and serves as no more than an <i>indication of intent</i>. Since
+JavaScript provides no mechanism to create private properties on an object, it
+is not possible to enforce the private modifier in dynamic code at run-time.
+For example, private accessibility can be defeated by changing an object’s
+static type to Any and accessing the member dynamically.</span></p>
+
+<h3><a name="_Toc364255793"></a><a name="_Ref333162474"><span lang=EN-US>8.2.3<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Inheritance and Overriding</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>A derived class <b><i>inherits</i></b> all
+members from its base class it doesn’t <b><i>override</i></b>. Inheritance
+means that a derived class implicitly contains all non-overridden members of
+the base class. Both public and private members are inherited, but only public members
+can be overridden. A member in a derived class is said to override a member in
+a base class when the derived class member has the same name and kind (instance
+or static) as the base class member. The type of an overriding member must be a
+subtype (section </span><span lang=EN-US>3.8.2</span><span lang=EN-US>) of the
+type of the overridden member, or otherwise a compile-time error occurs.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Base class instance member functions can be
+overridden by derived class instance member functions, but not by other kinds
+of members.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Base class instance member variables and
+accessors can be overridden by derived class instance member variables and
+accessors, but not by other kinds of members.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Base class static members can be overridden
+by derived class static members of any kind as long as the types are
+compatible, as described above.</span></p>
+
+<h3><a name="_Toc364255794"></a><a name="_Ref327509036"><span lang=EN-US>8.2.4<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Class Types</span></a></h3>
+
+<p class=MsoNormal><a name="_Ref307750378"><span lang=EN-US>A class declaration
+declares a new named type (section </span></a><span
+		lang=EN-US>3.5</span><span lang=EN-US>) called a class type. Within the
+constructor and member functions of a class, the type of </span><span
+		class=CodeFragment><span lang=EN-US>this</span></span><span lang=EN-US> is the
+instance type (section </span><span lang=EN-US>3.5.3</span><span lang=EN-US>)
+of this class type. The class type has the following members:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>A property for each instance member variable
+declaration in the class body.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>A property of a function type for each instance member
+function declaration in the class body.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>A property for each uniquely named instance member
+accessor declaration in the class body.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>A property for each constructor parameter
+declared with a </span><span class=CodeFragment><span lang=EN-US>public</span></span><span
+		lang=EN-US> or </span><span class=CodeFragment><span lang=EN-US>private</span></span><span
+		lang=EN-US> modifier.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>All base class instance type properties that are
+not overridden in the class.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>In the example</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US> A {<br>
+    <span style='color:blue;background:white'>public</span> x: <span
+			style='color:blue;background:white'>number</span>;<br>
+    <span style='color:blue;background:white'>public</span> f() { }<br>
+    <span style='color:blue;background:white'>public</span> g(a: <span
+			style='color:blue;background:white'>any</span>) { <span style='color:blue;
+background:white'>return</span> undefined; }<br>
+    <span style='color:blue;background:white'>static</span> s: <span
+			style='color:blue;background:white'>string</span>;<br>
+}</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US> B <span style='color:blue;background:white'>extends</span> A {<br>
+    <span style='color:blue;background:white'>public</span> y: <span
+			style='color:blue;background:white'>number</span>;<br>
+    <span style='color:blue;background:white'>public</span> g(b: <span
+			style='color:blue;background:white'>boolean</span>) { <span style='color:blue;
+background:white'>return</span> false; }<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>the instance type of ‘A’ is</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
+		lang=EN-US> A {<br>
+    x: <span style='color:blue;background:white'>number</span>;<br>
+    f: () =&gt; <span style='color:blue;background:white'>void</span>;<br>
+    g: (a: <span style='color:blue;background:white'>any</span>) =&gt; <span
+			style='color:blue;background:white'>any</span>;<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>and the instance type of ‘B’ is</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
+		lang=EN-US> B {<br>
+    x: <span style='color:blue;background:white'>number</span>;<br>
+    y: <span style='color:blue;background:white'>number</span>;<br>
+    f: () =&gt; <span style='color:blue;background:white'>void</span>;<br>
+    g: (b: <span style='color:blue;background:white'>boolean</span>) =&gt; <span
+			style='color:blue;background:white'>boolean</span>;<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Note that static declarations in a class do
+not contribute to the class type and its instance type—rather, static
+declarations introduce properties on the constructor function object. Also note
+that the declaration of ‘g’ in ‘B’ overrides the member inherited from ‘A’.</span></p>
+
+<h3><a name="_Toc364255795"></a><a name="_Ref333051845"><span lang=EN-US>8.2.5<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Constructor Function Types</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>The type of the constructor function
+introduced by a class declaration is called the constructor function type. The
+constructor function type has the following members:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>If the class contains no constructor declaration
+and has no base class, a single construct signature with no parameters, having the
+same type parameters as the class and returning the instance type of the class.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>If the class contains no constructor declaration
+and has a base class, a set of construct signatures with the same parameters as
+those of the base class constructor function type following substitution of
+type parameters with the type arguments specified in the base class type
+reference, all having the same type parameters as the class and returning the
+instance type of the class.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>If the class contains a constructor declaration
+with no overloads, a construct signature with the parameter list of the
+constructor implementation, having the same type parameters as the class and
+returning the instance type of the class.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>If the class contains a constructor declaration
+with overloads, a set of construct signatures with the parameter lists of the
+overloads, all having the same type parameters as the class and returning the
+instance type of the class.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>A property for each static member variable
+declaration in the class body.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>A property of a function type for each static member
+function declaration in the class body.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>A property for each uniquely named static member
+accessor declaration in the class body.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>A property named ‘prototype’ of the class
+instance type.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>All base class constructor function type
+properties that are not overridden in the class.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The example</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US> Pair&lt;T1, T2&gt; {<br>
+    <span style='color:blue;background:white'>constructor</span>(<span
+			style='color:blue;background:white'>public</span> item1: T1, <span
+			style='color:blue;background:white'>public</span> item2: T2) { }<br>
+}</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US> TwoArrays&lt;T&gt; <span style='color:blue;background:white'>extends</span>
+Pair&lt;T[], T[]&gt; { }</span></p>
+
+<p class=MsoNormal><span lang=EN-US>introduces two named types corresponding to</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
+		lang=EN-US> Pair&lt;T1, T2&gt; {<br>
+    item1: T1;<br>
+    item2: T2;<br>
+}</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
+		lang=EN-US> TwoArrays&lt;T&gt; {<br>
+    item1: T[];<br>
+    item2: T[];<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>and two constructor functions corresponding
+to</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+		lang=EN-US> Pair: {<br>
+    <span style='color:blue;background:white'>new</span> &lt;T1, T2&gt;(item1:
+T1, item2: T2): Pair&lt;T1, T2&gt;;<br>
+}</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+		lang=EN-US> TwoArrays: {<br>
+    <span style='color:blue;background:white'>new</span> &lt;T&gt;(item1: T[],
+item2: T[]): TwoArrays&lt;T&gt;;<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Note that the construct signatures in the
+constructor function types have the same type parameters as their class and
+return the instance type of their class. Also note that when a derived class
+doesn’t declare a constructor, type arguments from the base class reference are
+substituted before construct signatures are propagated from the base
+constructor function type to the derived constructor function type.</span></p>
+
+<h2><a name="_Toc364255796"></a><a name="_Ref327628166"><span lang=EN-US>8.3<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Constructor Declarations</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>A constructor declaration declares the
+constructor function of a class.</span></p>
+
+<p class=Grammar><a name="_Ref318213762"></a><a name="_Ref316999548"><span
+		lang=EN-US>ConstructorDeclaration:<br>
+ConstructorOverloads<sub>opt</sub>   ConstructorImplementation</span></a></p>
+
+<p class=Grammar><span lang=EN-US>ConstructorOverloads:<br>
+ConstructorOverload<br>
+ConstructorOverloads   ConstructorOverload</span></p>
+
+<p class=Grammar><span lang=EN-US>ConstructorOverload:<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span
+		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub>   </span><span
+		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>;</span></span></p>
+
+<p class=Grammar><span lang=EN-US>ConstructorImplementation:<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span
+		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub>   </span><span
+		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>{</span></span><span lang=EN-US>   FunctionBody   </span><span
+		class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US>A class may contain at most one constructor
+declaration. If a class contains no constructor declaration, an automatic
+constructor is provided, as described in section </span><span
+		lang=EN-US>8.3.3</span><span lang=EN-US>.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>If a constructor declaration includes
+overloads, the overloads determine the construct signatures of the type given
+to the constructor function object, and the constructor implementation
+signature must be assignable to that type. Otherwise, the constructor
+implementation itself determines the construct signature. This exactly
+parallels the way overloads are processed in a function declaration (section </span><span lang=EN-US>6.2</span><span lang=EN-US>).</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The function body of a constructor is
+permitted to contain return statements. If return statements specify
+expressions, those expressions must be of types that are assignable to the instance
+type of the class.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The type parameters of a generic class are
+in scope and accessible in a constructor declaration.</span></p>
+
+<h3><a name="_Toc364255797"></a><a name="_Ref327429960"><span lang=EN-US>8.3.1<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Constructor Parameters</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>Similar to functions, only the constructor
+implementation (and not constructor overloads) can specify default value
+expressions for optional parameters. It is a compile-time error for such
+default value expressions to reference </span><span class=CodeFragment><span
+		lang=EN-US>this</span></span><span lang=EN-US>. For each parameter with a
+default value, a statement that substitutes the default value for an omitted
+argument is included in the JavaScript generated for the constructor function.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A parameter of a <span class=Production>ConstructorImplementation</span>
+may be prefixed with a </span><span class=CodeFragment><span lang=EN-US>public</span></span><span
+		lang=EN-US> or </span><span class=CodeFragment><span lang=EN-US>private</span></span><span
+		lang=EN-US> modifier. This is called a <b><i>parameter property declaration</i></b>
+and is shorthand for declaring a property with the same name as the parameter
+and initializing it with the value of the parameter. For example, the
+declaration</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US style='background:white'> Point {<br>
+    <span style='color:blue'>constructor</span>(<span style='color:blue'>public</span>
+x: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
+y: <span style='color:blue'>number</span>) {<br>
+        <span style='color:green'>// Constructor body</span><br>
+    }<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>is equivalent to writing</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US style='background:white'> Point {<br>
+    <span style='color:blue'>public</span> x: <span style='color:blue'>number</span>;<br>
+    <span style='color:blue'>public</span> y: <span style='color:blue'>number</span>;<br>
+    <span style='color:blue'>constructor</span>(x: <span style='color:blue'>number</span>,
+y: <span style='color:blue'>number</span>) {<br>
+        <span style='color:blue'>this</span>.x = x;<br>
+        <span style='color:blue'>this</span>.y = y;<br>
+        <span style='color:green'>// Constructor body</span><br>
+    }<br>
+}</span></p>
+
+<h3><a name="_Toc364255798"></a><a name="_Ref331167300"><span lang=EN-US
+															  style='background:white'>8.3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='background:white'>Super Calls</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US style='background:white'>Super calls (section
+</span><span lang=EN-US style='background:white'>4.8.1</span><span lang=EN-US
+																   style='background:white'>) are used to call the constructor of the base class.
+A super call consists of the keyword </span><span class=CodeFragment><span
+		lang=EN-US style='background:white'>super</span></span><span lang=EN-US
+																	 style='background:white'> followed by an argument list enclosed in parentheses.
+For example:</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US style='background:white'> ColoredPoint <span style='color:blue'>extends</span>
+Point {<br>
+    <span style='color:blue'>constructor</span>(x: <span style='color:blue'>number</span>,
+y: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
+color: <span style='color:blue'>string</span>) {<br>
+        <span style='color:blue'>super</span>(x, y);<br>
+    }<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='background:white'>Constructors of
+classes with no </span><span class=CodeFragment><span lang=EN-US
+													  style='background:white'>extends</span></span><span lang=EN-US
+																										  style='background:white'> clause may not contain super calls, whereas constructors
+of derived classes must contain at least one super call somewhere in their
+function body. Super calls are not permitted outside constructors or in local
+functions inside constructors.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='background:white'>The first
+statement in the body of a constructor <i>must</i> be a super call if both of
+the following are true:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+		lang=EN-US style='font-family:Symbol;background:white'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='background:white'>The containing class is
+a derived class.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																	style='font-family:Symbol;background:white'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='background:white'>The constructor
+declares parameter properties or the containing class declares instance member
+variables with initializers.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='background:white'>In such a required
+super call, it is a compile-time error for argument expressions to reference </span><span
+		class=CodeFragment><span lang=EN-US style='background:white'>this</span></span><span
+		lang=EN-US style='background:white'>.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='background:white'>Initialization of parameter
+properties and instance member variables with initializers takes place
+immediately at the beginning of the constructor body if the class has no base
+class, or immediately following the super call if the class is a derived class.</span></p>
+
+<h3><a name="_Toc364255799"></a><a name="_Ref330995067"><span lang=EN-US>8.3.3<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Automatic Constructors</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>If a class omits a constructor declaration,
+an <b><i>automatic constructor</i></b> is provided.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>In a class with no </span><span
+		class=CodeFragment><span lang=EN-US>extends</span></span><span lang=EN-US>
+clause, the automatic constructor has no parameters and performs no action other
+than executing the instance member variable initializers (section </span><span lang=EN-US>8.4.1</span><span lang=EN-US>), if any.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>In a derived class, the automatic
+constructor has the same parameter list (and possibly overloads) as the base
+class constructor. The automatically provided constructor first forwards the
+call to the base class constructor using a call equivalent to</span></p>
+
+<p class=Code><span lang=EN-US>BaseClass.apply(<span style='color:blue;
+background:white'>this</span>, arguments);</span></p>
+
+<p class=MsoNormal><span lang=EN-US>and then executes the instance member
+variable initializers, if any.</span></p>
+
+<h2><a name="_Toc364255800"></a><a name="_Ref327195142"><span lang=EN-US>8.4<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Member</span></a><span lang=EN-US> Declarations</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>Member declarations can be member variable
+declarations, member function declarations, or member accessor declarations.</span></p>
+
+<p class=Grammar><span lang=EN-US>MemberDeclaration:<br>
+MemberVariableDeclaration<br>
+MemberFunctionDeclaration<br>
+MemberAccessorDeclaration</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Member declarations without a </span><span
+		class=CodeFragment><span lang=EN-US>static</span></span><span lang=EN-US>
+modifier are called instance member declarations. Instance member declarations
+declare properties in the class instance type (section </span><span
+		lang=EN-US>8.2.4</span><span lang=EN-US>), and must specify names that are
+unique among all instance member and parameter property declarations in the
+containing class, with the exception that instance get and set accessor
+declarations may pairwise specify the same name.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Member declarations with a </span><span
+		class=CodeFragment><span lang=EN-US>static</span></span><span lang=EN-US>
+modifier are called static member declarations. Static member declarations
+declare properties in the constructor function type (section </span><span lang=EN-US>8.2.5</span><span lang=EN-US>), and must specify names that are
+unique among all static member declarations in the containing class, with the
+exception that static get and set accessor declarations may pairwise specify
+the same name.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Note that the declaration spaces of
+instance and static members are separate. Thus, it is possible to have instance
+and statics members with the same name.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Except for overrides, as described in
+section </span><span lang=EN-US>8.2.3</span><span lang=EN-US>, it is an error
+for a derived class to declare a member with the same name and kind (instance
+or static) as a base class member.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Every class automatically contains a static
+member named ‘prototype’, the type of which is the containing class with type
+Any substituted for each type parameter. It is an error to explicitly declare a
+static member with the name ‘prototype’.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Below is an example of a class containing
+both instance and static declarations:</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US> Point {<br>
+    <span style='color:blue;background:white'>constructor</span>(<span
+			style='color:blue'>public</span> x: <span style='color:blue;background:white'>number</span>,
+<span style='color:blue'>public</span> y: <span style='color:blue;background:
+white'>number</span>) { }<br>
+<span style='color:blue;background:white'>    public</span> distance(p: Point)
+{<br>
+        <span style='color:blue;background:white'>var</span> dx = <span
+			style='color:blue;background:white'>this</span>.x - p.x;<br>
+        <span style='color:blue;background:white'>var</span> dy = <span
+			style='color:blue;background:white'>this</span>.y - p.y;<br>
+        <span style='color:blue;background:white'>return</span> Math.sqrt(dx *
+dx + dy * dy);<br>
+    }<br>
+    <span style='color:blue;background:white'>static</span> origin = <span
+			style='color:blue;background:white'>new</span> Point(<span style='color:maroon;
+background:white'>0</span>, <span style='color:maroon;background:white'>0</span>);<br>
+    <span style='color:blue;background:white'>static</span> distance(p1: Point,
+p2: Point) { <span style='color:blue;background:white'>return</span>
+p1.distance(p2); }<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The class instance type ‘Point’ has the
+members:</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
+		lang=EN-US> Point {<br>
+    x: <span style='color:blue;background:white'>number</span>;<br>
+    y: <span style='color:blue;background:white'>number</span>;<br>
+    distance(p: Point);<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>and the constructor function ‘Point’ has a
+type corresponding to the declaration:</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+		lang=EN-US> Point: {<br>
+    <span style='color:blue;background:white'>new</span>(x: <span
+			style='color:blue;background:white'>number</span>, y: <span style='color:blue;
+background:white'>number</span>): Point;<br>
+    origin: Point;<br>
+    distance(p1: Point, p2: Point): <span style='color:blue;background:white'>number</span>;<br>
+}</span></p>
+
+<h3><a name="_Toc364255801"></a><a name="_Ref330994751"><span lang=EN-US>8.4.1<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Member Variable Declarations</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>A member variable declaration declares an
+instance member variable or a static member variable.</span></p>
+
+<p class=Grammar><span lang=EN-US>MemberVariableDeclaration:<br>
+PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+		lang=EN-US>   PropertyName   TypeAnnotation<sub>opt</sub>   Initialiser<sub>opt</sub>  
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US>The type associated with a member variable
+declaration is determined in the same manner as an ordinary variable
+declaration (see section </span><span lang=EN-US>5.1</span><span lang=EN-US>).</span></p>
+
+<p class=MsoNormal><span lang=EN-US>An instance member variable declaration introduces
+a member in the class instance type and optionally initializes a property on
+instances of the class. Initializers in instance member variable declarations
+are executed once for every new instance of the class and are equivalent to
+assignments to properties of </span><span class=CodeFragment><span lang=EN-US>this</span></span><span
+		lang=EN-US> in the constructor. In an initializer expression for an instance
+member variable, </span><span class=CodeFragment><span lang=EN-US>this</span></span><span
+		lang=EN-US> is of the class instance type.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A static member variable declaration introduces
+a property in the constructor function type and optionally initializes a
+property on the constructor function object. Initializers in static member
+variable declarations are executed once when the containing program or module
+is loaded.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Since instance member variable initializers
+are equivalent to assignments to properties of </span><span class=CodeFragment><span
+		lang=EN-US>this</span></span><span lang=EN-US> in the constructor, the example</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US style='background:white'> Employee {<br>
+    <span style='color:blue'>public</span> name: <span style='color:blue'>string</span>;<br>
+    <span style='color:blue'>public</span> address: <span style='color:blue'>string</span>;<br>
+    <span style='color:blue'>public</span> retired = <span style='color:blue'>false</span>;<br>
+    <span style='color:blue'>public</span> manager: Employee = <span
+			style='color:blue'>null</span>;<br>
+    <span style='color:blue'>public</span> reports: Employee[] = [];<br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>is equivalent to</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US style='background:white'> Employee {<br>
+    <span style='color:blue'>public</span> name: <span style='color:blue'>string</span>;<br>
+    <span style='color:blue'>public</span> address: <span style='color:blue'>string</span>;<br>
+    <span style='color:blue'>public</span> retired: <span style='color:blue'>boolean</span>;<br>
+    <span style='color:blue'>public</span> manager: Employee;<br>
+    <span style='color:blue'>public</span> reports: Employee[];<br>
+    <span style='color:blue'>constructor</span>() {<br>
+        <span style='color:blue'>this</span>.retired = <span style='color:blue'>false</span>;<br>
+        <span style='color:blue'>this</span>.manager = <span style='color:blue'>null</span>;<br>
+        <span style='color:blue'>this</span>.reports = [];<br>
+    }<br>
+}</span></p>
+
+<h3><a name="_Toc364255802"></a><a name="_Ref331172549"><span lang=EN-US>8.4.2<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Member Function Declarations</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>A member function declaration declares an
+instance member function or a static member function.</span></p>
+
+<p class=Grammar><span lang=EN-US>MemberFunctionDeclaration:<br>
+MemberFunctionOverloads<sub>opt</sub>   MemberFunctionImplementation</span></p>
+
+<p class=Grammar><span lang=EN-US>MemberFunctionOverloads:<br>
+MemberFunctionOverload<br>
+MemberFunctionOverloads   MemberFunctionOverload</span></p>
+
+<p class=Grammar><span lang=EN-US>MemberFunctionOverload:<br>
+PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+		lang=EN-US>   PropertyName   CallSignature   </span><span class=Terminal><span
+		lang=EN-US style='font-style:normal'>;</span></span></p>
+
+<p class=Grammar><span lang=EN-US>MemberFunctionImplementation:</span><span
+		class=Terminal><span lang=EN-US style='font-style:normal'><br>
+</span></span><span lang=EN-US>PublicOrPrivate<sub>opt</sub>   </span><span
+		class=Terminal><span lang=EN-US style='font-style:normal'>static</span></span><sub><span
+		lang=EN-US>opt</span></sub><span lang=EN-US>   PropertyName   CallSignature   </span><span
+		class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
+		lang=EN-US>   FunctionBody   </span><span class=Terminal><span lang=EN-US
+																	   style='font-style:normal'>}</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US>A member function declaration is processed
+in the same manner as an ordinary function declaration (section </span><span lang=EN-US>6.1</span><span lang=EN-US>), except that in a member function </span><span
+		class=CodeFragment><span lang=EN-US>this</span></span><span lang=EN-US> has a
+known type.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>All overloads of a member function much
+have the same accessibility (public or private) and kind (instance or static).</span></p>
+
+<p class=MsoNormal><span lang=EN-US>An instance member function declaration
+declares a property in the class instance type and assigns a function object to
+a property on the prototype object of the class. In the body of an instance
+member function declaration, </span><span class=CodeFragment><span lang=EN-US>this</span></span><span
+		lang=EN-US> is of the class instance type.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A static member function declaration
+declares a property in the constructor function type and assigns a function object
+to a property on the constructor function object. In the body of static member
+function declaration, the type of </span><span class=CodeFragment><span
+		lang=EN-US>this</span></span><span lang=EN-US> is the constructor function type
+excluding construct signatures. (Construct signatures are excluded because a
+derived class constructor function is not guaranteed to have the same set of
+construct signatures as a base class constructor function.)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A member function can access overridden
+base class members using a super property access (section </span><span lang=EN-US>4.8.2</span><span lang=EN-US>). For example</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US style='background:white'> Point {<br>
+    <span style='color:blue'>constructor</span>(<span style='color:blue'>public</span>
+x: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
+y: <span style='color:blue'>number</span>) { }<br>
+    <span style='color:blue'>public</span> toString() {<br>
+        <span style='color:blue'>return</span> <span style='color:maroon'>&quot;x=&quot;</span>
++ <span style='color:blue'>this</span>.x + <span style='color:maroon'>&quot;
+y=&quot;</span> + <span style='color:blue'>this</span>.y;<br>
+    }<br>
+}</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+		lang=EN-US style='background:white'> ColoredPoint <span style='color:blue'>extends</span>
+Point {<br>
+    <span style='color:blue'>constructor</span>(x: <span style='color:blue'>number</span>,
+y: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
+color: <span style='color:blue'>string</span>) {<br>
+        <span style='color:blue'>super</span>(x, y);<br>
+    }<br>
+    <span style='color:blue'>public</span> toString() {<br>
+        <span style='color:blue'>return</span> <span style='color:blue'>super</span>.toString()
++ <span style='color:maroon'>&quot; color=&quot;</span> + <span
+			style='color:blue'>this</span>.color;<br>
+    }<br>
+}</span></p>
+
+<h3><a name="_Toc364255803"><span lang=EN-US>8.4.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Member Accessor Declarations</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>A member accessor declaration declares an
+instance member accessor or a static member accessor.</span></p>
+
+<p class=Grammar><span lang=EN-US>MemberAccessorDeclaration:<br>
+PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+		lang=EN-US>   GetAccessor<br>
+PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+		lang=EN-US>   SetAccessor</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Get and set accessors are processed in the
+same manner as in an object literal (section </span><span
+		lang=EN-US>4.5</span><span lang=EN-US>), except that a contextual type is never
+available in a member accessor declaration.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Accessors for the same member name must
+specify the same accessibility.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>An instance member accessor declaration
+declares a property in the class instance type and defines a property on the
+prototype object of the class with a get or set accessor. In the body of an instance
+member accessor declaration, </span><span class=CodeFragment><span lang=EN-US>this</span></span><span
+		lang=EN-US> is of the class instance type.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A static member accessor declaration
+declares a property in the constructor function type and defines a property on
+the constructor function object of the class with a get or set accessor. In the
+body of a static member accessor declaration, the type of </span><span
+		class=CodeFragment><span lang=EN-US>this</span></span><span lang=EN-US> is the constructor
+function type excluding construct signatures.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Get and set accessors are emitted as calls
+to ‘Object.defineProperty’ in the generated JavaScript, as described in section
+</span><span lang=EN-US>8.5.1</span><span lang=EN-US>.</span></p>
+
+<h2><a name="_Toc364255804"><span lang=EN-US>8.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Code Generation</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-US>This section describes the structure of the
+JavaScript code generated from TypeScript classes.</span></p>
+
+<h3><a name="_Toc364255805"></a><a name="_Ref332890757"><span lang=EN-US>8.5.1<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Classes Without Extends Clauses</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>A class with no </span><span
+		class=CodeFragment><span lang=EN-US>extends</span></span><span lang=EN-US> clause
+generates JavaScript equivalent to the following:</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+		lang=EN-US> </span><span class=CodeItalic><span lang=EN-US>&lt;<span
+		style='background:white'>ClassName</span>&gt;</span></span><span lang=EN-US> =
+(<span style='color:blue;background:white'>function</span> () {<br>
+    <span style='color:blue;background:white'>function</span> </span><span
+		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>(</span><span class=CodeItalic><span lang=EN-US>&lt;ConstructorParameters&gt;</span></span><span
+		lang=EN-US>) {<br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+		lang=EN-US><br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;ParameterPropertyAssignments&gt;</span></span><span
+		lang=EN-US><br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;MemberVariableAssignments&gt;<br>
+</span></span><span lang=EN-US>        </span><span class=CodeItalic><span
+		lang=EN-US>&lt;ConstructorStatements&gt;</span></span><span lang=EN-US><br>
+    }<br>
+    </span><span class=CodeItalic><span lang=EN-US>&lt;MemberFunctionStatements&gt;</span></span><span
+		lang=EN-US><br>
+    </span><span class=CodeItalic><span lang=EN-US>&lt;StaticVariableAssignments&gt;</span></span><span
+		lang=EN-US><br>
+    <span style='color:blue;background:white'>return</span> </span><span
+		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>;<br>
+})();</span></p>
+
+<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>ClassName</span></span><span
+		lang=EN-US> is the name of the class.</span></p>
+
+<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>ConstructorParameters</span></span><span
+		lang=EN-US> is a comma separated list of the constructor’s parameter names.</span></p>
+
+<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>DefaultValueAssignments</span></span><span
+		lang=EN-US> is a sequence of default property value assignments corresponding
+to those generated for a regular function declaration, as described in section </span><span lang=EN-US>6.5</span><span lang=EN-US>.</span></p>
+
+<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>ParameterPropertyAssignments</span></span><span
+		lang=EN-US> is a sequence of assignments, one for each parameter property
+declaration in the constructor, in order they are declared, of the form</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>this</span><span
+		lang=EN-US>.</span><span class=CodeItalic><span lang=EN-US>&lt;ParameterName&gt;</span></span><span
+		lang=EN-US> = </span><span class=CodeItalic><span lang=EN-US>&lt;ParameterName&gt;</span></span><span
+		lang=EN-US>;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>ParameterName</span>
+is the name of a parameter property.</span></p>
+
+<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>MemberVariableAssignments</span></span><span
+		lang=EN-US> is a sequence of assignments, one for each instance member variable
+declaration with an initializer, in the order they are declared, of the form</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>this</span><span
+		lang=EN-US>.</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
+		lang=EN-US> = </span><span class=CodeItalic><span lang=EN-US>&lt;InitializerExpression&gt;</span></span><span
+		lang=EN-US>;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>MemberName</span>
+is the name of the member variable and <span class=CodeItalic>InitializerExpression</span>
+is the code generated for the initializer expression.</span></p>
+
+<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>ConstructorStatements</span></span><span
+		lang=EN-US> is the code generated for the statements specified in the constructor
+body.</span></p>
+
+<p class=MsoNormal><i><span lang=EN-US>MemberFunctionStatements</span></i><span
+		lang=EN-US> is a sequence of statements, one for each member function
+declaration or member accessor declaration, in the order they are declared.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>An instance member function declaration generates
+a statement of the form</span></p>
+
+<p class=Code><span class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>.prototype.</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
+		lang=EN-US> = <span style='color:blue;background:white'>function</span> (</span><span
+		class=CodeItalic><span lang=EN-US>&lt;FunctionParameters&gt;</span></span><span
+		lang=EN-US>) {<br>
+    </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+		lang=EN-US><br>
+    </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionStatements&gt;</span></span><span
+		lang=EN-US><br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>and static member function declaration
+generates a statement of the form</span></p>
+
+<p class=Code><span class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>.</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
+		lang=EN-US> = <span style='color:blue;background:white'>function</span> (</span><span
+		class=CodeItalic><span lang=EN-US>&lt;FunctionParameters&gt;</span></span><span
+		lang=EN-US>) {<br>
+    </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+		lang=EN-US><br>
+    </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionStatements&gt;</span></span><span
+		lang=EN-US><br>
+}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>MemberName</span>
+is the name of the member function, and <span class=CodeItalic>FunctionParameters</span>,
+<span class=CodeItalic>DefaultValueAssignments</span>, and <span
+			class=CodeItalic>FunctionStatements</span> correspond to those generated for a
+regular function declaration, as described in section </span><span
+		lang=EN-US>6.5</span><span lang=EN-US>.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A get or set instance member accessor
+declaration, or a pair of get and set instance member accessor declarations
+with the same name, generates a statement of the form</span></p>
+
+<p class=Code><span lang=EN-US>Object.defineProperty(</span><span
+		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>.prototype, &quot;</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
+		lang=EN-US>&quot;, {<br>
+    get: <span style='color:blue;background:white'>function</span> () {<br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;GetAccessorStatements&gt;</span></span><span
+		lang=EN-US><br>
+    },<br>
+    set: <span style='color:blue;background:white'>function</span> (</span><span
+		class=CodeItalic><span lang=EN-US>&lt;ParameterName&gt;</span></span><span
+		lang=EN-US>) {<br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;SetAccessorStatements&gt;</span></span><span
+		lang=EN-US><br>
+    },<br>
+    enumerable: <span style='color:blue;background:white'>true</span>,<br>
+    configurable: <span style='color:blue;background:white'>true</span><br>
+};</span></p>
+
+<p class=MsoNormal><span lang=EN-US>and a get or set static member accessor
+declaration, or a pair of get and set static member accessor declarations with
+the same name, generates a statement of the form</span></p>
+
+<p class=Code><span lang=EN-US>Object.defineProperty(</span><span
+		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>, &quot;</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
+		lang=EN-US>&quot;, {<br>
+    get: <span style='color:blue;background:white'>function</span> () {<br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;GetAccessorStatements&gt;</span></span><span
+		lang=EN-US><br>
+    },<br>
+    set: <span style='color:blue;background:white'>function</span> (</span><span
+		class=CodeItalic><span lang=EN-US>&lt;ParameterName&gt;</span></span><span
+		lang=EN-US>) {<br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;SetAccessorStatements&gt;</span></span><span
+		lang=EN-US><br>
+    },<br>
+    enumerable: <span style='color:blue;background:white'>true</span>,<br>
+    configurable: <span style='color:blue;background:white'>true</span><br>
+};</span></p>
+
+<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>MemberName</span>
+is the name of the member accessor, <span class=CodeItalic>GetAccessorStatements</span>
+is the code generated for the statements in the get acessor’s function body, <span
+			class=CodeItalic>ParameterName</span> is the name of the set accessor
+parameter, and <span class=CodeItalic>SetAccessorStatements</span> is the code
+generated for the statements in the set accessor’s function body. The ‘get’
+property is included only if a get accessor is declared and the ‘set’ property
+is included only if a set accessor is declared.</span></p>
+
+<p class=MsoNormal><i><span lang=EN-US>StaticVariableAssignments</span></i><span
+		lang=EN-US> is a sequence of statements, one for each static member variable
+declaration with an initializer, in the order they are declared, of the form</span></p>
+
+<p class=Code><span class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>.</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
+		lang=EN-US> = </span><span class=CodeItalic><span lang=EN-US>&lt;InitializerExpression&gt;</span></span><span
+		lang=EN-US>;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>MemberName</span>
+is the name of the static variable, and <span class=CodeItalic>InitializerExpression</span>
+is the code generated for the initializer expression.</span></p>
+
+<h3><a name="_Toc364255806"></a><a name="_Ref332975645"><span lang=EN-US>8.5.2<span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+		lang=EN-US>Classes With Extends Clauses</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-US>A class with an </span><span
+		class=CodeFragment><span lang=EN-US>extends</span></span><span lang=EN-US>
+clause generates JavaScript equivalent to the following:</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+		lang=EN-US> </span><span class=CodeItalic><span lang=EN-US>&lt;<span
+		style='background:white'>ClassName</span>&gt;</span></span><span lang=EN-US> =
+(<span style='color:blue;background:white'>function</span> (_super) {<br>
+    __extends(</span><span class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>, _super);<br>
+    <span style='color:blue;background:white'>function</span> </span><span
+		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>(</span><span class=CodeItalic><span lang=EN-US>&lt;ConstructorParameters&gt;</span></span><span
+		lang=EN-US>) {<br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+		lang=EN-US><br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;SuperCallStatement&gt;</span></span><span
+		lang=EN-US><br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;ParameterPropertyAssignments&gt;</span></span><span
+		lang=EN-US><br>
+        </span><span class=CodeItalic><span lang=EN-US>&lt;MemberVariableAssignments&gt;<br>
+</span></span><span lang=EN-US>        </span><span class=CodeItalic><span
+		lang=EN-US>&lt;ConstructorStatements&gt;</span></span><span lang=EN-US><br>
+    }<br>
+    </span><span class=CodeItalic><span lang=EN-US>&lt;MemberFunctionStatements&gt;</span></span><span
+		lang=EN-US><br>
+    </span><span class=CodeItalic><span lang=EN-US>&lt;StaticVariableAssignments&gt;</span></span><span
+		lang=EN-US><br>
+    <span style='color:blue;background:white'>return</span> </span><span
+		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+		lang=EN-US>;<br>
+})(</span><span class=CodeItalic><span lang=EN-US>&lt;BaseClassName&gt;</span></span><span
+		lang=EN-US>);</span></p>
+
+<p class=MsoNormal><span lang=EN-US>In addition, the ‘__extends’ function below
+is emitted at the beginning of the JavaScript source file. It copies all
+properties from the base constructor function object to the derived constructor
+function object (in order to inherit static members), and appropriately establishes
+the ‘prototype’ property of the derived constructor function object.</span></p>
+
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+		lang=EN-US style='background:white'> __extends = <span style='color:blue'>this</span>.__extends
+|| <span style='color:blue'>function</span>(d, b) {<br>
+    <span style='color:blue'>for</span> (<span style='color:blue'>var</span> p <span
+			style='color:blue'>in</span> b) <span style='color:blue'>if</span>
+(b.hasOwnProperty(p)) d[p] = b[p];<br>
+<span style='color:blue'>    function</span></span><span lang=EN-US> f() { <span
+		style='color:blue;background:white'>this</span>.constructor = d; }<br>
+    f.prototype = b.prototype;<br>
+    d.prototype = <span style='color:blue;background:white'>new</span> f();<br>
+}</span></p>
+
+<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>BaseClassName</span></span><span
+		lang=EN-US> is the class name specified in the </span><span class=CodeFragment><span
+		lang=EN-US>extends</span></span><span lang=EN-US> clause.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>If the class has no explicitly declared constructor,
+the <i>SuperCallStatement</i> takes the form</span></p>
+
+<p class=Code><span lang=EN-US>_super.apply(<span style='color:blue;background:
+white'>this</span>, arguments);</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Otherwise the <span class=CodeItalic>SuperCallStatement</span>
+is present if the constructor function is required to start with a super call, as
+discussed in section </span><span lang=EN-US>8.3.2</span><span lang=EN-US>, and
+takes the form</span></p>
+
+<p class=Code><span lang=EN-US>_super.call(<span style='color:blue;background:
+white'>this</span>, </span><span class=CodeItalic><span lang=EN-US>&lt;SuperCallArguments&gt;</span></span><span
+		lang=EN-US>)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>where <i>SuperCallArguments</i> is the
+argument list specified in the super call. Note that this call precedes the
+code generated for parameter properties and member variables with initializers.
+Super calls elsewhere in the constructor generate similar code, but the code generated
+for such calls will be part of the <span class=CodeItalic>ConstructorStatements</span>
+section.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A super property access in the constructor,
+an instance member function, or an instance member accessor generates
+JavaScript equivalent to</span></p>
+
+<p class=Code><span lang=EN-US>_super.prototype.</span><span class=CodeItalic><span
+		lang=EN-US>&lt;PropertyName&gt;</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>PropertyName</span>
+is the name of the referenced base class property.<span class=CodeItalic> </span>When
+the super property access appears in a function call, the generated JavaScript
+is equivalent to</span></p>
+
+<p class=Code><span lang=EN-US>_super.prototype.</span><span class=CodeItalic><span
+		lang=EN-US>&lt;PropertyName&gt;</span></span><span lang=EN-US>.call(<span
+		style='color:blue;background:white'>this</span>, </span><span class=CodeItalic><span
+		lang=EN-US>&lt;Arguments&gt;</span></span><span lang=EN-US>)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>where Arguments is the code generated for
+the argument list specified in the function call.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A super property access in a static member
+function or a static member accessor generates JavaScript equivalent to</span></p>
+
+<p class=Code><span lang=EN-US>_super.</span><span class=CodeItalic><span
+		lang=EN-US>&lt;PropertyName&gt;</span></span></p>
+
+<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>PropertyName</span>
+is the name of the referenced base class property.<span class=CodeItalic> </span>When
+the super property access appears in a function call, the generated JavaScript
+is equivalent to</span></p>
+
+<p class=Code><span lang=EN-US>_super.</span><span class=CodeItalic><span
+		lang=EN-US>&lt;PropertyName&gt;</span></span><span lang=EN-US>.call(<span
+		style='color:blue;background:white'>this</span>, </span><span class=CodeItalic><span
+		lang=EN-US>&lt;Arguments&gt;</span></span><span lang=EN-US>)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>where Arguments is the code generated for
+the argument list specified in the function call.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>

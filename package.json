@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "tspec",
+  "devDependencies": {
+    "grunt-wrap": "~0.3.0",
+    "grunt": "~0.4.2"
+  }
+}
