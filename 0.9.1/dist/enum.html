@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+<li><a href="index.html">Index</a></li>
+<li><a href="introduction.html">Introduction</a></li>
+<li><a href="basic_concepts.html">Basic Concepts</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="expressions.html">Expressions</a></li>
+<li><a href="statements.html">Statements</a></li>
+<li><a href="functions.html">Functions</a></li>
+<li><a href="interfaces.html">Interfaces</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="classes.html">Classes</a></li>
+<li><a href="enum.html">Enums</a></li>
+<li><a href="internal_modules.html">Internal Modules</a></li>
+<li><a href="source_external_modules.html">Source Files and External Modules</a></li>
+<li><a href="ambient.html">Ambients</a></li>
+<li><a href="grammar.html">Grammar</a></li>
+
+	
+	<div class=WordSection11>
+	
+	<h1><a name="_Ref333577574"></a><a name="_Toc364255807"><span lang=EN-US>9<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Enums</span></a></h1>
+	
+	<p class=MsoNormal><span lang=EN-US>An enum type is a distinct subtype of the
+	Number primitive type with an associated set of named constants that define the
+	possible values of the enum type.</span></p>
+	
+	<h2><a name="_Toc364255808"></a><a name="_Ref350869434"></a><a
+			name="_Ref350702099"></a><a name="_Ref350701399"></a><a name="_Ref350695559"><span
+			lang=EN-US>9.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Enum Declarations</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>An enum declaration declares an <b><i>enum
+		type</i></b> and an <b><i>enum object</i></b> in the containing module.</span></p>
+	
+	<p class=Grammar><span lang=EN-US>EnumDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>enum</span></span><span
+			lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
+																		 style='font-style:normal'>{</span></span><span lang=EN-US>   EnumBody<sub>opt</sub>  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The enum type and enum object declared by
+	an <span class=Production>EnumDeclaration</span> both have the name given by
+	the <span class=Production>Identifier</span> of the declaration. The enum type
+	is a distinct subtype of the Number primitive type. The enum object is a
+	variable of an anonymous object type containing a set of properties, all of the
+	enum type, corresponding to the values declared for the enum type in the body
+	of the declaration. The enum object’s type furthermore includes a numeric index
+	signature with the signature ‘[x: number]: string’.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The <span class=Production>Identifier</span>
+	of an enum declaration may not be one of the predefined type names (section </span><span lang=EN-US>3.6.1</span><span lang=EN-US>).</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>enum</span><span
+			lang=EN-US> Color { Red, Green, Blue }</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>declares a subtype of the Number primitive
+	type called ‘Color’ and introduces a variable ‘Color’ with a type that
+	corresponds to the declaration</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US> Color: {<br>
+	    [x: <span style='color:blue;background:white'>number</span>]: <span
+				style='color:blue;background:white'>string</span>;<br>
+	    Red: Color;<br>
+	    Green: Color;<br>
+	    Blue: Color;<br>
+	};</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The numeric index signature reflects a
+	“reverse mapping” that is automatically generated in every enum object, as
+	described in section </span><span lang=EN-US>9.4</span><span lang=EN-US>. The
+	reverse mapping provides a convenient way to obtain the string representation
+	of an enum value. For example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US> c = Color.Red;<br>
+	console.log(Color[c]);  <span style='color:green;background:white'>// Outputs
+	&quot;Red&quot;</span></span></p>
+	
+	<h2><a name="_Toc364255809"><span lang=EN-US>9.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Enum Members</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>The body of an enum declaration defines
+	zero or more enum members which are the named values of the enum type.<span
+				style='background:white'> Each enum member has an associated numeric value of
+	the primitive type introduced by the enum declaration.</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>EnumBody:<br>
+	ConstantEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US><br>
+	ConstantEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><span lang=EN-US>  
+	ComputedEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US><br>
+	ComputedEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstantEnumMemberList:<br>
+	ConstantEnumMember<br>
+	ConstantEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><span lang=EN-US>   ConstantEnumMember</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstantEnumMember:<br>
+	PropertyName<br>
+	PropertyName   =   IntegerLiteral</span></p>
+	
+	<p class=Grammar><span lang=EN-US>IntegerLiteral:<br>
+	SignedInteger<br>
+	HexIntegerLiteral</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ComputedEnumMemberList:<br>
+	ComputedEnumMember<br>
+	ComputedEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><span lang=EN-US>   ComputedEnumMember</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ComputedEnumMember:<br>
+	PropertyName   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>=</span></span><span lang=EN-US>   AssignmentExpression</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>Enum members are
+	either <b><i>constant members</i></b> or <b><i>computed members</i></b>. Constant
+	members have known constant values that may be substituted in place of references
+	to the members at compile-time. Computed members have values that are computed
+	at run-time and not known at compile-time.</span></p>
+	
+	<p class=MsoNormal><i><span lang=EN-US style='background:white'>TODO: Decide
+	whether references to constant members are always replaced with their values or
+	whether this is a compiler option.</span></i></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>The body of an
+	enum declaration consists of a list of zero or more constant members followed
+	by zero or more computed members.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>A constant member
+	declared with an integer literal value is assigned that value. A constant
+	member declared without an integer literal value is assigned the value of the
+	preceding constant member plus one, or the value zero if it is the first member
+	in the enum body. The values of constant members are computed at compile-time
+	and may be substituted for references to the members in the generated
+	JavaScript code.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>Expressions specified
+	for computed members must produce values of type Any, the Number primitive
+	type, or an enum type. The values of computed members are not known at
+	compile-time and no substitution is performed for references to computed
+	members.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>In the example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>enum</span><span
+			lang=EN-US style='background:white'> Test {<br>
+	    A,<br>
+	    B,<br>
+	    C = <span style='color:maroon'>10</span>,<br>
+	    D,<br>
+	    E = Math.floor(Math.random() * <span style='color:maroon'>1000</span>)<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>‘A’, ‘B’, ‘C’, and
+	‘D’ are constant members with values 0, 1, 10, and 11 respectively, and ‘E’ is
+	a computed member.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>In the example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>enum</span><span
+			lang=EN-US style='background:white'> Style {<br>
+	    None = <span style='color:maroon'>0</span>,<br>
+	    Bold = <span style='color:maroon'>1</span>,<br>
+	    Italic = <span style='color:maroon'>2</span>,<br>
+	    Underline = <span style='color:maroon'>4</span>,<br>
+	    Emphasis = Style.Bold | Style.Italic,<br>
+	    Hyperlink = Style.Bold | Style.Underline<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>the first four
+	members are constant members and the last two are computed members. Note that
+	computed member declarations can reference previously declared members. Also,
+	because enums are subtypes of the Number primitive type, numeric operators,
+	such as the bitwise OR operator, can be used to compute enum values.</span></p>
+	
+	<h2><a name="_Toc364255810"></a><a name="_Ref352749354"><span lang=EN-US
+																  style='background:white'>9.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US style='background:white'>Declaration Merging</span></a></h2>
+	
+	<p class=MsoNormal><a name="_Ref351458374"><span lang=EN-US>Enums are
+	“open-ended” and enum declarations with the same qualified name relative to a
+	common root (as defined in section </span></a><span
+			lang=EN-US>2.3</span><span lang=EN-US>) define a single enum type and contribute
+	to a single enum object.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>It isn’t possible for one enum declaration
+	to continue the automatic numbering sequence of another, and when an enum type
+	has multiple declarations, only one declaration is permitted to omit a value
+	for the first member.</span></p>
+	
+	<h2><a name="_Toc364255811"></a><a name="_Ref354734560"><span lang=EN-US
+																  style='background:white'>9.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US style='background:white'>Code Generation</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>An enum
+	declaration generates JavaScript equivalent to the following:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US> </span><span class=CodeItalic><span lang=EN-US>&lt;<span
+			style='background:white'>EnumName</span>&gt;</span></span><span lang=EN-US>;<br>
+	(<span style='color:blue;background:white'>function</span> (</span><span
+			class=CodeItalic><span lang=EN-US>&lt;<span style='background:white'>EnumName</span>&gt;</span></span><span
+			lang=EN-US>) {<br>
+	    </span><span class=CodeItalic><span lang=EN-US>&lt;EnumMemberAssignments&gt;</span></span><span
+			lang=EN-US><br>
+	})(</span><span class=CodeItalic><span lang=EN-US>&lt;<span style='background:
+	white'>EnumName</span>&gt;</span></span><span lang=EN-US>||(</span><span
+			class=CodeItalic><span lang=EN-US>&lt;EnumName&gt;</span></span><span
+			lang=EN-US>={}));</span></p>
+	
+	<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>EnumName</span></span><span
+			lang=EN-US> is the name of the enum.</span></p>
+	
+	<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>EnumMemberAssignments</span></span><span
+			lang=EN-US> is a sequence of assignments, one for each enum member, in order
+	they are declared, of the form</span></p>
+	
+	<p class=Code><span class=CodeItalic><span lang=EN-US>&lt;EnumName&gt;</span></span><span
+			lang=EN-US>[</span><span class=CodeItalic><span lang=EN-US>&lt;EnumName&gt;</span></span><span
+			lang=EN-US>.</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
+			lang=EN-US> = </span><span class=CodeItalic><span lang=EN-US>&lt;MemberValue&gt;</span></span><span
+			lang=EN-US>] = &quot;</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
+			lang=EN-US>&quot;;</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>MemberName</span>
+	is the name of the enum member and <span class=CodeItalic>MemberValue</span> is
+	the assigned constant value or the code generated for the computed value
+	expression.</span></p>
+	
+	<p class=MsoNormal><i><span lang=EN-US>TODO: In general, when generating code
+	for a property access, use quoted names and bracket notation for non-identifier
+	member names.</span></i></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>For example, the
+	‘Color’ enum example from section </span><span
+			lang=EN-US style='background:white'>9.1</span><span lang=EN-US
+																style='background:white'> generates the following JavaScript:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US style='background:white'> Color;<br>
+	(<span style='color:blue'>function</span> (Color) {<br>
+	    Color[Color.Red = <span style='color:maroon'>0</span>] = <span
+				style='color:maroon'>&quot;Red&quot;</span>;<br>
+	    Color[Color.Green = <span style='color:maroon'>1</span>] = <span
+				style='color:maroon'>&quot;Green&quot;</span>;<br>
+	    Color[Color.Blue = <span style='color:maroon'>2</span>] = <span
+				style='color:maroon'>&quot;Blue&quot;</span>;<br>
+	})(Color||(Color={}));</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>&nbsp;</span></p>
+	
+	</div>
+	
+
+
+</body>
+</html>

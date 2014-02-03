@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+<li><a href="index.html">Index</a></li>
+<li><a href="introduction.html">Introduction</a></li>
+<li><a href="basic_concepts.html">Basic Concepts</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="expressions.html">Expressions</a></li>
+<li><a href="statements.html">Statements</a></li>
+<li><a href="functions.html">Functions</a></li>
+<li><a href="interfaces.html">Interfaces</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="classes.html">Classes</a></li>
+<li><a href="enum.html">Enums</a></li>
+<li><a href="internal_modules.html">Internal Modules</a></li>
+<li><a href="source_external_modules.html">Source Files and External Modules</a></li>
+<li><a href="ambient.html">Ambients</a></li>
+<li><a href="grammar.html">Grammar</a></li>
+
+	<div class=WordSection8>
+	
+	<h1><a name="_Toc364255775"><span lang=EN-US>6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Functions</span></a></h1>
+	
+	<p class=MsoNormal><span lang=EN-US>TypeScript extends JavaScript functions to
+	include type parameters, parameter and return type annotations, overloads,
+	default parameter values, and rest parameters.</span></p>
+	
+	<h2><a name="_Toc364255776"></a><a name="_Ref316213258"><span lang=EN-US>6.1<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Function Declarations</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>Function declarations consist of an
+	optional set of function overloads followed by an actual function
+	implementation.</span></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionDeclaration:  ( Modified )<br>
+	FunctionOverloads<sub>opt</sub>   FunctionImplementation</span></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionOverloads:<br>
+	FunctionOverload<br>
+	FunctionOverloads   FunctionOverload</span></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionOverload:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
+			lang=EN-US>   Identifier   CallSignature   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionImplementation:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
+			lang=EN-US>   Identifier   CallSignature   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>  
+	FunctionBody   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>}</span></span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>A function declaration introduces a
+	function with the given name in the containing declaration space. Function
+	overloads, if present, must specify the same name as the function
+	implementation. If a function declaration includes overloads, the overloads
+	determine the call signatures of the type given to the function object and the
+	function implementation signature must be assignable to that type. Otherwise,
+	the function implementation itself determines the call signature. Function
+	overloads have no other effect on a function declaration.</span></p>
+	
+	<h2><a name="_Toc364255777"></a><a name="_Ref321397142"><span lang=EN-US>6.2<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Function Overloads</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>Function overloads allow a more accurate
+	specification of the patterns of invocation supported by a function than is
+	possible with a single signature. The compile-time processing of a call to an
+	overloaded function chooses the best candidate overload for the particular
+	arguments and the return type of that overload becomes the result type the
+	function call expression. Thus, using overloads it is possible to statically describe
+	the manner in which a function’s return type varies based on its arguments.
+	Overload resolution in function calls is described further in section </span><span lang=EN-US>4.12</span><span lang=EN-US>.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Function overloads are purely a
+	compile-time construct. They have no impact on the emitted JavaScript and thus
+	no run-time cost.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The parameter list of a function overload cannot
+	specify default values for parameters. In other words, an overload may use only
+	the </span><span class=CodeFragment><span lang=EN-US>?</span></span><span
+			lang=EN-US> form when specifying optional parameters.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>It is an error to declare multiple function
+	overloads that are considered identical (section </span><span
+			lang=EN-US>3.8.1</span><span lang=EN-US>) or differ only in their return types.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The following is an example of a function
+	with overloads.</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
+			lang=EN-US> attr(name: <span style='color:blue;background:white'>string</span>):
+	<span style='color:blue;background:white'>string</span>;<br>
+	<span style='color:blue;background:white'>function</span> attr(name: <span
+				style='color:blue;background:white'>string</span>, value: <span
+				style='color:blue;background:white'>string</span>): Accessor;<br>
+	<span style='color:blue;background:white'>function</span> attr(map: <span
+				style='color:blue;background:white'>any</span>): Accessor;<br>
+	<span style='color:blue;background:white'>function</span> attr(nameOrMap: <span
+				style='color:blue;background:white'>any</span>, value?: <span style='color:
+	blue;background:white'>string</span>): <span style='color:blue;background:white'>any</span>
+	{<br>
+	    <span style='color:blue;background:white'>if</span> (nameOrMap &amp;&amp; <span
+				style='color:blue;background:white'>typeof</span> nameOrMap === <span
+				style='color:maroon;background:white'>&quot;object&quot;</span>) {<br>
+	        <span style='color:green;background:white'>// handle map case</span><br>
+	    }<br>
+	    <span style='color:blue;background:white'>else</span> {<br>
+	        <span style='color:green;background:white'>// handle string case</span><br>
+	    }<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Note that each overload and the final
+	implementation specify the same identifier. The type of the local variable ‘attr’
+	introduced by this declaration is</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US> attr: {<br>
+	    (name: <span style='color:blue;background:white'>string</span>): <span
+				style='color:blue;background:white'>string</span>;<br>
+	    (name: <span style='color:blue;background:white'>string</span>, value: <span
+				style='color:blue;background:white'>string</span>): Accessor;<br>
+	    (map: <span style='color:blue;background:white'>any</span>): Accessor;<br>
+	};</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Note that the signature of the actual
+	function implementation is not included in the type.</span></p>
+	
+	<h2><a name="_Toc364255778"></a><a name="_Ref320251238"><span lang=EN-US>6.3<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Function Implementations</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>A function implementation without a return
+	type annotation is said to be an <b><i>implicitly typed function</i></b>. The
+	return type of an implicitly typed function <i>f</i> is inferred from its
+	function body as follows:</span></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>If there are no return statements with
+	expressions in <i>f</i>’s function body, the inferred return type is Void.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Otherwise, if <i>f</i>’s function body directly
+	references <i>f</i> or references any implicitly typed functions that through
+	this same analysis reference <i>f</i>, the inferred return type is Any.</span></p>
+	
+	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Otherwise, the inferred return type is the
+	widened form (section </span><span lang=EN-US>3.9</span><span lang=EN-US>) of
+	the best common type (section </span><span lang=EN-US>3.10</span><span
+			lang=EN-US>) of the types of the return statement expression in the function
+	body, ignoring return statements with no expressions. A compile-time error
+	occurs if the best common type isn’t one of the return statement expression
+	types (i.e. if the best common type is an empty type).</span></p>
+	
+	<p class=MsoNormal><i><span lang=EN-US>TODO: An explicitly typed function
+	returning a non-void type must have at least one return statement somewhere in
+	its body. This rule does not apply if the function implementation consists of a
+	single throw statement.</span></i></p>
+	
+	<p class=MsoNormal><span lang=EN-US>In the example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
+			lang=EN-US> f(x: <span style='color:blue;background:white'>number</span>) {<br>
+	    if (x &lt;= <span style='color:maroon;background:white'>0</span>) <span
+				style='color:blue;background:white'>return</span> x;<br>
+	    <span style='color:blue;background:white'>return</span> g(x);<br>
+	}</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
+			lang=EN-US> g(x: <span style='color:blue;background:white'>number</span>) {<br>
+	    <span style='color:blue;background:white'>return</span> f(x - <span
+				style='color:maroon;background:white'>1</span>);<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>the inferred return type for ‘f’ and ‘g’ is
+	Any because the functions reference themselves through a cycle with no return
+	type annotations. Adding an explicit return type ‘number’ to either breaks the
+	cycle and causes the return type ‘number’ to be inferred for the other.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The type of </span><span
+			class=CodeFragment><span lang=EN-US>this</span></span><span lang=EN-US> in a
+	function implementation is the Any type.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>In the signature of a function
+	implementation, a parameter can be marked optional by following it with an
+	initializer. An optional parameter with an initializer but no type annotation
+	has its type inferred from the initializer. Specifically, the type of such a
+	parameter is the widened form of the type of the initializer expression. An
+	initializer expression for a given parameter is permitted to reference
+	parameters that are declared to the left of that parameter, but it is a
+	compile-time error to access other parameters or locals. For each parameter
+	with an initializer, a statement that substitutes the default value for an omitted
+	argument is included in the generated JavaScript, as described in section </span><span lang=EN-US>6.3</span><span lang=EN-US>. The example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
+			lang=EN-US> strange(x: <span style='color:blue;background:white'>number</span>,
+	y = x * <span style='color:maroon;background:white'>2</span>, z = x + y) {<br>
+	    <span style='color:blue;background:white'>return</span> z;<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>generates JavaScript that is equivalent to</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
+			lang=EN-US> strange(x, y, z) {<br>
+	    <span style='color:blue;background:white'>if</span> (<span
+				style='color:blue;background:white'>typeof</span> y === <span style='color:
+	maroon;background:white'>&quot;undefined&quot;</span>) { y = x * <span
+				style='color:maroon;background:white'>2</span>; }<br>
+	    <span style='color:blue;background:white'>if</span> (<span
+				style='color:blue;background:white'>typeof</span> z === <span style='color:
+	maroon;background:white'>&quot;undefined&quot;</span>) { z = x + y; }<br>
+	    <span style='color:blue;background:white'>return</span> z;<br>
+	}</span></p>
+	
+	<h2><a name="_Toc364255779"><span lang=EN-US>6.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Generic Functions</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>A function implementation may include type
+	parameters in its signature (section </span><span
+			lang=EN-US>3.7.2.1</span><span lang=EN-US>) and is then called a <b><i>generic
+		function</i></b>. Type parameters provide a mechanism for expressing
+	relationships between parameter and return types in call operations. Type
+	parameters have no run-time representation—they are purely a compile-time
+	construct.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Type parameters declared in the signature
+	of a function implementation are in scope in the signature and body of that
+	function implementation.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The following is an example of a generic
+	function:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
+			lang=EN-US> Comparable&lt;T&gt; {<br>
+	    localeCompare(other: T): <span style='color:blue;background:white'>number</span>;<br>
+	}</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
+			lang=EN-US> compare&lt;T <span style='color:blue;background:white'>extends</span>
+	Comparable&lt;T&gt;&gt;(x: T, y: T): <span style='color:blue;background:white'>number</span>
+	{<br>
+	    <span style='color:blue;background:white'>if</span> (x == null) <span
+				style='color:blue;background:white'>return</span> y == null ? <span
+				style='color:maroon;background:white'>0</span> : <span style='color:maroon;
+	background:white'>-1</span>;<br>
+	    <span style='color:blue;background:white'>if</span> (y == null) <span
+				style='color:blue;background:white'>return</span> <span style='color:maroon;
+	background:white'>1</span>;<br>
+	    <span style='color:blue;background:white'>return</span> x.localeCompare(y);<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Note that the ‘x’ and ‘y’ parameters are
+	known to be subtypes of the constraint ‘Comparable&lt;T&gt;’ and therefore have
+	a ‘compareTo’ member. This is described further in section </span><span lang=EN-US>3.4</span><span lang=EN-US>.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The type arguments of a call to a generic
+	function may be explicitly specified in a call operation or may, when possible,
+	be inferred (section </span><span lang=EN-US>4.12.2</span><span lang=EN-US>)
+	from the types of the regular arguments in the call. In the example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+			lang=EN-US> Person {<br>
+	    name: string;<br>
+	    localeCompare(other: Person) {<br>
+	        <span style='color:blue;background:white'>return</span>
+	compare(this.name, other.name);<br>
+	    }<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>the type argument to ‘compare’ is
+	automatically inferred to be the String type because the two arguments are
+	strings.</span></p>
+	
+	<h2><a name="_Toc364255780"></a><a name="_Ref332892747"><span lang=EN-US>6.5<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Code Generation</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>A function declaration generates JavaScript
+	code that is equivalent to:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
+			lang=EN-US> </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionName&gt;</span></span><span
+			lang=EN-US>(</span><span class=CodeItalic><span lang=EN-US>&lt;FunctionParameters&gt;</span></span><span
+			lang=EN-US>) {<br>
+	    </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+			lang=EN-US><br>
+	    </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionStatements&gt;</span></span><span
+			lang=EN-US><br>
+	}</span></p>
+	
+	<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>FunctionName</span></span><span
+			lang=EN-US> is the name of the function (or nothing in the case of a function
+	expression).</span></p>
+	
+	<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>FunctionParameters</span></span><span
+			lang=EN-US> is a comma separated list of the function’s parameter names.</span></p>
+	
+	<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>DefaultValueAssignments</span></span><span
+			lang=EN-US> is a sequence of default property value assignments, one for each
+	parameter with a default value, in the order they are declared, of the form</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>if</span><span
+			lang=EN-US> (<span style='color:blue;background:white'>typeof</span> </span><span
+			class=CodeItalic><span lang=EN-US>&lt;Parameter&gt;</span></span><span
+			lang=EN-US> === <span style='color:maroon;background:white'>&quot;undefined&quot;</span>)
+	{ </span><span class=CodeItalic><span lang=EN-US>&lt;Parameter&gt;</span></span><span
+			lang=EN-US> = </span><span class=CodeItalic><span lang=EN-US>&lt;Default&gt;</span></span><span
+			lang=EN-US>; }</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>Parameter</span>
+	is the parameter name and <span class=CodeItalic>Default</span> is the default
+	value expression.</span></p>
+	
+	<p class=MsoNormal><span class=CodeItalic><span lang=EN-US>FunctionStatements</span></span><span
+			lang=EN-US> is the code generated for the statements specified in the function
+	body.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+	
+	</div>
+	
+
+
+</body>
+</html>

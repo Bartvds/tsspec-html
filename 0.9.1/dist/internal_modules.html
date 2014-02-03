@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+<li><a href="index.html">Index</a></li>
+<li><a href="introduction.html">Introduction</a></li>
+<li><a href="basic_concepts.html">Basic Concepts</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="expressions.html">Expressions</a></li>
+<li><a href="statements.html">Statements</a></li>
+<li><a href="functions.html">Functions</a></li>
+<li><a href="interfaces.html">Interfaces</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="classes.html">Classes</a></li>
+<li><a href="enum.html">Enums</a></li>
+<li><a href="internal_modules.html">Internal Modules</a></li>
+<li><a href="source_external_modules.html">Source Files and External Modules</a></li>
+<li><a href="ambient.html">Ambients</a></li>
+<li><a href="grammar.html">Grammar</a></li>
+
+	<div class=WordSection12>
+	
+	<h1><a name="_Toc364255812"><span lang=EN-US>10<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Internal Modules</span></a></h1>
+	
+	<p class=MsoNormal><span lang=EN-US>An internal module is a named container of
+	statements and declarations. An internal module represents both a namespace and
+	a singleton module instance. The namespace contains named types and other
+	namespaces, and the singleton module instance contains properties for the module’s
+	exported members. The body of an internal module corresponds to a function that
+	is executed once, thereby providing a mechanism for maintaining local state
+	with assured isolation.</span></p>
+	
+	<h2><a name="_Toc364255813"></a><a name="_Ref352746058"></a><a
+			name="_Ref352744587"></a><a name="_Ref352744561"><span lang=EN-US>10.1</span><span
+			lang=EN-US>Module Declarations</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>An internal module declaration declares a
+	namespace name and, in the case of an instantiated module, a member name in the
+	containing module.</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ModuleDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span
+			lang=EN-US>   IdentifierPath   </span><span class=Terminal><span lang=EN-US
+																			 style='font-style:normal'>{</span></span><span lang=EN-US>   ModuleBody   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>IdentifierPath:<br>
+	Identifier<br>
+	IdentifierPath   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>.</span></span><span lang=EN-US>   Identifier</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Internal modules are either <b><i>instantiated</i></b>
+	or <b><i>non-instantiated</i></b>. A non-instantiated module is an internal
+	module containing only interface types and other non-instantiated modules. An
+	instantiated module is an internal module that doesn’t meet this definition. In
+	intuitive terms, an instantiated module is one for which a module object
+	instance is created, whereas a non-instantiated module is one for which no code
+	is generated.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>When a module identifier is referenced as a
+	<span class=Production>ModuleName</span> (section </span><span
+			lang=EN-US>3.6.2</span><span lang=EN-US>) it denotes a container of module and
+	type names, and when a module identifier is referenced as a <span
+				class=Production>PrimaryExpression</span> (section </span><span
+			lang=EN-US>4.3</span><span lang=EN-US>) it denotes the singleton module
+	instance. For example:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> M {<br>
+	    <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>interface</span> P { x: <span
+				style='color:blue;background:white'>number</span>; y: <span style='color:blue;
+	background:white'>number</span>; }<br>
+	    <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>var</span> a = <span style='color:maroon;
+	background:white'>1</span>;<br>
+	}</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US> p: M.P;             <span style='color:green;background:white'>// M
+	used as ModuleName</span><br>
+	<span style='color:blue;background:white'>var</span> m = M;              <span
+				style='color:green;background:white'>// M used as PrimaryExpression</span><br>
+	<span style='color:blue;background:white'>var</span> x1 = M.a;           <span
+				style='color:green;background:white'>// M used as PrimaryExpression</span><br>
+	<span style='color:blue;background:white'>var</span> x2 = m.a;           <span
+				style='color:green;background:white'>// Same as M.a</span><br>
+	<span style='color:blue;background:white'>var</span> q: m.P;             <span
+				style='color:green;background:white'>// Error</span></span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Above, when ‘M’ is used as a <span
+			class=Production>PrimaryExpression</span> it denotes an object instance with a
+	single member ‘a’ and when ‘M’ is used as a <span class=Production>ModuleName</span>
+	it denotes a container with a single type member ‘P’. The final line in the
+	example is an error because ‘m’ is a variable which cannot be referenced in a
+	type name.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>If the declaration of ‘M’ above had
+	excluded the exported variable ‘a’, ‘M’ would be a non-instantiated module and
+	it would be an error to reference ‘M’ as a <span class=Production>PrimaryExpression</span>.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An internal module declaration that
+	specifies an <span class=Production>IdentifierPath</span> with more than one
+	identifier is equivalent to a series of nested single-identifier internal
+	module declarations where all but the outermost are automatically exported. For
+	example:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> A.B.C {<br>
+	    <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>var</span> x = <span style='color:maroon;
+	background:white'>1</span>;<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>corresponds to</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> A {<br>
+	    <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>module</span> B {<br>
+	        <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>module</span> C {<br>
+	            <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>var</span> x = <span style='color:maroon;
+	background:white'>1</span>;<br>
+	        }<br>
+	    }<br>
+	}</span></p>
+	
+	<h2><a name="_Toc364255814"><span lang=EN-US>10.2</span><span lang=EN-US>Module
+	Body</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>The body of an internal module corresponds
+	to a function that is executed once to initialize the module instance.</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ModuleBody:<br>
+	ModuleElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ModuleElements:<br>
+	ModuleElement<br>
+	ModuleElements   ModuleElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ModuleElement:<br>
+	Statement<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   VariableDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   FunctionDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ClassDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   InterfaceDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   EnumDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ModuleDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ImportDeclaration</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Each module body has a declaration space
+	for local variables (including functions, modules, class constructor functions,
+	and enum objects), a declaration space for local named types (classes,
+	interfaces, and enums), and a declaration space for local namespaces
+	(containers of named types). Every declaration (whether local or exported) in a
+	module contributes to one or more of these declaration spaces.</span></p>
+	
+	<h2><a name="_Ref354731360"></a><a name="_Ref354498506"></a><a
+			name="_Ref354498297"></a><a name="_Ref354497956"></a><a name="_Toc364255815"></a><a
+			name="_Ref357432572"><span lang=EN-US>10.3</span><span lang=EN-US>Import
+	Declarations</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>Import declarations are used to create
+	local aliases for entities in other modules.</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ImportDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>import</span></span><span
+			lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
+																		 style='font-style:normal'>=</span></span><span lang=EN-US>   EntityName   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>EntityName:<br>
+	ModuleName<br>
+	ModuleName   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>.</span></span><span lang=EN-US>   Identifier</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An <span class=Production>EntityName</span>
+	consisting of a single identifier is resolved as a <span class=Production>ModuleName</span>
+	and is thus required to reference an internal module. The resulting local alias
+	references the given internal module and is itself classified as an internal
+	module.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An <span class=Production>EntityName</span>
+	consisting of more than one identifier is resolved as a <span class=Production>ModuleName</span>
+	followed by an identifier that names one or more exported entities in the given
+	module. The resulting local alias has all the meanings and classifications of
+	the referenced entity or entities. (As many as three distinct meanings are
+	possible for an entity name—namespace, type, and member.) In effect, it is as
+	if the imported entity or entities were declared locally with the local alias
+	name.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>In the example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US style='color:black;background:white'> A {<br>
+	    </span><span lang=EN-US style='color:blue;background:white'>export</span><span
+			lang=EN-US style='color:black;background:white'> </span><span lang=EN-US
+																		  style='color:blue;background:white'>interface</span><span lang=EN-US
+																																	style='color:black;background:white'> X { s: </span><span lang=EN-US
+																																															  style='color:blue;background:white'>string</span><span lang=EN-US
+																																																													 style='color:black;background:white'> }<br>
+	    </span><span lang=EN-US style='color:blue;background:white'>export</span><span
+			lang=EN-US style='color:black;background:white'> </span><span lang=EN-US
+																		  style='color:blue;background:white'>var</span><span lang=EN-US
+																															  style='color:black;background:white'> X: X;<br>
+	}</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US style='color:black;background:white'> B {<br>
+	    </span><span lang=EN-US style='color:blue;background:white'>interface</span><span
+			lang=EN-US style='background:white'> A { n: <span style='color:blue'>number</span>
+	}<br>
+	    <span style='color:blue'>import</span><span style='color:black'> Y = A;    </span><span
+				style='color:green'>// Alias only for module A</span><span style='color:black'><br>
+	    </span><span style='color:blue'>import</span><span style='color:black'> Z =
+	A.X;  </span><span style='color:green'>// Alias for both type and member A.X</span><span
+				style='color:black'><br>
+	    </span><span style='color:blue'>var</span><span style='color:black'> v: Z =
+	Z;<br>
+	}</span></span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>within ‘B’, ‘Y’ is an alias only for module
+	‘A’ and not the local interface ‘A’, whereas ‘Z’ is an alias for all exported
+	meanings of ‘A.X’, thus denoting both an interface type and a variable.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>If the <span class=Production>ModuleName</span>
+	portion of an <span class=Production>EntityName</span> references an
+	instantiated module, the <span class=Production>ModuleName</span> is required
+	to reference the module instance when evaluated as an expression. In the example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> A {<br>
+	    <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>interface</span> X { s: <span
+				style='color:blue;background:white'>string</span> }<br>
+	}</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> B {<br>
+	    <span style='color:blue;background:white'>var</span> A = 1;<br>
+	    <span style='color:blue;background:white'>import</span> Y = A;<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>‘Y’ is a local alias for the
+	non-instantiated module ‘A’. If the declaration of ‘A’ is changed such that ‘A’
+	becomes an instantiated module, for example by including a variable declaration
+	in ‘A’, the import statement in ‘B’ above would be an error because the
+	expression ‘A’ doesn’t reference the module instance of module ‘A’.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>When an import statement includes an export
+	modifier, all meanings of the local alias are exported.</span></p>
+	
+	<p class=MsoNormal><i><span lang=EN-US>TODO: Specify the exact restrictions on
+	import declarations referencing other import declarations. We minimally want to
+	disallow circular references.</span></i></p>
+	
+	<h2><a name="_Toc364255816"></a><a name="_Ref357156087"></a><a
+			name="_Ref357156033"></a><a name="_Ref357084368"></a><a name="_Ref357084065"><span
+			lang=EN-US>10.4</span><span lang=EN-US>Export Declarations</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>An export declaration declares an
+	externally accessible module member. An export declaration is simply a regular
+	declaration prefixed with the keyword </span><span class=CodeFragment><span
+			lang=EN-US>export</span></span><span lang=EN-US>.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Exported class, interface, and enum types
+	can be accessed as a <span class=Production>TypeName</span> (section </span><span lang=EN-US>3.6.2</span><span lang=EN-US>) of the form <i>M.T</i>, where <i>M</i>
+	is a reference to the containing module and <i>T</i> is the exported type name.
+	Likewise, as part of a <span class=Production>TypeName</span>, exported modules
+	can be accessed as a <span class=Production>ModuleName</span> of the form <i>M.N</i>,
+	where <i>M</i> is a reference to the containing module and <i>N</i> is the
+	exported module.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Exported variable, function, class, enum, module,
+	and import alias declarations become properties on the module instance and
+	together establish the module’s <b><i>instance type</i></b>. This unnamed type
+	has the following members:</span></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A property for each exported variable
+	declaration.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A property of a function type for each exported
+	function declaration.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A property of a constructor type for each
+	exported class declaration.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A property of an object type for each exported
+	enum declaration.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A property of an object type for each exported instantiated
+	module declaration.</span></p>
+	
+	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A property for each exported import alias that
+	references a variable, function, class, enum, or instantiated module.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An exported member depends on a (possibly
+	empty) set of named types (section </span><span
+			lang=EN-US>3.5</span><span lang=EN-US>). Those named types must be at least as
+	accessible as the exported member, or otherwise an error occurs.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The named types upon which a member depends
+	are the named types occurring in the transitive closure of the <b><i>directly
+			depends on</i></b> relationship defined as follows:</span></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A variable directly depends on the <span
+			class=Production>Type</span> specified in its type annotation.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A function directly depends on each <span
+			class=Production>Type</span> specified in a parameter or return type
+	annotation.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A class directly depends on each <span
+			class=Production>TypeReference</span> specified as a base class or implemented
+	interface, and each <span class=Production>Type</span> specified in a constructor
+	parameter type annotation, member variable type annotation, member function
+	parameter or return type annotation, member accessor parameter or return type
+	annotation, or index signature type annotation.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>An interface directly depends on each <span
+			class=Production>TypeReference</span> specified as a base interface and on the <span
+			class=Production>ObjectType</span> specified as its body.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A module directly depends on its exported
+	members.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A <span class=Production>Type</span> or <span
+			class=Production>ObjectType</span> directly depends on every <span
+			class=Production>TypeReference</span> that occurs within the type at any level
+	of nesting.</span></p>
+	
+	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>A <span class=Production>TypeReference</span>
+	directly depends on the type it references and on each <span class=Production>Type</span>
+	specified as a type argument.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>A named type <i>T</i> having a root module <i>R</i>
+	(section </span><span lang=EN-US>2.3</span><span lang=EN-US>) is said to be <b><i>at
+		least as accessible as</i></b> a member <i>M</i> if</span></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><i><span lang=EN-US>R</span></i><span lang=EN-US> is the global
+	module or an external module, or</span></p>
+	
+	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><i><span lang=EN-US>R</span></i><span lang=EN-US> is an internal
+	module in the parent module chain of <i>M</i>.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>In the example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
+			lang=EN-US style='background:white'> A { x: <span style='color:blue'>string</span>;
+	}</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US style='background:white'> M {<br>
+	    <span style='color:blue'>export</span> <span style='color:blue'>interface</span>
+	B { x: A; }<br>
+	    <span style='color:blue'>export</span> <span style='color:blue'>interface</span>
+	C { x: B; }<br>
+	    <span style='color:blue'>export</span> <span style='color:blue'>function</span>
+	foo(c: C) { … }<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>the ‘foo’ function depends upon the named
+	types ‘A’, ‘B’, and ‘C’. In order to export ‘foo’ it is necessary to also
+	export ‘B’ and ‘C’ as they otherwise would not be at least as accessible as
+	‘foo’. The ‘A’ interface is already at least as accessible as ‘foo’ because it
+	is declared in a parent module of foo’s module.</span></p>
+	
+	<h2><a name="_Toc364255817"></a><a name="_Ref352749355"><span lang=EN-US>10.5</span><span
+			lang=EN-US>Declaration Merging</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>Internal modules are “open-ended” and
+	internal module declarations with the same qualified name relative to a common
+	root (as defined in section </span><span lang=EN-US>2.3</span><span lang=EN-US>)
+	contribute to a single module. For example, the following two declarations of a
+	module outer might be located in separate source files.</span></p>
+	
+	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File a.ts:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> outer {<br>
+	    <span style='color:blue;background:white'>var</span> local = <span
+				style='color:maroon;background:white'>1</span>;           <span
+				style='color:green;background:white'>// Non-exported local variable</span><span
+				style='color:green'><br>
+	</span>    <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>var</span> a = local;    <span
+				style='color:green;background:white'>// outer.a</span><span style='color:green'><br>
+	</span>    <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>module</span> inner {<br>
+	        <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>var</span> x = <span style='color:maroon;
+	background:white'>10</span>;   <span style='color:green;background:white'>//
+	outer.inner.x</span><br>
+	    }<br>
+	}</span></p>
+	
+	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File b.ts:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> outer {<br>
+	    <span style='color:blue;background:white'>var</span> local = <span
+				style='color:maroon;background:white'>2</span>;           <span
+				style='color:green;background:white'>// Non-exported local variable</span><span
+				style='color:green'><br>
+	</span>    <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>var</span> b = local;    <span
+				style='color:green;background:white'>// outer.b</span><span style='color:green'><br>
+	</span>    <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>module</span> inner {<br>
+	        <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>var</span> y = <span style='color:maroon;
+	background:white'>20</span>;   <span style='color:green;background:white'>//
+	outer.inner.y</span><br>
+	    }<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Assuming the two source files are part of
+	the same program, the two declarations will have the global module as their
+	common root and will therefore contribute to the same module instance, the
+	instance type of which will be:</span></p>
+	
+	<p class=Code><span lang=EN-US>{<br>
+	    a: <span style='color:blue;background:white'>number</span>;<br>
+	    b: <span style='color:blue;background:white'>number</span>;<br>
+	    inner: {<br>
+	        x: <span style='color:blue;background:white'>number</span>;<br>
+	        y: <span style='color:blue;background:white'>number</span>;<br>
+	    };<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Declaration merging does not apply to local
+	aliases created by import declarations. In other words, it is not possible have
+	an import declaration and a module declaration for the same name within the
+	same module body.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Declaration merging also extends to
+	internal module declarations with the same qualified name relative to a common
+	root as a function, class, or enum declaration:</span></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>When merging a function and an internal module,
+	the type of the function object is merged with the instance type of the module.
+	In effect, the overloads or implementation of the function provide the call
+	signatures and the exported members of the module provide the properties of the
+	combined type.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>When merging a class and an internal module, the
+	type of the constructor function object is merged with the instance type of the
+	module. In effect, the overloads or implementation of the class constructor provide
+	the construct signatures, and the static members of the class and exported
+	members of the module provide the properties of the combined type. It is an
+	error to have static class members and exported module members with the same
+	name.</span></p>
+	
+	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>When merging an enum and an internal module, the
+	type of the enum object is merged with the instance type of the module. In
+	effect, the members of the enum and the exported members of the module provide
+	the properties of the combined type. It is an error to have enum members and
+	exported module members with the same name.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>When merging a non-ambient function or
+	class declaration and a non-ambient internal module declaration, the function
+	or class declaration must be located prior to the internal module declaration
+	in the same source file. This ensures that the shared object instance is
+	created as a function object. (While it is possible to add properties to an
+	object after its creation, it is not possible to make an object “callable”
+	after the fact.)</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
+			class=CodeFragment><span lang=EN-US> Point {<br>
+	    x: </span></span><span lang=EN-US style='color:blue;background:white'>number</span><span
+			class=CodeFragment><span lang=EN-US>;<br>
+	    y: </span></span><span lang=EN-US style='color:blue;background:white'>number</span><span
+			class=CodeFragment><span lang=EN-US>;<br>
+	}</span></span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
+			class=CodeFragment><span lang=EN-US> point(x: </span></span><span lang=EN-US
+																			  style='color:blue;background:white'>number</span><span class=CodeFragment><span
+			lang=EN-US>, y: </span></span><span lang=EN-US style='color:blue;background:
+	white'>number</span><span class=CodeFragment><span lang=EN-US>): Point {<br>
+	    </span></span><span lang=EN-US style='color:blue;background:white'>return</span><span
+			class=CodeFragment><span lang=EN-US> { x: x, y: y };<br>
+	}</span></span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			class=CodeFragment><span lang=EN-US> point {<br>
+	    </span></span><span lang=EN-US style='color:blue;background:white'>export</span><span
+			class=CodeFragment><span lang=EN-US> </span></span><span lang=EN-US
+																	 style='color:blue;background:white'>var</span><span class=CodeFragment><span
+			lang=EN-US> origin = point(</span></span><span lang=EN-US style='color:maroon;
+	background:white'>0</span><span class=CodeFragment><span lang=EN-US>, </span></span><span
+			lang=EN-US style='color:maroon;background:white'>0</span><span
+			class=CodeFragment><span lang=EN-US>);<br>
+	    </span></span><span lang=EN-US style='color:blue;background:white'>export</span><span
+			class=CodeFragment><span lang=EN-US> </span></span><span lang=EN-US
+																	 style='color:blue;background:white'>function</span><span class=CodeFragment><span
+			lang=EN-US> equals(p1: Point, p2: Point) {<br>
+	        </span></span><span lang=EN-US style='color:blue;background:white'>return</span><span
+			class=CodeFragment><span lang=EN-US> p1.x == p2.x &amp;&amp; p1.y == p2.y;<br>
+	    }<br>
+	}</span></span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			class=CodeFragment><span lang=EN-US> p1 = point(</span></span><span lang=EN-US
+																				style='color:maroon;background:white'>0</span><span class=CodeFragment><span
+			lang=EN-US>, </span></span><span lang=EN-US style='color:maroon;background:
+	white'>0</span><span class=CodeFragment><span lang=EN-US>);<br>
+	</span></span><span lang=EN-US style='color:blue;background:white'>var</span><span
+			class=CodeFragment><span lang=EN-US> p2 = point.origin;<br>
+	</span></span><span lang=EN-US style='color:blue;background:white'>var</span><span
+			class=CodeFragment><span lang=EN-US> b = point.equals(p1, p2);</span></span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>declares ‘point’ as a function object with
+	two properties, ‘origin’ and ‘equals’. Note that the module declaration for
+	‘point’ is located after the function declaration.</span></p>
+	
+	<h2><a name="_Toc364255818"><span lang=EN-US>10.6</span><span lang=EN-US>Code
+	Generation</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>An internal module generates JavaScript
+	code that is equivalent to the following:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US> </span><span class=CodeItalic><span lang=EN-US>&lt;ModuleName&gt;</span></span><span
+			lang=EN-US>;<br>
+	(<span style='color:blue;background:white'>function</span>(</span><span
+			class=CodeItalic><span lang=EN-US>&lt;ModuleName&gt;</span></span><span
+			lang=EN-US>) {<br>
+	    </span><span class=CodeItalic><span lang=EN-US>&lt;ModuleStatements&gt;</span></span><span
+			lang=EN-US><br>
+	})(</span><span class=CodeItalic><span lang=EN-US>&lt;ModuleName&gt;</span></span><span
+			lang=EN-US>||(</span><span class=CodeItalic><span lang=EN-US>&lt;ModuleName&gt;</span></span><span
+			lang=EN-US>={}));</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>ModuleName</span>
+	is the name of the module and <span class=CodeItalic>ModuleStatements</span> is
+	the code generated for the statements in the module body. The <span
+				class=CodeItalic>ModuleName</span> function parameter may be prefixed with one
+	or more underscore characters to ensure the name is unique within the function
+	body. Note that the entire module is emitted as an anonymous function that is
+	immediately executed. This ensures that local variables are in their own
+	lexical environment isolated from the surrounding context. Also note that the
+	generated function doesn’t create and return a module instance, but rather it
+	extends the existing instance (which may have just been created in the function
+	call). This ensures that internal modules can extend each other.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An import statement generates code of the
+	form</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US> &lt;</span><span class=CodeItalic><span lang=EN-US>Alias</span></span><span
+			lang=EN-US>&gt; = &lt;</span><span class=CodeItalic><span lang=EN-US>EntityName</span></span><span
+			lang=EN-US>&gt;;</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>This code is emitted only if the imported entity
+	is referenced as a <span class=Production>PrimaryExpression</span> somewhere in
+	the body of the importing module. If an imported entity is referenced only as a
+	<span class=Production>TypeName</span> or <span class=Production>ModuleName</span>,
+	nothing is emitted. This ensures that types declared in one internal module can
+	be referenced through an import alias in another internal module with no run-time
+	overhead.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>When a variable is exported, all references
+	to the variable in the body of the module are replaced with</span></p>
+	
+	<p class=Code><span lang=EN-US>&lt;</span><span class=CodeItalic><span
+			lang=EN-US>ModuleName</span></span><span lang=EN-US>&gt;.&lt;</span><span
+			class=CodeItalic><span lang=EN-US>VariableName</span></span><span lang=EN-US>&gt;</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>This effectively promotes the variable to
+	be a property on the module instance and ensures that all references to the
+	variable become references to the property.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>When a function, class, enum, or module is
+	exported, the code generated for the entity is followed by an assignment
+	statement of the form</span></p>
+	
+	<p class=Code><span lang=EN-US>&lt;</span><span class=CodeItalic><span
+			lang=EN-US>ModuleName</span></span><span lang=EN-US>&gt;.&lt;</span><span
+			class=CodeItalic><span lang=EN-US>EntityName</span></span><span lang=EN-US>&gt;
+	= &lt;</span><span class=CodeItalic><span lang=EN-US>EntityName</span></span><span
+			lang=EN-US>&gt;;</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>This copies a reference to the entity into
+	a property on the module instance.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>&nbsp;</span></p>
+	
+	</div>
+	
+
+
+</body>
+</html>

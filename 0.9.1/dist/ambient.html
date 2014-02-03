@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+<li><a href="index.html">Index</a></li>
+<li><a href="introduction.html">Introduction</a></li>
+<li><a href="basic_concepts.html">Basic Concepts</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="expressions.html">Expressions</a></li>
+<li><a href="statements.html">Statements</a></li>
+<li><a href="functions.html">Functions</a></li>
+<li><a href="interfaces.html">Interfaces</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="classes.html">Classes</a></li>
+<li><a href="enum.html">Enums</a></li>
+<li><a href="internal_modules.html">Internal Modules</a></li>
+<li><a href="source_external_modules.html">Source Files and External Modules</a></li>
+<li><a href="ambient.html">Ambients</a></li>
+<li><a href="grammar.html">Grammar</a></li>
+
+	<div class=WordSection14>
+	
+	<h1><a name="_Toc364255830"><span lang=EN-US>12<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Ambients</span></a></h1>
+	
+	<p class=MsoNormal><a name="_Ref325089664"><span lang=EN-US>Ambient
+	declarations are used to provide static typing over existing JavaScript code.
+	Ambient declarations differ from regular declarations in that no JavaScript
+	code is emitted for them. Instead of introducing new variables, functions,
+	classes, enums, or modules, ambient declarations provide type information for
+	entities that exist “ambiently” and are included in a program by external
+	means, for example by referencing a JavaScript library in a &lt;script/&gt;
+	tag.</span></a></p>
+	
+	<p class=MsoNormal><i><span lang=EN-US>TODO: Finish this chapter.</span></i></p>
+	
+	<h2><a name="_Toc364255831"></a><a name="_Ref343164647"><span lang=EN-US>12.1</span><span
+			lang=EN-US>Ambient Declarations</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>Ambient declarations are written using the </span><span
+			class=CodeFragment><span lang=EN-US>declare</span></span><span lang=EN-US> keyword
+	and can declare variables, functions, classes, enums, internal modules, or
+	external modules.</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientVariableDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientFunctionDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientClassDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientEnumDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientModuleDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientExternalModuleDeclaration</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Ambient declarations are only permitted at
+	the top-level in a source file (section </span><span
+			lang=EN-US>11.1</span><span lang=EN-US>).</span></p>
+	
+	<h3><a name="_Toc364255832"><span lang=EN-US>12.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+	</span></span><span lang=EN-US>Ambient Variable Declarations</span></a></h3>
+	
+	<p class=MsoNormal><span lang=EN-US>An ambient variable declaration introduces
+	a variable in the containing declaration space.</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientVariableDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>var</span></span><span
+			lang=EN-US>   Identifier    TypeAnnotation<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An ambient variable declaration may
+	optionally include a type annotation. If no type annotation is present, the
+	variable is assumed to have type Any.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An ambient variable declaration does not
+	permit an initializer expression to be present.</span></p>
+	
+	<h3><a name="_Toc364255833"><span lang=EN-US>12.1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;
+	</span></span><span lang=EN-US>Ambient Function Declarations</span></a></h3>
+	
+	<p class=MsoNormal><span lang=EN-US>An ambient function declaration introduces
+	a function in the containing declaration space.</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientFunctionDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
+			lang=EN-US>   Identifier   CallSignature   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Ambient functions may be overloaded by specifying
+	multiple ambient function declarations with the same name, but it is an error
+	to declare multiple overloads that are considered identical (section </span><span lang=EN-US>3.8.1</span><span lang=EN-US>) or differ only in their return types.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Ambient function declarations cannot
+	specify a function bodies and do not permit default parameter values.</span></p>
+	
+	<h3><a name="_Toc364255834"><span lang=EN-US>12.1.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+	</span></span><span lang=EN-US>Ambient Class Declarations</span></a></h3>
+	
+	<p class=MsoNormal><a name="_Ref325122420"><span lang=EN-US>An ambient class
+	declaration declares a class instance type and a constructor function in the
+	containing module.</span></a></p>
+	
+	<p class=Grammar><a name="_Ref343164926"></a><a name="_Ref334190903"><span
+			lang=EN-US>AmbientClassDeclaration:<br>
+	</span></a><span class=Terminal><span lang=EN-US style='font-style:normal'>class</span></span><span
+			lang=EN-US>   Identifier   TypeParameters<sub>opt</sub>   ClassHeritage   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
+			lang=EN-US>   AmbientClassBody   </span><span class=Terminal><span lang=EN-US
+																			   style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientClassBody:<br>
+	AmbientClassBodyElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientClassBodyElements:<br>
+	AmbientClassBodyElement<br>
+	AmbientClassBodyElements   AmbientClassBodyElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientClassBodyElement:<br>
+	AmbientConstructorDeclaration<br>
+	AmbientMemberDeclaration<br>
+	IndexSignature</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientConstructorDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientMemberDeclaration:<br>
+	PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US>   PropertyName   TypeAnnotation<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span><span
+			lang=EN-US><br>
+	PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US>   PropertyName   CallSignature   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<h3><a name="_Toc364255835"><span lang=EN-US>12.1.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
+	</span></span><span lang=EN-US>Ambient Enum Declarations</span></a></h3>
+	
+	<p class=MsoNormal><span lang=EN-US>An ambient enum declaration declares an
+	enum type and an enum object in the containing module.</span></p>
+	
+	<p class=Grammar><a name="_Ref350870964"><span lang=EN-US>AmbientEnumDeclaration:<br>
+	</span></a><span class=Terminal><span lang=EN-US style='font-style:normal'>enum</span></span><span
+			lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
+																		 style='font-style:normal'>{</span></span><span lang=EN-US>   AmbientEnumBody<sub>opt</sub>  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientEnumBody:<br>
+	AmbientEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientEnumMemberList:<br>
+	AmbientEnumMember<br>
+	AmbientEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><span lang=EN-US>   AmbientEnumMember</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientEnumMember:<br>
+	PropertyName<br>
+	PropertyName   =   IntegerLiteral</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An <span class=Production>AmbientEnumMember</span>
+	that includes an <span class=Production>IntegerLiteral</span> value is
+	considered a constant member. An <span class=Production>AmbientEnumMember</span>
+	with no <span class=Production>IntegerLiteral</span> value is considered a
+	computed member.</span></p>
+	
+	<h3><a name="_Toc364255836"><span lang=EN-US>12.1.5<span style='font:7.0pt "Times New Roman"'>&nbsp;
+	</span></span><span lang=EN-US>Ambient Module Declarations</span></a></h3>
+	
+	<p class=MsoNormal><span lang=EN-US>An ambient module declaration declares an
+	internal module.</span></p>
+	
+	<p class=Grammar><a name="_Ref325111315"><span lang=EN-US>AmbientModuleDeclaration:<br>
+	</span></a><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span
+			lang=EN-US>   IdentifierPath   </span><span class=Terminal><span lang=EN-US
+																			 style='font-style:normal'>{</span></span><span lang=EN-US>  
+	AmbientModuleBody   </span><span class=Terminal><span lang=EN-US
+														  style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientModuleBody:<br>
+	AmbientModuleElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientModuleElements:<br>
+	AmbientModuleElement<br>
+	AmbientModuleElements   AmbientModuleElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientModuleElement:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientVariableDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientFunctionDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientClassDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   InterfaceDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientEnumDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientModuleDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ImportDeclaration</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Except for <span class=Production>ImportDeclaration</span>s,
+	<span class=Production>AmbientModuleElement</span>s always declare exported
+	entities regardless of whether they include the optional </span><span
+			class=CodeFragment><span lang=EN-US>export</span></span><span lang=EN-US>
+	modifier.</span></p>
+	
+	<h3><a name="_Toc364255837"></a><a name="_Ref357433218"></a><a
+			name="_Ref352677710"><span lang=EN-US>12.1.6<span style='font:7.0pt "Times New Roman"'>&nbsp;
+	</span></span><span lang=EN-US>Ambient External Module</span></a><span
+			lang=EN-US> Declarations</span></h3>
+	
+	<p class=MsoNormal><span lang=EN-US>An <span class=Production>AmbientExternalModuleDeclaration</span>
+	declares an external module. This type of declaration is permitted only in the
+	global module. The <span class=Production>StringLiteral</span> must specify a
+	top-level external module name. Relative external module names are not
+	permitted.</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientExternalModuleDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span
+			lang=EN-US>   StringLiteral   </span><span class=Terminal><span lang=EN-US
+																			style='font-style:normal'>{</span></span><span lang=EN-US>   
+	AmbientExternalModuleBody   </span><span class=Terminal><span lang=EN-US
+																  style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientExternalModuleBody:<br>
+	AmbientExternalModuleElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientExternalModuleElements:<br>
+	AmbientExternalModuleElement<br>
+	AmbientExternalModuleElements   AmbientExternalModuleElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientExternalModuleElement:<br>
+	AmbientModuleElement<br>
+	ExportAssignment<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ExternalImportDeclaration</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An <span class=Production>ExternalImportDeclaration</span>
+	in an <span class=Production>AmbientExternalModuleDeclaration</span> may
+	reference other external modules only through top-level external module names.
+	Relative external module names are not permitted.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>If an ambient external module declaration
+	includes an export assignment, it is an error for any of the declarations with
+	the module to specify an </span><span class=CodeFragment><span lang=EN-US>export</span></span><span
+			lang=EN-US> modifier. If an ambient external module declaration contains no
+	export assignment, entities declared in the module are exported regardless of
+	whether their declarations include the optional </span><span
+			class=CodeFragment><span lang=EN-US>export</span></span><span lang=EN-US>
+	modifier.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+	
+	</div>
+	
+
+
+</body>
+</html>

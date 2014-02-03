@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+<li><a href="index.html">Index</a></li>
+<li><a href="introduction.html">Introduction</a></li>
+<li><a href="basic_concepts.html">Basic Concepts</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="expressions.html">Expressions</a></li>
+<li><a href="statements.html">Statements</a></li>
+<li><a href="functions.html">Functions</a></li>
+<li><a href="interfaces.html">Interfaces</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="classes.html">Classes</a></li>
+<li><a href="enum.html">Enums</a></li>
+<li><a href="internal_modules.html">Internal Modules</a></li>
+<li><a href="source_external_modules.html">Source Files and External Modules</a></li>
+<li><a href="ambient.html">Ambients</a></li>
+<li><a href="grammar.html">Grammar</a></li>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class=WordSection4>
+	
+	<h1><a name="_Toc364255689"><span lang=EN-US>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Basic Concepts</span></a></h1>
+	
+	<p class=MsoNormal><span lang=EN-US>The remainder of this document is the
+	formal specification of the TypeScript programming language and is intended to
+	be read as an adjunct to the </span><a
+			href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf"><span
+			lang=EN-US>ECMAScript Language Specification</span></a><span lang=EN-US> (specifically,
+	the ECMA-262 Standard, 5<sup>th</sup> Edition). This document describes the syntactic
+	grammar added by TypeScript along with the compile-time processing and type
+	checking performed by the TypeScript compiler, but it only minimally discusses
+	the run-time behavior of programs since that is covered by the ECMAScript
+	specification.</span></p>
+	
+	<h2><a name="_Toc364255690"></a><a name="_Ref352070784"><span lang=EN-US>2.1<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Grammar Conventions</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>The syntactic grammar added by TypeScript
+	language is specified throughout this document using the existing conventions and
+	production names of the ECMAScript grammar. In places where TypeScript augments
+	an existing grammar production it is so noted. For example:</span></p>
+	
+	<p class=Grammar><span lang=EN-US>CallExpression:� ( Modified )<br>
+	�<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
+			lang=EN-US>�� </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>(</span></span><span lang=EN-US>�� ArgumentList<sub>opt</sub>�� </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+			lang=EN-US><br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
+			lang=EN-US>�� </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>.</span></span><span lang=EN-US>�� IdentifierName</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The �<i>( Modified )</i>� annotation
+	indicates that an existing grammar production is being replaced, and the ���
+	references the contents of the original grammar production.</span></p>
+	
+	<h2><a name="_Toc364255691"><span lang=EN-US>2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Namespaces and Named Types</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>TypeScript supports <b><i>named types</i></b>
+	that can be organized in hierarchical <b><i>namespaces</i></b>. Namespaces are
+	introduced by module declarations and named types are introduced by class,
+	interface, and enum declarations. Named types are denoted by qualified names
+	that extend from some root module (possibly the global module) to the point of
+	their declaration. The example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> X {<br>
+	��� <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>module</span> Y {<br>
+	������� <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>interface</span> Z { }<br>
+	��� }<br>
+	��� <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>interface</span> Y { }<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>declares two interface types with the
+	qualified names �X.Y.Z� and �X.Y� relative to the root module in which �X� is
+	declared.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>In a qualified type name all identifiers but
+	the last one refer to namespaces and the last identifier refers to a named type.
+	Named type and namespace names are in separate declaration spaces and it is therefore
+	possible for a named type and a namespace to have the same name, as in the
+	example above.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The hierarchy formed by namespace and named
+	type names partially mirrors that formed by module instances and members. The
+	example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> A {<br>
+	��� <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>module</span> B {<br>
+	������� <span style='color:blue;background:white'>export</span> <span
+				style='color:blue'>class</span> C { }<br>
+	��� }<br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>introduces a named type with the qualified
+	name �A.B.C� and also introduces a constructor function that can be accessed using
+	the expression �A.B.C�. Thus, in the example</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US> c: A.B.C = <span style='color:blue;background:white'>new</span>
+	A.B.C();</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>the two occurrences of �A.B.C� in fact
+	refer to different entities. It is the context of the occurrences that
+	determines whether �A.B.C� is processed as a type name or an expression.</span></p>
+	
+	<h2><a name="_Toc364255692"></a><a name="_Ref323978672"><span lang=EN-US>2.3<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Declarations</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>Declarations introduce names in the <b><i>declaration
+		spaces</i></b> to which they belong. It is an error to have two names with same
+	spelling in the same declaration space. Declaration spaces exist as follows:</span></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The global module and each external or internal
+	module has a declaration space for variables (including functions, modules, class
+	constructor functions, and enum objects), a declaration space for named types (classes,
+	interfaces, and enums), and a declaration space for namespaces (containers of named
+	types). Every declaration (whether local or exported) in a module contributes
+	to one or more of these declaration spaces.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Each external or internal module has a declaration
+	space for exported members, a declaration space for exported named types, and a
+	declaration space for exported namespaces. All export declarations in the
+	module contribute to these declaration spaces. Each internal module�s export
+	declaration spaces are shared with other internal modules that have the same
+	root module and the same qualified name starting from that root module.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Each class declaration has a declaration space
+	for instance members, a declaration space for static members, and a declaration
+	space for type parameters.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Each interface declaration has a declaration
+	space for members and a declaration space for type parameters. An interface�s
+	declaration space is shared with other interfaces that have the same root
+	module and the same qualified name starting from that root module.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Each enum declaration has a declaration space
+	for its enum members. An enum�s declaration space is shared with other enums
+	that have the same root module and the same qualified name starting from that
+	root module.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Each function declaration (including constructor,
+	member function, and member accessor declarations) and each function expression
+	has a declaration space for variables (parameters, local variables, and local functions)
+	and a declaration space for type parameters.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Each object literal has a declaration space for
+	its properties.</span></p>
+	
+	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																		style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Each object type literal has a declaration space
+	for its members.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Top-level declarations in a source file
+	with no top-level import or export declarations belong to the <b><i>global
+			module</i></b>. Top-level declarations in a source file with one or more
+	top-level import or export declarations belong to the <b><i>external module</i></b>
+	represented by that source file.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>An internal module declaration contributes a
+	namespace name (representing a container of types) and possibly a member name
+	(representing the module instance) to the containing module. A class
+	declaration contributes both a member name (representing the constructor
+	function) and a type name (representing the class type) to the containing
+	module. An interface declaration contributes a type name to the containing
+	module. An enum declaration contributes both a member name (representing the
+	enum object) and a type name (representing the enum type) to the containing
+	module. Any other declaration contributes a member name to the declaration
+	space to which it belongs.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The <b><i>parent module</i></b> of an
+	entity is defined as follows: </span></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The parent module of an entity declared in an
+	internal module is that internal module.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The parent module of an entity declared in an
+	external module is that external module.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The parent module of an entity declared in the
+	global module is the global module.</span></p>
+	
+	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																		style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The parent module of an external module is the
+	global module.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>The <b><i>root module</i></b> of an entity
+	is defined as follows:</span></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The root module of a non-exported entity is the
+	entity�s parent module.</span></p>
+	
+	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																		style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The root module of an exported entity is the
+	root module of the entity�s parent module.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Intuitively, the root module of an entity
+	is the outermost module body from within which the entity is reachable.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Interfaces, enums, and internal modules are
+	�open ended,� meaning that interface, enum, and internal module declarations
+	with the same qualified name relative to a common root are automatically
+	merged. For further details, see sections </span><span
+			lang=EN-US>7.2</span><span lang=EN-US>, </span><span
+			lang=EN-US>9.3</span><span lang=EN-US>, and </span><span
+			lang=EN-US>10.5</span><span lang=EN-US>.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Namespace, type, and member names exist in separate
+	declaration spaces. Furthermore, declarations of non-instantiated modules (modules
+	that contain only interfaces or modules at all levels of nesting) do not
+	introduce a member name in their containing declaration space. This means that
+	the following is permitted, provided module �X� contains only interface or
+	module declarations at all levels of nesting:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
+			lang=EN-US> M {<br>
+	��� <span style='color:blue;background:white'>module</span> X { ... }����� <span
+				style='color:green;background:white'>// Namespace</span><span style='color:
+	green'><br>
+	</span>��� <span style='color:blue;background:white'>interface</span> X { ... }��
+	<span style='color:green;background:white'>// Type</span><br>
+	��� <span style='color:blue;background:white'>var</span> X;����������� ����<span
+				style='color:green;background:white'>// Member</span><br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>If module �X� above was an instantiated
+	module (section </span><span lang=EN-US>10.1</span><span lang=EN-US>) it would
+	cause a member �X� to be introduced in �M�. This member would conflict with the
+	variable �X� and thus cause an error.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Instance and static members in a class are likewise
+	in separate declaration spaces. Thus the following is permitted:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
+			lang=EN-US> C {<br>
+	��� x: number;� ��������<span style='color:green;background:white'>// </span><span
+				style='color:green'>Instance member</span><br>
+	��� <span style='color:blue;background:white'>static</span> x: string;�� <span
+				style='color:green;background:white'>// Static</span><span style='color:green'>
+	member</span><br>
+	}</span></p>
+	
+	<h2><a name="_Toc364255693"></a><a name="_Ref320695415"><span lang=EN-US>2.4<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Scopes</span></a></h2>
+	
+	<p class=MsoNormal><span lang=EN-US>The <b><i>scope</i></b> of a name is the
+	region of program text within which it is possible to refer to the entity
+	declared by that name without qualification of the name. The scope of a name
+	depends on the context in which the name is declared. The contexts are listed below
+	in order from outermost to innermost:</span></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The scope of an entity declared in the global
+	module is the entire program text.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The scope of an entity declared in an external
+	module is the source file of that external module.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The scope of an exported entity declared in an
+	internal module is the body of that module and every internal module with the
+	same root and the same qualified name relative to that root.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The scope of a non-exported entity declared
+	within an internal module declaration is the body of that internal module
+	declaration.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The scope of a type parameter declared in a
+	class or interface declaration is that entire declaration, including
+	constraints, extends clause, implements clause, and declaration body, but not
+	including static member declarations.</span></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+			lang=EN-US style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The scope of a type parameter declared in a call
+	or construct signature is that entire signature declaration, including
+	constraints, parameter list, and return type. If the signature is part of a
+	function implementation, the scope includes the function body.</span></p>
+	
+	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
+																		style='font-family:Symbol'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>The scope of a parameter, local variable, or
+	local function declared within a function declaration (including a constructor,
+	member function, or member accessor declaration) or function expression is the
+	body of that function declaration or function expression.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>Scopes may overlap, for example through
+	nesting of modules and functions. When the scopes of two entities with the same
+	name overlap, the entity with the innermost declaration takes precedence and
+	access to the outer entity is either not possible or only possible by
+	qualifying its name.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>When an identifier is resolved as a <span
+			class=Production>TypeName</span> <span style='background:white'>(section </span></span><span lang=EN-US style='background:white'>3.6.2</span><span lang=EN-US
+																																							   style='background:white'>)</span><span lang=EN-US>, only classes, interfaces, enums,
+	and type parameters are considered and other entities in scope are ignored.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>When an identifier is resolved as a <span
+			class=Production>ModuleName</span> <span style='background:white'>(section </span></span><span lang=EN-US style='background:white'>3.6.2</span><span lang=EN-US
+																																								 style='background:white'>)</span><span lang=EN-US>, only modules are considered
+	and other entities in scope are ignored.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>When an identifier
+	is resolved as a <span class=Production>PrimaryExpression</span> (section </span><span lang=EN-US style='background:white'>4.3</span><span lang=EN-US style='background:
+	white'>), only instantiated modules (section </span><span
+			lang=EN-US style='background:white'>10.1</span><span lang=EN-US
+																 style='background:white'>), classes, enums, functions, variables, and parameters
+	are considered and other entities in scope are ignored.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>Note that class and
+	enum members are never directly in scope�they can only be accessed by applying
+	the dot (�.�) operator to a class instance or enum object. This even includes
+	members of the current instance in a constructor or member function, which are
+	accessed by applying the dot operator to </span><span class=CodeFragment><span
+			lang=EN-US style='background:white'>this</span></span><span lang=EN-US
+																		style='background:white'>.</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US style='background:white'>As the rules above
+	imply, </span><span lang=EN-US>locally declared entities in an internal module
+	are closer in scope than exported entities declared in other module
+	declarations for the same internal module. For example:</span></p>
+	
+	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
+			lang=EN-US> x = <span style='color:maroon'>1</span>;<br>
+	<span style='color:blue;background:white'>module</span> M {<br>
+	��� <span style='color:blue;background:white'>export</span> <span
+				style='color:blue;background:white'>var</span> x = <span style='color:maroon'>2</span>;<br>
+	��� console.log(x);���� <span style='color:green;background:white'>// </span><span
+				style='color:green'>2</span><br>
+	}<br>
+	<span style='color:blue;background:white'>module</span> M {<br>
+	�� �console.log(x);���� <span style='color:green;background:white'>// </span><span
+				style='color:green'>2</span><br>
+	}<br>
+	<span style='color:blue;background:white'>module</span> M {<br>
+	��� <span style='color:blue;background:white'>var</span> x = <span
+				style='color:maroon'>3</span>;<br>
+	��� console.log(x);���� <span style='color:green;background:white'>// </span><span
+				style='color:green'>3</span><br>
+	}</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+	
+	</div>
+	
+
+
+</body>
+</html>

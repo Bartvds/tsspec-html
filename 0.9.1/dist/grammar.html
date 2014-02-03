@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html; charset=utf8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+<li><a href="index.html">Index</a></li>
+<li><a href="introduction.html">Introduction</a></li>
+<li><a href="basic_concepts.html">Basic Concepts</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="expressions.html">Expressions</a></li>
+<li><a href="statements.html">Statements</a></li>
+<li><a href="functions.html">Functions</a></li>
+<li><a href="interfaces.html">Interfaces</a></li>
+<li><a href="types.html">Types</a></li>
+<li><a href="classes.html">Classes</a></li>
+<li><a href="enum.html">Enums</a></li>
+<li><a href="internal_modules.html">Internal Modules</a></li>
+<li><a href="source_external_modules.html">Source Files and External Modules</a></li>
+<li><a href="ambient.html">Ambients</a></li>
+<li><a href="grammar.html">Grammar</a></li>
+
+	
+	<div class=WordSection15>
+	
+	<p class=Appendix1><a name="_Toc364255838"><span lang=EN-US><span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span lang=EN-US>Grammar</span></a></p>
+	
+	<p class=MsoNormal><span lang=EN-US>This appendix contains a summary of the
+	grammar found in the main document. As described in section </span><span lang=EN-US>2.1</span><span lang=EN-US>, the TypeScript grammar is a superset of
+	the grammar defined in the </span><a
+			href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf"><span
+			lang=EN-US>ECMAScript Language Specification</span></a><span lang=EN-US>
+	(specifically, the ECMA-262 Standard, 5<sup>th</sup> Edition) and this appendix
+	lists only productions that are new or modified from the ECMAScript grammar.</span></p>
+	
+	<p class=Appendix2><a name="_Toc364255839"><span lang=EN-US>1.1<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Types</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeParameters:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>&lt;</span></span><span
+			lang=EN-US>   TypeParameterList   </span><span class=Terminal><span lang=EN-US
+																				style='font-style:normal'>&gt;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeParameterList:<br>
+	TypeParameter<br>
+	TypeParameterList   </span><span class=Terminal><span lang=EN-US
+														  style='font-style:normal'>,</span></span><span lang=EN-US>   TypeParameter</span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeParameter:<br>
+	Identifier   Constraint<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>Constraint:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>extends</span></span><span
+			lang=EN-US>   Type</span></p>
+	
+	<p class=Grammar><span lang=EN-US>Type:<br>
+	PredefinedType<br>
+	TypeReference<br>
+	TypeQuery<br>
+	TypeLiteral</span></p>
+	
+	<p class=Grammar><span lang=EN-US>PredefinedType:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>any</span></span><span
+			lang=EN-US><br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>number<br>
+	boolean</span></span><span lang=EN-US><br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>string<br>
+	void</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeReference:<br>
+	TypeName   TypeArguments<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeName:<br>
+	Identifier<br>
+	ModuleName   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>.</span></span><span lang=EN-US>   Identifier</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ModuleName:<br>
+	Identifier<br>
+	ModuleName   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>.</span></span><span lang=EN-US>   Identifier</span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeArguments:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>&lt;</span></span><span
+			lang=EN-US>   TypeArgumentList   </span><span class=Terminal><span lang=EN-US
+																			   style='font-style:normal'>&gt;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeArgumentList:<br>
+	TypeArgument<br>
+	TypeArgumentList   </span><span class=Terminal><span lang=EN-US
+														 style='font-style:normal'>,</span></span><span lang=EN-US>   TypeArgument</span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeArgument:<br>
+	Type</span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeQuery:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>typeof</span></span><span
+			lang=EN-US>   TypeQueryExpression</span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeQueryExpression:<br>
+	Identifier<br>
+	TypeQueryExpression   </span><span class=Terminal><span lang=EN-US
+															style='font-style:normal'>.</span></span><span lang=EN-US>   IdentifierName</span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeLiteral:<br>
+	ObjectType<br>
+	ArrayType<br>
+	FunctionType<br>
+	ConstructorType</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ArrayType:<br>
+	PredefinedType   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>[</span></span><span lang=EN-US>   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>]</span></span><span lang=EN-US> <br>
+	TypeReference   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>[</span></span><span lang=EN-US>   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>]</span></span><span lang=EN-US> <br>
+	ObjectType   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>[</span></span><span lang=EN-US>   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>]</span></span><span lang=EN-US> <br>
+	ArrayType   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>[</span></span><span lang=EN-US>   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>]</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionType:<br>
+	TypeParameters<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	 style='font-style:normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub>  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>=&gt;</span></span><span lang=EN-US>   Type</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstructorType:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>new</span></span><span
+			lang=EN-US>   TypeParameters<sub>opt</sub>   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>(</span></span><span lang=EN-US>  
+	ParameterList<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	style='font-style:normal'>)</span></span><span lang=EN-US>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>=&gt;</span></span><span
+			lang=EN-US>   Type</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ObjectType:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
+			lang=EN-US>   TypeBody<sub>opt</sub>   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeBody:<br>
+	TypeMemberList   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>;</span></span><sub><span lang=EN-US>opt</span></sub></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeMemberList:<br>
+	TypeMember<br>
+	TypeMemberList   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>;</span></span><span lang=EN-US>   TypeMember</span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeMember:<br>
+	PropertySignature<br>
+	CallSignature<br>
+	ConstructSignature<br>
+	IndexSignature<br>
+	MethodSignature</span></p>
+	
+	<p class=Grammar><span lang=EN-US>PropertySignature:<br>
+	PropertyName   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>?</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>  
+	TypeAnnotation<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>PropertyName:<br>
+	IdentifierName<br>
+	StringLiteral<br>
+	NumericLiteral</span></p>
+	
+	<p class=Grammar><span lang=EN-US>CallSignature:<br>
+	TypeParameters<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	 style='font-style:normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub> 
+	 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+			lang=EN-US>   TypeAnnotation<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ParameterList:<br>
+	RequiredParameterList<br>
+	OptionalParameterList<br>
+	RestParameter<br>
+	RequiredParameterList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><span lang=EN-US>  
+	OptionalParameterList<br>
+	RequiredParameterList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><span lang=EN-US>   RestParameter<br>
+	OptionalParameterList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><span lang=EN-US>   RestParameter<br>
+	RequiredParameterList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><span lang=EN-US>   OptionalParameterList  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span
+			lang=EN-US>   RestParameter</span></p>
+	
+	<p class=Grammar><span lang=EN-US>RequiredParameterList:<br>
+	RequiredParameter<br>
+	RequiredParameterList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><span lang=EN-US>   RequiredParameter</span></p>
+	
+	<p class=Grammar><span lang=EN-US>RequiredParameter:<br>
+	PublicOrPrivate<sub>opt</sub>   Identifier   TypeAnnotation<sub>opt</sub><br>
+	Identifier   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>:</span></span><span lang=EN-US>   StringLiteral</span></p>
+	
+	<p class=Grammar><span lang=EN-US>PublicOrPrivate:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>public</span></span><span
+			lang=EN-US><br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>private</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>OptionalParameterList:<br>
+	OptionalParameter<br>
+	OptionalParameterList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><span lang=EN-US>   OptionalParameter</span></p>
+	
+	<p class=Grammar><span lang=EN-US>OptionalParameter:<br>
+	PublicOrPrivate<sub>opt</sub>   Identifier   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>?</span></span><span lang=EN-US>  
+	TypeAnnotation<sub>opt</sub><br>
+	PublicOrPrivate<sub>opt</sub>   Identifier   TypeAnnotation<sub>opt</sub>  
+	Initialiser</span></p>
+	
+	<p class=Grammar><span lang=EN-US>RestParameter:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>...</span></span><span
+			lang=EN-US>   Identifier   TypeAnnotation<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstructSignature:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>new</span></span><span
+			lang=EN-US>   TypeParameters<sub>opt</sub>   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>(</span></span><span lang=EN-US>  
+	ParameterList<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	style='font-style:normal'>)</span></span><span lang=EN-US>   TypeAnnotation<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>IndexSignature:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>[</span></span><span
+			lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
+																		 style='font-style:normal'>:</span></span><span lang=EN-US>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>string</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>]</span></span><span lang=EN-US>   TypeAnnotation<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>[</span></span><span
+			lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
+																		 style='font-style:normal'>:</span></span><span lang=EN-US>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>number</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>]</span></span><span lang=EN-US>   TypeAnnotation</span></p>
+	
+	<p class=Grammar><span lang=EN-US>MethodSignature:<br>
+	PropertyName   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>?</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>  
+	CallSignature</span></p>
+	
+	<p class=Appendix2><a name="_Toc364255840"><span lang=EN-US>1.2<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Expressions</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>PropertyAssignment:  ( Modified )<br>
+	PropertyName   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>:</span></span><span lang=EN-US>   AssignmentExpression<br>
+	PropertyName   CallSignature   </span><span class=Terminal><span lang=EN-US
+																	 style='font-style:normal'>{</span></span><span lang=EN-US>   FunctionBody   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span><span
+			lang=EN-US><br>
+	GetAccessor</span><span class=Terminal><span lang=EN-US style='font-style:normal'><br>
+	</span></span><span lang=EN-US>SetAccessor</span></p>
+	
+	<p class=Grammar><span lang=EN-US>GetAccessor:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>get</span></span><span
+			lang=EN-US>   PropertyName   </span><span class=Terminal><span lang=EN-US
+																		   style='font-style:normal'>(</span></span><span lang=EN-US>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+			lang=EN-US>   TypeAnnotation<sub>opt</sub>   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>  
+	FunctionBody   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>SetAccessor:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>set</span></span><span
+			lang=EN-US>   PropertyName   </span><span class=Terminal><span lang=EN-US
+																		   style='font-style:normal'>(</span></span><span lang=EN-US>   Identifier  
+	TypeAnnotation<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	 style='font-style:normal'>)</span></span><span lang=EN-US>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
+			lang=EN-US>   FunctionBody   </span><span class=Terminal><span lang=EN-US
+																		   style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>CallExpression:  ( Modified )<br>
+	…<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>(</span></span><span lang=EN-US>   ArgumentList<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+			lang=EN-US><br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>.</span></span><span lang=EN-US>   IdentifierName</span></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionExpression:  ( Modified )<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
+			lang=EN-US>   Identifier<sub>opt</sub>   CallSignature   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
+			lang=EN-US>   FunctionBody   </span><span class=Terminal><span lang=EN-US
+																		   style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AssignmentExpression:  ( Modified )<br>
+	…<br>
+	ArrowFunctionExpression</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ArrowFunctionExpression:<br>
+	ArrowFormalParameters   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>=&gt;</span></span><span lang=EN-US>   Block<br>
+	ArrowFormalParameters   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>=&gt;</span></span><span lang=EN-US>  
+	AssignmentExpression</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ArrowFormalParameters:<br>
+	CallSignature<br>
+	Identifier</span></p>
+	
+	<p class=Grammar><span lang=EN-US>Arguments:  ( Modified )<br>
+	TypeArguments<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	style='font-style:normal'>(</span></span><span lang=EN-US>   ArgumentList<sub>opt</sub>  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>UnaryExpression:  ( Modified )<br>
+	…<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>&lt;</span></span><span
+			lang=EN-US>   Type   </span><span class=Terminal><span lang=EN-US
+																   style='font-style:normal'>&gt;</span></span><span lang=EN-US>   UnaryExpression</span></p>
+	
+	<p class=Appendix2><a name="_Toc364255841"><span lang=EN-US>1.3<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Statements</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>VariableDeclaration:  ( Modified )<br>
+	Identifier   TypeAnnotation<sub>opt</sub>   Initialiser<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>VariableDeclarationNoIn:  ( Modified )<br>
+	Identifier   TypeAnnotation<sub>opt</sub>   InitialiserNoIn<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>TypeAnnotation:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>:</span></span><span
+			lang=EN-US>   Type</span></p>
+	
+	<p class=Appendix2><a name="_Toc364255842"><span lang=EN-US>1.4<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Functions</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionDeclaration:  ( Modified )<br>
+	FunctionOverloads<sub>opt</sub>   FunctionImplementation</span></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionOverloads:<br>
+	FunctionOverload<br>
+	FunctionOverloads   FunctionOverload</span></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionOverload:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
+			lang=EN-US>   Identifier   CallSignature   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>FunctionImplementation:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
+			lang=EN-US>   Identifier   CallSignature   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>  
+	FunctionBody   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>}</span></span></p>
+	
+	<p class=Appendix2><a name="_Toc364255843"><span lang=EN-US>1.5<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Interfaces</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>InterfaceDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>interface</span></span><span
+			lang=EN-US>   Identifier   TypeParameters<sub>opt</sub>  
+	InterfaceExtendsClause<sub>opt</sub>   ObjectType</span></p>
+	
+	<p class=Grammar><span lang=EN-US>InterfaceExtendsClause:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>extends</span></span><span
+			lang=EN-US>   ClassOrInterfaceTypeList</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ClassOrInterfaceTypeList:<br>
+	ClassOrInterfaceType<br>
+	ClassOrInterfaceTypeList   </span><span class=Terminal><span lang=EN-US
+																 style='font-style:normal'>,</span></span><span lang=EN-US>  
+	ClassOrInterfaceType</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ClassOrInterfaceType:<br>
+	TypeReference</span></p>
+	
+	<p class=Appendix2><a name="_Toc364255844"><span lang=EN-US>1.6<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Classes</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>ClassDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>class</span></span><span
+			lang=EN-US>   Identifier   TypeParameters<sub>opt</sub>   ClassHeritage   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
+			lang=EN-US>   ClassBody   </span><span class=Terminal><span lang=EN-US
+																		style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ClassHeritage:<br>
+	ClassExtendsClause<sub>opt</sub>   ImplementsClause<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ClassExtendsClause:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>extends</span></span><span
+			lang=EN-US>    ClassType</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ClassType:<br>
+	TypeReference</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ImplementsClause:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>implements</span></span><span
+			lang=EN-US>   ClassOrInterfaceTypeList</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ClassBody:<br>
+	ClassElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ClassElements:<br>
+	ClassElement<br>
+	ClassElements   ClassElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ClassElement:<br>
+	ConstructorDeclaration<br>
+	MemberDeclaration<br>
+	IndexSignature</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstructorDeclaration:<br>
+	ConstructorOverloads<sub>opt</sub>   ConstructorImplementation</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstructorOverloads:<br>
+	ConstructorOverload<br>
+	ConstructorOverloads   ConstructorOverload</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstructorOverload:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstructorImplementation:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>{</span></span><span lang=EN-US>   FunctionBody   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>MemberDeclaration:<br>
+	MemberVariableDeclaration<br>
+	MemberFunctionDeclaration<br>
+	MemberAccessorDeclaration</span></p>
+	
+	<p class=Grammar><span lang=EN-US>MemberVariableDeclaration:<br>
+	PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US>   PropertyName   TypeAnnotation<sub>opt</sub>   Initialiser<sub>opt</sub>  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>MemberFunctionDeclaration:<br>
+	MemberFunctionOverloads<sub>opt</sub>   MemberFunctionImplementation</span></p>
+	
+	<p class=Grammar><span lang=EN-US>MemberFunctionOverloads:<br>
+	MemberFunctionOverload<br>
+	MemberFunctionOverloads   MemberFunctionOverload</span></p>
+	
+	<p class=Grammar><span lang=EN-US>MemberFunctionOverload:<br>
+	PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US>   PropertyName   CallSignature   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>MemberFunctionImplementation:</span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'><br>
+	</span></span><span lang=EN-US>PublicOrPrivate<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>static</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   PropertyName   CallSignature   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
+			lang=EN-US>   FunctionBody   </span><span class=Terminal><span lang=EN-US
+																		   style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>MemberAccessorDeclaration:<br>
+	PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US>   GetAccessor<br>
+	PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US>   SetAccessor</span></p>
+	
+	<p class=Appendix2><a name="_Toc364255845"><span lang=EN-US>1.7<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Enums</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>EnumDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>enum</span></span><span
+			lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
+																		 style='font-style:normal'>{</span></span><span lang=EN-US>   EnumBody<sub>opt</sub>  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>EnumBody:<br>
+	ConstantEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US><br>
+	ConstantEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><span lang=EN-US>  
+	ComputedEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US><br>
+	ComputedEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstantEnumMemberList:<br>
+	ConstantEnumMember<br>
+	ConstantEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><span lang=EN-US>   ConstantEnumMember</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ConstantEnumMember:<br>
+	PropertyName<br>
+	PropertyName   =   IntegerLiteral</span></p>
+	
+	<p class=Grammar><span lang=EN-US>IntegerLiteral:<br>
+	SignedInteger<br>
+	HexIntegerLiteral</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ComputedEnumMemberList:<br>
+	ComputedEnumMember<br>
+	ComputedEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>,</span></span><span lang=EN-US>   ComputedEnumMember</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ComputedEnumMember:<br>
+	PropertyName   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>=</span></span><span lang=EN-US>   AssignmentExpression</span></p>
+	
+	<p class=Appendix2><a name="_Toc364255846"><span lang=EN-US>1.8<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Internal Modules</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>ModuleDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span
+			lang=EN-US>   IdentifierPath   </span><span class=Terminal><span lang=EN-US
+																			 style='font-style:normal'>{</span></span><span lang=EN-US>   ModuleBody   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>IdentifierPath:<br>
+	Identifier<br>
+	IdentifierPath   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>.</span></span><span lang=EN-US>   Identifier</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ModuleBody:<br>
+	ModuleElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ModuleElements:<br>
+	ModuleElement<br>
+	ModuleElements   ModuleElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ModuleElement:<br>
+	Statement<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   VariableDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   FunctionDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ClassDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   InterfaceDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   EnumDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ModuleDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ImportDeclaration</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ImportDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>import</span></span><span
+			lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
+																		 style='font-style:normal'>=</span></span><span lang=EN-US>   EntityName   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>EntityName:<br>
+	Identifier<br>
+	ModuleName   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>.</span></span><span lang=EN-US>   Identifier</span></p>
+	
+	<p class=Appendix2><a name="_Toc364255847"><span lang=EN-US>1.9<span
+			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+			lang=EN-US>Programs and External Modules</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>SourceFile:<br>
+	ImplementationSourceFile<br>
+	DeclarationSourceFile</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ImplementationSourceFile:<br>
+	ImplementationElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ImplementationElements:<br>
+	ImplementationElement<br>
+	ImplementationElements   ImplementationElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ImplementationElement:<br>
+	ModuleElement<br>
+	ExportAssignment<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ExternalImportDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientDeclaration</span></p>
+	
+	<p class=Grammar><span lang=EN-US>DeclarationSourceFile:<br>
+	DeclarationElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>DeclarationElements:<br>
+	DeclarationElement<br>
+	DeclarationElements   DeclarationElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>DeclarationElement:<br>
+	ExportAssignment<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   InterfaceDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ImportDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ExternalImportDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientDeclaration</span></p>
+	
+	<p class=Grammar><span lang=EN-US>ExternalImportDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>import</span></span><span
+			lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
+																		 style='font-style:normal'>=</span></span><span lang=EN-US>   ExternalModuleReference  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ExternalModuleReference:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>require</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>(</span></span><span lang=EN-US>   StringLiteral   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>ExportAssignment:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>=</span></span><span lang=EN-US>   Identifier   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Appendix2><a name="_Toc364255848"><span lang=EN-US>1.10</span><span
+			lang=EN-US>Ambients</span></a></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientVariableDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientFunctionDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientClassDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientEnumDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientModuleDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
+			lang=EN-US>   AmbientExternalModuleDeclaration</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientVariableDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>var</span></span><span
+			lang=EN-US>   Identifier    TypeAnnotation<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientFunctionDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
+			lang=EN-US>   Identifier   CallSignature   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientClassDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>class</span></span><span
+			lang=EN-US>   Identifier   TypeParameters<sub>opt</sub>   ClassHeritage   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
+			lang=EN-US>   AmbientClassBody   </span><span class=Terminal><span lang=EN-US
+																			   style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientClassBody:<br>
+	AmbientClassBodyElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientClassBodyElements:<br>
+	AmbientClassBodyElement<br>
+	AmbientClassBodyElements   AmbientClassBodyElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientClassBodyElement:<br>
+	AmbientConstructorDeclaration<br>
+	AmbientMemberDeclaration<br>
+	IndexSignature</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientConstructorDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
+			lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+	normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientMemberDeclaration:<br>
+	PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US>   PropertyName   TypeAnnotation<sub>opt</sub>   </span><span
+			class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span><span
+			lang=EN-US><br>
+	PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+																	  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
+			lang=EN-US>   PropertyName   CallSignature   </span><span class=Terminal><span
+			lang=EN-US style='font-style:normal'>;</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientEnumDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>enum</span></span><span
+			lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
+																		 style='font-style:normal'>{</span></span><span lang=EN-US>   AmbientEnumBody<sub>opt</sub>  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientEnumBody:<br>
+	AmbientEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientEnumMemberList:<br>
+	AmbientEnumMember<br>
+	AmbientEnumMemberList   </span><span class=Terminal><span lang=EN-US
+															  style='font-style:normal'>,</span></span><span lang=EN-US>   AmbientEnumMember</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientEnumMember:<br>
+	PropertyName<br>
+	PropertyName   =   IntegerLiteral</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientModuleDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span
+			lang=EN-US>   IdentifierPath   </span><span class=Terminal><span lang=EN-US
+																			 style='font-style:normal'>{</span></span><span lang=EN-US>   AmbientModuleBody  
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientModuleBody:<br>
+	AmbientModuleElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientModuleElements:<br>
+	AmbientModuleElement<br>
+	AmbientModuleElements   AmbientModuleElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientModuleElement:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientVariableDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientFunctionDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientClassDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   InterfaceDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientEnumDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   AmbientModuleDeclaration<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ImportDeclaration</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientExternalModuleDeclaration:<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span
+			lang=EN-US>   StringLiteral   </span><span class=Terminal><span lang=EN-US
+																			style='font-style:normal'>{</span></span><span lang=EN-US>   
+	AmbientExternalModuleBody   </span><span class=Terminal><span lang=EN-US
+																  style='font-style:normal'>}</span></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientExternalModuleBody:<br>
+	AmbientExternalModuleElements<sub>opt</sub></span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientExternalModuleElements:<br>
+	AmbientExternalModuleElement<br>
+	AmbientExternalModuleElements   AmbientExternalModuleElement</span></p>
+	
+	<p class=Grammar><span lang=EN-US>AmbientExternalModuleElement:<br>
+	AmbientModuleElement<br>
+	ExportAssignment<br>
+	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
+			lang=EN-US>opt</span></sub><span lang=EN-US>   ExternalImportDeclaration</span></p>
+	
+	<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+	
+	</div>
+	
+
+
+</body>
+</html>
