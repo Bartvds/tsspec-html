@@ -4,23 +4,25 @@
 
 The official PDF and DocX are cumbersome to use, and it looks as if the team has [no interest in improving it](https://typescript.codeplex.com/workitem/2143) with a more usable HTML version.
 
+Browse it on [bartvds.github.io/tsspec-html/0.9.1/index.html](http://bartvds.github.io/tsspec-html/0.9.1)
+
 ## Pages
 
-- [Index](0.9.1/dist/index.html)
-- [Introduction](0.9.1/dist/introduction.html)
-- [Basic Concepts](0.9.1/dist/basic_concepts.html)
-- [Types](0.9.1/dist/types.html)
-- [Expressions](0.9.1/dist/expressions.html)
-- [Statements](0.9.1/dist/statements.html)
-- [Functions](0.9.1/dist/functions.html)
-- [Interfaces](0.9.1/dist/interfaces.html)
-- [Types](0.9.1/dist/types.html)
-- [Classes](0.9.1/dist/classes.html)
-- [Enums](0.9.1/dist/enum.html)
-- [Internal Modules](0.9.1/dist/internal_modules.html)
-- [Source Files and External Modules](0.9.1/dist/source_external_modules.html)
-- [Ambients](0.9.1/dist/ambient.html)
-- [Grammar](0.9.1/dist/grammar.html)
+- [Index](http://bartvds.github.io/tsspec-html/0.9.1/dist/index.html)
+- [Introduction](http://bartvds.github.io/tsspec-html/0.9.1/dist/introduction.html)
+- [Basic Concepts](http://bartvds.github.io/tsspec-html/0.9.1/dist/basic_concepts.html)
+- [Types](http://bartvds.github.io/tsspec-html/0.9.1/dist/types.html)
+- [Expressions](http://bartvds.github.io/tsspec-html/0.9.1/dist/expressions.html)
+- [Statements](http://bartvds.github.io/tsspec-html/0.9.1/dist/statements.html)
+- [Functions](http://bartvds.github.io/tsspec-html/0.9.1/dist/functions.html)
+- [Interfaces](http://bartvds.github.io/tsspec-html/0.9.1/dist/interfaces.html)
+- [Types](http://bartvds.github.io/tsspec-html/0.9.1/dist/types.html)
+- [Classes](http://bartvds.github.io/tsspec-html/0.9.1/dist/classes.html)
+- [Enums](http://bartvds.github.io/tsspec-html/0.9.1/dist/enum.html)
+- [Internal Modules](http://bartvds.github.io/tsspec-html/0.9.1/dist/internal_modules.html)
+- [Source Files and External Modules](0.9.1/dist/external_modules.html)
+- [Ambients](http://bartvds.github.io/tsspec-html/0.9.1/dist/ambient.html)
+- [Grammar](http://bartvds.github.io/tsspec-html/0.9.1/dist/grammar.html)
 
 
 Sources:
