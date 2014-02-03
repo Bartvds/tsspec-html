@@ -15,23 +15,23 @@ default parameter values, and rest parameters.</span></p>
 optional set of function overloads followed by an actual function
 implementation.</span></p>
 
-<p class=Grammar><span lang=EN-US>FunctionDeclaration:  ( Modified )<br>
-FunctionOverloads<sub>opt</sub>   FunctionImplementation</span></p>
+<p class=Grammar><span lang=EN-US>FunctionDeclaration:&nbsp; ( Modified )<br>
+FunctionOverloads<sub>opt</sub>&nbsp;&nbsp; FunctionImplementation</span></p>
 
 <p class=Grammar><span lang=EN-US>FunctionOverloads:<br>
 FunctionOverload<br>
-FunctionOverloads   FunctionOverload</span></p>
+FunctionOverloads&nbsp;&nbsp; FunctionOverload</span></p>
 
 <p class=Grammar><span lang=EN-US>FunctionOverload:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
-		lang=EN-US>   Identifier   CallSignature   </span><span class=Terminal><span
+		lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; CallSignature&nbsp;&nbsp; </span><span class=Terminal><span
 		lang=EN-US style='font-style:normal'>;</span></span></p>
 
 <p class=Grammar><span lang=EN-US>FunctionImplementation:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
-		lang=EN-US>   Identifier   CallSignature   </span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>  
-FunctionBody   </span><span class=Terminal><span lang=EN-US style='font-style:
+		lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; CallSignature&nbsp;&nbsp; </span><span class=Terminal><span
+		lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;
+FunctionBody&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
 normal'>}</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>A function declaration introduces a
@@ -84,14 +84,14 @@ with overloads.</span></p>
 			style='color:blue;background:white'>any</span>, value?: <span style='color:
 blue;background:white'>string</span>): <span style='color:blue;background:white'>any</span>
 {<br>
-    <span style='color:blue;background:white'>if</span> (nameOrMap &amp;&amp; <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>if</span> (nameOrMap &amp;&amp; <span
 			style='color:blue;background:white'>typeof</span> nameOrMap === <span
 			style='color:maroon;background:white'>&quot;object&quot;</span>) {<br>
-        <span style='color:green;background:white'>// handle map case</span><br>
-    }<br>
-    <span style='color:blue;background:white'>else</span> {<br>
-        <span style='color:green;background:white'>// handle string case</span><br>
-    }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// handle map case</span><br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>else</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// handle string case</span><br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Note that each overload and the final
@@ -100,11 +100,11 @@ introduced by this declaration is</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> attr: {<br>
-    (name: <span style='color:blue;background:white'>string</span>): <span
+&nbsp;&nbsp;&nbsp; (name: <span style='color:blue;background:white'>string</span>): <span
 			style='color:blue;background:white'>string</span>;<br>
-    (name: <span style='color:blue;background:white'>string</span>, value: <span
+&nbsp;&nbsp;&nbsp; (name: <span style='color:blue;background:white'>string</span>, value: <span
 			style='color:blue;background:white'>string</span>): Accessor;<br>
-    (map: <span style='color:blue;background:white'>any</span>): Accessor;<br>
+&nbsp;&nbsp;&nbsp; (map: <span style='color:blue;background:white'>any</span>): Accessor;<br>
 };</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Note that the signature of the actual
@@ -149,14 +149,14 @@ single throw statement.</span></i></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US> f(x: <span style='color:blue;background:white'>number</span>) {<br>
-    if (x &lt;= <span style='color:maroon;background:white'>0</span>) <span
+&nbsp;&nbsp;&nbsp; if (x &lt;= <span style='color:maroon;background:white'>0</span>) <span
 			style='color:blue;background:white'>return</span> x;<br>
-    <span style='color:blue;background:white'>return</span> g(x);<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> g(x);<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US> g(x: <span style='color:blue;background:white'>number</span>) {<br>
-    <span style='color:blue;background:white'>return</span> f(x - <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> f(x - <span
 			style='color:maroon;background:white'>1</span>);<br>
 }</span></p>
 
@@ -183,21 +183,21 @@ argument is included in the generated JavaScript, as described in section </span
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US> strange(x: <span style='color:blue;background:white'>number</span>,
 y = x * <span style='color:maroon;background:white'>2</span>, z = x + y) {<br>
-    <span style='color:blue;background:white'>return</span> z;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> z;<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>generates JavaScript that is equivalent to</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US> strange(x, y, z) {<br>
-    <span style='color:blue;background:white'>if</span> (<span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>if</span> (<span
 			style='color:blue;background:white'>typeof</span> y === <span style='color:
 maroon;background:white'>&quot;undefined&quot;</span>) { y = x * <span
 			style='color:maroon;background:white'>2</span>; }<br>
-    <span style='color:blue;background:white'>if</span> (<span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>if</span> (<span
 			style='color:blue;background:white'>typeof</span> z === <span style='color:
 maroon;background:white'>&quot;undefined&quot;</span>) { z = x + y; }<br>
-    <span style='color:blue;background:white'>return</span> z;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> z;<br>
 }</span></p>
 
 <h2><a name="_Toc364255779"><span lang=EN-US>6.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
@@ -220,21 +220,21 @@ function:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> Comparable&lt;T&gt; {<br>
-    localeCompare(other: T): <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; localeCompare(other: T): <span style='color:blue;background:white'>number</span>;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US> compare&lt;T <span style='color:blue;background:white'>extends</span>
 Comparable&lt;T&gt;&gt;(x: T, y: T): <span style='color:blue;background:white'>number</span>
 {<br>
-    <span style='color:blue;background:white'>if</span> (x == null) <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>if</span> (x == null) <span
 			style='color:blue;background:white'>return</span> y == null ? <span
 			style='color:maroon;background:white'>0</span> : <span style='color:maroon;
 background:white'>-1</span>;<br>
-    <span style='color:blue;background:white'>if</span> (y == null) <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>if</span> (y == null) <span
 			style='color:blue;background:white'>return</span> <span style='color:maroon;
 background:white'>1</span>;<br>
-    <span style='color:blue;background:white'>return</span> x.localeCompare(y);<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> x.localeCompare(y);<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Note that the ‘x’ and ‘y’ parameters are
@@ -248,11 +248,11 @@ from the types of the regular arguments in the call. In the example</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> Person {<br>
-    name: string;<br>
-    localeCompare(other: Person) {<br>
-        <span style='color:blue;background:white'>return</span>
+&nbsp;&nbsp;&nbsp; name: string;<br>
+&nbsp;&nbsp;&nbsp; localeCompare(other: Person) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span>
 compare(this.name, other.name);<br>
-    }<br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>the type argument to ‘compare’ is
@@ -270,9 +270,9 @@ code that is equivalent to:</span></p>
 		lang=EN-US> </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionName&gt;</span></span><span
 		lang=EN-US>(</span><span class=CodeItalic><span lang=EN-US>&lt;FunctionParameters&gt;</span></span><span
 		lang=EN-US>) {<br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
 		lang=EN-US><br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionStatements&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionStatements&gt;</span></span><span
 		lang=EN-US><br>
 }</span></p>
 

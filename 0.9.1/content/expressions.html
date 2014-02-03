@@ -181,11 +181,11 @@ interface type ‘RegExp’.</span></p>
 <p class=MsoNormal><span lang=EN-US>Object literals are extended to support
 type annotations in get and set accessors.</span></p>
 
-<p class=Grammar><span lang=EN-US>PropertyAssignment:  ( Modified )<br>
-PropertyName   </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>:</span></span><span lang=EN-US>   AssignmentExpression<br>
-PropertyName   CallSignature   </span><span class=Terminal><span lang=EN-US
-																 style='font-style:normal'>{</span></span><span lang=EN-US>   FunctionBody   </span><span
+<p class=Grammar><span lang=EN-US>PropertyAssignment:&nbsp; ( Modified )<br>
+PropertyName&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>:</span></span><span lang=EN-US>&nbsp;&nbsp; AssignmentExpression<br>
+PropertyName&nbsp;&nbsp; CallSignature&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+																 style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp; FunctionBody&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span><span
 		lang=EN-US><br>
 GetAccessor</span><span class=Terminal><span lang=EN-US style='font-style:normal'><br>
@@ -193,22 +193,22 @@ GetAccessor</span><span class=Terminal><span lang=EN-US style='font-style:normal
 
 <p class=Grammar><span lang=EN-US>GetAccessor:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>get</span></span><span
-		lang=EN-US>   PropertyName   </span><span class=Terminal><span lang=EN-US
-																	   style='font-style:normal'>(</span></span><span lang=EN-US>   </span><span
+		lang=EN-US>&nbsp;&nbsp; PropertyName&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+																	   style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
-		lang=EN-US>   TypeAnnotation<sub>opt</sub>   </span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>  
-FunctionBody   </span><span class=Terminal><span lang=EN-US style='font-style:
+		lang=EN-US>&nbsp;&nbsp; TypeAnnotation<sub>opt</sub>&nbsp;&nbsp; </span><span class=Terminal><span
+		lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;
+FunctionBody&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
 normal'>}</span></span></p>
 
 <p class=Grammar><span lang=EN-US>SetAccessor:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>set</span></span><span
-		lang=EN-US>   PropertyName   </span><span class=Terminal><span lang=EN-US
-																	   style='font-style:normal'>(</span></span><span lang=EN-US>   Identifier  
-TypeAnnotation<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
-																 style='font-style:normal'>)</span></span><span lang=EN-US>   </span><span
+		lang=EN-US>&nbsp;&nbsp; PropertyName&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+																	   style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp;
+TypeAnnotation<sub>opt</sub>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+																 style='font-style:normal'>)</span></span><span lang=EN-US>&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
-		lang=EN-US>   FunctionBody   </span><span class=Terminal><span lang=EN-US
+		lang=EN-US>&nbsp;&nbsp; FunctionBody&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 																	   style='font-style:normal'>}</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>The type of an object literal is an object
@@ -341,16 +341,16 @@ classified as a reference, so is the parenthesized expression.</span></p>
 		lang=EN-US>super</span></span><span lang=EN-US> keyword can be used in
 expressions to reference base class properties and the base class constructor.</span></p>
 
-<p class=Grammar><span lang=EN-US>CallExpression:  ( Modified )<br>
+<p class=Grammar><span lang=EN-US>CallExpression:&nbsp; ( Modified )<br>
 …<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
-		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>(</span></span><span lang=EN-US>   ArgumentList<sub>opt</sub>   </span><span
+		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; ArgumentList<sub>opt</sub>&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
 		lang=EN-US><br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
-		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>.</span></span><span lang=EN-US>   IdentifierName</span></p>
+		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>.</span></span><span lang=EN-US>&nbsp;&nbsp; IdentifierName</span></p>
 
 <h3><a name="_Toc364255741"></a><a name="_Ref331172635"><span lang=EN-US>4.8.1<span
 		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
@@ -424,22 +424,22 @@ property access is specified in section </span><span
 to optionally include parameter and return type annotations, and a new compact
 form, called arrow function expressions, is introduced.</span></p>
 
-<p class=Grammar><span lang=EN-US>FunctionExpression:  ( Modified )<br>
+<p class=Grammar><span lang=EN-US>FunctionExpression:&nbsp; ( Modified )<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
-		lang=EN-US>   Identifier<sub>opt</sub>   CallSignature   </span><span
+		lang=EN-US>&nbsp;&nbsp; Identifier<sub>opt</sub>&nbsp;&nbsp; CallSignature&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
-		lang=EN-US>   FunctionBody   </span><span class=Terminal><span lang=EN-US
+		lang=EN-US>&nbsp;&nbsp; FunctionBody&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 																	   style='font-style:normal'>}</span></span></p>
 
-<p class=Grammar><span lang=EN-US>AssignmentExpression:  ( Modified )<br>
+<p class=Grammar><span lang=EN-US>AssignmentExpression:&nbsp; ( Modified )<br>
 …<br>
 ArrowFunctionExpression</span></p>
 
 <p class=Grammar><span lang=EN-US>ArrowFunctionExpression:<br>
-ArrowFormalParameters   </span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>=&gt;</span></span><span lang=EN-US>   Block<br>
-ArrowFormalParameters   </span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>=&gt;</span></span><span lang=EN-US>  
+ArrowFormalParameters&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+														  style='font-style:normal'>=&gt;</span></span><span lang=EN-US>&nbsp;&nbsp; Block<br>
+ArrowFormalParameters&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+														  style='font-style:normal'>=&gt;</span></span><span lang=EN-US>&nbsp;&nbsp;
 AssignmentExpression</span></p>
 
 <p class=Grammar><span lang=EN-US>ArrowFormalParameters:<br>
@@ -538,11 +538,11 @@ undefined or unexpected </span><span class=CodeFragment><span lang=EN-US>this</s
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Messenger {<br>
-    message = <span style='color:maroon'>&quot;Hello World&quot;</span>;<br>
-    start() {<br>
-        setTimeout(() =&gt; alert(<span style='color:blue'>this</span>.message),
+&nbsp;&nbsp;&nbsp; message = <span style='color:maroon'>&quot;Hello World&quot;</span>;<br>
+&nbsp;&nbsp;&nbsp; start() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setTimeout(() =&gt; alert(<span style='color:blue'>this</span>.message),
 <span style='color:maroon'>3000</span>);<br>
-    }<br>
+&nbsp;&nbsp;&nbsp; }<br>
 };<br>
 <span style='color:blue'>var</span> messenger = <span style='color:blue'>new</span>
 Messenger();<br>
@@ -559,12 +559,12 @@ arrange access to the surrounding </span><span class=CodeFragment><span
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Messenger {<br>
-    message = <span style='color:maroon'>&quot;Hello World&quot;</span>;<br>
-    start() {<br>
-        <span style='color:blue'>var</span> _this = <span style='color:blue'>this</span>;<br>
-        setTimeout(<span style='color:blue'>function</span>() { alert(_this.message);
+&nbsp;&nbsp;&nbsp; message = <span style='color:maroon'>&quot;Hello World&quot;</span>;<br>
+&nbsp;&nbsp;&nbsp; start() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>var</span> _this = <span style='color:blue'>this</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setTimeout(<span style='color:blue'>function</span>() { alert(_this.message);
 }, <span style='color:maroon'>3000</span>);<br>
-    }<br>
+&nbsp;&nbsp;&nbsp; }<br>
 };<br>
 <span style='color:blue'>var</span> messenger = <span style='color:blue'>new</span>
 Messenger();<br>
@@ -615,21 +615,21 @@ directly denotable. In the example</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> Comparable&lt;T&gt; {<br>
-    compareTo(other: T): <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; compareTo(other: T): <span style='color:blue;background:white'>number</span>;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> Comparer {<br>
-    &lt;T <span style='color:blue;background:white'>extends</span>
+&nbsp;&nbsp;&nbsp; &lt;T <span style='color:blue;background:white'>extends</span>
 Comparable&lt;T&gt;&gt;(x: T, y: T): <span style='color:blue;background:white'>number</span>;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> f: Comparer = (x, y) =&gt; {<br>
-    <span style='color:blue;background:white'>var</span> z: <span
-			style='color:blue;background:white'>any</span>;  <span style='color:green;
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> z: <span
+			style='color:blue;background:white'>any</span>;&nbsp; <span style='color:green;
 background:white'>// No name for type of x and y</span><br>
-    ...<br>
+&nbsp;&nbsp;&nbsp; ...<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>the ‘Comparer’ type represents a function
@@ -644,12 +644,12 @@ must be explicitly typed:</span></p>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> f: Comparer = &lt;T <span style='color:blue;background:white'>extends</span>
 Comparable&lt;T&gt;&gt;(x: T, y: T) =&gt; {<br>
-    <span style='color:blue;background:white'>var</span> z: T;  <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> z: T;&nbsp; <span
 			style='color:green;background:white'>// Z has same type as x and y</span><br>
-    ...<br>
+&nbsp;&nbsp;&nbsp; ...<br>
 }</span></p>
 
-<h2><a name="_Toc364255747"></a><a name="_Ref320780642"><span lang=EN-US>4.10</span><span
+<h2><a name="_Toc364255747"></a><a name="_Ref320780642"><span lang="EN-US">4.10</span>&nbsp;<span
 		lang=EN-US>Property Access</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>A property access uses either dot notation
@@ -740,7 +740,7 @@ type Any.</span></p>
 </span></span><span lang=EN-US>Otherwise, the property access is invalid and a
 compile-time error occurs.</span></p>
 
-<h2><a name="_Toc364255748"></a><a name="_Ref321406016"><span lang=EN-US>4.11</span><span
+<h2><a name="_Toc364255748"></a><a name="_Ref321406016"><span lang="EN-US">4.11</span>&nbsp;<span
 		lang=EN-US>The new Operator</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>A </span><span class=CodeFragment><span
@@ -780,15 +780,15 @@ with no construct signatures but one or more call signatures, the expression is
 processed as a function call. A compile-time error occurs if the result of the
 function call is not Void. The type of the result of the operation is Any.</span></p>
 
-<h2><a name="_Toc364255749"></a><a name="_Ref320250038"><span lang=EN-US>4.12</span><span
+<h2><a name="_Toc364255749"></a><a name="_Ref320250038"><span lang="EN-US">4.12</span>&nbsp;<span
 		lang=EN-US>Function Calls</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>Function calls are extended from JavaScript
 to optionally include type arguments.</span></p>
 
-<p class=Grammar><span lang=EN-US>Arguments:  ( Modified )<br>
-TypeArguments<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
-																style='font-style:normal'>(</span></span><span lang=EN-US>   ArgumentList<sub>opt</sub>  
+<p class=Grammar><span lang=EN-US>Arguments:&nbsp; ( Modified )<br>
+TypeArguments<sub>opt</sub>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+																style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; ArgumentList<sub>opt</sub>&nbsp;&nbsp;
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>A function call takes one of the forms</span></p>
@@ -1109,7 +1109,7 @@ the grammar for expressions. For example, the statement</span></p>
 
 <p class=Code><span lang=EN-US>f(g&lt;A, B&gt;(7));</span></p>
 
-<p class=MsoNormal><span lang=EN-US>could be interpreted as  a call to ‘f’ with
+<p class=MsoNormal><span lang=EN-US>could be interpreted as&nbsp; a call to ‘f’ with
 two arguments, ‘g &lt; A’ and ‘B &gt; (7)’. Alternatively, it could be
 interpreted as a call to ‘f’ with one argument, which is a call to a generic function
 ‘g’ with two type arguments and one regular argument.</span></p>
@@ -1135,17 +1135,17 @@ is interpreted as a call with one argument, which is a call to a generic functio
 <p class=MsoNormal><span lang=EN-US>are both interpreted as calls to ‘f’ with
 two arguments.</span></p>
 
-<h2><a name="_Toc364255753"><span lang=EN-US>4.13</span><span lang=EN-US>Type
+<h2><a name="_Toc364255753"><span lang="EN-US">4.13</span>&nbsp;<span lang=EN-US>Type
 Assertions</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>TypeScript extends the JavaScript
 expression grammar with the ability to assert a type for an expression:</span></p>
 
-<p class=Grammar><span lang=EN-US>UnaryExpression:  ( Modified )<br>
+<p class=Grammar><span lang=EN-US>UnaryExpression:&nbsp; ( Modified )<br>
 …<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>&lt;</span></span><span
-		lang=EN-US>   Type   </span><span class=Terminal><span lang=EN-US
-															   style='font-style:normal'>&gt;</span></span><span lang=EN-US>   UnaryExpression</span></p>
+		lang=EN-US>&nbsp;&nbsp; Type&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+															   style='font-style:normal'>&gt;</span></span><span lang=EN-US>&nbsp;&nbsp; UnaryExpression</span></p>
 
 <p class=MsoNormal><span lang=EN-US>A type assertion expression consists of a
 type enclosed in </span><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span
@@ -1180,10 +1180,10 @@ Shape { ... }</span></p>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US style='background:white'> createShape(kind: <span style='color:blue'>string</span>):
 Shape {<br>
-    <span style='color:blue'>if</span> (kind === <span style='color:maroon'>&quot;circle&quot;</span>)
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>if</span> (kind === <span style='color:maroon'>&quot;circle&quot;</span>)
 <span style='color:blue'>return</span> <span style='color:blue'>new</span>
 Circle();<br>
-    ...<br>
+&nbsp;&nbsp;&nbsp; ...<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
@@ -1204,11 +1204,11 @@ example using the </span><span class=CodeFragment><span lang=EN-US>instanceof</s
 		lang=EN-US style='background:white'> shape = createShape(shapeKind);<br>
 <span style='color:blue'>if</span> (shape <span style='color:blue'>instanceof</span>
 Circle) {<br>
-    <span style='color:blue'>var</span> circle = &lt;Circle&gt; shape;<br>
-    ...<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>var</span> circle = &lt;Circle&gt; shape;<br>
+&nbsp;&nbsp;&nbsp; ...<br>
 }</span></p>
 
-<h2><a name="_Toc364255754"><span lang=EN-US>4.14</span><span lang=EN-US>Unary Operators</span></a></h2>
+<h2><a name="_Toc364255754"><span lang="EN-US">4.14</span>&nbsp;<span lang=EN-US>Unary Operators</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>The subsections that follow specify the
 compile-time processing rules of the unary operators. In general, if the
@@ -1285,7 +1285,7 @@ type and produces the value </span><span class=CodeFragment><span lang=EN-US>und
 		lang=EN-US>typeof</span></span><span lang=EN-US> operator takes an operand of
 any type and produces a value of the String primitive type.</span></p>
 
-<h2><a name="_Toc364255761"><span lang=EN-US>4.15</span><span lang=EN-US>Binary
+<h2><a name="_Toc364255761"><span lang="EN-US">4.15</span>&nbsp;<span lang=EN-US>Binary
 Operators</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>The subsections that follow specify the compile-time
@@ -2676,7 +2676,7 @@ of any type and produces a result that is of the best common type (section </spa
 
 <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
 
-<h2><a name="_Toc364255769"><span lang=EN-US>4.16</span><span lang=EN-US>The
+<h2><a name="_Toc364255769"><span lang="EN-US">4.16</span>&nbsp;<span lang=EN-US>The
 Conditional Operator</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>In a conditional expression of the form</span></p>
@@ -2691,7 +2691,7 @@ or the type of one must be a subtype of the other. The result is of the best
 common type (section </span><span lang=EN-US>3.10</span><span lang=EN-US>) of the
 two expression types.</span></p>
 
-<h2><a name="_Toc364255770"><span lang=EN-US>4.17</span><span lang=EN-US>Assignment
+<h2><a name="_Toc364255770"><span lang="EN-US">4.17</span>&nbsp;<span lang=EN-US>Assignment
 Operators</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>An assignment of the form</span></p>
@@ -2718,8 +2718,8 @@ font-family:Consolas;font-style:normal'> </span></span><span class=CodeItalic><s
 <p class=MsoNormal><span lang=EN-US>where <i>Operator=</i> is of the compound
 assignment operators</span></p>
 
-<p class=Code><span lang=EN-US>*=   /=   %=   +=   -=   &lt;&lt;=   &gt;&gt;=  
-&gt;&gt;&gt;=   &amp;=   ^=   |=</span></p>
+<p class=Code><span lang=EN-US>*=&nbsp;&nbsp; /=&nbsp;&nbsp; %=&nbsp;&nbsp; +=&nbsp;&nbsp; -=&nbsp;&nbsp; &lt;&lt;=&nbsp;&nbsp; &gt;&gt;=&nbsp;&nbsp;
+&gt;&gt;&gt;=&nbsp;&nbsp; &amp;=&nbsp;&nbsp; ^=&nbsp;&nbsp; |=</span></p>
 
 <p class=MsoNormal><span lang=EN-US>is subject to the same requirements, and
 produces a value of the same type, as the corresponding non-compound operation.
@@ -2727,8 +2727,7 @@ A compound assignment furthermore requires <i>VarExpr</i> to be classified as a
 reference (section </span><span lang=EN-US>4.1</span><span lang=EN-US>) and the
 type of the non-compound operation to be assignable to the type of <i>VarExpr</i>.</span></p>
 
-<h2><a name="_Toc364255771"></a><a name="_Ref314665618"></a><a
-		name="_Ref314551848"><span lang=EN-US>4.18</span><span lang=EN-US>Contextually
+<h2><a name="_Toc364255771"></a><a name="_Ref314665618"></a><a name="_Ref314551848"><span lang="EN-US">4.18</span>&nbsp;<span lang=EN-US>Contextually
 Typed Expressions</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>In certain situations, parameter and return
@@ -2833,15 +2832,15 @@ function to be of type Any as no type annotations are present.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US style='background:white'> EventObject {<br>
-    x: <span style='color:blue'>number</span>;<br>
-    y: <span style='color:blue'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; x: <span style='color:blue'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; y: <span style='color:blue'>number</span>;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US style='background:white'> EventHandlers {<br>
-    mousedown?: (event: EventObject) =&gt; <span style='color:blue'>void</span>;<br>
-    mouseup?: (event: EventObject) =&gt; <span style='color:blue'>void</span>;<br>
-    mousemove?: (event: EventObject) =&gt; <span style='color:blue'>void</span>;<br>
+&nbsp;&nbsp;&nbsp; mousedown?: (event: EventObject) =&gt; <span style='color:blue'>void</span>;<br>
+&nbsp;&nbsp;&nbsp; mouseup?: (event: EventObject) =&gt; <span style='color:blue'>void</span>;<br>
+&nbsp;&nbsp;&nbsp; mousemove?: (event: EventObject) =&gt; <span style='color:blue'>void</span>;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
@@ -2849,8 +2848,8 @@ function to be of type Any as no type annotations are present.</span></p>
 { ... }</span></p>
 
 <p class=Code><span lang=EN-US style='background:white'>setEventHandlers({<br>
-    mousedown: e =&gt; { startTracking(e.x, e.y); },<br>
-    mouseup: e =&gt; { endTracking(); }<br>
+&nbsp;&nbsp;&nbsp; mousedown: e =&gt; { startTracking(e.x, e.y); },<br>
+&nbsp;&nbsp;&nbsp; mouseup: e =&gt; { endTracking(); }<br>
 });</span></p>
 
 <p class=MsoNormal><span lang=EN-US>the object literal passed to

@@ -19,8 +19,8 @@ possible values of the enum type.</span></p>
 
 <p class=Grammar><span lang=EN-US>EnumDeclaration:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>enum</span></span><span
-		lang=EN-US>   Identifier   </span><span class=Terminal><span lang=EN-US
-																	 style='font-style:normal'>{</span></span><span lang=EN-US>   EnumBody<sub>opt</sub>  
+		lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+																	 style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp; EnumBody<sub>opt</sub>&nbsp;&nbsp;
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>The enum type and enum object declared by
@@ -46,11 +46,11 @@ corresponds to the declaration</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> Color: {<br>
-    [x: <span style='color:blue;background:white'>number</span>]: <span
+&nbsp;&nbsp;&nbsp; [x: <span style='color:blue;background:white'>number</span>]: <span
 			style='color:blue;background:white'>string</span>;<br>
-    Red: Color;<br>
-    Green: Color;<br>
-    Blue: Color;<br>
+&nbsp;&nbsp;&nbsp; Red: Color;<br>
+&nbsp;&nbsp;&nbsp; Green: Color;<br>
+&nbsp;&nbsp;&nbsp; Blue: Color;<br>
 };</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The numeric index signature reflects a
@@ -61,7 +61,7 @@ of an enum value. For example</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> c = Color.Red;<br>
-console.log(Color[c]);  <span style='color:green;background:white'>// Outputs
+console.log(Color[c]);&nbsp; <span style='color:green;background:white'>// Outputs
 &quot;Red&quot;</span></span></p>
 
 <h2><a name="_Toc364255809"><span lang=EN-US>9.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
@@ -73,25 +73,25 @@ zero or more enum members which are the named values of the enum type.<span
 the primitive type introduced by the enum declaration.</span></span></p>
 
 <p class=Grammar><span lang=EN-US>EnumBody:<br>
-ConstantEnumMemberList   </span><span class=Terminal><span lang=EN-US
+ConstantEnumMemberList&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 														   style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub><span
 		lang=EN-US><br>
-ConstantEnumMemberList   </span><span class=Terminal><span lang=EN-US
-														   style='font-style:normal'>,</span></span><span lang=EN-US>  
-ComputedEnumMemberList   </span><span class=Terminal><span lang=EN-US
+ConstantEnumMemberList&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+														   style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;
+ComputedEnumMemberList&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 														   style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub><span
 		lang=EN-US><br>
-ComputedEnumMemberList   </span><span class=Terminal><span lang=EN-US
+ComputedEnumMemberList&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 														   style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub></p>
 
 <p class=Grammar><span lang=EN-US>ConstantEnumMemberList:<br>
 ConstantEnumMember<br>
-ConstantEnumMemberList   </span><span class=Terminal><span lang=EN-US
-														   style='font-style:normal'>,</span></span><span lang=EN-US>   ConstantEnumMember</span></p>
+ConstantEnumMemberList&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+														   style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp; ConstantEnumMember</span></p>
 
 <p class=Grammar><span lang=EN-US>ConstantEnumMember:<br>
 PropertyName<br>
-PropertyName   =   IntegerLiteral</span></p>
+PropertyName&nbsp;&nbsp; =&nbsp;&nbsp; IntegerLiteral</span></p>
 
 <p class=Grammar><span lang=EN-US>IntegerLiteral:<br>
 SignedInteger<br>
@@ -99,12 +99,12 @@ HexIntegerLiteral</span></p>
 
 <p class=Grammar><span lang=EN-US>ComputedEnumMemberList:<br>
 ComputedEnumMember<br>
-ComputedEnumMemberList   </span><span class=Terminal><span lang=EN-US
-														   style='font-style:normal'>,</span></span><span lang=EN-US>   ComputedEnumMember</span></p>
+ComputedEnumMemberList&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+														   style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp; ComputedEnumMember</span></p>
 
 <p class=Grammar><span lang=EN-US>ComputedEnumMember:<br>
-PropertyName   </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>=</span></span><span lang=EN-US>   AssignmentExpression</span></p>
+PropertyName&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>=</span></span><span lang=EN-US>&nbsp;&nbsp; AssignmentExpression</span></p>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>Enum members are
 either <b><i>constant members</i></b> or <b><i>computed members</i></b>. Constant
@@ -138,11 +138,11 @@ members.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>enum</span><span
 		lang=EN-US style='background:white'> Test {<br>
-    A,<br>
-    B,<br>
-    C = <span style='color:maroon'>10</span>,<br>
-    D,<br>
-    E = Math.floor(Math.random() * <span style='color:maroon'>1000</span>)<br>
+&nbsp;&nbsp;&nbsp; A,<br>
+&nbsp;&nbsp;&nbsp; B,<br>
+&nbsp;&nbsp;&nbsp; C = <span style='color:maroon'>10</span>,<br>
+&nbsp;&nbsp;&nbsp; D,<br>
+&nbsp;&nbsp;&nbsp; E = Math.floor(Math.random() * <span style='color:maroon'>1000</span>)<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>‘A’, ‘B’, ‘C’, and
@@ -153,12 +153,12 @@ a computed member.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>enum</span><span
 		lang=EN-US style='background:white'> Style {<br>
-    None = <span style='color:maroon'>0</span>,<br>
-    Bold = <span style='color:maroon'>1</span>,<br>
-    Italic = <span style='color:maroon'>2</span>,<br>
-    Underline = <span style='color:maroon'>4</span>,<br>
-    Emphasis = Style.Bold | Style.Italic,<br>
-    Hyperlink = Style.Bold | Style.Underline<br>
+&nbsp;&nbsp;&nbsp; None = <span style='color:maroon'>0</span>,<br>
+&nbsp;&nbsp;&nbsp; Bold = <span style='color:maroon'>1</span>,<br>
+&nbsp;&nbsp;&nbsp; Italic = <span style='color:maroon'>2</span>,<br>
+&nbsp;&nbsp;&nbsp; Underline = <span style='color:maroon'>4</span>,<br>
+&nbsp;&nbsp;&nbsp; Emphasis = Style.Bold | Style.Italic,<br>
+&nbsp;&nbsp;&nbsp; Hyperlink = Style.Bold | Style.Underline<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>the first four
@@ -195,7 +195,7 @@ declaration generates JavaScript equivalent to the following:</span></p>
 (<span style='color:blue;background:white'>function</span> (</span><span
 		class=CodeItalic><span lang=EN-US>&lt;<span style='background:white'>EnumName</span>&gt;</span></span><span
 		lang=EN-US>) {<br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;EnumMemberAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;EnumMemberAssignments&gt;</span></span><span
 		lang=EN-US><br>
 })(</span><span class=CodeItalic><span lang=EN-US>&lt;<span style='background:
 white'>EnumName</span>&gt;</span></span><span lang=EN-US>||(</span><span
@@ -233,11 +233,11 @@ member names.</span></i></p>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US style='background:white'> Color;<br>
 (<span style='color:blue'>function</span> (Color) {<br>
-    Color[Color.Red = <span style='color:maroon'>0</span>] = <span
+&nbsp;&nbsp;&nbsp; Color[Color.Red = <span style='color:maroon'>0</span>] = <span
 			style='color:maroon'>&quot;Red&quot;</span>;<br>
-    Color[Color.Green = <span style='color:maroon'>1</span>] = <span
+&nbsp;&nbsp;&nbsp; Color[Color.Green = <span style='color:maroon'>1</span>] = <span
 			style='color:maroon'>&quot;Green&quot;</span>;<br>
-    Color[Color.Blue = <span style='color:maroon'>2</span>] = <span
+&nbsp;&nbsp;&nbsp; Color[Color.Blue = <span style='color:maroon'>2</span>] = <span
 			style='color:maroon'>&quot;Blue&quot;</span>;<br>
 })(Color||(Color={}));</span></p>
 

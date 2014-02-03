@@ -36,19 +36,19 @@ language is specified throughout this document using the existing conventions an
 production names of the ECMAScript grammar. In places where TypeScript augments
 an existing grammar production it is so noted. For example:</span></p>
 
-<p class=Grammar><span lang=EN-US>CallExpression:  ( Modified )<br>
-…<br>
+<p class=Grammar><span lang=EN-US>CallExpression:&nbsp; ( Modified )<br>
+&nbsp;<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
-		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>(</span></span><span lang=EN-US>   ArgumentList<sub>opt</sub>   </span><span
+		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; ArgumentList<sub>opt</sub>&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
 		lang=EN-US><br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
-		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>.</span></span><span lang=EN-US>   IdentifierName</span></p>
+		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>.</span></span><span lang=EN-US>&nbsp;&nbsp; IdentifierName</span></p>
 
-<p class=MsoNormal><span lang=EN-US>The ‘<i>( Modified )</i>’ annotation
-indicates that an existing grammar production is being replaced, and the ‘…’
+<p class=MsoNormal><span lang=EN-US>The &nbsp;<i>( Modified )</i>&nbsp; annotation
+indicates that an existing grammar production is being replaced, and the &nbsp;&nbsp;&nbsp;
 references the contents of the original grammar production.</span></p>
 
 <h2><a name="_Toc364255691"><span lang=EN-US>2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
@@ -63,17 +63,17 @@ their declaration. The example</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
 		lang=EN-US> X {<br>
-    <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>module</span> Y {<br>
-        <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>interface</span> Z { }<br>
-    }<br>
-    <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>interface</span> Y { }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>declares two interface types with the
-qualified names ‘X.Y.Z’ and ‘X.Y’ relative to the root module in which ‘X’ is
+qualified names &nbsp;X.Y.Z&nbsp; and &nbsp;X.Y&nbsp; relative to the root module in which &nbsp;X&nbsp; is
 declared.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>In a qualified type name all identifiers but
@@ -88,24 +88,24 @@ example</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
 		lang=EN-US> A {<br>
-    <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>module</span> B {<br>
-        <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
 			style='color:blue'>class</span> C { }<br>
-    }<br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>introduces a named type with the qualified
-name ‘A.B.C’ and also introduces a constructor function that can be accessed using
-the expression ‘A.B.C’. Thus, in the example</span></p>
+name &nbsp;A.B.C&nbsp; and also introduces a constructor function that can be accessed using
+the expression &nbsp;A.B.C&nbsp;. Thus, in the example</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> c: A.B.C = <span style='color:blue;background:white'>new</span>
 A.B.C();</span></p>
 
-<p class=MsoNormal><span lang=EN-US>the two occurrences of ‘A.B.C’ in fact
+<p class=MsoNormal><span lang=EN-US>the two occurrences of &nbsp;A.B.C&nbsp; in fact
 refer to different entities. It is the context of the occurrences that
-determines whether ‘A.B.C’ is processed as a type name or an expression.</span></p>
+determines whether &nbsp;A.B.C&nbsp; is processed as a type name or an expression.</span></p>
 
 <h2><a name="_Toc364255692"></a><a name="_Ref323978672"><span lang=EN-US>2.3<span
 		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
@@ -116,7 +116,7 @@ determines whether ‘A.B.C’ is processed as a type name or an expression.</span><
 spelling in the same declaration space. Declaration spaces exist as follows:</span></p>
 
 <p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The global module and each external or internal
 module has a declaration space for variables (including functions, modules, class
 constructor functions, and enum objects), a declaration space for named types (classes,
@@ -125,48 +125,48 @@ types). Every declaration (whether local or exported) in a module contributes
 to one or more of these declaration spaces.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Each external or internal module has a declaration
 space for exported members, a declaration space for exported named types, and a
 declaration space for exported namespaces. All export declarations in the
-module contribute to these declaration spaces. Each internal module’s export
+module contribute to these declaration spaces. Each internal module&nbsp;s export
 declaration spaces are shared with other internal modules that have the same
 root module and the same qualified name starting from that root module.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Each class declaration has a declaration space
 for instance members, a declaration space for static members, and a declaration
 space for type parameters.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Each interface declaration has a declaration
-space for members and a declaration space for type parameters. An interface’s
+space for members and a declaration space for type parameters. An interface&nbsp;s
 declaration space is shared with other interfaces that have the same root
 module and the same qualified name starting from that root module.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Each enum declaration has a declaration space
-for its enum members. An enum’s declaration space is shared with other enums
+for its enum members. An enum&nbsp;s declaration space is shared with other enums
 that have the same root module and the same qualified name starting from that
 root module.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Each function declaration (including constructor,
 member function, and member accessor declarations) and each function expression
 has a declaration space for variables (parameters, local variables, and local functions)
 and a declaration space for type parameters.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Each object literal has a declaration space for
 its properties.</span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Each object type literal has a declaration space
 for its members.</span></p>
 
@@ -191,22 +191,22 @@ space to which it belongs.</span></p>
 entity is defined as follows: </span></p>
 
 <p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The parent module of an entity declared in an
 internal module is that internal module.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The parent module of an entity declared in an
 external module is that external module.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The parent module of an entity declared in the
 global module is the global module.</span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The parent module of an external module is the
 global module.</span></p>
 
@@ -214,20 +214,20 @@ global module.</span></p>
 is defined as follows:</span></p>
 
 <p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The root module of a non-exported entity is the
-entity’s parent module.</span></p>
+entity&nbsp;s parent module.</span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The root module of an exported entity is the
-root module of the entity’s parent module.</span></p>
+root module of the entity&nbsp;s parent module.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Intuitively, the root module of an entity
 is the outermost module body from within which the entity is reachable.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Interfaces, enums, and internal modules are
-“open ended,” meaning that interface, enum, and internal module declarations
+&nbsp;open ended,&nbsp; meaning that interface, enum, and internal module declarations
 with the same qualified name relative to a common root are automatically
 merged. For further details, see sections </span><span
 		lang=EN-US>7.2</span><span lang=EN-US>, </span><span
@@ -238,33 +238,33 @@ merged. For further details, see sections </span><span
 declaration spaces. Furthermore, declarations of non-instantiated modules (modules
 that contain only interfaces or modules at all levels of nesting) do not
 introduce a member name in their containing declaration space. This means that
-the following is permitted, provided module ‘X’ contains only interface or
+the following is permitted, provided module &nbsp;X&nbsp; contains only interface or
 module declarations at all levels of nesting:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
 		lang=EN-US> M {<br>
-    <span style='color:blue;background:white'>module</span> X { ... }      <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>module</span> X { ... }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
 			style='color:green;background:white'>// Namespace</span><span style='color:
 green'><br>
-</span>    <span style='color:blue;background:white'>interface</span> X { ... }  
+</span>&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>interface</span> X { ... }&nbsp;&nbsp;
 <span style='color:green;background:white'>// Type</span><br>
-    <span style='color:blue;background:white'>var</span> X;                <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> X;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span
 			style='color:green;background:white'>// Member</span><br>
 }</span></p>
 
-<p class=MsoNormal><span lang=EN-US>If module ‘X’ above was an instantiated
+<p class=MsoNormal><span lang=EN-US>If module &nbsp;X&nbsp; above was an instantiated
 module (section </span><span lang=EN-US>10.1</span><span lang=EN-US>) it would
-cause a member ‘X’ to be introduced in ‘M’. This member would conflict with the
-variable ‘X’ and thus cause an error.</span></p>
+cause a member &nbsp;X&nbsp; to be introduced in &nbsp;M&nbsp;. This member would conflict with the
+variable &nbsp;X&nbsp; and thus cause an error.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Instance and static members in a class are likewise
 in separate declaration spaces. Thus the following is permitted:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> C {<br>
-    x: number;          <span style='color:green;background:white'>// </span><span
+&nbsp;&nbsp;&nbsp; x: number;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span
 			style='color:green'>Instance member</span><br>
-    <span style='color:blue;background:white'>static</span> x: string;   <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>static</span> x: string;&nbsp;&nbsp; <span
 			style='color:green;background:white'>// Static</span><span style='color:green'>
 member</span><br>
 }</span></p>
@@ -280,43 +280,43 @@ depends on the context in which the name is declared. The contexts are listed be
 in order from outermost to innermost:</span></p>
 
 <p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The scope of an entity declared in the global
 module is the entire program text.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The scope of an entity declared in an external
 module is the source file of that external module.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The scope of an exported entity declared in an
 internal module is the body of that module and every internal module with the
 same root and the same qualified name relative to that root.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The scope of a non-exported entity declared
 within an internal module declaration is the body of that internal module
 declaration.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The scope of a type parameter declared in a
 class or interface declaration is that entire declaration, including
 constraints, extends clause, implements clause, and declaration body, but not
 including static member declarations.</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		lang=EN-US style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The scope of a type parameter declared in a call
 or construct signature is that entire signature declaration, including
 constraints, parameter list, and return type. If the signature is part of a
 function implementation, the scope includes the function body.</span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	style='font-family:Symbol'>&nbsp;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The scope of a parameter, local variable, or
 local function declared within a function declaration (including a constructor,
 member function, or member accessor declaration) or function expression is the
@@ -346,8 +346,8 @@ white'>), only instantiated modules (section </span><span
 are considered and other entities in scope are ignored.</span></p>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>Note that class and
-enum members are never directly in scope—they can only be accessed by applying
-the dot (‘.’) operator to a class instance or enum object. This even includes
+enum members are never directly in scope&nbsp;they can only be accessed by applying
+the dot (&nbsp;.&nbsp;) operator to a class instance or enum object. This even includes
 members of the current instance in a constructor or member function, which are
 accessed by applying the dot operator to </span><span class=CodeFragment><span
 		lang=EN-US style='background:white'>this</span></span><span lang=EN-US
@@ -361,19 +361,19 @@ declarations for the same internal module. For example:</span></p>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> x = <span style='color:maroon'>1</span>;<br>
 <span style='color:blue;background:white'>module</span> M {<br>
-    <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>var</span> x = <span style='color:maroon'>2</span>;<br>
-    console.log(x);     <span style='color:green;background:white'>// </span><span
+&nbsp;&nbsp;&nbsp; console.log(x);&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// </span><span
 			style='color:green'>2</span><br>
 }<br>
 <span style='color:blue;background:white'>module</span> M {<br>
-    console.log(x);     <span style='color:green;background:white'>// </span><span
+&nbsp;&nbsp; &nbsp;console.log(x);&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// </span><span
 			style='color:green'>2</span><br>
 }<br>
 <span style='color:blue;background:white'>module</span> M {<br>
-    <span style='color:blue;background:white'>var</span> x = <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> x = <span
 			style='color:maroon'>3</span>;<br>
-    console.log(x);     <span style='color:green;background:white'>// </span><span
+&nbsp;&nbsp;&nbsp; console.log(x);&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// </span><span
 			style='color:green'>3</span><br>
 }</span></p>
 

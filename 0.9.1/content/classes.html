@@ -22,9 +22,9 @@ derived classes to extend and specialize base classes.</span></p>
 
 <p class=Grammar><span lang=EN-US>ClassDeclaration:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>class</span></span><span
-		lang=EN-US>   Identifier   TypeParameters<sub>opt</sub>   ClassHeritage   </span><span
+		lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; TypeParameters<sub>opt</sub>&nbsp;&nbsp; ClassHeritage&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
-		lang=EN-US>   ClassBody   </span><span class=Terminal><span lang=EN-US
+		lang=EN-US>&nbsp;&nbsp; ClassBody&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 																	style='font-style:normal'>}</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>A <span class=Production>ClassDeclaration</span>
@@ -54,13 +54,13 @@ constructor function) in the containing module.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Point {<br>
-    <span style='color:blue'>constructor</span>(<span style='color:blue'>public</span>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>constructor</span>(<span style='color:blue'>public</span>
 x: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
 y: <span style='color:blue'>number</span>) { }<br>
-    <span style='color:blue'>public</span> length() { <span style='color:blue'>return</span>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> length() { <span style='color:blue'>return</span>
 Math.sqrt(<span style='color:blue'>this</span>.x * <span style='color:blue'>this</span>.x
 + <span style='color:blue'>this</span>.y * <span style='color:blue'>this</span>.y);<br>
-    <span style='color:blue'>static</span> origin = <span style='color:blue'>new</span>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>static</span> origin = <span style='color:blue'>new</span>
 Point(<span style='color:maroon'>0</span>, <span style='color:maroon'>0</span>);<br>
 }</span></p>
 
@@ -68,9 +68,9 @@ Point(<span style='color:maroon'>0</span>, <span style='color:maroon'>0</span>);
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> Point {<br>
-    x: <span style='color:blue;background:white'>number</span>;<br>
-    y: <span style='color:blue;background:white'>number</span>;<br>
-    length(): <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; x: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; y: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; length(): <span style='color:blue;background:white'>number</span>;<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The ‘Point’ member is a constructor
@@ -78,10 +78,10 @@ function whose type corresponds to the declaration</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> Point: {<br>
-    <span style='color:blue;background:white'>new</span>(x: <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>new</span>(x: <span
 			style='color:blue;background:white'>number</span>, y: <span style='color:blue;
 background:white'>number</span>): Point;<br>
-    origin: Point;<br>
+&nbsp;&nbsp;&nbsp; origin: Point;<br>
 };</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The context in which a class is referenced
@@ -111,18 +111,18 @@ clause specifies a set of interfaces for which to validate the class provides
 an implementation.</span></p>
 
 <p class=Grammar><span lang=EN-US>ClassHeritage:<br>
-ClassExtendsClause<sub>opt</sub>   ImplementsClause<sub>opt</sub></span></p>
+ClassExtendsClause<sub>opt</sub>&nbsp;&nbsp; ImplementsClause<sub>opt</sub></span></p>
 
 <p class=Grammar><span lang=EN-US>ClassExtendsClause:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>extends</span></span><span
-		lang=EN-US>    ClassType</span></p>
+		lang=EN-US>&nbsp;&nbsp;&nbsp; ClassType</span></p>
 
 <p class=Grammar><span lang=EN-US>ClassType:<br>
 TypeReference</span></p>
 
 <p class=Grammar><span lang=EN-US>ImplementsClause:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>implements</span></span><span
-		lang=EN-US>   ClassOrInterfaceTypeList</span></p>
+		lang=EN-US>&nbsp;&nbsp; ClassOrInterfaceTypeList</span></p>
 
 <p class=MsoNormal><span lang=EN-US>A class that includes an </span><span
 		class=CodeFragment><span lang=EN-US>extends</span></span><span lang=EN-US>
@@ -221,7 +221,7 @@ ClassElements<sub>opt</sub></span></a></p>
 
 <p class=Grammar><span lang=EN-US>ClassElements:<br>
 ClassElement<br>
-ClassElements   ClassElement</span></p>
+ClassElements&nbsp;&nbsp; ClassElement</span></p>
 
 <p class=Grammar><span lang=EN-US>ClassElement:<br>
 ConstructorDeclaration<br>
@@ -357,21 +357,21 @@ not overridden in the class.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> A {<br>
-    <span style='color:blue;background:white'>public</span> x: <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>public</span> x: <span
 			style='color:blue;background:white'>number</span>;<br>
-    <span style='color:blue;background:white'>public</span> f() { }<br>
-    <span style='color:blue;background:white'>public</span> g(a: <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>public</span> f() { }<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>public</span> g(a: <span
 			style='color:blue;background:white'>any</span>) { <span style='color:blue;
 background:white'>return</span> undefined; }<br>
-    <span style='color:blue;background:white'>static</span> s: <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>static</span> s: <span
 			style='color:blue;background:white'>string</span>;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> B <span style='color:blue;background:white'>extends</span> A {<br>
-    <span style='color:blue;background:white'>public</span> y: <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>public</span> y: <span
 			style='color:blue;background:white'>number</span>;<br>
-    <span style='color:blue;background:white'>public</span> g(b: <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>public</span> g(b: <span
 			style='color:blue;background:white'>boolean</span>) { <span style='color:blue;
 background:white'>return</span> false; }<br>
 }</span></p>
@@ -380,9 +380,9 @@ background:white'>return</span> false; }<br>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> A {<br>
-    x: <span style='color:blue;background:white'>number</span>;<br>
-    f: () =&gt; <span style='color:blue;background:white'>void</span>;<br>
-    g: (a: <span style='color:blue;background:white'>any</span>) =&gt; <span
+&nbsp;&nbsp;&nbsp; x: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; f: () =&gt; <span style='color:blue;background:white'>void</span>;<br>
+&nbsp;&nbsp;&nbsp; g: (a: <span style='color:blue;background:white'>any</span>) =&gt; <span
 			style='color:blue;background:white'>any</span>;<br>
 }</span></p>
 
@@ -390,10 +390,10 @@ background:white'>return</span> false; }<br>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> B {<br>
-    x: <span style='color:blue;background:white'>number</span>;<br>
-    y: <span style='color:blue;background:white'>number</span>;<br>
-    f: () =&gt; <span style='color:blue;background:white'>void</span>;<br>
-    g: (b: <span style='color:blue;background:white'>boolean</span>) =&gt; <span
+&nbsp;&nbsp;&nbsp; x: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; y: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; f: () =&gt; <span style='color:blue;background:white'>void</span>;<br>
+&nbsp;&nbsp;&nbsp; g: (b: <span style='color:blue;background:white'>boolean</span>) =&gt; <span
 			style='color:blue;background:white'>boolean</span>;<br>
 }</span></p>
 
@@ -468,7 +468,7 @@ properties that are not overridden in the class.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> Pair&lt;T1, T2&gt; {<br>
-    <span style='color:blue;background:white'>constructor</span>(<span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>constructor</span>(<span
 			style='color:blue;background:white'>public</span> item1: T1, <span
 			style='color:blue;background:white'>public</span> item2: T2) { }<br>
 }</span></p>
@@ -481,14 +481,14 @@ Pair&lt;T[], T[]&gt; { }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> Pair&lt;T1, T2&gt; {<br>
-    item1: T1;<br>
-    item2: T2;<br>
+&nbsp;&nbsp;&nbsp; item1: T1;<br>
+&nbsp;&nbsp;&nbsp; item2: T2;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> TwoArrays&lt;T&gt; {<br>
-    item1: T[];<br>
-    item2: T[];<br>
+&nbsp;&nbsp;&nbsp; item1: T[];<br>
+&nbsp;&nbsp;&nbsp; item2: T[];<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>and two constructor functions corresponding
@@ -496,13 +496,13 @@ to</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> Pair: {<br>
-    <span style='color:blue;background:white'>new</span> &lt;T1, T2&gt;(item1:
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>new</span> &lt;T1, T2&gt;(item1:
 T1, item2: T2): Pair&lt;T1, T2&gt;;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> TwoArrays: {<br>
-    <span style='color:blue;background:white'>new</span> &lt;T&gt;(item1: T[],
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>new</span> &lt;T&gt;(item1: T[],
 item2: T[]): TwoArrays&lt;T&gt;;<br>
 }</span></p>
 
@@ -522,27 +522,27 @@ constructor function of a class.</span></p>
 
 <p class=Grammar><a name="_Ref318213762"></a><a name="_Ref316999548"><span
 		lang=EN-US>ConstructorDeclaration:<br>
-ConstructorOverloads<sub>opt</sub>   ConstructorImplementation</span></a></p>
+ConstructorOverloads<sub>opt</sub>&nbsp;&nbsp; ConstructorImplementation</span></a></p>
 
 <p class=Grammar><span lang=EN-US>ConstructorOverloads:<br>
 ConstructorOverload<br>
-ConstructorOverloads   ConstructorOverload</span></p>
+ConstructorOverloads&nbsp;&nbsp; ConstructorOverload</span></p>
 
 <p class=Grammar><span lang=EN-US>ConstructorOverload:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span
-		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub>   </span><span
+		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; ParameterList<sub>opt</sub>&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
-		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
+		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
 normal'>;</span></span></p>
 
 <p class=Grammar><span lang=EN-US>ConstructorImplementation:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span
-		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>(</span></span><span lang=EN-US>   ParameterList<sub>opt</sub>   </span><span
+		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; ParameterList<sub>opt</sub>&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
-		lang=EN-US>   </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>{</span></span><span lang=EN-US>   FunctionBody   </span><span
+		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp; FunctionBody&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>A class may contain at most one constructor
@@ -587,25 +587,25 @@ declaration</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Point {<br>
-    <span style='color:blue'>constructor</span>(<span style='color:blue'>public</span>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>constructor</span>(<span style='color:blue'>public</span>
 x: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
 y: <span style='color:blue'>number</span>) {<br>
-        <span style='color:green'>// Constructor body</span><br>
-    }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green'>// Constructor body</span><br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>is equivalent to writing</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Point {<br>
-    <span style='color:blue'>public</span> x: <span style='color:blue'>number</span>;<br>
-    <span style='color:blue'>public</span> y: <span style='color:blue'>number</span>;<br>
-    <span style='color:blue'>constructor</span>(x: <span style='color:blue'>number</span>,
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> x: <span style='color:blue'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> y: <span style='color:blue'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>constructor</span>(x: <span style='color:blue'>number</span>,
 y: <span style='color:blue'>number</span>) {<br>
-        <span style='color:blue'>this</span>.x = x;<br>
-        <span style='color:blue'>this</span>.y = y;<br>
-        <span style='color:green'>// Constructor body</span><br>
-    }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>this</span>.x = x;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>this</span>.y = y;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green'>// Constructor body</span><br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <h3><a name="_Toc364255798"></a><a name="_Ref331167300"><span lang=EN-US
@@ -623,11 +623,11 @@ For example:</span></p>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> ColoredPoint <span style='color:blue'>extends</span>
 Point {<br>
-    <span style='color:blue'>constructor</span>(x: <span style='color:blue'>number</span>,
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>constructor</span>(x: <span style='color:blue'>number</span>,
 y: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
 color: <span style='color:blue'>string</span>) {<br>
-        <span style='color:blue'>super</span>(x, y);<br>
-    }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>super</span>(x, y);<br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>Constructors of
@@ -734,23 +734,23 @@ both instance and static declarations:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> Point {<br>
-    <span style='color:blue;background:white'>constructor</span>(<span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>constructor</span>(<span
 			style='color:blue'>public</span> x: <span style='color:blue;background:white'>number</span>,
 <span style='color:blue'>public</span> y: <span style='color:blue;background:
 white'>number</span>) { }<br>
-<span style='color:blue;background:white'>    public</span> distance(p: Point)
+<span style='color:blue;background:white'>&nbsp;&nbsp;&nbsp; public</span> distance(p: Point)
 {<br>
-        <span style='color:blue;background:white'>var</span> dx = <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> dx = <span
 			style='color:blue;background:white'>this</span>.x - p.x;<br>
-        <span style='color:blue;background:white'>var</span> dy = <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> dy = <span
 			style='color:blue;background:white'>this</span>.y - p.y;<br>
-        <span style='color:blue;background:white'>return</span> Math.sqrt(dx *
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> Math.sqrt(dx *
 dx + dy * dy);<br>
-    }<br>
-    <span style='color:blue;background:white'>static</span> origin = <span
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>static</span> origin = <span
 			style='color:blue;background:white'>new</span> Point(<span style='color:maroon;
 background:white'>0</span>, <span style='color:maroon;background:white'>0</span>);<br>
-    <span style='color:blue;background:white'>static</span> distance(p1: Point,
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>static</span> distance(p1: Point,
 p2: Point) { <span style='color:blue;background:white'>return</span>
 p1.distance(p2); }<br>
 }</span></p>
@@ -760,9 +760,9 @@ members:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> Point {<br>
-    x: <span style='color:blue;background:white'>number</span>;<br>
-    y: <span style='color:blue;background:white'>number</span>;<br>
-    distance(p: Point);<br>
+&nbsp;&nbsp;&nbsp; x: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; y: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; distance(p: Point);<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>and the constructor function ‘Point’ has a
@@ -770,11 +770,11 @@ type corresponding to the declaration:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> Point: {<br>
-    <span style='color:blue;background:white'>new</span>(x: <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>new</span>(x: <span
 			style='color:blue;background:white'>number</span>, y: <span style='color:blue;
 background:white'>number</span>): Point;<br>
-    origin: Point;<br>
-    distance(p1: Point, p2: Point): <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; origin: Point;<br>
+&nbsp;&nbsp;&nbsp; distance(p1: Point, p2: Point): <span style='color:blue;background:white'>number</span>;<br>
 }</span></p>
 
 <h3><a name="_Toc364255801"></a><a name="_Ref330994751"><span lang=EN-US>8.4.1<span
@@ -785,9 +785,9 @@ background:white'>number</span>): Point;<br>
 instance member variable or a static member variable.</span></p>
 
 <p class=Grammar><span lang=EN-US>MemberVariableDeclaration:<br>
-PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
-		lang=EN-US>   PropertyName   TypeAnnotation<sub>opt</sub>   Initialiser<sub>opt</sub>  
+		lang=EN-US>&nbsp;&nbsp; PropertyName&nbsp;&nbsp; TypeAnnotation<sub>opt</sub>&nbsp;&nbsp; Initialiser<sub>opt</sub>&nbsp;&nbsp;
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>The type associated with a member variable
@@ -815,28 +815,28 @@ are equivalent to assignments to properties of </span><span class=CodeFragment><
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Employee {<br>
-    <span style='color:blue'>public</span> name: <span style='color:blue'>string</span>;<br>
-    <span style='color:blue'>public</span> address: <span style='color:blue'>string</span>;<br>
-    <span style='color:blue'>public</span> retired = <span style='color:blue'>false</span>;<br>
-    <span style='color:blue'>public</span> manager: Employee = <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> name: <span style='color:blue'>string</span>;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> address: <span style='color:blue'>string</span>;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> retired = <span style='color:blue'>false</span>;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> manager: Employee = <span
 			style='color:blue'>null</span>;<br>
-    <span style='color:blue'>public</span> reports: Employee[] = [];<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> reports: Employee[] = [];<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>is equivalent to</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Employee {<br>
-    <span style='color:blue'>public</span> name: <span style='color:blue'>string</span>;<br>
-    <span style='color:blue'>public</span> address: <span style='color:blue'>string</span>;<br>
-    <span style='color:blue'>public</span> retired: <span style='color:blue'>boolean</span>;<br>
-    <span style='color:blue'>public</span> manager: Employee;<br>
-    <span style='color:blue'>public</span> reports: Employee[];<br>
-    <span style='color:blue'>constructor</span>() {<br>
-        <span style='color:blue'>this</span>.retired = <span style='color:blue'>false</span>;<br>
-        <span style='color:blue'>this</span>.manager = <span style='color:blue'>null</span>;<br>
-        <span style='color:blue'>this</span>.reports = [];<br>
-    }<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> name: <span style='color:blue'>string</span>;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> address: <span style='color:blue'>string</span>;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> retired: <span style='color:blue'>boolean</span>;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> manager: Employee;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> reports: Employee[];<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>constructor</span>() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>this</span>.retired = <span style='color:blue'>false</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>this</span>.manager = <span style='color:blue'>null</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>this</span>.reports = [];<br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <h3><a name="_Toc364255802"></a><a name="_Ref331172549"><span lang=EN-US>8.4.2<span
@@ -847,25 +847,25 @@ are equivalent to assignments to properties of </span><span class=CodeFragment><
 instance member function or a static member function.</span></p>
 
 <p class=Grammar><span lang=EN-US>MemberFunctionDeclaration:<br>
-MemberFunctionOverloads<sub>opt</sub>   MemberFunctionImplementation</span></p>
+MemberFunctionOverloads<sub>opt</sub>&nbsp;&nbsp; MemberFunctionImplementation</span></p>
 
 <p class=Grammar><span lang=EN-US>MemberFunctionOverloads:<br>
 MemberFunctionOverload<br>
-MemberFunctionOverloads   MemberFunctionOverload</span></p>
+MemberFunctionOverloads&nbsp;&nbsp; MemberFunctionOverload</span></p>
 
 <p class=Grammar><span lang=EN-US>MemberFunctionOverload:<br>
-PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
-		lang=EN-US>   PropertyName   CallSignature   </span><span class=Terminal><span
+		lang=EN-US>&nbsp;&nbsp; PropertyName&nbsp;&nbsp; CallSignature&nbsp;&nbsp; </span><span class=Terminal><span
 		lang=EN-US style='font-style:normal'>;</span></span></p>
 
 <p class=Grammar><span lang=EN-US>MemberFunctionImplementation:</span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'><br>
-</span></span><span lang=EN-US>PublicOrPrivate<sub>opt</sub>   </span><span
+</span></span><span lang=EN-US>PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>static</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>   PropertyName   CallSignature   </span><span
+		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; PropertyName&nbsp;&nbsp; CallSignature&nbsp;&nbsp; </span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
-		lang=EN-US>   FunctionBody   </span><span class=Terminal><span lang=EN-US
+		lang=EN-US>&nbsp;&nbsp; FunctionBody&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 																	   style='font-style:normal'>}</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>A member function declaration is processed
@@ -896,29 +896,29 @@ base class members using a super property access (section </span><span lang=EN-U
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Point {<br>
-    <span style='color:blue'>constructor</span>(<span style='color:blue'>public</span>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>constructor</span>(<span style='color:blue'>public</span>
 x: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
 y: <span style='color:blue'>number</span>) { }<br>
-    <span style='color:blue'>public</span> toString() {<br>
-        <span style='color:blue'>return</span> <span style='color:maroon'>&quot;x=&quot;</span>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> toString() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>return</span> <span style='color:maroon'>&quot;x=&quot;</span>
 + <span style='color:blue'>this</span>.x + <span style='color:maroon'>&quot;
 y=&quot;</span> + <span style='color:blue'>this</span>.y;<br>
-    }<br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> ColoredPoint <span style='color:blue'>extends</span>
 Point {<br>
-    <span style='color:blue'>constructor</span>(x: <span style='color:blue'>number</span>,
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>constructor</span>(x: <span style='color:blue'>number</span>,
 y: <span style='color:blue'>number</span>, <span style='color:blue'>public</span>
 color: <span style='color:blue'>string</span>) {<br>
-        <span style='color:blue'>super</span>(x, y);<br>
-    }<br>
-    <span style='color:blue'>public</span> toString() {<br>
-        <span style='color:blue'>return</span> <span style='color:blue'>super</span>.toString()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>super</span>(x, y);<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>public</span> toString() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue'>return</span> <span style='color:blue'>super</span>.toString()
 + <span style='color:maroon'>&quot; color=&quot;</span> + <span
 			style='color:blue'>this</span>.color;<br>
-    }<br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <h3><a name="_Toc364255803"><span lang=EN-US>8.4.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -928,12 +928,12 @@ color: <span style='color:blue'>string</span>) {<br>
 instance member accessor or a static member accessor.</span></p>
 
 <p class=Grammar><span lang=EN-US>MemberAccessorDeclaration:<br>
-PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
-		lang=EN-US>   GetAccessor<br>
-PublicOrPrivate<sub>opt</sub>   </span><span class=Terminal><span lang=EN-US
+		lang=EN-US>&nbsp;&nbsp; GetAccessor<br>
+PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
 																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
-		lang=EN-US>   SetAccessor</span></p>
+		lang=EN-US>&nbsp;&nbsp; SetAccessor</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Get and set accessors are processed in the
 same manner as in an object literal (section </span><span
@@ -978,23 +978,23 @@ generates JavaScript equivalent to the following:</span></p>
 		lang=EN-US> </span><span class=CodeItalic><span lang=EN-US>&lt;<span
 		style='background:white'>ClassName</span>&gt;</span></span><span lang=EN-US> =
 (<span style='color:blue;background:white'>function</span> () {<br>
-    <span style='color:blue;background:white'>function</span> </span><span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span> </span><span
 		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
 		lang=EN-US>(</span><span class=CodeItalic><span lang=EN-US>&lt;ConstructorParameters&gt;</span></span><span
 		lang=EN-US>) {<br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
 		lang=EN-US><br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;ParameterPropertyAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;ParameterPropertyAssignments&gt;</span></span><span
 		lang=EN-US><br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;MemberVariableAssignments&gt;<br>
-</span></span><span lang=EN-US>        </span><span class=CodeItalic><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;MemberVariableAssignments&gt;<br>
+</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span
 		lang=EN-US>&lt;ConstructorStatements&gt;</span></span><span lang=EN-US><br>
-    }<br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;MemberFunctionStatements&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;MemberFunctionStatements&gt;</span></span><span
 		lang=EN-US><br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;StaticVariableAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;StaticVariableAssignments&gt;</span></span><span
 		lang=EN-US><br>
-    <span style='color:blue;background:white'>return</span> </span><span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> </span><span
 		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
 		lang=EN-US>;<br>
 })();</span></p>
@@ -1050,9 +1050,9 @@ a statement of the form</span></p>
 		lang=EN-US> = <span style='color:blue;background:white'>function</span> (</span><span
 		class=CodeItalic><span lang=EN-US>&lt;FunctionParameters&gt;</span></span><span
 		lang=EN-US>) {<br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
 		lang=EN-US><br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionStatements&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionStatements&gt;</span></span><span
 		lang=EN-US><br>
 }</span></p>
 
@@ -1064,9 +1064,9 @@ generates a statement of the form</span></p>
 		lang=EN-US> = <span style='color:blue;background:white'>function</span> (</span><span
 		class=CodeItalic><span lang=EN-US>&lt;FunctionParameters&gt;</span></span><span
 		lang=EN-US>) {<br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
 		lang=EN-US><br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionStatements&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;FunctionStatements&gt;</span></span><span
 		lang=EN-US><br>
 }</span></p>
 
@@ -1085,18 +1085,18 @@ with the same name, generates a statement of the form</span></p>
 		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
 		lang=EN-US>.prototype, &quot;</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
 		lang=EN-US>&quot;, {<br>
-    get: <span style='color:blue;background:white'>function</span> () {<br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;GetAccessorStatements&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; get: <span style='color:blue;background:white'>function</span> () {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;GetAccessorStatements&gt;</span></span><span
 		lang=EN-US><br>
-    },<br>
-    set: <span style='color:blue;background:white'>function</span> (</span><span
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; set: <span style='color:blue;background:white'>function</span> (</span><span
 		class=CodeItalic><span lang=EN-US>&lt;ParameterName&gt;</span></span><span
 		lang=EN-US>) {<br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;SetAccessorStatements&gt;</span></span><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;SetAccessorStatements&gt;</span></span><span
 		lang=EN-US><br>
-    },<br>
-    enumerable: <span style='color:blue;background:white'>true</span>,<br>
-    configurable: <span style='color:blue;background:white'>true</span><br>
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; enumerable: <span style='color:blue;background:white'>true</span>,<br>
+&nbsp;&nbsp;&nbsp; configurable: <span style='color:blue;background:white'>true</span><br>
 };</span></p>
 
 <p class=MsoNormal><span lang=EN-US>and a get or set static member accessor
@@ -1107,18 +1107,18 @@ the same name, generates a statement of the form</span></p>
 		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
 		lang=EN-US>, &quot;</span><span class=CodeItalic><span lang=EN-US>&lt;MemberName&gt;</span></span><span
 		lang=EN-US>&quot;, {<br>
-    get: <span style='color:blue;background:white'>function</span> () {<br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;GetAccessorStatements&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; get: <span style='color:blue;background:white'>function</span> () {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;GetAccessorStatements&gt;</span></span><span
 		lang=EN-US><br>
-    },<br>
-    set: <span style='color:blue;background:white'>function</span> (</span><span
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; set: <span style='color:blue;background:white'>function</span> (</span><span
 		class=CodeItalic><span lang=EN-US>&lt;ParameterName&gt;</span></span><span
 		lang=EN-US>) {<br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;SetAccessorStatements&gt;</span></span><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;SetAccessorStatements&gt;</span></span><span
 		lang=EN-US><br>
-    },<br>
-    enumerable: <span style='color:blue;background:white'>true</span>,<br>
-    configurable: <span style='color:blue;background:white'>true</span><br>
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; enumerable: <span style='color:blue;background:white'>true</span>,<br>
+&nbsp;&nbsp;&nbsp; configurable: <span style='color:blue;background:white'>true</span><br>
 };</span></p>
 
 <p class=MsoNormal><span lang=EN-US>where <span class=CodeItalic>MemberName</span>
@@ -1155,27 +1155,27 @@ clause generates JavaScript equivalent to the following:</span></p>
 		lang=EN-US> </span><span class=CodeItalic><span lang=EN-US>&lt;<span
 		style='background:white'>ClassName</span>&gt;</span></span><span lang=EN-US> =
 (<span style='color:blue;background:white'>function</span> (_super) {<br>
-    __extends(</span><span class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; __extends(</span><span class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
 		lang=EN-US>, _super);<br>
-    <span style='color:blue;background:white'>function</span> </span><span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span> </span><span
 		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
 		lang=EN-US>(</span><span class=CodeItalic><span lang=EN-US>&lt;ConstructorParameters&gt;</span></span><span
 		lang=EN-US>) {<br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;DefaultValueAssignments&gt;</span></span><span
 		lang=EN-US><br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;SuperCallStatement&gt;</span></span><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;SuperCallStatement&gt;</span></span><span
 		lang=EN-US><br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;ParameterPropertyAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;ParameterPropertyAssignments&gt;</span></span><span
 		lang=EN-US><br>
-        </span><span class=CodeItalic><span lang=EN-US>&lt;MemberVariableAssignments&gt;<br>
-</span></span><span lang=EN-US>        </span><span class=CodeItalic><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;MemberVariableAssignments&gt;<br>
+</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span
 		lang=EN-US>&lt;ConstructorStatements&gt;</span></span><span lang=EN-US><br>
-    }<br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;MemberFunctionStatements&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;MemberFunctionStatements&gt;</span></span><span
 		lang=EN-US><br>
-    </span><span class=CodeItalic><span lang=EN-US>&lt;StaticVariableAssignments&gt;</span></span><span
+&nbsp;&nbsp;&nbsp; </span><span class=CodeItalic><span lang=EN-US>&lt;StaticVariableAssignments&gt;</span></span><span
 		lang=EN-US><br>
-    <span style='color:blue;background:white'>return</span> </span><span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> </span><span
 		class=CodeItalic><span lang=EN-US>&lt;ClassName&gt;</span></span><span
 		lang=EN-US>;<br>
 })(</span><span class=CodeItalic><span lang=EN-US>&lt;BaseClassName&gt;</span></span><span
@@ -1190,13 +1190,13 @@ the ‘prototype’ property of the derived constructor function object.</span><
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US style='background:white'> __extends = <span style='color:blue'>this</span>.__extends
 || <span style='color:blue'>function</span>(d, b) {<br>
-    <span style='color:blue'>for</span> (<span style='color:blue'>var</span> p <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue'>for</span> (<span style='color:blue'>var</span> p <span
 			style='color:blue'>in</span> b) <span style='color:blue'>if</span>
 (b.hasOwnProperty(p)) d[p] = b[p];<br>
-<span style='color:blue'>    function</span></span><span lang=EN-US> f() { <span
+<span style='color:blue'>&nbsp;&nbsp;&nbsp; function</span></span><span lang=EN-US> f() { <span
 		style='color:blue;background:white'>this</span>.constructor = d; }<br>
-    f.prototype = b.prototype;<br>
-    d.prototype = <span style='color:blue;background:white'>new</span> f();<br>
+&nbsp;&nbsp;&nbsp; f.prototype = b.prototype;<br>
+&nbsp;&nbsp;&nbsp; d.prototype = <span style='color:blue;background:white'>new</span> f();<br>
 }</span></p>
 
 <p class=MsoNormal><span class=CodeItalic><span lang=EN-US>BaseClassName</span></span><span

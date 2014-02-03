@@ -56,7 +56,7 @@ function definition that the function f has return type string.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US> f() {<br>
-    <span style='color:blue;background:white'>return</span> <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
 			style='color:maroon;background:white'>&quot;hello&quot;</span>;<br>
 }</span></p>
 
@@ -76,12 +76,12 @@ we can express a parameter requirement as in the following code fragment.</span>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US> f(s: <span style='color:blue;background:white'>string</span>) {<br>
-    <span style='color:blue;background:white'>return</span> s;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> s;<br>
 }</span></p>
 
-<p class=Code><span lang=EN-US>f({});       <span style='color:green;
+<p class=Code><span lang=EN-US>f({});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;
 background:white'>// Error</span><br>
-f(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);  <span
+f(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);&nbsp; <span
 			style='color:green;background:white'>// Ok</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>This optional type annotation on the parameter
@@ -121,7 +121,7 @@ characterize the expected behavior of an object.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>declare</span><span
 		lang=EN-US> <span style='color:blue;background:white'>var</span> document;<br>
-document.title = <span style='color:maroon;background:white'>&quot;Hello&quot;</span>; 
+document.title = <span style='color:maroon;background:white'>&quot;Hello&quot;</span>;&nbsp;
 <span style='color:green;background:white'>// Ok</span><span style='color:green'>
 because document has been declared</span></span></p>
 
@@ -164,17 +164,17 @@ requirements of an asynchronous voting mechanism.</span></p>
 		lang=EN-US> vote(candidate: <span style='color:blue;background:white'>string</span>,
 callback: (result: <span style='color:blue;background:white'>string</span>)
 =&gt; <span style='color:blue;background:white'>any</span>) {<br>
-   <span style='color:green;background:white'>// ...</span><br>
+&nbsp;&nbsp; <span style='color:green;background:white'>// ...</span><br>
 }</span></p>
 
 <p class=Code><span lang=EN-US>vote(<span style='color:maroon;background:white'>&quot;BigPig&quot;</span>,<br>
-     <span style='color:blue;background:white'>function</span>(result: <span
+&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span>(result: <span
 			style='color:blue;background:white'>string</span>) {<br>
-         <span style='color:blue;background:white'>if</span> (result === <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>if</span> (result === <span
 			style='color:maroon;background:white'>&quot;BigPig&quot;</span>) {<br>
-            <span style='color:green;background:white'>// ...</span><br>
-         }<br>
-     }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// ...</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp; }<br>
 );</span></p>
 
 <p class=MsoNormal><span lang=EN-US>In this example, the second parameter to ‘vote’
@@ -212,23 +212,23 @@ code, an interface declares one required field (name) and one optional field
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> Friend {<br>
-    name: <span style='color:blue;background:white'>string</span>;<br>
-    favoriteColor?: <span style='color:blue;background:white'>string</span>;<br>
+&nbsp;&nbsp;&nbsp; name: <span style='color:blue;background:white'>string</span>;<br>
+&nbsp;&nbsp;&nbsp; favoriteColor?: <span style='color:blue;background:white'>string</span>;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US> add(friend: Friend) {<br>
-    <span style='color:blue;background:white'>var</span> name = friend.name;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> name = friend.name;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US>add({ name: <span style='color:maroon;
-background:white'>&quot;Fred&quot;</span> });  <span style='color:green;
+background:white'>&quot;Fred&quot;</span> });&nbsp; <span style='color:green;
 background:white'>// Ok</span><br>
 add({ favoriteColor: <span style='color:maroon;background:white'>&quot;blue&quot;</span>
-});  <span style='color:green;background:white'>// Error, name required</span><br>
+});&nbsp; <span style='color:green;background:white'>// Error, name required</span><br>
 add({ name: <span style='color:maroon;background:white'>&quot;Jill&quot;</span>,
 favoriteColor: <span style='color:maroon;background:white'>&quot;green&quot;</span>
-});  <span style='color:green;background:white'>// Ok</span></span></p>
+});&nbsp; <span style='color:green;background:white'>// Ok</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>TypeScript object types model the diversity
 of behaviors that a JavaScript object can exhibit. For example, the jQuery
@@ -243,14 +243,14 @@ small subset of jQuery behavior, just enough to use jQuery in a simple way.</spa
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> JQuery {<br>
-    text(content: <span style='color:blue;background:white'>string</span>);<br>
+&nbsp;&nbsp;&nbsp; text(content: <span style='color:blue;background:white'>string</span>);<br>
 }<br>
 <br>
 <span style='color:blue;background:white'>interface</span> JQueryStatic {<br>
-    get(url: <span style='color:blue;background:white'>string</span>, callback:
+&nbsp;&nbsp;&nbsp; get(url: <span style='color:blue;background:white'>string</span>, callback:
 (data: <span style='color:blue;background:white'>string</span>) =&gt; <span
-			style='color:blue;background:white'>any</span>);   <br>
-    (query: <span style='color:blue;background:white'>string</span>): JQuery;   
+			style='color:blue;background:white'>any</span>);&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; (query: <span style='color:blue;background:white'>string</span>): JQuery;&nbsp;&nbsp;&nbsp;
 <br>
 }</span></p>
 
@@ -258,10 +258,10 @@ small subset of jQuery behavior, just enough to use jQuery in a simple way.</spa
 		lang=EN-US> <span style='color:blue;background:white'>var</span> $: JQueryStatic;</span></p>
 
 <p class=Code><span lang=EN-US>$.get(<span style='color:maroon;background:white'>&quot;http://mysite.org/divContent&quot;</span>,<br>
-      <span style='color:blue;background:white'>function</span> (data: <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span> (data: <span
 			style='color:blue;background:white'>string</span>) {<br>
-          $(<span style='color:maroon;background:white'>&quot;div&quot;</span>).text(data);<br>
-      }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(<span style='color:maroon;background:white'>&quot;div&quot;</span>).text(data);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
 );</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The ‘JQueryStatic’ interface references
@@ -289,7 +289,7 @@ literal. The following example uses both forms to describe the same type.</span>
 <p class=Code><span lang=EN-US style='color:blue'>var</span><span lang=EN-US>&nbsp;f:&nbsp;{&nbsp;():&nbsp;<span
 		style='color:blue'>string</span>;&nbsp;};<span style='color:teal'><br>
 </span><span style='color:blue'>var</span>&nbsp;sameType:&nbsp;()&nbsp;=&gt;&nbsp;<span
-		style='color:blue'>string</span>&nbsp;=&nbsp;f;<span style='color:green'>     //
+		style='color:blue'>string</span>&nbsp;=&nbsp;f;<span style='color:green'> &nbsp;&nbsp;&nbsp;&nbsp;//
 Ok</span><span style='color:teal'><br>
 </span><span style='color:blue'>var</span>&nbsp;nope:&nbsp;()&nbsp;=&gt;&nbsp;<span
 		style='color:blue'>number</span>&nbsp;=&nbsp;sameType;&nbsp; <span
@@ -362,17 +362,17 @@ literal, as long as the object literal supplies all of the required members.</sp
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='color:black'>&nbsp;CPoint&nbsp;</span><span lang=EN-US>{<br>
-    x: <span style='color:blue;background:white'>number</span>;<br>
-    y: <span style='color:blue;background:white'>number</span>;<span
+&nbsp;&nbsp;&nbsp; x: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; y: <span style='color:blue;background:white'>number</span>;<span
 			style='color:teal'><br>
 </span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
 			style='color:blue;background:white'>constructor</span>(x:<span
 			style='color:black'>&nbsp;</span><span style='color:blue;background:white'>number</span>,&nbsp;
 y:<span style='color:black'>&nbsp;</span><span style='color:blue;background:
 white'>number</span>)<span style='color:black'>&nbsp;</span>{<br>
-        <span style='color:blue;background:white'>this</span>.x = x;<br>
-        <span style='color:blue;background:white'>this</span>.y = y;<br>
-    }<span style='color:teal'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.x = x;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.y = y;<br>
+&nbsp;&nbsp;&nbsp; }<span style='color:teal'><br>
 </span>}</span></p>
 
 <p class=Code><span lang=EN-US style='color:black'>getX</span><span lang=EN-US>(<span
@@ -407,7 +407,7 @@ function ‘mul’ by flowing type information bottom up in the return expressio
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US> mul(a: <span style='color:blue;background:white'>number</span>, b: <span
 		style='color:blue;background:white'>number</span>) {<br>
-    <span style='color:blue;background:white'>return</span> a * b;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> a * b;<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>For variables and parameters without a type
@@ -427,10 +427,10 @@ function expression is as given in the ‘get’ signature and can provide a
 template that includes parameter names and types.</span></p>
 
 <p class=Code><span lang=EN-US>$.get(<span style='color:maroon;background:white'>&quot;http://mysite.org/divContent&quot;</span>,<br>
-      <span style='color:blue;background:white'>function</span> (data) {<br>
-          $(<span style='color:maroon;background:white'>&quot;div&quot;</span>).text(data); 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span> (data) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(<span style='color:maroon;background:white'>&quot;div&quot;</span>).text(data);&nbsp;
 <span style='color:green'>// TypeScript infers data is a string</span><br>
-      }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
 );</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Contextual typing is also useful for
@@ -462,14 +462,14 @@ declaration. We’ll start with a simple BankAccount class.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> BankAccount {<br>
-    balance = <span style='color:maroon;background:white'>0</span>;<br>
-    deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
-        <span style='color:blue;background:white'>this</span>.balance +=
+&nbsp;&nbsp;&nbsp; balance = <span style='color:maroon;background:white'>0</span>;<br>
+&nbsp;&nbsp;&nbsp; deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance +=
 credit;<br>
-        <span style='color:blue;background:white'>return</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
 			style='color:blue;background:white'>this</span>.balance;<br>
-    }<br>
-}  </span></p>
+&nbsp;&nbsp;&nbsp; }<br>
+}&nbsp; </span></p>
 
 <p class=MsoNormal><span lang=EN-US>This class generates the following
 JavaScript code.</span></p>
@@ -477,18 +477,18 @@ JavaScript code.</span></p>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> BankAccount = (<span style='color:blue;background:white'>function</span>
 () {<br>
-    <span style='color:blue;background:white'>function</span> BankAccount() {<br>
-        <span style='color:blue;background:white'>this</span>.balance = <span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span> BankAccount() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance = <span
 			style='color:maroon;background:white'>0</span>;<br>
-    }<br>
-    BankAccount.prototype.deposit = <span style='color:blue;background:white'>function</span>(credit)
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; BankAccount.prototype.deposit = <span style='color:blue;background:white'>function</span>(credit)
 {<br>
-        <span style='color:blue;background:white'>this</span>.balance +=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance +=
 credit;<br>
-        <span style='color:blue;background:white'>return</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
 			style='color:blue;background:white'>this</span>.balance;<br>
-    };<br>
-    <span style='color:blue;background:white'>return</span> BankAccount;<br>
+&nbsp;&nbsp;&nbsp; };<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> BankAccount;<br>
 })();</span></p>
 
 <p class=MsoNormal><span lang=EN-US>This TypeScript class declaration creates a
@@ -499,8 +499,8 @@ following.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US> BankAccount {<br>
-    balance: <span style='color:blue;background:white'>number</span>;<br>
-    deposit(credit: <span style='color:blue;background:white'>number</span>): <span
+&nbsp;&nbsp;&nbsp; balance: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; deposit(credit: <span style='color:blue;background:white'>number</span>): <span
 			style='color:blue;background:white'>number</span>;<br>
 }</span></p>
 
@@ -524,18 +524,18 @@ declaration.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> BankAccount {<br>
-    balance: <span style='color:blue;background:white'>number</span>;<br>
-    <span style='color:blue;background:white'>constructor</span>(initially: <span
+&nbsp;&nbsp;&nbsp; balance: <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>constructor</span>(initially: <span
 			style='color:blue;background:white'>number</span>) {<br>
-        <span style='color:blue;background:white'>this</span>.balance =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance =
 initially;<br>
-    }<br>
-    deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
-        <span style='color:blue;background:white'>this</span>.balance +=
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance +=
 credit;<br>
-        <span style='color:blue;background:white'>return</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
 			style='color:blue;background:white'>this</span>.balance;<br>
-    }<br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>This version of the ‘BankAccount’ class
@@ -545,16 +545,16 @@ syntax.</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> BankAccount {<br>
-    <span style='color:blue;background:white'>constructor</span>(<span
+&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>constructor</span>(<span
 			style='color:blue;background:white'>public</span> balance: <span
 			style='color:blue;background:white'>number</span>) {<br>
-    }<br>
-    deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
-        <span style='color:blue;background:white'>this</span>.balance +=
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance +=
 credit;<br>
-        <span style='color:blue;background:white'>return</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
 			style='color:blue;background:white'>this</span>.balance;<br>
-    }<br>
+&nbsp;&nbsp;&nbsp; }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The ‘public’ keyword denotes that the
@@ -635,7 +635,7 @@ JavaScript module pattern.</span></p>
 		style='color:teal'>(</span>message<span style='color:teal'>,</span>&nbsp;key<span
 		style='color:teal'>);<br>
 </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:teal'>}<br>
-    </span>exports.sendMessage = sendMessage;<span style='color:teal'><br>
+&nbsp;&nbsp;&nbsp; </span>exports.sendMessage = sendMessage;<span style='color:teal'><br>
 })(</span>MessageModule<span style='color:teal'>);</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>This example illustrates the two essential
