@@ -4,7 +4,7 @@
 
 The official PDF and DocX are cumbersome to use, and it looks as if the team has [no interest in improving it](https://typescript.codeplex.com/workitem/2143) with a more usable HTML version.
 
-Browse it on [bartvds.github.io/tsspec-html/0.9.1/index.html](http://bartvds.github.io/tsspec-html/0.9.1)
+Browse it on: [bartvds.github.io/tsspec-html/](http://bartvds.github.io/tsspec-html/0.9.1/dist/index.html)
 
 ## Pages
 
