@@ -23,7 +23,7 @@ in their implements clause to validate that they provide an implementation of
 the interfaces.</span></p>
 
 <h2><a name="_Toc364255782"></a><a name="_Ref325089130"><span lang=EN-US>7.1<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
 		lang=EN-US>Interface Declarations</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>An interface declaration declares a new
@@ -32,16 +32,16 @@ introducing a type name in the containing module.</span></p>
 
 <p class=Grammar><span lang=EN-US>InterfaceDeclaration:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>interface</span></span><span
-		lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; TypeParameters<sub>opt</sub>&nbsp;&nbsp;
-InterfaceExtendsClause<sub>opt</sub>&nbsp;&nbsp; ObjectType</span></p>
+		lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;TypeParameters<sub>opt</sub>&nbsp;&nbsp;
+InterfaceExtendsClause<sub>opt</sub>&nbsp;&nbsp;&nbsp;ObjectType</span></p>
 
 <p class=Grammar><span lang=EN-US>InterfaceExtendsClause:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>extends</span></span><span
-		lang=EN-US>&nbsp;&nbsp; ClassOrInterfaceTypeList</span></p>
+		lang=EN-US>&nbsp;&nbsp;&nbsp;ClassOrInterfaceTypeList</span></p>
 
 <p class=Grammar><span lang=EN-US>ClassOrInterfaceTypeList:<br>
 ClassOrInterfaceType<br>
-ClassOrInterfaceTypeList&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+ClassOrInterfaceTypeList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
 															 style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;
 ClassOrInterfaceType</span></p>
 
@@ -129,14 +129,14 @@ contain properties with the same name but different types:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US style='background:white'> Mover {<br>
-&nbsp;&nbsp;&nbsp; move(): <span style='color:blue'>void</span>;<br>
-&nbsp;&nbsp;&nbsp; getStatus(): { speed: <span style='color:blue'>number</span>; };<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move(): <span style='color:blue'>void</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;getStatus(): { speed: <span style='color:blue'>number</span>; };<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US style='background:white'> Shaker {<br>
-&nbsp;&nbsp;&nbsp; shake(): <span style='color:blue'>void</span>;<br>
-&nbsp;&nbsp;&nbsp; getStatus(): { frequency: <span style='color:blue'>number</span>; };<br>
+&nbsp;&nbsp;&nbsp;&nbsp;shake(): <span style='color:blue'>void</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;getStatus(): { frequency: <span style='color:blue'>number</span>; };<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>An interface that
@@ -148,7 +148,7 @@ is a subtype of both ‘Mover’ and ‘Shaker’:</span></p>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US style='background:white'> MoverShaker <span style='color:blue'>extends</span>
 Mover, Shaker {<br>
-&nbsp;&nbsp;&nbsp; getStatus(): { speed: <span style='color:blue'>number</span>; frequency: <span
+&nbsp;&nbsp;&nbsp;&nbsp;getStatus(): { speed: <span style='color:blue'>number</span>; frequency: <span
 			style='color:blue'>number</span>; };<br>
 }</span></p>
 
@@ -185,7 +185,7 @@ the </span><span class=CodeFragment><span lang=EN-US>extends</span></span><span
 of the interface declarations are merged into a single object type.</span></p>
 
 <h2><a name="_Toc364255784"><span lang=EN-US style='background:white'>7.3<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
 		lang=EN-US style='background:white'>Interfaces Extending Classes</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>When an interface type
@@ -198,25 +198,25 @@ that class or a descendant class. For example:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Control {<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue'>private</span> state: <span style='color:blue'>any</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>private</span> state: <span style='color:blue'>any</span>;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
 		lang=EN-US style='background:white'> SelectableControl <span style='color:blue'>extends</span>
 Control {<br>
-&nbsp;&nbsp;&nbsp; select(): <span style='color:blue'>void</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;select(): <span style='color:blue'>void</span>;<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Button <span style='color:blue'>extends</span>
 Control {<br>
-&nbsp;&nbsp;&nbsp; select() { }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;select() { }<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> TextBox <span style='color:blue'>extends</span>
 Control {<br>
-&nbsp;&nbsp;&nbsp; select() { }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;select() { }<br>
 }</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
@@ -226,7 +226,7 @@ Control {<br>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US style='background:white'> Location {<br>
-&nbsp;&nbsp;&nbsp; select() { }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;select() { }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>In the above example,
@@ -262,8 +262,8 @@ the following is a dynamic check for the ‘MoverShaker’ interface:</span></p>
 getSomeObject();<br>
 <span style='color:blue'>if</span> (obj &amp;&amp; obj.move &amp;&amp;
 obj.shake &amp;&amp; obj.getStatus) {<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue'>var</span> moverShaker = &lt;MoverShaker&gt; obj;<br>
-&nbsp;&nbsp;&nbsp; ...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>var</span> moverShaker = &lt;MoverShaker&gt; obj;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>If such a check is used often it can be
@@ -272,7 +272,7 @@ abstracted into a function:</span></p>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
 		lang=EN-US style='background:white'> asMoverShaker(obj: <span style='color:
 blue'>any</span>): MoverShaker {<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue'>return</span> obj &amp;&amp; obj.move &amp;&amp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>return</span> obj &amp;&amp; obj.move &amp;&amp;
 obj.shake &amp;&amp; obj.getStatus ? obj : <span style='color:blue'>null</span>;<br>
 }</span></p>
 

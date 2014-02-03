@@ -28,7 +28,7 @@ the run-time behavior of programs since that is covered by the ECMAScript
 specification.</span></p>
 
 <h2><a name="_Toc364255690"></a><a name="_Ref352070784"><span lang=EN-US>2.1<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
 		lang=EN-US>Grammar Conventions</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>The syntactic grammar added by TypeScript
@@ -36,18 +36,18 @@ language is specified throughout this document using the existing conventions an
 production names of the ECMAScript grammar. In places where TypeScript augments
 an existing grammar production it is so noted. For example:</span></p>
 
-<p class=Grammar><span lang=EN-US>CallExpression:&nbsp; ( Modified )<br>
+<p class=Grammar><span lang=EN-US>CallExpression:&nbsp;&nbsp;( Modified )<br>
 &nbsp;<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
-		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; ArgumentList<sub>opt</sub>&nbsp;&nbsp; </span><span
+		lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;ArgumentList<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
 		lang=EN-US><br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>super</span></span><span
-		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>.</span></span><span lang=EN-US>&nbsp;&nbsp; IdentifierName</span></p>
+		lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>.</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;IdentifierName</span></p>
 
-<p class=MsoNormal><span lang=EN-US>The &nbsp;<i>( Modified )</i>&nbsp; annotation
+<p class=MsoNormal><span lang=EN-US>The &nbsp;<i>( Modified )</i>&nbsp;&nbsp;annotation
 indicates that an existing grammar production is being replaced, and the &nbsp;&nbsp;&nbsp;
 references the contents of the original grammar production.</span></p>
 
@@ -63,17 +63,17 @@ their declaration. The example</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
 		lang=EN-US> X {<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>module</span> Y {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>interface</span> Z { }<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>interface</span> Y { }<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>declares two interface types with the
-qualified names &nbsp;X.Y.Z&nbsp; and &nbsp;X.Y&nbsp; relative to the root module in which &nbsp;X&nbsp; is
+qualified names &nbsp;X.Y.Z&nbsp;&nbsp;and &nbsp;X.Y&nbsp;&nbsp;relative to the root module in which &nbsp;X&nbsp;&nbsp;is
 declared.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>In a qualified type name all identifiers but
@@ -88,27 +88,27 @@ example</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
 		lang=EN-US> A {<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>module</span> B {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>export</span> <span
 			style='color:blue'>class</span> C { }<br>
-&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>introduces a named type with the qualified
-name &nbsp;A.B.C&nbsp; and also introduces a constructor function that can be accessed using
+name &nbsp;A.B.C&nbsp;&nbsp;and also introduces a constructor function that can be accessed using
 the expression &nbsp;A.B.C&nbsp;. Thus, in the example</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> c: A.B.C = <span style='color:blue;background:white'>new</span>
 A.B.C();</span></p>
 
-<p class=MsoNormal><span lang=EN-US>the two occurrences of &nbsp;A.B.C&nbsp; in fact
+<p class=MsoNormal><span lang=EN-US>the two occurrences of &nbsp;A.B.C&nbsp;&nbsp;in fact
 refer to different entities. It is the context of the occurrences that
-determines whether &nbsp;A.B.C&nbsp; is processed as a type name or an expression.</span></p>
+determines whether &nbsp;A.B.C&nbsp;&nbsp;is processed as a type name or an expression.</span></p>
 
 <h2><a name="_Toc364255692"></a><a name="_Ref323978672"><span lang=EN-US>2.3<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
 		lang=EN-US>Declarations</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>Declarations introduce names in the <b><i>declaration
@@ -227,7 +227,7 @@ root module of the entity&nbsp;s parent module.</span></p>
 is the outermost module body from within which the entity is reachable.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Interfaces, enums, and internal modules are
-&nbsp;open ended,&nbsp; meaning that interface, enum, and internal module declarations
+&nbsp;open ended,&nbsp;&nbsp;meaning that interface, enum, and internal module declarations
 with the same qualified name relative to a common root are automatically
 merged. For further details, see sections </span><span
 		lang=EN-US>7.2</span><span lang=EN-US>, </span><span
@@ -238,39 +238,39 @@ merged. For further details, see sections </span><span
 declaration spaces. Furthermore, declarations of non-instantiated modules (modules
 that contain only interfaces or modules at all levels of nesting) do not
 introduce a member name in their containing declaration space. This means that
-the following is permitted, provided module &nbsp;X&nbsp; contains only interface or
+the following is permitted, provided module &nbsp;X&nbsp;&nbsp;contains only interface or
 module declarations at all levels of nesting:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>module</span><span
 		lang=EN-US> M {<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>module</span> X { ... }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>module</span> X { ... }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
 			style='color:green;background:white'>// Namespace</span><span style='color:
 green'><br>
-</span>&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>interface</span> X { ... }&nbsp;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>interface</span> X { ... }&nbsp;&nbsp;
 <span style='color:green;background:white'>// Type</span><br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> X;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>var</span> X;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
 			style='color:green;background:white'>// Member</span><br>
 }</span></p>
 
-<p class=MsoNormal><span lang=EN-US>If module &nbsp;X&nbsp; above was an instantiated
+<p class=MsoNormal><span lang=EN-US>If module &nbsp;X&nbsp;&nbsp;above was an instantiated
 module (section </span><span lang=EN-US>10.1</span><span lang=EN-US>) it would
-cause a member &nbsp;X&nbsp; to be introduced in &nbsp;M&nbsp;. This member would conflict with the
-variable &nbsp;X&nbsp; and thus cause an error.</span></p>
+cause a member &nbsp;X&nbsp;&nbsp;to be introduced in &nbsp;M&nbsp;. This member would conflict with the
+variable &nbsp;X&nbsp;&nbsp;and thus cause an error.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Instance and static members in a class are likewise
 in separate declaration spaces. Thus the following is permitted:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> C {<br>
-&nbsp;&nbsp;&nbsp; x: number;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span
+&nbsp;&nbsp;&nbsp;&nbsp;x: number;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span
 			style='color:green'>Instance member</span><br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>static</span> x: string;&nbsp;&nbsp; <span
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>static</span> x: string;&nbsp;&nbsp;&nbsp;<span
 			style='color:green;background:white'>// Static</span><span style='color:green'>
 member</span><br>
 }</span></p>
 
 <h2><a name="_Toc364255693"></a><a name="_Ref320695415"><span lang=EN-US>2.4<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
 		lang=EN-US>Scopes</span></a></h2>
 
 <p class=MsoNormal><span lang=EN-US>The <b><i>scope</i></b> of a name is the
@@ -361,19 +361,19 @@ declarations for the same internal module. For example:</span></p>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
 		lang=EN-US> x = <span style='color:maroon'>1</span>;<br>
 <span style='color:blue;background:white'>module</span> M {<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>export</span> <span
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>export</span> <span
 			style='color:blue;background:white'>var</span> x = <span style='color:maroon'>2</span>;<br>
-&nbsp;&nbsp;&nbsp; console.log(x);&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// </span><span
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span
 			style='color:green'>2</span><br>
 }<br>
 <span style='color:blue;background:white'>module</span> M {<br>
-&nbsp;&nbsp; &nbsp;console.log(x);&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// </span><span
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span
 			style='color:green'>2</span><br>
 }<br>
 <span style='color:blue;background:white'>module</span> M {<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> x = <span
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>var</span> x = <span
 			style='color:maroon'>3</span>;<br>
-&nbsp;&nbsp;&nbsp; console.log(x);&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// </span><span
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span
 			style='color:green'>3</span><br>
 }</span></p>
 

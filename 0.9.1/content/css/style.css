@@ -1,6 +1,6 @@
 html, body {
 }
-body {
+body , p, li {
     font-size:1em;
     font-family:"Segoe UI Light","sans-serif";
     color:#404040;

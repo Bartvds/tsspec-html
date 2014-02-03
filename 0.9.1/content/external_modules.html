@@ -33,33 +33,33 @@ ImplementationElements<sub>opt</sub></span></p>
 
 <p class=Grammar><span lang=EN-US>ImplementationElements:<br>
 ImplementationElement<br>
-ImplementationElements&nbsp;&nbsp; ImplementationElement</span></p>
+ImplementationElements&nbsp;&nbsp;&nbsp;ImplementationElement</span></p>
 
 <p class=Grammar><span lang=EN-US>ImplementationElement:<br>
 ModuleElement<br>
 ExportAssignment<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; ExternalImportDeclaration<br>
+		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;ExternalImportDeclaration<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; AmbientDeclaration</span></p>
+		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientDeclaration</span></p>
 
 <p class=Grammar><span lang=EN-US>DeclarationSourceFile:<br>
 DeclarationElements<sub>opt</sub></span></p>
 
 <p class=Grammar><span lang=EN-US>DeclarationElements:<br>
 DeclarationElement<br>
-DeclarationElements&nbsp;&nbsp; DeclarationElement</span></p>
+DeclarationElements&nbsp;&nbsp;&nbsp;DeclarationElement</span></p>
 
 <p class=Grammar><span lang=EN-US>DeclarationElement:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; InterfaceDeclaration<br>
+		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;InterfaceDeclaration<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; ImportDeclaration<br>
+		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;ImportDeclaration<br>
 ExportAssignment<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; ExternalImportDeclaration<br>
+		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;ExternalImportDeclaration<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; AmbientDeclaration</span></p>
+		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientDeclaration</span></p>
 
 <p class=MsoNormal><span lang=EN-US>When a TypeScript program is compiled, all of
 the program’s source files are processed together. Statements and declarations
@@ -191,7 +191,7 @@ log.message(<span style='color:maroon;background:white'>&quot;hello&quot;</span>
 <p class=Code><span lang=EN-US style='color:blue;background:white'>export</span><span
 		lang=EN-US> <span style='color:blue;background:white'>function</span>
 message(s: <span style='color:blue;background:white'>string</span>) {<br>
-&nbsp;&nbsp;&nbsp; console.log(s);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(s);<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The import declaration in the ‘main’ module
@@ -218,7 +218,7 @@ using node.js) and on the client side (using an AMD compliant loader) with no
 changes to the TypeScript source code.</span></p>
 
 <h3><a name="_Toc364255823"></a><a name="_Ref324173787"><span lang=EN-US>11.2.1<span
-		style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>External
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>External
 Module Names</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>External modules are identified and
@@ -298,7 +298,7 @@ space root). If a matching module cannot be found an error occurs.</span></p>
 
 <h3><a name="_Ref323981484"></a><a name="_Ref323816296"></a><a
 		name="_Toc364255824"></a><a name="_Ref325089515"><span lang=EN-US>11.2.2<span
-		style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>External
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>External
 Import Declarations</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>External import declarations are used to
@@ -307,15 +307,15 @@ referenced.</span></p>
 
 <p class=Grammar><span lang=EN-US>ExternalImportDeclaration:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>import</span></span><span
-		lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+		lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
 																	 style='font-style:normal'>=</span></span><span lang=EN-US>&nbsp;&nbsp;
-ExternalModuleReference&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
+ExternalModuleReference&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
 															style='font-style:normal'>;</span></span></p>
 
 <p class=Grammar><span lang=EN-US>ExternalModuleReference:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>require</span></span><span
-		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; StringLiteral&nbsp;&nbsp; </span><span
+		lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;StringLiteral&nbsp;&nbsp;&nbsp;</span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>The string literal specified in an <span
@@ -350,7 +350,7 @@ assignment it is an error for the external module to also contain export declara
 The two types of exports are mutually exclusive.</span></p>
 
 <h3><a name="_Toc364255826"></a><a name="_Ref352416284"><span lang=EN-US>11.2.4<span
-		style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>Export
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>Export
 Assignments</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>An export assignment designates a module
@@ -358,8 +358,8 @@ member as the entity to be exported in place of the external module itself.</spa
 
 <p class=Grammar><span lang=EN-US>ExportAssignment:<br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><span
-		lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>=</span></span><span lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; </span><span
+		lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>=</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span
 		class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
 
 <p class=MsoNormal><span lang=EN-US>The <span class=Production>Identifier</span>
@@ -380,11 +380,11 @@ file ‘point.ts’:</span></p>
 
 <p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
 		lang=EN-US> Point {<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>constructor</span>(<span
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>constructor</span>(<span
 			style='color:blue;background:white'>public</span> x: <span style='color:blue;
 background:white'>number</span>, <span style='color:blue;background:white'>public</span>
 y: <span style='color:blue;background:white'>number</span>) { }<br>
-&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>static</span> origin = <span
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>static</span> origin = <span
 			style='color:blue;background:white'>new</span> Point(0, 0);<br>
 }</span></p>
 
@@ -404,7 +404,7 @@ import alias use the same name as the exported entity.</span></p>
 
 <h3><a name="_Ref325381204"></a><a name="_Toc364255827"></a><a
 		name="_Ref352750126"></a><a name="_Ref325381235"><span lang=EN-US>11.2.5<span
-		style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>CommonJS
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>CommonJS
 Modules</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>The </span><a
@@ -430,7 +430,7 @@ log.message(<span style='color:maroon;background:white'>&quot;hello&quot;</span>
 
 <p class=Code><span lang=EN-US>exports.message = <span style='color:blue;
 background:white'>function</span>(s) {<br>
-&nbsp;&nbsp;&nbsp; console.log(s);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(s);<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>An external import declaration is
@@ -455,7 +455,7 @@ x: <span style='color:blue;background:white'>number</span>; y: <span
 		lang=EN-US> <span style='color:blue;background:white'>function</span> point(x: <span
 		style='color:blue;background:white'>number</span>, y: <span style='color:blue;
 background:white'>number</span>): Point {<br>
-&nbsp;&nbsp;&nbsp; return { x: x, y: y };<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return { x: x, y: y };<br>
 }</span></p>
 
 <p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File game.ts:</span></p>
@@ -495,7 +495,7 @@ dependency on the ‘geometry’ module and would simply be</span></p>
 		style='color:maroon;background:white'>20</span> };</span></p>
 
 <h3><a name="_Toc364255828"></a><a name="_Ref325471838"><span lang=EN-US>11.2.6<span
-		style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>AMD
+		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>AMD
 Modules</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>The </span><a
@@ -520,7 +520,7 @@ generates the following JavaScript code when compiled for the AMD pattern.</span
 white'>&quot;require&quot;</span>, <span style='color:maroon;background:white'>&quot;exports&quot;</span>,
 <span style='color:maroon;background:white'>&quot;log&quot;</span>], <span
 			style='color:blue;background:white'>function</span>(require, exports, log) {<br>
-&nbsp;&nbsp;&nbsp; log.message(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;log.message(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);<br>
 }</span></p>
 
 <p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File log.js:</span></p>
@@ -528,10 +528,10 @@ white'>&quot;require&quot;</span>, <span style='color:maroon;background:white'>&
 <p class=Code><span lang=EN-US>define([<span style='color:maroon;background:
 white'>&quot;require&quot;</span>, <span style='color:maroon;background:white'>&quot;exports&quot;</span>],
 <span style='color:blue;background:white'>function</span>(require, exports) {<br>
-&nbsp;&nbsp;&nbsp; exports.message = <span style='color:blue;background:white'>function</span>(s)
+&nbsp;&nbsp;&nbsp;&nbsp;exports.message = <span style='color:blue;background:white'>function</span>(s)
 {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(s);<br>
-&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(s);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The special ‘require’ and ‘exports’ dependencies
