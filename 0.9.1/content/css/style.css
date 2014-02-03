@@ -1,3 +1,21 @@
+html, body {
+}
+body {
+    font-size:1em;
+    font-family:"Segoe UI Light","sans-serif";
+    color:#404040;
+}
+.menu {
+    margin:50px;
+}
+
+.col {
+    max-width:70em;
+    margin-left:auto;
+    margin-right:auto;
+    padding:1em;
+}
+
 /* Font Definitions */
 @font-face
 {font-family:Courier;
