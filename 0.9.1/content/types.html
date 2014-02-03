@@ -15,26 +15,18 @@ analysis occurs entirely at compile-time and adds no run-time overhead to
 program execution.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>All types in TypeScript are subtypes of a
-single top type called the Any type. The </span><span class=CodeFragment><span
-		lang=EN-US>any</span></span><span lang=EN-US> keyword references this type. The
+single top type called the Any type. The </span><span class=CodeFragment><span lang=EN-US>any</span></span><span lang=EN-US> keyword references this type. The
 Any type is the one type that can represent <i>any</i> JavaScript value with no
-constraints. All other types are categorized as <b><i>primitive types</i></b>, <b><i>object
-		types</i></b>, or <b><i>type parameters</i></b>. These types introduce various
+constraints. All other types are categorized as <b><i>primitive types</i></b>, <b><i>object types</i></b>, or <b><i>type parameters</i></b>. These types introduce various
 static constraints on their values.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The primitive types are the Number, Boolean,
 String, Void, Null, and Undefined types along with user defined enum types. The
-</span><span class=CodeFragment><span lang=EN-US>number</span></span><span
-		lang=EN-US>, </span><span class=CodeFragment><span lang=EN-US>boolean</span></span><span
-		lang=EN-US>, </span><span class=CodeFragment><span lang=EN-US>string</span></span><span
-		lang=EN-US>, and </span><span class=CodeFragment><span lang=EN-US>void</span></span><span
-		lang=EN-US> keywords reference the Number, Boolean, String, and Void primitive
+</span><span class=CodeFragment><span lang=EN-US>number</span></span><span lang=EN-US>, </span><span class=CodeFragment><span lang=EN-US>boolean</span></span><span lang=EN-US>, </span><span class=CodeFragment><span lang=EN-US>string</span></span><span lang=EN-US>, and </span><span class=CodeFragment><span lang=EN-US>void</span></span><span lang=EN-US> keywords reference the Number, Boolean, String, and Void primitive
 types respectively. The Void type exists purely to indicate the absence of a
 value, such as in a function with no return value. It is not possible to
 explicitly reference the Null and Undefined types—only <i>values</i> of those
-types can be referenced, using the </span><span class=CodeFragment><span
-		lang=EN-US>null</span></span><span lang=EN-US> and </span><span
-		class=CodeFragment><span lang=EN-US>undefined</span></span><span lang=EN-US>
+types can be referenced, using the </span><span class=CodeFragment><span lang=EN-US>null</span></span><span lang=EN-US> and </span><span class=CodeFragment><span lang=EN-US>undefined</span></span><span lang=EN-US>
 literals.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The object types are all class, interface, array,
@@ -53,17 +45,18 @@ declaration associates the module with an anonymous type containing a set of
 properties corresponding to the exported variables and functions in the module,
 and a function declaration associates the function with an anonymous type
 containing a call signature corresponding to the parameters and return type of
-the function. Types can be associated with variables through explicit <b><i>type
-		annotations</i></b>, such as</span></p>
+the function. Types can be associated with variables through explicit <b><i>type annotations</i></b>, such as</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> x: <span style='color:blue;background:white'>number</span>;</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> x: <span style='color:blue;background:white'>number</span>;</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>or through implicit <b><i>type inference</i></b>,
 as in</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> x = <span style='color:maroon;background:white'>1</span>;</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> x = <span style='color:maroon;background:white'>1</span>;</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>which infers the type of ‘x’ to be the Number
 primitive type because that is the type of the value used to initialize ‘x’.</span></p>
@@ -78,8 +71,8 @@ operations on Any values. Specifically, properties of any name can be accessed
 through an Any value and Any values can be called as functions or constructors
 with any argument list.</span></p>
 
-<p class=MsoNormal><span lang=EN-US>The </span><span class=CodeFragment><span
-		lang=EN-US>any</span></span><span lang=EN-US> keyword references the Any type. In
+<p class=MsoNormal>
+	<span lang=EN-US>The </span><span class=CodeFragment><span lang=EN-US>any</span></span><span lang=EN-US> keyword references the Any type. In
 general, in places where a type is not explicitly provided and TypeScript
 cannot infer one, the Any type is assumed.</span></p>
 
@@ -87,16 +80,14 @@ cannot infer one, the Any type is assumed.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Some examples:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> x: <span style='color:blue;background:white'>any</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> x: <span style='color:blue;background:white'>any</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <span style='color:green;background:white'>// Explicitly typed</span><br>
-<span style='color:blue;background:white'>var</span> y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as y: any</span><br>
-<span style='color:blue;background:white'>var</span> z: { a; b; };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as z: { a: any; b: any; }</span></span></p>
+<span style='color:blue;background:white'>var</span> y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as y: any</span><br>
+<span style='color:blue;background:white'>var</span> z: { a; b; };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as z: { a: any; b: any; }</span></span>
+</p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-		lang=EN-US> f(x) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same
+<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span lang=EN-US> f(x) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same
 as f(x: any): void</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;console.log(x);<br>
 }</span></p>
@@ -114,8 +105,8 @@ String, Void, Null, and Undefined types and all user defined enum types.</span><
 the similarly named JavaScript primitive type and represents double-precision
 64-bit format IEEE 754 floating point values.</span></p>
 
-<p class=MsoNormal><span lang=EN-US>The </span><span class=CodeFragment><span
-		lang=EN-US>number</span></span><span lang=EN-US> keyword references the Number primitive
+<p class=MsoNormal>
+	<span lang=EN-US>The </span><span class=CodeFragment><span lang=EN-US>number</span></span><span lang=EN-US> keyword references the Number primitive
 type and numeric literals may be used to write values of the Number primitive
 type.</span></p>
 
@@ -127,17 +118,12 @@ global interface type ‘Number’.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Some examples:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> x: <span style='color:blue;background:white'>number</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> x: <span style='color:blue;background:white'>number</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <span style='color:green;background:white'>// Explicitly typed</span><br>
-<span style='color:blue;background:white'>var</span> y = <span
-			style='color:maroon;background:white'>0</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as y: number = 0</span><br>
-<span style='color:blue;background:white'>var</span> z = <span
-			style='color:maroon;background:white'>123.456</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as z: number = 123.456</span><br>
-<span style='color:blue;background:white'>var</span> s = z.toFixed(<span
-			style='color:maroon;background:white'>2</span>);&nbsp;&nbsp;&nbsp;<span style='color:green;
+<span style='color:blue;background:white'>var</span> y = <span style='color:maroon;background:white'>0</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as y: number = 0</span><br>
+<span style='color:blue;background:white'>var</span> z = <span style='color:maroon;background:white'>123.456</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as z: number = 123.456</span><br>
+<span style='color:blue;background:white'>var</span> s = z.toFixed(<span style='color:maroon;background:white'>2</span>);&nbsp;&nbsp;&nbsp;<span style='color:green;
 background:white'>// Property of Number </span><span style='color:green'>interface</span></span></p>
 
 <h3><a name="_Toc364255698"><span lang=EN-US>3.2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -147,30 +133,24 @@ background:white'>// Property of Number </span><span style='color:green'>interfa
 the similarly named JavaScript primitive type and represents logical values
 that are either true or false.</span></p>
 
-<p class=MsoNormal><span lang=EN-US>The </span><span class=CodeFragment><span
-		lang=EN-US>boolean</span></span><span lang=EN-US> keyword references the
-Boolean primitive type and the </span><span class=CodeFragment><span
-		lang=EN-US>true</span></span><span lang=EN-US> and </span><span
-		class=CodeFragment><span lang=EN-US>false</span></span><span lang=EN-US>
+<p class=MsoNormal>
+	<span lang=EN-US>The </span><span class=CodeFragment><span lang=EN-US>boolean</span></span><span lang=EN-US> keyword references the
+Boolean primitive type and the </span><span class=CodeFragment><span lang=EN-US>true</span></span><span lang=EN-US> and </span><span class=CodeFragment><span lang=EN-US>false</span></span><span lang=EN-US>
 literals reference the two Boolean truth values.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>For purposes of determining type
 relationships (section </span><span lang=EN-US>3.8</span><span lang=EN-US>) and
-accessing properties (section </span><span lang=EN-US>4.10</span><span
-		lang=EN-US>), the Boolean primitive type behaves as an object type with the
+accessing properties (section </span><span lang=EN-US>4.10</span><span lang=EN-US>), the Boolean primitive type behaves as an object type with the
 same properties as the global interface type ‘Boolean’.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Some examples:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> b: <span style='color:blue;background:white'>boolean</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> b: <span style='color:blue;background:white'>boolean</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <span style='color:green;background:white'>// Explicitly typed</span><br>
-<span style='color:blue;background:white'>var</span> yes = <span
-			style='color:blue;background:white'>true</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as yes: boolean = true</span><br>
-<span style='color:blue;background:white'>var</span> no = <span
-			style='color:blue;background:white'>false</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as no: boolean = false</span></span></p>
+<span style='color:blue;background:white'>var</span> yes = <span style='color:blue;background:white'>true</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as yes: boolean = true</span><br>
+<span style='color:blue;background:white'>var</span> no = <span style='color:blue;background:white'>false</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as no: boolean = false</span></span>
+</p>
 
 <h3><a name="_Toc364255699"><span lang=EN-US>3.2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The String Type</span></a></h3>
@@ -179,43 +159,35 @@ same properties as the global interface type ‘Boolean’.</span></p>
 the similarly named JavaScript primitive type and represents sequences of
 characters stored as Unicode UTF-16 code units.</span></p>
 
-<p class=MsoNormal><span lang=EN-US>The </span><span class=CodeFragment><span
-		lang=EN-US>string</span></span><span lang=EN-US> keyword references the String primitive
+<p class=MsoNormal>
+	<span lang=EN-US>The </span><span class=CodeFragment><span lang=EN-US>string</span></span><span lang=EN-US> keyword references the String primitive
 type and string literals may be used to write values of the String primitive type.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>For purposes of determining type
 relationships (section </span><span lang=EN-US>3.8</span><span lang=EN-US>) and
-accessing properties (section </span><span lang=EN-US>4.10</span><span
-		lang=EN-US>), the String primitive type behaves as an object type with the same
+accessing properties (section </span><span lang=EN-US>4.10</span><span lang=EN-US>), the String primitive type behaves as an object type with the same
 properties as the global interface type ‘String’.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Some examples:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> s: <span style='color:blue;background:white'>string</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> s: <span style='color:blue;background:white'>string</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <span style='color:green;background:white'>// Explicitly typed</span><br>
-<span style='color:blue;background:white'>var</span> empty = <span
-			style='color:maroon;background:white'>&quot;&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as empty: string = &quot;&quot;</span><br>
-<span style='color:blue;background:white'>var</span> abc = <span
-			style='color:maroon;background:white'>'abc'</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as abc: string = &quot;abc&quot;</span><br>
-<span style='color:blue;background:white'>var</span> c = abc.charAt(<span
-			style='color:maroon;background:white'>2</span>);&nbsp;&nbsp;<span style='color:green;
+<span style='color:blue;background:white'>var</span> empty = <span style='color:maroon;background:white'>&quot;&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as empty: string = &quot;&quot;</span><br>
+<span style='color:blue;background:white'>var</span> abc = <span style='color:maroon;background:white'>'abc'</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as abc: string = &quot;abc&quot;</span><br>
+<span style='color:blue;background:white'>var</span> c = abc.charAt(<span style='color:maroon;background:white'>2</span>);&nbsp;&nbsp;<span style='color:green;
 background:white'>// Property of String </span><span style='color:green'>interface</span></span></p>
 
 <h3><a name="_Toc364255700"><span lang=EN-US>3.2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>The Void Type</span></a></h3>
 
-<p class=MsoNormal><span lang=EN-US>The Void type, referenced by the </span><span
-		class=CodeFragment><span lang=EN-US>void</span></span><span lang=EN-US>
+<p class=MsoNormal>
+	<span lang=EN-US>The Void type, referenced by the </span><span class=CodeFragment><span lang=EN-US>void</span></span><span lang=EN-US>
 keyword, represents the absence of a value and is used as the return type of
 functions with no return value.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The only possible values for the Void type
-are </span><span class=CodeFragment><span lang=EN-US>null</span></span><span
-		lang=EN-US> and </span><span class=CodeFragment><span lang=EN-US>undefined</span></span><span
-		lang=EN-US>. The Void type is a subtype of the Any type and a supertype of the Null
+are </span><span class=CodeFragment><span lang=EN-US>null</span></span><span lang=EN-US> and </span><span class=CodeFragment><span lang=EN-US>undefined</span></span><span lang=EN-US>. The Void type is a subtype of the Any type and a supertype of the Null
 and Undefined types, but otherwise Void is unrelated to all other types.</span></p>
 
 <p class=MsoNormal><i><span lang=EN-US>NOTE: We might consider disallowing
@@ -227,60 +199,54 @@ is not feasible to disallow Void properties or parameters.</span></i></p>
 </span></span><span lang=EN-US>The Null Type</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>The Null type corresponds to the similarly
-named JavaScript primitive type and is the type of the </span><span
-		class=CodeFragment><span lang=EN-US>null</span></span><span lang=EN-US> literal.</span></p>
+named JavaScript primitive type and is the type of the </span><span class=CodeFragment><span lang=EN-US>null</span></span><span lang=EN-US> literal.</span>
+</p>
 
-<p class=MsoNormal><span lang=EN-US>The </span><span class=CodeFragment><span
-		lang=EN-US>null</span></span><span lang=EN-US> literal references the one and
+<p class=MsoNormal>
+	<span lang=EN-US>The </span><span class=CodeFragment><span lang=EN-US>null</span></span><span lang=EN-US> literal references the one and
 only value of the Null type. It is not possible to directly reference the Null
 type itself.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The Null type is a subtype of all types, except
-the Undefined type. This means that </span><span class=CodeFragment><span
-		lang=EN-US>null</span></span><span lang=EN-US> is considered a valid value for
+the Undefined type. This means that </span><span class=CodeFragment><span lang=EN-US>null</span></span><span lang=EN-US> is considered a valid value for
 all primitive types, object types, and type parameters, including even the
 Number and Boolean primitive types.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Some examples:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> n: <span style='color:blue;background:white'>number</span> = <span
-		style='color:blue;background:white'>null</span>;&nbsp;&nbsp;&nbsp;<span style='color:green;
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> n: <span style='color:blue;background:white'>number</span> = <span style='color:blue;background:white'>null</span>;&nbsp;&nbsp;&nbsp;<span style='color:green;
 background:white'>// Primitives can be null</span><br>
-<span style='color:blue;background:white'>var</span> x = <span
-			style='color:blue;background:white'>null</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as x: any = null</span><br>
-<span style='color:blue;background:white'>var</span> e: Null;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Error, can't reference Null type</span></span></p>
+<span style='color:blue;background:white'>var</span> x = <span style='color:blue;background:white'>null</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as x: any = null</span><br>
+<span style='color:blue;background:white'>var</span> e: Null;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Error, can't reference Null type</span></span>
+</p>
 
-<h3><a name="_Toc364255702"></a><a name="_Ref331509340"><span lang=EN-US>3.2.6<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>The Undefined Type</span></a></h3>
+<h3>
+	<a name="_Toc364255702"></a><a name="_Ref331509340"><span lang=EN-US>3.2.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>The Undefined Type</span></a>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>The Undefined type corresponds to the
-similarly named JavaScript primitive type and is the type of the </span><span
-		class=CodeFragment><span lang=EN-US>undefined</span></span><span lang=EN-US> literal.</span></p>
+similarly named JavaScript primitive type and is the type of the </span><span class=CodeFragment><span lang=EN-US>undefined</span></span><span lang=EN-US> literal.</span>
+</p>
 
-<p class=MsoNormal><span lang=EN-US>The </span><span class=CodeFragment><span
-		lang=EN-US>undefined</span></span><span lang=EN-US> literal denotes the value
+<p class=MsoNormal>
+	<span lang=EN-US>The </span><span class=CodeFragment><span lang=EN-US>undefined</span></span><span lang=EN-US> literal denotes the value
 given to all uninitialized variables and is the one and only value of the
 Undefined type. It is not possible to directly reference the Undefined type
 itself.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>The undefined type is a subtype of all
-types. This means that </span><span class=CodeFragment><span lang=EN-US>undefined</span></span><span
-		lang=EN-US> is considered a valid value for all primitive types, object types,
+types. This means that </span><span class=CodeFragment><span lang=EN-US>undefined</span></span><span lang=EN-US> is considered a valid value for all primitive types, object types,
 and type parameters.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Some examples:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> n: <span style='color:blue;background:white'>number</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> n: <span style='color:blue;background:white'>number</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <span style='color:green;background:white'>// Same as n: number = undefined</span><br>
-<span style='color:blue;background:white'>var</span> x = undefined;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Same as x: any = undefined</span><br>
-<span style='color:blue;background:white'>var</span> e: Undefined;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Error, can't reference Undefined type</span></span></p>
+<span style='color:blue;background:white'>var</span> x = undefined;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Same as x: any = undefined</span><br>
+<span style='color:blue;background:white'>var</span> e: Undefined;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Error, can't reference Undefined type</span></span>
+</p>
 
 <h3><a name="_Toc364255703"><span lang=EN-US>3.2.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Enum Types</span></a></h3>
@@ -288,27 +254,27 @@ and type parameters.</span></p>
 <p class=MsoNormal><span lang=EN-US>Enum types are distinct user defined
 subtypes of the Number primitive type. Enum types are declared using enum
 declarations (section </span><span lang=EN-US>9.1</span><span lang=EN-US>) and
-referenced using type references (section </span><span
-		lang=EN-US>3.6.2</span><span lang=EN-US>).</span></p>
+referenced using type references (section </span><span lang=EN-US>3.6.2</span><span lang=EN-US>).</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Enum types are assignable to the Number
 primitive type, and vice versa, but different enum types are not assignable to
 each other.</span></p>
 
-<h3><a name="_Toc364255704"></a><a name="_Ref352158837"><span lang=EN-US>3.2.8<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>String Literal Types</span></a></h3>
+<h3>
+	<a name="_Toc364255704"></a><a name="_Ref352158837"><span lang=EN-US>3.2.8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>String Literal Types</span></a>
+</h3>
 
-<p class=MsoNormal><span lang=EN-US>Specialized signatures (section </span><span lang=EN-US>3.7.2.4</span><span lang=EN-US>) permit string literals to be used as
+<p class=MsoNormal>
+	<span lang=EN-US>Specialized signatures (section </span><span lang=EN-US>3.7.2.4</span><span lang=EN-US>) permit string literals to be used as
 types in parameter type annotations. String literal types are permitted only in
 that context and nowhere else.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>All string literal types are subtypes of
 the String primitive type.</span></p>
 
-<h2><a name="_Toc364255705"></a><a name="_Ref325637319"><span lang=EN-US>3.3<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Object Types</span></a></h2>
+<h2>
+	<a name="_Toc364255705"></a><a name="_Ref325637319"><span lang=EN-US>3.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Object Types</span></a>
+</h2>
 
 <p class=MsoNormal><span lang=EN-US>The object types include references to class
 and interface types as well as anonymous object types created by a number of
@@ -316,9 +282,9 @@ constructs such as object literals, function declarations, and module
 declarations. Object types are composed from properties, call signatures,
 construct signatures, and index signatures, collectively called members.</span></p>
 
-<h3><a name="_Toc364255706"></a><a name="_Ref349911330"><span lang=EN-US>3.3.1<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Named Type References</span></a></h3>
+<h3>
+	<a name="_Toc364255706"></a><a name="_Ref349911330"><span lang=EN-US>3.3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Named Type References</span></a>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>Type references (section </span><span lang=EN-US>3.6.2</span><span lang=EN-US>) to class and interface types are
 classified as object types. Type references to generic class and interface
@@ -329,8 +295,7 @@ the class or interface to produce an actual object type.</span></p>
 </span></span><span lang=EN-US>Array Types</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>Array types represent JavaScript arrays.
-Array types are type references (section </span><span
-		lang=EN-US>3.6.2</span><span lang=EN-US>) created from the generic interface
+Array types are type references (section </span><span lang=EN-US>3.6.2</span><span lang=EN-US>) created from the generic interface
 type ‘Array’ in the global module. Array type literals (section </span><span lang=EN-US>3.6.4</span><span lang=EN-US>) provide a shorthand notation for
 creating such references.</span></p>
 
@@ -343,29 +308,26 @@ types.</span></p>
 <p class=MsoNormal><span lang=EN-US>Several constructs in the TypeScript
 language introduce new anonymous object types:</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-US>Function and constructor type literals (section </span><span lang=EN-US>3.6.4</span><span lang=EN-US>).</span></p>
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Function and constructor type literals (section </span><span lang=EN-US>3.6.4</span><span lang=EN-US>).</span>
+</p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-US>Object type literals (section </span><span lang=EN-US>3.7</span><span lang=EN-US>).</span></p>
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Object type literals (section </span><span lang=EN-US>3.7</span><span lang=EN-US>).</span>
+</p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Object literals (section </span><span lang=EN-US>4.5</span><span lang=EN-US>).</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-US>Function expressions (section </span><span lang=EN-US>4.9</span><span lang=EN-US>) and function declarations (</span><span lang=EN-US>6.1</span><span lang=EN-US>).</span></p>
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Function expressions (section </span><span lang=EN-US>4.9</span><span lang=EN-US>) and function declarations (</span><span lang=EN-US>6.1</span><span lang=EN-US>).</span>
+</p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Constructor function types created by class
 declarations (section </span><span lang=EN-US>8.2.5</span><span lang=EN-US>).</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Module instance types created by module
 declarations (section </span><span lang=EN-US>10.3</span><span lang=EN-US>).</span></p>
 
@@ -375,35 +337,28 @@ declarations (section </span><span lang=EN-US>10.3</span><span lang=EN-US>).</sp
 <p class=MsoNormal><span lang=EN-US>Every object type is composed from zero or
 more of the following kinds of members:</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><b><i><span lang=EN-US>Properties</span></i></b><span lang=EN-US>,
 which define the names and types of the properties of objects of the given
 type. Property names are unique within their type.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><b><i><span lang=EN-US>Call signatures</span></i></b><span
-		lang=EN-US>, which define the possible parameter lists and return types
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><i><span lang=EN-US>Call signatures</span></i></b><span lang=EN-US>, which define the possible parameter lists and return types
 associated with applying call operations to objects of the given type.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><b><i><span lang=EN-US>Construct signatures</span></i></b><span
-		lang=EN-US>, which define the possible parameter lists and return types
-associated with applying the </span><span class=CodeFragment><span lang=EN-US>new</span></span><span
-		lang=EN-US> operator to objects of the given type.</span></p>
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><i><span lang=EN-US>Construct signatures</span></i></b><span lang=EN-US>, which define the possible parameter lists and return types
+associated with applying the </span><span class=CodeFragment><span lang=EN-US>new</span></span><span lang=EN-US> operator to objects of the given type.</span>
+</p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><b><i><span lang=EN-US>Index signatures</span></i></b><span
-		lang=EN-US>, which define type constraints for properties in the given type.</span></p>
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><i><span lang=EN-US>Index signatures</span></i></b><span lang=EN-US>, which define type constraints for properties in the given type.</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Properties are either <b><i>public</i></b>
 or <b><i>private</i></b> and are either <b><i>required</i></b> or <b><i>optional</i></b>:</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Properties in a class declaration may be
 designated public or private, while properties declared in other contexts are
 always considered public. Private members are only accessible within the class
@@ -411,8 +366,7 @@ body containing their declaration, as described in section </span><span lang=EN-
 themselves in subtype and assignment compatibility checks, as described in
 section </span><span lang=EN-US>3.8</span><span lang=EN-US>.</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Properties in an object type literal or
 interface declaration may be designated required or optional, while properties declared
 in other contexts are always considered required. Properties that are optional
@@ -427,17 +381,15 @@ types of other parameters or the function result to become further specialized.<
 
 <p class=MsoNormal><span lang=EN-US>For purposes of determining type
 relationships (section </span><span lang=EN-US>3.8</span><span lang=EN-US>) and
-accessing properties (section </span><span lang=EN-US>4.10</span><span
-		lang=EN-US>), object types appear to have certain additional members:</span></p>
+accessing properties (section </span><span lang=EN-US>4.10</span><span lang=EN-US>), object types appear to have certain additional members:</span>
+</p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Every object type appears to have the members of
 the global interface type ‘Object’ unless those members are hidden by members in
 the object type.</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>An object type with one or more call or
 construct signatures appears to have the members of the global interface type ‘Function’
 unless those members are hidden by members in the object type.</span></p>
@@ -445,25 +397,21 @@ unless those members are hidden by members in the object type.</span></p>
 <p class=MsoNormal><span lang=EN-US>Object type members hide ‘Object’ or ‘Function’
 interface members in the following manner:</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>A property hides an ‘Object’ or ‘Function’
 property with the same name.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>A call signature hides an ‘Object’ or ‘Function’
 call signature with the same number of parameters and identical parameter types
 in the respective positions.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>A construct signature hides an ‘Object’ or ‘Function’
 construct signature with the same number of parameters and identical parameter
 types in the respective positions.</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>An index signature hides an ‘Object’ or ‘Function’
 index signature with the same parameter type.</span></p>
 
@@ -476,20 +424,16 @@ subtype of that in the ‘Object’ or ‘Function’ interface.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Some examples:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> o: Object = { x: <span style='color:maroon;background:white'>10</span>,
-y: <span style='color:maroon;background:white'>20</span> };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Ok</span><br>
-<span style='color:blue;background:white'>var</span> f: Function = (x: <span
-			style='color:blue;background:white'>number</span>) =&gt; x * x;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Ok</span><br>
-<span style='color:blue;background:white'>var</span> err: Object = { toString: <span
-			style='color:maroon;background:white'>0</span> };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Error, incompatible toString</span></span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> o: Object = { x: <span style='color:maroon;background:white'>10</span>,
+y: <span style='color:maroon;background:white'>20</span> };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Ok</span><br>
+<span style='color:blue;background:white'>var</span> f: Function = (x: <span style='color:blue;background:white'>number</span>) =&gt; x * x;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Ok</span><br>
+<span style='color:blue;background:white'>var</span> err: Object = { toString: <span style='color:maroon;background:white'>0</span> };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Error, incompatible toString</span></span>
+</p>
 
-<h2><a name="_Toc364255710"></a><a name="_Ref342394865"><span lang=EN-US>3.4<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Type Parameters</span></a></h2>
+<h2>
+	<a name="_Toc364255710"></a><a name="_Ref342394865"><span lang=EN-US>3.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Type Parameters</span></a>
+</h2>
 
 <p class=MsoNormal><span lang=EN-US>A type parameter represents an actual type
 that the parameter is bound to in a generic type reference or a generic
@@ -508,12 +452,11 @@ declaration (or subtypes of ‘Object’ when no constraint was specified).
 Likewise, for purposes of accessing properties (section </span><span lang=EN-US>4.10</span><span lang=EN-US>), type parameters appear to have the
 members of their declared constraint, but no other members.</span></p>
 
-<h2><a name="_Toc364255711"></a><a name="_Ref349736654"><span lang=EN-US>3.5<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Named Types</span></a></h2>
+<h2>
+	<a name="_Toc364255711"></a><a name="_Ref349736654"><span lang=EN-US>3.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Named Types</span></a>
+</h2>
 
-<p class=MsoNormal><span lang=EN-US>Class, interface, and enum types are <b><i>named
-	types</i></b> that are introduced through class declarations (section </span><span lang=EN-US>8.1</span><span lang=EN-US>), interface declarations (section </span><span lang=EN-US>7.1</span><span lang=EN-US>), and enum declarations (</span><span lang=EN-US>9.1</span><span lang=EN-US>). Class and interface types may have type
+<p class=MsoNormal><span lang=EN-US>Class, interface, and enum types are <b><i>named types</i></b> that are introduced through class declarations (section </span><span lang=EN-US>8.1</span><span lang=EN-US>), interface declarations (section </span><span lang=EN-US>7.1</span><span lang=EN-US>), and enum declarations (</span><span lang=EN-US>9.1</span><span lang=EN-US>). Class and interface types may have type
 parameters and are then called <b><i>generic types</i></b>. Conversely, named
 types without type parameters are called <b><i>non-generic types</i></b>.</span></p>
 
@@ -526,9 +469,7 @@ private members) and are in most contexts interchangeable. In particular, class
 declarations with only public members introduce named types that function
 exactly like those created by interface declarations.</span></p>
 
-<p class=MsoNormal><span lang=EN-US>Named types are referenced through <b><i>type
-	references</i></b> (section </span><span lang=EN-US>3.6.2</span><span
-		lang=EN-US>) that specify a type name and, if applicable, the type arguments to
+<p class=MsoNormal><span lang=EN-US>Named types are referenced through <b><i>type references</i></b> (section </span><span lang=EN-US>3.6.2</span><span lang=EN-US>) that specify a type name and, if applicable, the type arguments to
 be substituted for the type parameters of the named type.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Named types are technically not types—only <i>references</i>
@@ -543,24 +484,24 @@ structural type system, and therefore a type created from a reference to a
 generic type is indistinguishable from an equivalent manually written expansion.
 For example, given the declaration</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US style='background:white'> Pair&lt;T1, T2&gt; { first: T1; second:
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US style='background:white'> Pair&lt;T1, T2&gt; { first: T1; second:
 T2; }</span></p>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>the type reference</span></p>
 
-<p class=Code><span lang=EN-US style='background:white'>Pair&lt;<span
-		style='color:blue'>string</span>, Entity&gt;</span></p>
+<p class=Code><span lang=EN-US style='background:white'>Pair&lt;<span style='color:blue'>string</span>, Entity&gt;</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US style='background:white'>is
 indistinguishable from the type</span></p>
 
-<p class=Code><span lang=EN-US style='background:white'>{ first: <span
-		style='color:blue'>string</span>; second: Entity; }</span></p>
+<p class=Code><span lang=EN-US style='background:white'>{ first: <span style='color:blue'>string</span>; second: Entity; }</span>
+</p>
 
-<h3><a name="_Toc364255712"></a><a name="_Ref343772601"><span lang=EN-US>3.5.1<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Type Parameter Lists</span></a></h3>
+<h3>
+	<a name="_Toc364255712"></a><a name="_Ref343772601"><span lang=EN-US>3.5.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Type Parameter Lists</span></a>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>Class, interface, and function declarations
 may optionally include lists of type parameters enclosed in &lt; and &gt;
@@ -568,25 +509,24 @@ brackets. Type parameters are also permitted in call signatures of object,
 function, and constructor type literals.</span></p>
 
 <p class=Grammar><span lang=EN-US>TypeParameters:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>&lt;</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;TypeParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																			style='font-style:normal'>&gt;</span></span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>&lt;</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>&gt;</span></span>
+</p>
 
 <p class=Grammar><span lang=EN-US>TypeParameterList:<br>
 TypeParameter<br>
-TypeParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-													  style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeParameter</span></p>
+TypeParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeParameter</span>
+</p>
 
 <p class=Grammar><span lang=EN-US>TypeParameter:<br>
 Identifier&nbsp;&nbsp;&nbsp;Constraint<sub>opt</sub></span></p>
 
 <p class=Grammar><span lang=EN-US>Constraint:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>extends</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;Type</span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>extends</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Type</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Type parameter names must be unique. A
-compile-time error occurs if two or more type parameters in the same <span
-			class=Production>TypeParameterList</span> have the same name.</span></p>
+compile-time error occurs if two or more type parameters in the same <span class=Production>TypeParameterList</span> have the same name.</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>The scope of a type parameter extends over
 the entire declaration with which the type parameter list is associated, the
@@ -602,9 +542,9 @@ to specifying the global interface type ‘Object’.</span></p>
 parameter constraints within the same type parameter list, including even
 constraint declarations that occur to the left of the type parameter.</span></p>
 
-<h3><a name="_Toc364255713"></a><a name="_Ref349725118"><span lang=EN-US>3.5.2<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Recursive Generic Types</span></a></h3>
+<h3>
+	<a name="_Toc364255713"></a><a name="_Ref349725118"><span lang=EN-US>3.5.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Recursive Generic Types</span></a>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>Generic types are permitted to directly or
 indirectly reference themselves in a recursive fashion as long as such
@@ -618,8 +558,7 @@ referenced, directly or indirectly, within that type.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Consider the following example:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> List&lt;T&gt; {<br>
+<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> List&lt;T&gt; {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;data: T;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;next: List&lt;T&gt;;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;owner: List&lt;List&lt;T&gt;&gt;;&nbsp;&nbsp;<span style='color:green;background:
@@ -638,9 +577,9 @@ type with a nested reference to ‘List’ that doesn’t reference ‘T’.</sp
 <p class=MsoNormal><i><span lang=EN-US>TODO: The restriction on generative
 recursion is likely to be removed.</span></i></p>
 
-<h3><a name="_Toc364255714"></a><a name="_Ref349832418"><span lang=EN-US>3.5.3<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Instance Types</span></a></h3>
+<h3>
+	<a name="_Toc364255714"></a><a name="_Ref349832418"><span lang=EN-US>3.5.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Instance Types</span></a>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>Each named type has an associated actual
 type known as the <b><i>instance type</i></b>. For a non-generic type, the
@@ -650,28 +589,25 @@ type where each of the supplied type arguments is the corresponding type
 parameter. Since the instance type uses the type parameters it can be used only
 where the type parameters are in scope—that is, inside the declaration of the
 generic type. Within the constructor and member functions of a class, the type
-of </span><span class=CodeFragment><span lang=EN-US>this</span></span><span
-		lang=EN-US> is the instance type of the class.</span></p>
+of </span><span class=CodeFragment><span lang=EN-US>this</span></span><span lang=EN-US> is the instance type of the class.</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>The following example illustrates the concept
 of an instance type:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-		lang=EN-US> G&lt;T&gt; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:
+<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span lang=EN-US> G&lt;T&gt; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:
 white'>// </span><span style='color:green'>Introduce type parameter T</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;self: G&lt;T&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span
-			style='color:green'>Use T as type argument to form instance type</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;self: G&lt;T&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span style='color:green'>Use T as type argument to form instance type</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;f() {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.self = <span
-			style='color:blue;background:white'>this</span>;&nbsp;&nbsp;<span style='color:green;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.self = <span style='color:blue;background:white'>this</span>;&nbsp;&nbsp;<span style='color:green;
 background:white'>// </span><span style='color:green'>self and this are both of
 type G&lt;T&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 }</span></p>
 
-<h2><a name="_Toc364255715"></a><a name="_Ref319139856"><span lang=EN-US>3.6<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Specifying Types</span></a></h2>
+<h2>
+	<a name="_Toc364255715"></a><a name="_Ref319139856"><span lang=EN-US>3.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Specifying Types</span></a>
+</h2>
 
 <p class=MsoNormal><span lang=EN-US>Types are specified either by referencing
 their keyword or name, by querying expression types, or by writing type
@@ -683,22 +619,17 @@ TypeReference<br>
 TypeQuery<br>
 TypeLiteral</span></p>
 
-<h3><a name="_Toc364255716"></a><a name="_Ref352313823"><span lang=EN-US>3.6.1<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Predefined Types</span></a></h3>
+<h3>
+	<a name="_Toc364255716"></a><a name="_Ref352313823"><span lang=EN-US>3.6.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Predefined Types</span></a>
+</h3>
 
-<p class=MsoNormal><span lang=EN-US>The </span><span class=CodeFragment><span
-		lang=EN-US>any</span></span><span lang=EN-US>, </span><span class=CodeFragment><span
-		lang=EN-US>number</span></span><span lang=EN-US>, </span><span
-		class=CodeFragment><span lang=EN-US>boolean</span></span><span lang=EN-US>, </span><span
-		class=CodeFragment><span lang=EN-US>string</span></span><span lang=EN-US>, and </span><span
-		class=CodeFragment><span lang=EN-US>void</span></span><span lang=EN-US>
+<p class=MsoNormal>
+	<span lang=EN-US>The </span><span class=CodeFragment><span lang=EN-US>any</span></span><span lang=EN-US>, </span><span class=CodeFragment><span lang=EN-US>number</span></span><span lang=EN-US>, </span><span class=CodeFragment><span lang=EN-US>boolean</span></span><span lang=EN-US>, </span><span class=CodeFragment><span lang=EN-US>string</span></span><span lang=EN-US>, and </span><span class=CodeFragment><span lang=EN-US>void</span></span><span lang=EN-US>
 keywords reference the Any type and the Number, Boolean, String, and Void primitive
 types respectively.</span></p>
 
 <p class=Grammar><span lang=EN-US>PredefinedType:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>any</span></span><span
-		lang=EN-US><br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>any</span></span><span lang=EN-US><br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>number<br>
 boolean</span></span><span lang=EN-US><br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>string<br>
@@ -707,10 +638,9 @@ void</span></span></p>
 <p class=MsoNormal><span lang=EN-US>The predefined type keywords are reserved
 and cannot be used as names of user defined types.</span></p>
 
-<h3><a name="_Toc364255717"></a><a name="_Ref343176491"></a><a
-		name="_Ref343165311"></a><a name="_Ref342558726"><span lang=EN-US>3.6.2<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Type </span></a><span lang=EN-US>References</span></h3>
+<h3>
+	<a name="_Toc364255717"></a><a name="_Ref343176491"></a><a name="_Ref343165311"></a><a name="_Ref342558726"><span lang=EN-US>3.6.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Type </span></a><span lang=EN-US>References</span>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>A type reference references a named type or
 type parameter through its name and, in the case of a generic type, supplies a
@@ -735,7 +665,8 @@ type or type parameter. A reference to a generic type must be followed by a
 list of <span class=Production>TypeArguments</span>.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Resolution of a <span class=Production>TypeName</span>
-consisting of a single identifier is described in section </span><span lang=EN-US>2.4</span><span lang=EN-US>.</span></p>
+consisting of a single identifier is described in section </span><span lang=EN-US>2.4</span><span lang=EN-US>.</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Resolution of a <span class=Production>TypeName</span>
 of the form <i>M.N</i>, where <i>M</i> is a <span class=Production>ModuleName</span>
@@ -745,7 +676,8 @@ and the resulting module contains an exported named type <i>N</i>, then <i>M.N</
 refers to that member. Otherwise, <i>M.N</i> is undefined.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Resolution of a <span class=Production>ModuleName</span>
-consisting of a single identifier is described in section </span><span lang=EN-US>2.4</span><span lang=EN-US>.</span></p>
+consisting of a single identifier is described in section </span><span lang=EN-US>2.4</span><span lang=EN-US>.</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Resolution of a <span class=Production>ModuleName</span>
 of the form <i>M.N</i>, where <i>M</i> is a <span class=Production>ModuleName</span>
@@ -762,14 +694,13 @@ include a list of type arguments enclosed in angle brackets and separated by
 commas.</span></p>
 
 <p class=Grammar><span lang=EN-US>TypeArguments:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>&lt;</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;TypeArgumentList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																		   style='font-style:normal'>&gt;</span></span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>&lt;</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeArgumentList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>&gt;</span></span>
+</p>
 
 <p class=Grammar><span lang=EN-US>TypeArgumentList:<br>
 TypeArgument<br>
-TypeArgumentList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-													 style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeArgument</span></p>
+TypeArgumentList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeArgument</span>
+</p>
 
 <p class=Grammar><span lang=EN-US>TypeArgument:<br>
 Type</span></p>
@@ -779,49 +710,39 @@ required to specify exactly one type argument for each type parameter of the
 referenced generic type. Each type argument must be assignable to (section </span><span lang=EN-US>3.8.3</span><span lang=EN-US>) the constraint of the corresponding
 type parameter or otherwise an error occurs. An example:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> A { a: <span style='color:blue;background:white'>string</span>; }</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> A { a: <span style='color:blue;background:white'>string</span>; }</span>
+</p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> B <span style='color:blue;background:white'>extends</span> A { b: <span
-		style='color:blue;background:white'>string</span>; }</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> B <span style='color:blue;background:white'>extends</span> A { b: <span style='color:blue;background:white'>string</span>; }</span>
+</p>
 
-<p class=Code><span lang=EN-US style='color:blue'>interface</span><span
-		lang=EN-US> C <span style='color:blue;background:white'>extends</span> B { c: <span
-		style='color:blue;background:white'>string</span>; }</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue'>interface</span><span lang=EN-US> C <span style='color:blue;background:white'>extends</span> B { c: <span style='color:blue;background:white'>string</span>; }</span>
+</p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> G&lt;T, U <span style='color:blue;background:white'>extends</span> B&gt;
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> G&lt;T, U <span style='color:blue;background:white'>extends</span> B&gt;
 {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;x: T;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;y: U;<br>
 }</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> v1: G&lt;A, C&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> v1: G&lt;A, C&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;
 background:white'>// Ok</span><br>
-<span style='color:blue;background:white'>var</span> v2: G&lt;{ a: <span
-			style='color:blue;background:white'>string</span> }, C&gt;;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Ok, equivalent to G&lt;A, C&gt;</span><br>
-<span style='color:blue;background:white'>var</span> v3: G&lt;A, A&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Error, A not valid argument for U</span><span
-			style='color:green'><br>
+<span style='color:blue;background:white'>var</span> v2: G&lt;{ a: <span style='color:blue;background:white'>string</span> }, C&gt;;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Ok, equivalent to G&lt;A, C&gt;</span><br>
+<span style='color:blue;background:white'>var</span> v3: G&lt;A, A&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Error, A not valid argument for U</span><span style='color:green'><br>
 </span><span style='color:blue;background:white'>var</span> v4: G&lt;G&lt;A, B&gt;,
 C&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Ok</span><br>
-<span style='color:blue;background:white'>var</span> v5: G&lt;<span
-			style='color:blue;background:white'>any</span>, <span style='color:blue;
+<span style='color:blue;background:white'>var</span> v5: G&lt;<span style='color:blue;background:white'>any</span>, <span style='color:blue;
 background:white'>any</span>&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;
 background:white'>// Ok</span><br>
-<span style='color:blue;background:white'>var</span> v6: G&lt;<span
-			style='color:blue;background:white'>any</span>&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// Error, wrong </span><span
-			style='color:green'>number of arguments</span><br>
-<span style='color:blue;background:white'>var</span> v7: G;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// </span><span style='color:green'>Error,
+<span style='color:blue;background:white'>var</span> v6: G&lt;<span style='color:blue;background:white'>any</span>&gt;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// Error, wrong </span><span style='color:green'>number of arguments</span><br>
+<span style='color:blue;background:white'>var</span> v7: G;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span style='color:green'>Error,
 no arguments</span></span></p>
 
-<p class=MsoNormal><span lang=EN-US>A type argument is simply a <span
-		class=Production>Type</span> and may itself be a type reference to a generic
+<p class=MsoNormal><span lang=EN-US>A type argument is simply a <span class=Production>Type</span> and may itself be a type reference to a generic
 type, as demonstrated by ‘v4’ in the example above.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>A type reference to a generic type <i>G</i>
@@ -829,11 +750,9 @@ designates a type wherein all occurrences of <i>G</i>’s type parameters have
 been replaced with the actual type arguments supplied in the type reference.
 For example, the declaration of ‘v1’ above is equivalent to:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> v1: {<br>
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> v1: {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;x: { a: <span style='color:blue;background:white'>string</span>; }<br>
-&nbsp;&nbsp;&nbsp;&nbsp;y: { a: <span style='color:blue;background:white'>string</span>; b: <span
-			style='color:blue;background:white'>string</span>; c: <span style='color:blue;
+&nbsp;&nbsp;&nbsp;&nbsp;y: { a: <span style='color:blue;background:white'>string</span>; b: <span style='color:blue;background:white'>string</span>; c: <span style='color:blue;
 background:white'>string</span> };<br>
 };</span></p>
 
@@ -844,20 +763,19 @@ background:white'>string</span> };<br>
 expression.</span></p>
 
 <p class=Grammar><span lang=EN-US>TypeQuery:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>typeof</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;TypeQueryExpression</span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>typeof</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeQueryExpression</span>
+</p>
 
 <p class=Grammar><span lang=EN-US>TypeQueryExpression:<br>
 Identifier<br>
-TypeQueryExpression&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														style='font-style:normal'>.</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;IdentifierName</span></p>
+TypeQueryExpression&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>.</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;IdentifierName</span>
+</p>
 
-<p class=MsoNormal><span lang=EN-US>A type query consists of the keyword </span><span
-		class=CodeFragment><span lang=EN-US>typeof</span></span><span lang=EN-US>
+<p class=MsoNormal>
+	<span lang=EN-US>A type query consists of the keyword </span><span class=CodeFragment><span lang=EN-US>typeof</span></span><span lang=EN-US>
 followed by an expression. The expression is restricted to a single identifier
 or a sequence of identifiers separated by periods. The expression is processed
-as an identifier expression (section </span><span
-		lang=EN-US>4.3</span><span lang=EN-US>) or property access expression (section </span><span lang=EN-US>4.10</span><span lang=EN-US>), the type of which becomes the result.
+as an identifier expression (section </span><span lang=EN-US>4.3</span><span lang=EN-US>) or property access expression (section </span><span lang=EN-US>4.10</span><span lang=EN-US>), the type of which becomes the result.
 Similar to other static typing constructs, type queries are erased from the
 generated JavaScript code and add no run-time overhead.</span></p>
 
@@ -865,16 +783,15 @@ generated JavaScript code and add no run-time overhead.</span></p>
 anonymous types that are generated by various constructs such as object
 literals, function declarations, and module declarations. For example:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> a = { x: 10, y: 20 };<br>
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> a = { x: 10, y: 20 };<br>
 <span style='color:blue;background:white'>var</span> b: <span style='color:
 blue;background:white'>typeof</span> a;</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Above, ‘b’ is given the same type as ‘a’,
 namely ‘{ x: number; y: number; }’.</span></p>
 
-<h3><a name="_Toc364255719"></a><a name="_Ref343720352"></a><a
-		name="_Ref343718476"><span lang=EN-US>3.6.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+<h3>
+	<a name="_Toc364255719"></a><a name="_Ref343720352"></a><a name="_Ref343718476"><span lang=EN-US>3.6.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Type Literals</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>Type literals compose other types into new anonymous
@@ -888,120 +805,91 @@ ConstructorType</span></p>
 
 <p class=Grammar><span lang=EN-US>ArrayType:<br>
 PredefinedType&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>]</span></span><span lang=EN-US> <br>
+normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>]</span></span><span lang=EN-US> <br>
 TypeReference&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>]</span></span><span lang=EN-US> <br>
+normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>]</span></span><span lang=EN-US> <br>
 ObjectType&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>]</span></span><span lang=EN-US> <br>
+normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>]</span></span><span lang=EN-US> <br>
 ArrayType&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>]</span></span></p>
+normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>]</span></span>
+</p>
 
 <p class=Grammar><span lang=EN-US>FunctionType:<br>
-TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																 style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;ParameterList<sub>opt</sub>&nbsp;&nbsp;
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
+TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;ParameterList<sub>opt</sub>&nbsp;&nbsp;
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
 normal'>=&gt;</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Type</span></p>
 
 <p class=Grammar><span lang=EN-US>ConstructorType:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>new</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;
-ParameterList<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																style='font-style:normal'>)</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span
-		class=Terminal><span lang=EN-US style='font-style:normal'>=&gt;</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;Type</span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>new</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;
+ParameterList<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>=&gt;</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Type</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Object type literals are the primary form
-of type literals and are described in section </span><span
-		lang=EN-US>3.7</span><span lang=EN-US>. Array, function, and constructor type
+of type literals and are described in section </span><span lang=EN-US>3.7</span><span lang=EN-US>. Array, function, and constructor type
 literals are simply shorthand notations for other types:</span></p>
 
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
-	   style='margin-left:36.0pt;border-collapse:collapse;border:none'>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 style='margin-left:36.0pt;border-collapse:collapse;border:none'>
 	<tr style='height:21.6pt'>
 		<td width=271 style='width:202.95pt;border:solid windowtext 1.0pt;background:
   #D9D9D9;padding:0cm 5.4pt 0cm 5.4pt;height:21.6pt'>
 			<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
-  text-align:center;line-height:normal;page-break-after:avoid'><span
-					lang=EN-US>Type literal</span></p>
+  text-align:center;line-height:normal;page-break-after:avoid'><span lang=EN-US>Type literal</span></p>
 		</td>
 		<td width=271 style='width:202.95pt;border:solid windowtext 1.0pt;border-left:
   none;background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt;height:21.6pt'>
 			<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
-  text-align:center;line-height:normal;page-break-after:avoid'><span
-					lang=EN-US>Equivalent form</span></p>
+  text-align:center;line-height:normal;page-break-after:avoid'><span lang=EN-US>Equivalent form</span></p>
 		</td>
 	</tr>
 	<tr style='height:21.6pt'>
 		<td width=271 style='width:202.95pt;border:solid windowtext 1.0pt;border-top:
   none;padding:0cm 5.4pt 0cm 5.4pt;height:21.6pt'>
 			<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;page-break-after:avoid'><i><span lang=EN-US>T</span></i><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>[</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>]</span></span></p>
+  normal;page-break-after:avoid'>
+				<i><span lang=EN-US>T</span></i><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>[</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>]</span></span>
+			</p>
 		</td>
 		<td width=271 style='width:202.95pt;border-top:none;border-left:none;
   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:21.6pt'>
 			<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;page-break-after:avoid'><span class=CodeFragment><span lang=EN-US>Array</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span
-					lang=EN-US> <i>T</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span></p>
+  normal;page-break-after:avoid'>
+				<span class=CodeFragment><span lang=EN-US>Array</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span lang=EN-US> <i>T</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span>
+			</p>
 		</td>
 	</tr>
 	<tr style='height:21.6pt'>
 		<td width=271 style='width:202.95pt;border:solid windowtext 1.0pt;border-top:
   none;padding:0cm 5.4pt 0cm 5.4pt;height:21.6pt'>
 			<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;page-break-after:avoid'><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span
-					lang=EN-US> <i>TParams</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>(</span></span><span
-					lang=EN-US> <i>Params</i> </span><span class=CodeFragment><span lang=EN-US>)</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>=&gt;</span></span><span
-					lang=EN-US> <i>Result</i></span></p>
+  normal;page-break-after:avoid'>
+				<span class=CodeFragment><span lang=EN-US>&lt;</span></span><span lang=EN-US> <i>TParams</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>(</span></span><span lang=EN-US> <i>Params</i> </span><span class=CodeFragment><span lang=EN-US>)</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>=&gt;</span></span><span lang=EN-US> <i>Result</i></span>
+			</p>
 		</td>
 		<td width=271 style='width:202.95pt;border-top:none;border-left:none;
   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:21.6pt'>
 			<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;page-break-after:avoid'><span class=CodeFragment><span lang=EN-US>{</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span
-					lang=EN-US> <i>TParams</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>(</span></span><span
-					lang=EN-US> <i>Params</i> </span><span class=CodeFragment><span lang=EN-US>)</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>:</span></span><span
-					lang=EN-US> <i>Result </i></span><span class=CodeFragment><span lang=EN-US>}</span></span></p>
+  normal;page-break-after:avoid'>
+				<span class=CodeFragment><span lang=EN-US>{</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span lang=EN-US> <i>TParams</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>(</span></span><span lang=EN-US> <i>Params</i> </span><span class=CodeFragment><span lang=EN-US>)</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>:</span></span><span lang=EN-US> <i>Result </i></span><span class=CodeFragment><span lang=EN-US>}</span></span>
+			</p>
 		</td>
 	</tr>
 	<tr style='height:21.6pt'>
 		<td width=271 style='width:202.95pt;border:solid windowtext 1.0pt;border-top:
   none;padding:0cm 5.4pt 0cm 5.4pt;height:21.6pt'>
 			<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;page-break-after:avoid'><span class=CodeFragment><span lang=EN-US>new</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span
-					lang=EN-US> <i>TParams</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>(</span></span><span
-					lang=EN-US> <i>Params</i> </span><span class=CodeFragment><span lang=EN-US>)</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>=&gt;</span></span><span
-					lang=EN-US> <i>Result</i></span></p>
+  normal;page-break-after:avoid'>
+				<span class=CodeFragment><span lang=EN-US>new</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span lang=EN-US> <i>TParams</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>(</span></span><span lang=EN-US> <i>Params</i> </span><span class=CodeFragment><span lang=EN-US>)</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>=&gt;</span></span><span lang=EN-US> <i>Result</i></span>
+			</p>
 		</td>
 		<td width=271 style='width:202.95pt;border-top:none;border-left:none;
   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:21.6pt'>
 			<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal;page-break-after:avoid'><span class=CodeFragment><span lang=EN-US>{</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>new</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span
-					lang=EN-US> <i>TParams</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>(</span></span><span
-					lang=EN-US> <i>Params</i> </span><span class=CodeFragment><span lang=EN-US>)</span></span><span
-					lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>:</span></span><span
-					lang=EN-US> <i>Result </i></span><span class=CodeFragment><span lang=EN-US>}</span></span></p>
+  normal;page-break-after:avoid'>
+				<span class=CodeFragment><span lang=EN-US>{</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>new</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>&lt;</span></span><span lang=EN-US> <i>TParams</i> </span><span class=CodeFragment><span lang=EN-US>&gt;</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>(</span></span><span lang=EN-US> <i>Params</i> </span><span class=CodeFragment><span lang=EN-US>)</span></span><span lang=EN-US> </span><span class=CodeFragment><span lang=EN-US>:</span></span><span lang=EN-US> <i>Result </i></span><span class=CodeFragment><span lang=EN-US>}</span></span>
+			</p>
 		</td>
 	</tr>
 </table>
@@ -1039,9 +927,9 @@ type literal</span></p>
 
 <p class=Code><span lang=EN-US>{ (): string }[]</span></p>
 
-<h2><a name="_Toc364255720"></a><a name="_Ref343592676"><span lang=EN-US>3.7<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Object Type Literals</span></a></h2>
+<h2>
+	<a name="_Toc364255720"></a><a name="_Ref343592676"><span lang=EN-US>3.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Object Type Literals</span></a>
+</h2>
 
 <p class=MsoNormal><span lang=EN-US>An object type literal defines an object
 type by specifying the set of members that are statically considered to be
@@ -1049,9 +937,8 @@ present in instances of the type. Object type literals can be given names using
 interface declarations but are otherwise anonymous.</span></p>
 
 <p class=Grammar><span lang=EN-US>ObjectType:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;TypeBody<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>}</span></span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeBody<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span>
+</p>
 
 <p class=Grammar><span lang=EN-US>TypeBody:<br>
 TypeMemberList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
@@ -1104,12 +991,12 @@ of a property signature must be unique within its containing type. If the proper
 name is followed by a question mark, the property is optional. Otherwise, the
 property is required.</span></p>
 
-<p class=MsoNormal><span lang=EN-US>If a property signature omits a <span
-		class=Production>TypeAnnotation</span>, the Any type is assumed.</span></p>
+<p class=MsoNormal><span lang=EN-US>If a property signature omits a <span class=Production>TypeAnnotation</span>, the Any type is assumed.</span>
+</p>
 
-<h3><a name="_Toc364255722"></a><a name="_Ref343690028"><span lang=EN-US>3.7.2<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Call Signatures</span></a></h3>
+<h3>
+	<a name="_Toc364255722"></a><a name="_Ref343690028"><span lang=EN-US>3.7.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Call Signatures</span></a>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>A call signature defines the type
 parameters, parameter list, and return type associated with applying a call
@@ -1118,25 +1005,23 @@ instance of the containing type. A type may <b><i>overload</i></b> call
 operations by defining multiple different call signatures.</span></p>
 
 <p class=Grammar><span lang=EN-US>CallSignature:<br>
-TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																 style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;ParameterList<sub>opt</sub>&nbsp;&nbsp;
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub></span></p>
+TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;ParameterList<sub>opt</sub>&nbsp;&nbsp;
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub></span>
+</p>
 
-<p class=MsoNormal><span lang=EN-US>A call signature that includes <span
-		class=Production>TypeParameters</span> (section </span><span
-		lang=EN-US>3.5.1</span><span lang=EN-US>) is called a <b><i>generic call
-	signature</i></b>. Conversely, a call signature with no <span class=Production>TypeParameters</span>
+<p class=MsoNormal><span lang=EN-US>A call signature that includes <span class=Production>TypeParameters</span> (section </span><span lang=EN-US>3.5.1</span><span lang=EN-US>) is called a <b><i>generic call signature</i></b>. Conversely, a call signature with no <span class=Production>TypeParameters</span>
 is called a non-generic call signature.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>As well as being members of object type
-literals, call signatures occur in method signatures (section </span><span lang=EN-US>3.7.5</span><span lang=EN-US>), function expressions (section </span><span lang=EN-US>4.9</span><span lang=EN-US>), and function declarations (section </span><span lang=EN-US>6.1</span><span lang=EN-US>).</span></p>
+literals, call signatures occur in method signatures (section </span><span lang=EN-US>3.7.5</span><span lang=EN-US>), function expressions (section </span><span lang=EN-US>4.9</span><span lang=EN-US>), and function declarations (section </span><span lang=EN-US>6.1</span><span lang=EN-US>).</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>An object type containing call signatures
 is said to be a <b><i>function type</i></b>.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>It is an error for a type to declare
-multiple call signatures that are considered identical (section </span><span lang=EN-US>3.8.1</span><span lang=EN-US>) or differ only in their return types.</span></p>
+multiple call signatures that are considered identical (section </span><span lang=EN-US>3.8.1</span><span lang=EN-US>) or differ only in their return types.</span>
+</p>
 
 <h4><a name="_Ref343771118"><span lang=EN-US>3.7.2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Type Parameters</span></a></h4>
@@ -1154,15 +1039,13 @@ and return type annotations in their associated call signature.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Type arguments for call signature type
 parameters may be explicitly specified in a call operation or may, when
-possible, be inferred (section </span><span
-		lang=EN-US>4.12.2</span><span lang=EN-US>) from the types of the regular arguments
+possible, be inferred (section </span><span lang=EN-US>4.12.2</span><span lang=EN-US>) from the types of the regular arguments
 in the call.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Some examples of call signatures with type
 parameters:</span></p>
 
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
-	   style='margin-left:36.0pt;border-collapse:collapse;border:none'>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 style='margin-left:36.0pt;border-collapse:collapse;border:none'>
 	<tr style='height:21.6pt'>
 		<td width=277 style='width:207.9pt;border:solid windowtext 1.0pt;padding:
   3.6pt 5.75pt 3.6pt 5.75pt;height:21.6pt'>
@@ -1238,22 +1121,18 @@ finally followed by an optional rest parameter.</span></p>
 RequiredParameterList<br>
 OptionalParameterList<br>
 RestParameter<br>
-RequiredParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;
+RequiredParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;
 OptionalParameterList<br>
-RequiredParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;RestParameter<br>
-OptionalParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;RestParameter<br>
-RequiredParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;
-OptionalParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;RestParameter</span></p>
+RequiredParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;RestParameter<br>
+OptionalParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;RestParameter<br>
+RequiredParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;
+OptionalParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;RestParameter</span>
+</p>
 
 <p class=Grammar><span lang=EN-US>RequiredParameterList:<br>
 RequiredParameter<br>
-RequiredParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;RequiredParameter</span></p>
+RequiredParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;RequiredParameter</span>
+</p>
 
 <p class=Grammar><span lang=EN-US>RequiredParameter:<br>
 PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub><br>
@@ -1261,32 +1140,29 @@ Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='
 normal'>:</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;StringLiteral</span></p>
 
 <p class=Grammar><span lang=EN-US>PublicOrPrivate:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>public</span></span><span
-		lang=EN-US><br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>public</span></span><span lang=EN-US><br>
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>private</span></span></p>
 
 <p class=Grammar><span lang=EN-US>OptionalParameterList:<br>
 OptionalParameter<br>
-OptionalParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;OptionalParameter</span></p>
+OptionalParameterList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;OptionalParameter</span>
+</p>
 
 <p class=Grammar><span lang=EN-US>OptionalParameter:<br>
-PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>?</span></span><span lang=EN-US>&nbsp;&nbsp;
+PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>?</span></span><span lang=EN-US>&nbsp;&nbsp;
 TypeAnnotation<sub>opt</sub><br>
 PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub>&nbsp;&nbsp;
 Initialiser</span></p>
 
 <p class=Grammar><span lang=EN-US>RestParameter:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>...</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub></span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>...</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub></span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Parameter names must be unique. A
 compile-time error occurs if two or more parameters have the same name.</span></p>
 
-<p class=MsoNormal><span lang=EN-US>A parameter is permitted to include a </span><span
-		class=CodeFragment><span lang=EN-US>public</span></span><span lang=EN-US> or </span><span
-		class=CodeFragment><span lang=EN-US>private</span></span><span lang=EN-US>
+<p class=MsoNormal>
+	<span lang=EN-US>A parameter is permitted to include a </span><span class=CodeFragment><span lang=EN-US>public</span></span><span lang=EN-US> or </span><span class=CodeFragment><span lang=EN-US>private</span></span><span lang=EN-US>
 modifier only if it occurs in the parameter list of a <span class=Production>ConstructorImplementation</span>
 (section </span><span lang=EN-US>8.3.1</span><span lang=EN-US>).</span></p>
 
@@ -1295,23 +1171,19 @@ considered to be of that type. A type annotation for a rest parameter must
 denote an array type.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>A parameter with no type annotation or
-initializer is considered to be of type </span><span class=CodeFragment><span
-		lang=EN-US>any</span></span><span lang=EN-US>, unless it is a rest parameter,
-in which case it is considered to be of type </span><span class=CodeFragment><span
-		lang=EN-US>any[]</span></span><span lang=EN-US>.</span></p>
+initializer is considered to be of type </span><span class=CodeFragment><span lang=EN-US>any</span></span><span lang=EN-US>, unless it is a rest parameter,
+in which case it is considered to be of type </span><span class=CodeFragment><span lang=EN-US>any[]</span></span><span lang=EN-US>.</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>When a parameter type annotation specifies
 a string literal type, the containing signature is a specialized signature
 (section </span><span lang=EN-US>3.7.2.4</span><span lang=EN-US>). Specialized
-signatures are not permitted in conjunction with a function body, i.e. the <span
-			class=Production>FunctionExpression</span>, <span class=Production>FunctionImplementation</span>,
-<span class=Production>MemberFunctionImplementation</span>, and <span
-			class=Production>ConstructorImplementation</span> grammar productions do not
+signatures are not permitted in conjunction with a function body, i.e. the <span class=Production>FunctionExpression</span>, <span class=Production>FunctionImplementation</span>,
+<span class=Production>MemberFunctionImplementation</span>, and <span class=Production>ConstructorImplementation</span> grammar productions do not
 permit parameters with string literal types.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>A parameter can be marked optional by
-following its name with a question mark (</span><span class=CodeFragment><span
-		lang=EN-US>?</span></span><span lang=EN-US>) or by including an initializer.
+following its name with a question mark (</span><span class=CodeFragment><span lang=EN-US>?</span></span><span lang=EN-US>) or by including an initializer.
 The form that includes an initializer is permitted only in conjunction with a
 function body, i.e. only in a <span class=Production>FunctionExpression</span>,
 <span class=Production>FunctionImplementation</span>, <span class=Production>MemberFunctionImplementation</span>,
@@ -1324,8 +1196,7 @@ or <span class=Production>ConstructorImplementation</span> grammar production.</
 
 <p class=MsoNormal><span lang=EN-US>If present, a call signature’s return type
 annotation specifies the type of the value computed and returned by a call
-operation. A </span><span class=CodeFragment><span lang=EN-US>void</span></span><span
-		lang=EN-US> return type annotation is used to indicate that a function has no
+operation. A </span><span class=CodeFragment><span lang=EN-US>void</span></span><span lang=EN-US> return type annotation is used to indicate that a function has no
 return value.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>When a call signature with no return type
@@ -1342,15 +1213,13 @@ in section </span><span lang=EN-US>6.3</span><span lang=EN-US>.</span></p>
 </span></span><span lang=EN-US>Specialized Signatures</span></a></h4>
 
 <p class=MsoNormal><span lang=EN-US>When a parameter type annotation specifies
-a string literal type (section </span><span
-		lang=EN-US>3.2.8</span><span lang=EN-US>), the containing signature is considered
+a string literal type (section </span><span lang=EN-US>3.2.8</span><span lang=EN-US>), the containing signature is considered
 a specialized signature. Specialized signatures are used to express patterns
 where specific string values for some parameters cause the types of other parameters
 or the function result to become further specialized. For example, the
 declaration</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> Document {<br>
+<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> Document {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;createElement(tagName: <span style='color:blue;background:white'>string</span>):
 HTMLElement;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;createElement(tagName: <span style='color:maroon;background:white'>&quot;div&quot;</span>):
@@ -1382,19 +1251,15 @@ type.</span></p>
 </span></span><span lang=EN-US>Construct Signatures</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>A construct signature defines the parameter
-list and return type associated with applying the </span><span
-		class=CodeFragment><span lang=EN-US>new</span></span><span lang=EN-US> operator
+list and return type associated with applying the </span><span class=CodeFragment><span lang=EN-US>new</span></span><span lang=EN-US> operator
 (section </span><span lang=EN-US>4.11</span><span lang=EN-US>) to an instance
-of the containing type. A type may overload </span><span class=CodeFragment><span
-		lang=EN-US>new</span></span><span lang=EN-US> operations by defining multiple construct
+of the containing type. A type may overload </span><span class=CodeFragment><span lang=EN-US>new</span></span><span lang=EN-US> operations by defining multiple construct
 signatures with different parameter lists.</span></p>
 
 <p class=Grammar><span lang=EN-US>ConstructSignature:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>new</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;
-ParameterList<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																style='font-style:normal'>)</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub></span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>new</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;
+ParameterList<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub></span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>The type parameters, parameter list, and
 return type of a construct signature are subject to the same rules as a call
@@ -1404,45 +1269,32 @@ signature.</span></p>
 said to be a <b><i>constructor type</i></b>.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>It is an error for a type to declare
-multiple construct signatures that are considered identical (section </span><span lang=EN-US>3.8.1</span><span lang=EN-US>) or differ only by their return types.</span></p>
+multiple construct signatures that are considered identical (section </span><span lang=EN-US>3.8.1</span><span lang=EN-US>) or differ only by their return types.</span>
+</p>
 
-<h3><a name="_Toc364255724"></a><a name="_Ref351906593"></a><a
-		name="_Ref351648322"><span lang=EN-US>3.7.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+<h3>
+	<a name="_Toc364255724"></a><a name="_Ref351906593"></a><a name="_Ref351648322"><span lang=EN-US>3.7.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>Index Signatures</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>An index signature defines a type
 constraint for properties in the containing type.</span></p>
 
 <p class=Grammar><span lang=EN-US>IndexSignature:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>[</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																	 style='font-style:normal'>:</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span
-		class=Terminal><span lang=EN-US style='font-style:normal'>string</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>:</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>string</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
 normal'>]</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeAnnotation<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>[</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																	 style='font-style:normal'>:</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span
-		class=Terminal><span lang=EN-US style='font-style:normal'>number</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>[</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>:</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>number</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
 normal'>]</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;TypeAnnotation</span></p>
 
 <p class=MsoNormal><span lang=EN-US>There are two kinds of index signatures:</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><b><i><span lang=EN-US>String index signatures</span></i></b><span
-		lang=EN-US>, specified using index type </span><span class=CodeFragment><span
-		lang=EN-US>string</span></span><span lang=EN-US>, define type constraints for
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><i><span lang=EN-US>String index signatures</span></i></b><span lang=EN-US>, specified using index type </span><span class=CodeFragment><span lang=EN-US>string</span></span><span lang=EN-US>, define type constraints for
 all properties and numeric index signatures in the containing type.
 Specifically, in a type with a string index signature of type <i>T</i>, all
 properties and numeric index signatures must have types that are subtypes of <i>T</i>.</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><b><i><span lang=EN-US>Numeric index signatures</span></i></b><span
-		lang=EN-US>, specified using index type </span><span class=CodeFragment><span
-		lang=EN-US>number</span></span><span lang=EN-US>, define type constraints for
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><i><span lang=EN-US>Numeric index signatures</span></i></b><span lang=EN-US>, specified using index type </span><span class=CodeFragment><span lang=EN-US>number</span></span><span lang=EN-US>, define type constraints for
 all numerically named properties in the containing type. Specifically, in a
 type with a numeric index signature of type <i>T</i>, all numerically named
 properties must have types that are subtypes of <i>T</i>.</span></p>
@@ -1454,11 +1306,12 @@ the abstract operation defined in ECMAScript specification.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Index signatures affect the determination
 of the type that results from applying a bracket notation property access to an
-instance of the containing type, as described in section </span><span lang=EN-US>4.10</span><span lang=EN-US>.</span></p>
+instance of the containing type, as described in section </span><span lang=EN-US>4.10</span><span lang=EN-US>.</span>
+</p>
 
-<h3><a name="_Toc364255725"></a><a name="_Ref343599928"><span lang=EN-US>3.7.5<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Method Signatures</span></a></h3>
+<h3>
+	<a name="_Toc364255725"></a><a name="_Ref343599928"><span lang=EN-US>3.7.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Method Signatures</span></a>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>A method signature is shorthand for
 declaring a property of a function type.</span></p>
@@ -1474,18 +1327,15 @@ type literals and interfaces can declare optional properties.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>A method signature of the form</span></p>
 
-<p class=Code><span class=CodeItalic><span lang=EN-US>PropName</span></span><span
-		lang=EN-US> &lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList</span></span><span
-		lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList</span></span><span
-		lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType</span></span></p>
+<p class=Code>
+	<span class=CodeItalic><span lang=EN-US>PropName</span></span><span lang=EN-US> &lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList</span></span><span lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList</span></span><span lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType</span></span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>is equivalent to the property declaration</span></p>
 
-<p class=Code><span class=CodeItalic><span lang=EN-US>PropName</span></span><span
-		lang=EN-US> : { &lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList</span></span><span
-		lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList</span></span><span
-		lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType</span></span><span
-		lang=EN-US> }</span></p>
+<p class=Code>
+	<span class=CodeItalic><span lang=EN-US>PropName</span></span><span lang=EN-US> : { &lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList</span></span><span lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList</span></span><span lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType</span></span><span lang=EN-US> }</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>A literal type may <b><i>overload</i></b> a
 method by declaring multiple method signatures with the same name but differing
@@ -1494,53 +1344,30 @@ or all be optional (question mark included). A set of overloaded method
 signatures correspond to a declaration of a single property with a type
 composed from an equivalent set of call signatures. Specifically</span></p>
 
-<p class=Code><span class=CodeItalic><span lang=EN-US>PropName</span></span><span
-		lang=EN-US> &lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>1</sub></span></span><span
-		lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>1</sub></span></span><span
-		lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>1</sub></span></span><span
-		lang=EN-US> ;</span><span class=CodeItalic><span lang=EN-US><br>
-PropName</span></span><span lang=EN-US> &lt; </span><span class=CodeItalic><span
-		lang=EN-US>TypeParamList<sub>2</sub></span></span><span lang=EN-US> &gt; ( </span><span
-		class=CodeItalic><span lang=EN-US>ParamList<sub>2</sub></span></span><span
-		lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>2</sub></span></span><span
-		lang=EN-US> ;<br>
+<p class=Code>
+	<span class=CodeItalic><span lang=EN-US>PropName</span></span><span lang=EN-US> &lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>1</sub></span></span><span lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>1</sub></span></span><span lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>1</sub></span></span><span lang=EN-US> ;</span><span class=CodeItalic><span lang=EN-US><br>
+PropName</span></span><span lang=EN-US> &lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>2</sub></span></span><span lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>2</sub></span></span><span lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>2</sub></span></span><span lang=EN-US> ;<br>
 …</span><span class=CodeItalic><span lang=EN-US><br>
-PropName</span></span><span lang=EN-US> &lt; </span><span class=CodeItalic><span
-		lang=EN-US>TypeParamList<sub>n</sub></span></span><span lang=EN-US> &gt; ( </span><span
-		class=CodeItalic><span lang=EN-US>ParamList<sub>n</sub></span></span><span
-		lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>n</sub></span></span><span
-		lang=EN-US> ;</span></p>
+PropName</span></span><span lang=EN-US> &lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>n</sub></span></span><span lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>n</sub></span></span><span lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>n</sub></span></span><span lang=EN-US> ;</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>is equivalent to</span></p>
 
-<p class=Code><span class=CodeItalic><span lang=EN-US>PropName</span></span><span
-		lang=EN-US> : {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>1</sub></span></span><span
-		lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>1</sub></span></span><span
-		lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>1</sub></span></span><span
-		lang=EN-US> ;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>2</sub></span></span><span
-		lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>2</sub></span></span><span
-		lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>2</sub></span></span><span
-		lang=EN-US> ;<br>
+<p class=Code><span class=CodeItalic><span lang=EN-US>PropName</span></span><span lang=EN-US> : {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>1</sub></span></span><span lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>1</sub></span></span><span lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>1</sub></span></span><span lang=EN-US> ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>2</sub></span></span><span lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>2</sub></span></span><span lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>2</sub></span></span><span lang=EN-US> ;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;…<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>n</sub></span></span><span
-		lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>n</sub></span></span><span
-		lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>n</sub></span></span><span
-		lang=EN-US> ; }</span></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt; </span><span class=CodeItalic><span lang=EN-US>TypeParamList<sub>n</sub></span></span><span lang=EN-US> &gt; ( </span><span class=CodeItalic><span lang=EN-US>ParamList<sub>n</sub></span></span><span lang=EN-US> ) : </span><span class=CodeItalic><span lang=EN-US>ReturnType<sub>n</sub></span></span><span lang=EN-US> ; }</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>In the following example of an object type</span></p>
 
 <p class=Code><span lang=EN-US>{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;func1(x: <span style='color:blue;background:white'>number</span>): <span
-			style='color:blue;background:white'>number</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// </span><span style='color:green'>Method
+&nbsp;&nbsp;&nbsp;&nbsp;func1(x: <span style='color:blue;background:white'>number</span>): <span style='color:blue;background:white'>number</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// </span><span style='color:green'>Method
 signature</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;func2: (x: <span style='color:blue;background:white'>number</span>) =&gt; <span
-			style='color:blue;background:white'>number</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;
+&nbsp;&nbsp;&nbsp;&nbsp;func2: (x: <span style='color:blue;background:white'>number</span>) =&gt; <span style='color:blue;background:white'>number</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;
 background:white'>// </span><span style='color:green'>Function type literal</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;func3: { (x: <span style='color:blue;background:white'>number</span>): <span
-			style='color:blue;background:white'>number</span> };&nbsp;&nbsp;&nbsp;<span style='color:green;
+&nbsp;&nbsp;&nbsp;&nbsp;func3: { (x: <span style='color:blue;background:white'>number</span>): <span style='color:blue;background:white'>number</span> };&nbsp;&nbsp;&nbsp;<span style='color:green;
 background:white'>// </span><span style='color:green'>Object type literal</span><br>
 }</span></p>
 
@@ -1549,15 +1376,11 @@ are all of the same type, namely an object type with a single call signature
 taking a number and returning a number. Likewise, in the object type</span></p>
 
 <p class=Code><span lang=EN-US>{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;func4(x: <span style='color:blue;background:white'>number</span>): <span
-			style='color:blue;background:white'>number</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;func4(s: <span style='color:blue;background:white'>string</span>): <span
-			style='color:blue;background:white'>string</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;func4(x: <span style='color:blue;background:white'>number</span>): <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;func4(s: <span style='color:blue;background:white'>string</span>): <span style='color:blue;background:white'>string</span>;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;func5: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x: <span style='color:blue;background:white'>number</span>): <span
-			style='color:blue;background:white'>number</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(s: <span style='color:blue;background:white'>string</span>): <span
-			style='color:blue;background:white'>string</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x: <span style='color:blue;background:white'>number</span>): <span style='color:blue;background:white'>number</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(s: <span style='color:blue;background:white'>string</span>): <span style='color:blue;background:white'>string</span>;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;};<br>
 }</span></p>
 
@@ -1565,9 +1388,9 @@ taking a number and returning a number. Likewise, in the object type</span></p>
 the same type, namely an object type with two call signatures taking and
 returning number and string respectively.</span></p>
 
-<h2><a name="_Toc364255726"></a><a name="_Ref320780546"><span lang=EN-US>3.8<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Type Relationships</span></a></h2>
+<h2>
+	<a name="_Toc364255726"></a><a name="_Ref320780546"><span lang=EN-US>3.8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Type Relationships</span></a>
+</h2>
 
 <p class=MsoNormal><span lang=EN-US>Types in TypeScript have identity, subtype,
 supertype, and assignment compatibility relationships as defined in the
@@ -1591,48 +1414,40 @@ interface.</span></p>
 members of their constraint (or the ‘Object’ interface if they have no
 constraint), but no other members.</span></p>
 
-<h3><a name="_Ref307995639"></a><a name="_Toc364255727"></a><a
-		name="_Ref326851506"><span lang=EN-US>3.8.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+<h3>
+	<a name="_Ref307995639"></a><a name="_Toc364255727"></a><a name="_Ref326851506"><span lang=EN-US>3.8.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>­Type and Member Identity</span></a></h3>
 
 <p class=MsoNormal><span lang=EN-US>Two types are considered <b><i>identical</i></b>
 when</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>they are the same primitive type,</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>they are the same type parameter, or</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>they are object types with identical sets of
 members.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>Two members are considered identical when</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>they are public properties with identical names,
 optionality, and types,</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>they are private properties originating in the
 same declaration and having identical types,</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>they are identical call signatures,</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>they are identical construct signatures, or</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>they are index signatures of identical kind with
 identical types.</span></p>
 
@@ -1651,8 +1466,8 @@ identity of signatures.</span></p>
 themselves in their internal structure, in effect creating recursive types with
 infinite nesting. For example, the type</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> A { next: A; }</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> A { next: A; }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>contains an infinitely nested sequence of
 ‘next’ properties. Types such as this are perfectly valid but require special
@@ -1663,14 +1478,13 @@ for every directly or indirectly nested occurrence of references to the same <i>
 and <i>T</i> (where same means originating in the same declaration). For
 example, consider the identity relationship between ‘A’ above and ‘B’ below:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> B { next: C; }</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> B { next: C; }</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> C { next: D; }</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> C { next: D; }</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue'>interface</span><span
-		lang=EN-US> D { next: B; }</span></p>
+<p class=Code><span lang=EN-US style='color:blue'>interface</span><span lang=EN-US> D { next: B; }</span></p>
 
 <p class=MsoNormal><span lang=EN-US>To determine whether ‘A’ and ‘B’ are
 identical, first the ‘next’ properties of type ‘A’ and ‘C’ are compared. That
@@ -1683,25 +1497,27 @@ true.</span></p>
 <p class=MsoNormal><span lang=EN-US>When this same technique is used to compare
 generic type references, two type references are considered the same when they
 originate in the same declaration and have identical type arguments. However,
-certain recursive generic patterns are prohibited, as explained in section </span><span lang=EN-US>3.5.2</span><span lang=EN-US>.</span></p>
+certain recursive generic patterns are prohibited, as explained in section </span><span lang=EN-US>3.5.2</span><span lang=EN-US>.</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Private properties match only if they originate
 in the same declaration and have identical types. Two distinct types might
 contain properties that originate in the same declaration if the types are separate
 parameterized references to the same generic class. In the example</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-		lang=EN-US> C&lt;T&gt; { <span style='color:blue;background:white'>private</span>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>class</span><span lang=EN-US> C&lt;T&gt; { <span style='color:blue;background:white'>private</span>
 x: T; }</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> X { f(): <span style='color:blue;background:white'>string</span>; }</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> X { f(): <span style='color:blue;background:white'>string</span>; }</span>
+</p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-		lang=EN-US> Y { f(): <span style='color:blue;background:white'>string</span>; }</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>interface</span><span lang=EN-US> Y { f(): <span style='color:blue;background:white'>string</span>; }</span>
+</p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> a: C&lt;X&gt;;<br>
+<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> a: C&lt;X&gt;;<br>
 <span style='color:blue;background:white'>var</span> b: C&lt;Y&gt;;</span></p>
 
 <p class=MsoNormal><span lang=EN-US>the variables ‘a’ and ‘b’ are of identical
@@ -1710,132 +1526,110 @@ types because the two type references to ‘C’ create types with a private mem
 members have types with identical sets of members once the type arguments ‘X’
 and ‘Y’ are substituted.</span></p>
 
-<h3><a name="_Toc364255728"></a><a name="_Ref326839674"><span lang=EN-US>3.8.2<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Subtypes and Supertypes</span></a></h3>
+<h3>
+	<a name="_Toc364255728"></a><a name="_Ref326839674"><span lang=EN-US>3.8.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Subtypes and Supertypes</span></a>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>Given a type <i>S</i> and a substitution
 type <i>S’</i> where</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>when <i>S</i> is the primitive type Number,
 Boolean, or String, <i>S’</i> is the global interface type ‘Number’, ‘Boolean’,
 or ‘String’,</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>when <i>S</i> is an enum type, <i>S’</i> is the
 global interface type ‘Number’,</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>when <i>S</i> is a type parameter, <i>S’</i> is
 the constraint of that type parameter,</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>otherwise, <i>S’</i> is <i>S</i>,</span></p>
 
 <p class=MsoNormal><i><span lang=EN-US>S</span></i><span lang=EN-US> is a <b><i>subtype</i></b>
 of a type <i>T</i>, and <i>T</i> is a <b><i>supertype</i></b> of <i>S</i>, if
 one of the following is true:</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> and <i>T</i>
 are identical types.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>T</span></i><span lang=EN-US> is the Any
 type.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> is the
 Undefined type.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> is the Null
 type and <i>T</i> is not the Undefined type.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> is an enum type
 and <i>T</i> is the primitive type Number.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> is a string
 literal type and <i>T</i> is the primitive type String.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> and <i>T</i>
 are type parameters, and <i>S</i> is directly or indirectly constrained to <i>T</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S’</span></i><span lang=EN-US> and <i>T</i> are
 object types and, for each member <i>M</i> in <i>T</i>, one of the following is
 true:</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a public property
 and <i>S’</i> contains a public property of the same name as <i>M</i> and a
 type that is a subtype of that of <i>M</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a private
 property and <i>S’</i> contains a private property that originates in the same
 declaration as <i>M</i> and has a type that is a subtype of that of <i>M</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is an optional
 property and <i>S’</i> contains no property of the same name as <i>M</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a non-specialized
 call or construct signature and <i>S’</i> contains a call or construct
 signature <i>N</i> where, when substituting ‘Object’ for all type parameters
 declared by <i>M</i> and <i>N</i> (if any),</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;text-indent:
--18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
+-18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
 signatures are of the same kind (call or construct),</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;text-indent:
--18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
+-18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
 number of non-optional parameters in <i>N</i> is less than or equal to that of <i>M</i>,</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;text-indent:
--18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>for
+-18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>for
 parameter positions that are present in both signatures, each parameter type in
 <i>N</i> is a subtype or supertype of the corresponding parameter type in <i>M</i>,</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;text-indent:
--18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
+-18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
 result type of <i>M</i> is Void, or the result type of <i>N</i> is a subtype of
 that of <i>M</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a string
 index signature of type <i>U</i> and <i>S’</i> contains a string index signature
 of a type that is a subtype of <i>U</i>.</span></p>
 
-<p class=MsoListParagraphCxSpLast style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a numeric
 index signature of type <i>U</i> and <i>S’</i> contains a string or numeric
 index signature of a type that is a subtype of <i>U</i>.</span></p>
@@ -1848,133 +1642,109 @@ expansion of optional parameters of the rest parameter element type.</span></p>
 signatures (section </span><span lang=EN-US>3.7.2.4</span><span lang=EN-US>)
 are not significant when determining subtype and supertype relationships.</span></p>
 
-<h3><a name="_Toc364255729"></a><a name="_Ref330633611"><span lang=EN-US>3.8.3<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Assignment Compatibility</span></a></h3>
+<h3>
+	<a name="_Toc364255729"></a><a name="_Ref330633611"><span lang=EN-US>3.8.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Assignment Compatibility</span></a>
+</h3>
 
 <p class=MsoNormal><span lang=EN-US>Types are required to be assignment
-compatible in<a name="_Ref313351047"> certain circumstances, such as expression
-		and variable types in assignment statements and argument and parameter types in
-		function calls.</a></span></p>
+compatible in<a name="_Ref313351047"> certain circumstances, such as expression and variable types in assignment statements and argument and parameter types in function calls.</a></span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Given a type <i>S</i> and a substitution
 type <i>S’</i> where</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>when <i>S</i> is the primitive type Number,
 Boolean, or String, <i>S’</i> is the global interface type ‘Number’, ‘Boolean’,
 or ‘String’,</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>when <i>S</i> is an enum type, <i>S’</i> is the
 global interface type ‘Number’,</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>when <i>S</i> is a type parameter, <i>S’</i> is the
 constraint of that type parameter,</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>otherwise, <i>S’</i> is <i>S</i>,</span></p>
 
-<p class=MsoNormal><i><span lang=EN-US>S</span></i><span lang=EN-US> is <b><i>assignable
-	to</i></b> a type <i>T</i>, and <i>T</i> is <b><i>assignable from</i></b> <i>S</i>,
+<p class=MsoNormal><i><span lang=EN-US>S</span></i><span lang=EN-US> is <b><i>assignable to</i></b> a type <i>T</i>, and <i>T</i> is <b><i>assignable from</i></b> <i>S</i>,
 if one of the following is true:</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> and <i>T</i>
 are identical types.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> or <i>T</i> is
 the Any type.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> is the
 Undefined type.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> is the Null
 type and <i>T</i> is not the Undefined type.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> or <i>T</i> is
 an enum type and<i> </i>the other is the primitive type Number.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S</span></i><span lang=EN-US> and <i>T</i>
 are type parameters, and <i>S</i> is directly or indirectly constrained to <i>T</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>S’</span></i><span lang=EN-US> and <i>T</i>
 are object types and, for each member <i>M</i> in <i>T</i>, one of the
 following is true:</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a public
 property and <i>S’</i> contains a public property of the same name as <i>M</i>
 and a type that is assignable to that of <i>M</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a private
 property and <i>S’</i> contains a private property that originates in the same
 declaration as <i>M</i> and has a type that is assignable to that of <i>M</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is an optional
 property and <i>S’</i> contains no property of the same name as <i>M</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a non-specialized
 call or construct signature and <i>S’</i> contains a call or construct
 signature <i>N</i> where, when substituting ‘Object’ for all type parameters
 declared by <i>M</i> and <i>N</i> (if any),</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;text-indent:
--18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
+-18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
 signatures are of the same kind (call or construct),</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;text-indent:
--18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
+-18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
 number of non-optional parameters in <i>N</i> is less than or equal to that of <i>M</i>,</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;text-indent:
--18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>for
+-18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>for
 parameter positions that are present in both signatures, each parameter type in
 <i>N</i> is assignable to or from the corresponding parameter type in <i>M</i>,</span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:108.0pt;text-indent:
--18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
+-18.0pt'><span lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span><span lang=EN-US>the
 result type of <i>M</i> is Void, or the result type of <i>N</i> is assignable
 to that of <i>M</i>.</span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'><a
-		name="_Ref315956176"><span lang=EN-US style='font-family:"Courier New"'>o<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><i><span
-		lang=EN-US>M</span></i><span lang=EN-US> is a string index signature of type <i>U</i>
+<p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;text-indent:-18.0pt'>
+	<a name="_Ref315956176"><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a string index signature of type <i>U</i>
 and <i>S’</i> contains a string index signature of a type that is assignable to
 <i>U</i>.</span></a></p>
 
-<p class=MsoListParagraphCxSpLast style='margin-left:72.0pt;text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='margin-left:72.0pt;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span><i><span lang=EN-US>M</span></i><span lang=EN-US> is a numeric
 index signature of type <i>U</i> and <i>S’</i> contains a string or numeric
 index signature of a type that is assignable to <i>U</i>.</span></p>
@@ -1990,13 +1760,11 @@ are not significant when determining assignment compatibility.</span></p>
 <p class=MsoNormal><span lang=EN-US>The assignment compatibility and subtyping
 rules differ only in that</span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-		lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>the Any type is assignable to, but not a subtype
 of, all types, and</span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																	style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span><span lang=EN-US>the primitive type Number is assignable to, but
 not a subtype of, all enum types.</span></p>
 
@@ -2005,60 +1773,59 @@ that, when assigning values or passing parameters, optional properties must
 either be present and of a compatible type, or not be present at all. For
 example:</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-		lang=EN-US style='background:white'> foo(x: { id: <span style='color:blue'>number</span>;
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>function</span><span lang=EN-US style='background:white'> foo(x: { id: <span style='color:blue'>number</span>;
 name?: <span style='color:blue'>string; </span>}) { }</span></p>
 
-<p class=Code><span lang=EN-US style='background:white'>foo({ id: <span
-		style='color:maroon'>1234 </span>});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green'>//
+<p class=Code><span lang=EN-US style='background:white'>foo({ id: <span style='color:maroon'>1234 </span>});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green'>//
 Ok</span><br>
 foo({ id: <span style='color:maroon'>1234</span>, name: <span style='color:
 maroon'>&quot;hello&quot; </span>});&nbsp;&nbsp;<span style='color:green'>// Ok</span><br>
 foo({ id: <span style='color:maroon'>1234</span>, name: <span style='color:
 blue'>false </span>});&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green'>// Error, name of wrong
 type</span><br>
-foo({ name: <span style='color:maroon'>&quot;hello&quot; </span>});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green'>// Error, id required but missing</span></span></p>
+foo({ name: <span style='color:maroon'>&quot;hello&quot; </span>});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green'>// Error, id required but missing</span></span>
+</p>
 
-<h2><a name="_Toc364255730"></a><a name="_Ref331363661"><span lang=EN-US>3.9<span
-		style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
-		lang=EN-US>Widened Types</span></a></h2>
+<h2>
+	<a name="_Toc364255730"></a><a name="_Ref331363661"><span lang=EN-US>3.9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang=EN-US>Widened Types</span></a>
+</h2>
 
 <p class=MsoNormal><span lang=EN-US>In several situations TypeScript infers
 types from context, alleviating the need for the programmer to explicitly
 specify types that appear obvious. For example</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> name = <span style='color:maroon;background:white'>&quot;Steve&quot;</span>;</span></p>
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> name = <span style='color:maroon;background:white'>&quot;Steve&quot;</span>;</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>infers the type of ‘name’ to be the String primitive
 type since that is the type of the value used to initialize it. When inferring
 the type of a variable, property or function result from an expression, the <b><i>widened</i></b>
 form of the source type is used as the inferred type of the target. The widened
 form of a type is the type in which all occurrences of the Null and Undefined
-types have been replaced with the type </span><span class=CodeFragment><span
-		lang=EN-US>any</span></span><span lang=EN-US>.</span></p>
+types have been replaced with the type </span><span class=CodeFragment><span lang=EN-US>any</span></span><span lang=EN-US>.</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>The following example shows the results of
 widening types to produce inferred variable types.</span></p>
 
-<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-		lang=EN-US> a = <span style='color:blue;background:white'>null</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Code>
+	<span lang=EN-US style='color:blue;background:white'>var</span><span lang=EN-US> a = <span style='color:blue;background:white'>null</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <span style='color:green;background:white'>// var a: any</span><br>
 <span style='color:blue;background:white'>var</span> b =
 undefined;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// var b:
 any</span><br>
-<span style='color:blue;background:white'>var</span> c = { x: <span
-			style='color:maroon;background:white'>0</span>, y: <span style='color:blue;
+<span style='color:blue;background:white'>var</span> c = { x: <span style='color:maroon;background:white'>0</span>, y: <span style='color:blue;
 background:white'>null</span> }; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:
 white'>// var c: { x: number, y: any</span> <span style='color:green;
 background:white'>}</span><br>
-<span style='color:blue;background:white'>var</span> d = [ <span
-			style='color:blue;background:white'>null</span>, undefined ];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-			style='color:green;background:white'>// var d: any[]</span></span></p>
+<span style='color:blue;background:white'>var</span> d = [ <span style='color:blue;background:white'>null</span>, undefined ];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// var d: any[]</span></span>
+</p>
 
-<h2><a name="_Toc364255731"></a><a name="_Ref314579145"><span lang="EN-US">3.10</span>&nbsp;<span
-		lang=EN-US>Best Common Type</span></a></h2>
+<h2>
+	<a name="_Toc364255731"></a><a name="_Ref314579145"><span lang="EN-US">3.10</span>&nbsp;<span lang=EN-US>Best Common Type</span></a>
+</h2>
 
 <p class=MsoNormal><span lang=EN-US>In some cases a <b><i>best common type</i></b>
 needs to be inferred from a set of types. In particular, return types of
@@ -2072,10 +1839,9 @@ type is the Any type.</span></p>
 <i>T<sub>2</sub></i>, …, <i>T<sub>n</sub></i> }, the best common type is the
 one <i>T<sub>x</sub></i> in the set that is a supertype of every <i>T<sub>n</sub></i>.
 It is possible that no such type exists, in which case the best common type is
-an empty object type (the type </span><span class=CodeFragment><span
-		lang=EN-US>{}</span></span><span lang=EN-US>).</span></p>
+an empty object type (the type </span><span class=CodeFragment><span lang=EN-US>{}</span></span><span lang=EN-US>).</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
 
-</div>
-s
+</div>s

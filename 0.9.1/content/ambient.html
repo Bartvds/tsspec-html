@@ -14,31 +14,26 @@ tag.</span></a></p>
 
 <p class=MsoNormal><i><span lang=EN-US>TODO: Finish this chapter.</span></i></p>
 
-<h2><a name="_Toc364255831"></a><a name="_Ref343164647"><span lang="EN-US">12.1</span>&nbsp;<span
-		lang=EN-US>Ambient Declarations</span></a></h2>
+<h2>
+	<a name="_Toc364255831"></a><a name="_Ref343164647"><span lang="EN-US">12.1</span>&nbsp;<span lang=EN-US>Ambient Declarations</span></a>
+</h2>
 
-<p class=MsoNormal><span lang=EN-US>Ambient declarations are written using the </span><span
-		class=CodeFragment><span lang=EN-US>declare</span></span><span lang=EN-US> keyword
+<p class=MsoNormal>
+	<span lang=EN-US>Ambient declarations are written using the </span><span class=CodeFragment><span lang=EN-US>declare</span></span><span lang=EN-US> keyword
 and can declare variables, functions, classes, enums, internal modules, or
 external modules.</span></p>
 
 <p class=Grammar><span lang=EN-US>AmbientDeclaration:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientVariableDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientFunctionDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientClassDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientEnumDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientModuleDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientExternalModuleDeclaration</span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientVariableDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientFunctionDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientClassDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientEnumDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientModuleDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>declare</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientExternalModuleDeclaration</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Ambient declarations are only permitted at
-the top-level in a source file (section </span><span
-		lang=EN-US>11.1</span><span lang=EN-US>).</span></p>
+the top-level in a source file (section </span><span lang=EN-US>11.1</span><span lang=EN-US>).</span></p>
 
 <h3><a name="_Toc364255832"><span lang=EN-US>12.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span></span><span lang=EN-US>Ambient Variable Declarations</span></a></h3>
@@ -47,9 +42,8 @@ the top-level in a source file (section </span><span
 a variable in the containing declaration space.</span></p>
 
 <p class=Grammar><span lang=EN-US>AmbientVariableDeclaration:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>var</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span
-		class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>var</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>An ambient variable declaration may
 optionally include a type annotation. If no type annotation is present, the
@@ -65,13 +59,13 @@ permit an initializer expression to be present.</span></p>
 a function in the containing declaration space.</span></p>
 
 <p class=Grammar><span lang=EN-US>AmbientFunctionDeclaration:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;CallSignature&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>;</span></span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>function</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;CallSignature&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Ambient functions may be overloaded by specifying
 multiple ambient function declarations with the same name, but it is an error
-to declare multiple overloads that are considered identical (section </span><span lang=EN-US>3.8.1</span><span lang=EN-US>) or differ only in their return types.</span></p>
+to declare multiple overloads that are considered identical (section </span><span lang=EN-US>3.8.1</span><span lang=EN-US>) or differ only in their return types.</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Ambient function declarations cannot
 specify a function bodies and do not permit default parameter values.</span></p>
@@ -83,13 +77,9 @@ specify a function bodies and do not permit default parameter values.</span></p>
 declaration declares a class instance type and a constructor function in the
 containing module.</span></a></p>
 
-<p class=Grammar><a name="_Ref343164926"></a><a name="_Ref334190903"><span
-		lang=EN-US>AmbientClassDeclaration:<br>
-</span></a><span class=Terminal><span lang=EN-US style='font-style:normal'>class</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;ClassHeritage&nbsp;&nbsp;&nbsp;</span><span
-		class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientClassBody&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																		   style='font-style:normal'>}</span></span></p>
+<p class=Grammar><a name="_Ref343164926"></a><a name="_Ref334190903"><span lang=EN-US>AmbientClassDeclaration:<br>
+</span></a><span class=Terminal><span lang=EN-US style='font-style:normal'>class</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;TypeParameters<sub>opt</sub>&nbsp;&nbsp;&nbsp;ClassHeritage&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientClassBody&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span>
+</p>
 
 <p class=Grammar><span lang=EN-US>AmbientClassBody:<br>
 AmbientClassBodyElements<sub>opt</sub></span></p>
@@ -104,23 +94,14 @@ AmbientMemberDeclaration<br>
 IndexSignature</span></p>
 
 <p class=Grammar><span lang=EN-US>AmbientConstructorDeclaration:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
-normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;ParameterList<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span
-		class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>constructor</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
+normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;ParameterList<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:
 normal'>;</span></span></p>
 
 <p class=Grammar><span lang=EN-US>AmbientMemberDeclaration:<br>
-PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;PropertyName&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span
-		class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span><span
-		lang=EN-US><br>
-PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																  style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;PropertyName&nbsp;&nbsp;&nbsp;CallSignature&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
-		lang=EN-US style='font-style:normal'>;</span></span></p>
+PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;PropertyName&nbsp;&nbsp;&nbsp;TypeAnnotation<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span><span lang=EN-US><br>
+PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>static</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;PropertyName&nbsp;&nbsp;&nbsp;CallSignature&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span>
+</p>
 
 <h3><a name="_Toc364255835"><span lang=EN-US>12.1.4<span style='font:7.0pt "Times New Roman"'>&nbsp;
 </span></span><span lang=EN-US>Ambient Enum Declarations</span></a></h3>
@@ -129,19 +110,17 @@ PublicOrPrivate<sub>opt</sub>&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span
 enum type and an enum object in the containing module.</span></p>
 
 <p class=Grammar><a name="_Ref350870964"><span lang=EN-US>AmbientEnumDeclaration:<br>
-</span></a><span class=Terminal><span lang=EN-US style='font-style:normal'>enum</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																	 style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientEnumBody<sub>opt</sub>&nbsp;&nbsp;
+</span></a><span class=Terminal><span lang=EN-US style='font-style:normal'>enum</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientEnumBody<sub>opt</sub>&nbsp;&nbsp;
 </span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span></p>
 
 <p class=Grammar><span lang=EN-US>AmbientEnumBody:<br>
-AmbientEnumMemberList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub></p>
+AmbientEnumMemberList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><sub><span lang=EN-US>opt</span></sub>
+</p>
 
 <p class=Grammar><span lang=EN-US>AmbientEnumMemberList:<br>
 AmbientEnumMember<br>
-AmbientEnumMemberList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-														  style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientEnumMember</span></p>
+AmbientEnumMemberList&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientEnumMember</span>
+</p>
 
 <p class=Grammar><span lang=EN-US>AmbientEnumMember:<br>
 PropertyName<br>
@@ -160,11 +139,9 @@ computed member.</span></p>
 internal module.</span></p>
 
 <p class=Grammar><a name="_Ref325111315"><span lang=EN-US>AmbientModuleDeclaration:<br>
-</span></a><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;IdentifierPath&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																		 style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;
-AmbientModuleBody&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-													  style='font-style:normal'>}</span></span></p>
+</span></a><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;IdentifierPath&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;
+AmbientModuleBody&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span>
+</p>
 
 <p class=Grammar><span lang=EN-US>AmbientModuleBody:<br>
 AmbientModuleElements<sub>opt</sub></span></p>
@@ -174,31 +151,23 @@ AmbientModuleElement<br>
 AmbientModuleElements&nbsp;&nbsp;&nbsp;AmbientModuleElement</span></p>
 
 <p class=Grammar><span lang=EN-US>AmbientModuleElement:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientVariableDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientFunctionDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientClassDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;InterfaceDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientEnumDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientModuleDeclaration<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;ImportDeclaration</span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientVariableDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientFunctionDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientClassDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;InterfaceDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientEnumDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;AmbientModuleDeclaration<br>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;ImportDeclaration</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>Except for <span class=Production>ImportDeclaration</span>s,
 <span class=Production>AmbientModuleElement</span>s always declare exported
-entities regardless of whether they include the optional </span><span
-		class=CodeFragment><span lang=EN-US>export</span></span><span lang=EN-US>
+entities regardless of whether they include the optional </span><span class=CodeFragment><span lang=EN-US>export</span></span><span lang=EN-US>
 modifier.</span></p>
 
-<h3><a name="_Toc364255837"></a><a name="_Ref357433218"></a><a
-		name="_Ref352677710"><span lang=EN-US>12.1.6<span style='font:7.0pt "Times New Roman"'>&nbsp;
-</span></span><span lang=EN-US>Ambient External Module</span></a><span
-		lang=EN-US> Declarations</span></h3>
+<h3>
+	<a name="_Toc364255837"></a><a name="_Ref357433218"></a><a name="_Ref352677710"><span lang=EN-US>12.1.6<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span lang=EN-US>Ambient External Module</span></a><span lang=EN-US> Declarations</span></h3>
 
 <p class=MsoNormal><span lang=EN-US>An <span class=Production>AmbientExternalModuleDeclaration</span>
 declares an external module. This type of declaration is permitted only in the
@@ -207,11 +176,9 @@ top-level external module name. Relative external module names are not
 permitted.</span></p>
 
 <p class=Grammar><span lang=EN-US>AmbientExternalModuleDeclaration:<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span
-		lang=EN-US>&nbsp;&nbsp;&nbsp;StringLiteral&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-																		style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;
-AmbientExternalModuleBody&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US
-															  style='font-style:normal'>}</span></span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>module</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;StringLiteral&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>{</span></span><span lang=EN-US>&nbsp;&nbsp;&nbsp;
+AmbientExternalModuleBody&nbsp;&nbsp;&nbsp;</span><span class=Terminal><span lang=EN-US style='font-style:normal'>}</span></span>
+</p>
 
 <p class=Grammar><span lang=EN-US>AmbientExternalModuleBody:<br>
 AmbientExternalModuleElements<sub>opt</sub></span></p>
@@ -223,8 +190,8 @@ AmbientExternalModuleElements&nbsp;&nbsp;&nbsp;AmbientExternalModuleElement</spa
 <p class=Grammar><span lang=EN-US>AmbientExternalModuleElement:<br>
 AmbientModuleElement<br>
 ExportAssignment<br>
-</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-		lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;ExternalImportDeclaration</span></p>
+</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp;&nbsp;ExternalImportDeclaration</span>
+</p>
 
 <p class=MsoNormal><span lang=EN-US>An <span class=Production>ExternalImportDeclaration</span>
 in an <span class=Production>AmbientExternalModuleDeclaration</span> may
@@ -233,11 +200,9 @@ Relative external module names are not permitted.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>If an ambient external module declaration
 includes an export assignment, it is an error for any of the declarations with
-the module to specify an </span><span class=CodeFragment><span lang=EN-US>export</span></span><span
-		lang=EN-US> modifier. If an ambient external module declaration contains no
+the module to specify an </span><span class=CodeFragment><span lang=EN-US>export</span></span><span lang=EN-US> modifier. If an ambient external module declaration contains no
 export assignment, entities declared in the module are exported regardless of
-whether their declarations include the optional </span><span
-		class=CodeFragment><span lang=EN-US>export</span></span><span lang=EN-US>
+whether their declarations include the optional </span><span class=CodeFragment><span lang=EN-US>export</span></span><span lang=EN-US>
 modifier.</span></p>
 
 <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
