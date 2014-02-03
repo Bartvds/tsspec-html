@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf8">
-	<title></title>
+	<title>TypeScript</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -14,30 +14,30 @@
 color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 
 </div>
-
-<ul class="menu">
-	<li><a href="index.html">Index</a></li>
-	<li><a href="introduction.html">Introduction</a></li>
-	<li><a href="basic_concepts.html">Basic Concepts</a></li>
-	<li><a href="types.html">Types</a></li>
-	<li><a href="expressions.html">Expressions</a></li>
-	<li><a href="statements.html">Statements</a></li>
-	<li><a href="functions.html">Functions</a></li>
-	<li><a href="interfaces.html">Interfaces</a></li>
-	<li><a href="classes.html">Classes</a></li>
-	<li><a href="enum.html">Enums</a></li>
-	<li><a href="internal_modules.html">Internal Modules</a></li>
-	<li><a href="external_modules.html">Source Files and External Modules</a></li>
-	<li><a href="ambient.html">Ambients</a></li>
-	<li><a href="grammar.html">Grammar</a></li>
-</ul>
-
-	<div class=WordSection3>
+<div class="sideMenu">
+<div class="menu">
+	<p class="MsoToc1"><a href="index.html">Index</a></p>
+	<p class="MsoToc1">1 - <a href="introduction.html">Introduction</a></p>
+	<p class="MsoToc1">2 - <a href="basic_concepts.html">Basic Concepts</a></p>
+	<p class="MsoToc1">3 - <a href="types.html">Types</a></p>
+	<p class="MsoToc1">4 - <a href="expressions.html">Expressions</a></p>
+	<p class="MsoToc1">5 - <a href="statements.html">Statements</a></p>
+	<p class="MsoToc1">6 - <a href="functions.html">Functions</a></p>
+	<p class="MsoToc1">7 - <a href="interfaces.html">Interfaces</a></p>
+	<p class="MsoToc1">8 - <a href="classes.html">Classes</a></p>
+	<p class="MsoToc1">9 - <a href="enum.html">Enums</a></p>
+	<p class="MsoToc1">10 - <a href="internal_modules.html">Internal Modules</a></p>
+	<p class="MsoToc1">11 - <a href="external_modules.html">Source Files and External Modules</a></p>
+	<p class="MsoToc1">12 - <a href="ambient.html">Ambients</a></p>
+	<p class="MsoToc1">A. - <a href="grammar.html">Grammar</a></p>
+</div>
+</div>
+	<div class="WordSection1">
 	
-	<h1><a name="_Toc364255681"><span lang=EN-US>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Introduction</span></a></h1>
+	<h1><a name="_Toc364255681"><span>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>Introduction</a></h1>
 	
-	<p class=MsoNormal><span lang=EN-US>Web applications such as e-mail, maps,
+	<p class="MsoNormal">Web applications such as e-mail, maps,
 	document editing, and collaboration tools are becoming an increasingly
 	important part of the everyday computing. We designed TypeScript to meet the
 	needs of the JavaScript programming teams that build and maintain large
@@ -47,9 +47,9 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	reduce naming conflicts by organizing their code into dynamically-loadable
 	modules. TypeScript’s optional type system enables JavaScript programmers to
 	use highly-productive development tools and practices: static checking,
-	symbol-based navigation, statement completion, and code re-factoring.</span></p>
+	symbol-based navigation, statement completion, and code re-factoring.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript is a syntactic sugar for
+	<p class="MsoNormal">TypeScript is a syntactic sugar for
 	JavaScript. TypeScript syntax is a superset of Ecmascript 5 (ES5) syntax. Every
 	JavaScript program is also a TypeScript program. The TypeScript compiler
 	performs only file-local transformations on TypeScript programs and does not
@@ -58,67 +58,62 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	names, making tractable the direct debugging of emitted JavaScript. TypeScript
 	optionally provides source maps, enabling source-level debugging. TypeScript
 	tools typically emit JavaScript upon file save, preserving the test, edit,
-	refresh cycle commonly used in JavaScript development.</span></p>
+	refresh cycle commonly used in JavaScript development.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript syntax includes several proposed
+	<p class="MsoNormal">TypeScript syntax includes several proposed
 	features of Ecmascript 6 (ES6), including classes and modules. Classes enable
 	programmers to express common object-oriented patterns in a standard way,
 	making features like inheritance more readable and interoperable. Modules
 	enable programmers to organize their code into components while avoiding naming
 	conflicts. The TypeScript compiler provides module code generation options that
-	support either static or dynamic loading of module contents.</span></p>
+	support either static or dynamic loading of module contents.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript also provides to JavaScript
+	<p class="MsoNormal">TypeScript also provides to JavaScript
 	programmers a system of optional type annotations. These type annotations are
 	like the JSDoc comments found in the Closure system, but in TypeScript they are
 	integrated directly into the language syntax. This integration makes the code
 	more readable and reduces the maintenance cost of synchronizing type
-	annotations with their corresponding variables.</span></p>
+	annotations with their corresponding variables.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>The TypeScript type system enables
+	<p class="MsoNormal"><span>The TypeScript type system enables
 	programmers to express limits on the capabilities of JavaScript objects, and to
 	use tools that enforce these limits. To minimize the number of annotations
 	needed for tools to become useful, the TypeScript type system makes extensive
 	use of type inference. For example, from the following statement, TypeScript
 	will infer that the variable ‘i’ has the type number.</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-			lang=EN-US> i = 0;</span></p>
+	<p class="Code"><span style='color:blue;background:white'>var</span><span> i = 0;</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript will infer from the following
-	function definition that the function f has return type string.</span></p>
+	<p class="MsoNormal">TypeScript will infer from the following
+	function definition that the function f has return type string.</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-			lang=EN-US> f() {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
-				style='color:maroon;background:white'>&quot;hello&quot;</span>;<br>
+	<p class="Code"><span style='color:blue;background:white'>function</span><span> f() {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>return</span> <span style='color:maroon;background:white'>&quot;hello&quot;</span>;<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>To benefit from this inference, a
+	<p class="MsoNormal">To benefit from this inference, a
 	programmer can use the TypeScript language service. For example, a code editor
 	can incorporate the TypeScript language service and use the service to find the
-	members of a string object as in the following screen shot.</span></p>
+	members of a string object as in the following screen shot.</p>
 	
-	<p class=MsoNormal style='margin-left:36.0pt'><img width=442 height=297
-													   id="Picture 6"
-													   src="img/image001.png"></p>
+	<p class="MsoNormal" style='margin-left:36.0pt'><img width=442 height=297 id="Picture 6" src="img/image001.png"></p>
 	
-	<p class=MsoNormal><span lang=EN-US>In this example, the programmer benefits
+	<p class="MsoNormal">In this example, the programmer benefits
 	from type inference without providing type annotations. Some beneficial tools,
 	however, do require the programmer to provide type annotations. In TypeScript,
-	we can express a parameter requirement as in the following code fragment.</span></p>
+	we can express a parameter requirement as in the following code fragment.</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-			lang=EN-US> f(s: <span style='color:blue;background:white'>string</span>) {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> s;<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>function</span><span> f(s: <span style='color:blue;background:white'>string</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>return</span> s;<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US>f({});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;
+	<p class="Code"><span>f({});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;
 	background:white'>// Error</span><br>
-	f(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);&nbsp; <span
-				style='color:green;background:white'>// Ok</span></span></p>
+	f(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);&nbsp;&nbsp;<span style='color:green;background:white'>// Ok</span></span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>This optional type annotation on the parameter
+	<p class="MsoNormal"><span>This optional type annotation on the parameter
 	‘s’ lets the TypeScript type checker know that the programmer expects parameter
 	‘s’ to be of type ‘string’. Within the body of function ‘f’, tools can assume
 	‘s’ is of type ‘string’ and provide operator type checking and member
@@ -127,20 +122,19 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	parameter. For the function ‘f’, the TypeScript compiler will emit the
 	following JavaScript code:</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-			lang=EN-US style='color:black'>&nbsp;f(s)&nbsp;{<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;</span><span lang=EN-US style='color:blue;background:
-	white'>return</span><span lang=EN-US style='color:black'>&nbsp;s;<br>
+	<p class="Code"><span style='color:blue;background:white'>function</span><span style='color:black'>&nbsp;f(s)&nbsp;{<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;</span><span style='color:blue;background:
+	white'>return</span><span style='color:black'>&nbsp;s;<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>In the JavaScript output, all type
+	<p class="MsoNormal">In the JavaScript output, all type
 	annotations have been erased. In general, TypeScript erases all type
-	information before emiting JavaScript.</span></p>
+	information before emiting JavaScript.</p>
 	
-	<h2><a name="_Toc364255682"><span lang=EN-US>1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Ambient Declarations</span></a></h2>
+	<h2><a name="_Toc364255682"><span>1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span>Ambient Declarations</a></h2>
 	
-	<p class=MsoNormal><span lang=EN-US>An ambient declaration introduces a
+	<p class="MsoNormal"><span>An ambient declaration introduces a
 	variable into a TypeScript scope, but has zero impact on the emitted JavaScript
 	program. Programmers can use ambient declarations to tell the TypeScript
 	compiler that some other component will supply a variable. For example, by
@@ -153,32 +147,32 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	the examples below will illustrate how programmers can use types to further
 	characterize the expected behavior of an object.</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>declare</span><span
-			lang=EN-US> <span style='color:blue;background:white'>var</span> document;<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>declare</span><span> <span style='color:blue;background:white'>var</span> document;<br>
 	document.title = <span style='color:maroon;background:white'>&quot;Hello&quot;</span>;&nbsp;
 	<span style='color:green;background:white'>// Ok</span><span style='color:green'>
 	because document has been declared</span></span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>In the case of ‘document’, the TypeScript
+	<p class="MsoNormal"><span>In the case of ‘document’, the TypeScript
 	compiler automatically supplies a declaration, because TypeScript by default
 	includes a file ‘lib.d.ts’ that provides interface declarations for the
 	built-in JavaScript library as well as the Document Object Model.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The TypeScript compiler does not include by
+	<p class="MsoNormal">The TypeScript compiler does not include by
 	default an interface for jQuery, so to use jQuery, a programmer could supply a
-	declaration such as:</span></p>
+	declaration such as:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>declare</span><span
-			lang=EN-US> <span style='color:blue;background:white'>var</span> $;</span></p>
+	<p class="Code">
+		<span style='color:blue;background:white'>declare</span><span> <span style='color:blue;background:white'>var</span> $;</span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Section </span><span
-			lang=EN-US>1.3</span><span lang=EN-US> provides a more extensive example of how
-	a programmer can add type information for jQuery and other libraries.</span></p>
+	<p class="MsoNormal">Section 1.3 provides a more extensive example of how
+	a programmer can add type information for jQuery and other libraries.</p>
 	
-	<h2><a name="_Toc364255683"><span lang=EN-US>1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Function Types</span></a></h2>
+	<h2><a name="_Toc364255683"><span>1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span>Function Types</a></h2>
 	
-	<p class=MsoNormal><span lang=EN-US>Function expressions are a powerful feature
+	<p class="MsoNormal">Function expressions are a powerful feature
 	of JavaScript. They enable function definitions to create closures: functions
 	that capture information from the lexical scope surrounding the function’s
 	definition. Closures are currently JavaScript’s only way of enforcing data
@@ -186,85 +180,79 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	retain information that cannot be accessed from outside the closure. JavaScript
 	programmers often use closures to express event handlers and other asynchronous
 	callbacks, in which another software component, such as the DOM, will call back
-	into JavaScript through a handler function.</span></p>
+	into JavaScript through a handler function.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript function types make it possible
+	<p class="MsoNormal"><span>TypeScript function types make it possible
 	for programmers to express the expected <i>signature</i> of a function. A
 	function signature is a sequence of parameter types plus a return type. The
 	following example uses function types to express the callback signature
 	requirements of an asynchronous voting mechanism.</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-			lang=EN-US> vote(candidate: <span style='color:blue;background:white'>string</span>,
+	<p class="Code">
+		<span style='color:blue;background:white'>function</span><span> vote(candidate: <span style='color:blue;background:white'>string</span>,
 	callback: (result: <span style='color:blue;background:white'>string</span>)
 	=&gt; <span style='color:blue;background:white'>any</span>) {<br>
-	&nbsp;&nbsp; <span style='color:green;background:white'>// ...</span><br>
+	&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// ...</span><br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US>vote(<span style='color:maroon;background:white'>&quot;BigPig&quot;</span>,<br>
-	&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span>(result: <span
-				style='color:blue;background:white'>string</span>) {<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>if</span> (result === <span
-				style='color:maroon;background:white'>&quot;BigPig&quot;</span>) {<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:green;background:white'>// ...</span><br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
-	&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+	<p class="Code"><span>vote(<span style='color:maroon;background:white'>&quot;BigPig&quot;</span>,<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>function</span>(result: <span style='color:blue;background:white'>string</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>if</span> (result === <span style='color:maroon;background:white'>&quot;BigPig&quot;</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:green;background:white'>// ...</span><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 	);</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>In this example, the second parameter to ‘vote’
+	<p class="MsoNormal"><span>In this example, the second parameter to ‘vote’
 	has the function type</span></p>
 	
-	<p class=Code><span lang=EN-US>(result: <span style='color:blue;background:
+	<p class="Code"><span>(result: <span style='color:blue;background:
 	white'>string</span>) =&gt; <span style='color:blue;background:white'>any</span></span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>which means the second parameter is a
+	<p class="MsoNormal"><span>which means the second parameter is a
 	function returning type ‘any’ that has a single parameter of type ‘string’
 	named ‘result’.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Section </span><span
-			lang=EN-US>3.7.2</span><span lang=EN-US> provides additional information about
-	function types.</span></p>
+	<p class="MsoNormal">Section 3.7.2 provides additional information about
+	function types.</p>
 	
-	<h2><a name="_Toc364255684"></a><a name="_Ref336337724"><span lang=EN-US>1.3<span
-			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
-			lang=EN-US>Object Types</span></a></h2>
+	<h2>
+		<a name="_Toc364255684"></a><a name="_Ref336337724"><span>1.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span>Object Types</a>
+	</h2>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript programmers use <i>object types</i>
-	to declare their expectations of object behavior. The following code uses an <i>object
-			type literal</i> to specify the return type of the ‘MakePoint’ function.</span></p>
+	<p class="MsoNormal"><span>TypeScript programmers use <i>object types</i>
+	to declare their expectations of object behavior. The following code uses an <i>object type literal</i> to specify the return type of the ‘MakePoint’ function.</span>
+	</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue'>var</span><span lang=EN-US>&nbsp;MakePoint:&nbsp;()&nbsp;=&gt;&nbsp;{<span
-			style='color:teal'><br>
-	</span>&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;<span style='color:blue'>number</span>;&nbsp;y:&nbsp;<span
-			style='color:blue'>number</span>;<span style='color:teal'><br>
+	<p class="Code">
+		<span style='color:blue'>var</span><span>&nbsp;MakePoint:&nbsp;()&nbsp;=&gt;&nbsp;{<span style='color:teal'><br>
+	</span>&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;<span style='color:blue'>number</span>;&nbsp;y:&nbsp;<span style='color:blue'>number</span>;<span style='color:teal'><br>
 	</span>};</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Programmers can give names to object types;
+	<p class="MsoNormal"><span>Programmers can give names to object types;
 	we call named object types <i>interfaces</i>. For example, in the following
 	code, an interface declares one required field (name) and one optional field
 	(favoriteColor).</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-			lang=EN-US> Friend {<br>
-	&nbsp;&nbsp;&nbsp; name: <span style='color:blue;background:white'>string</span>;<br>
-	&nbsp;&nbsp;&nbsp; favoriteColor?: <span style='color:blue;background:white'>string</span>;<br>
+	<p class="Code"><span style='color:blue;background:white'>interface</span><span> Friend {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;name: <span style='color:blue;background:white'>string</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;favoriteColor?: <span style='color:blue;background:white'>string</span>;<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-			lang=EN-US> add(friend: Friend) {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>var</span> name = friend.name;<br>
+	<p class="Code"><span style='color:blue;background:white'>function</span><span> add(friend: Friend) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>var</span> name = friend.name;<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US>add({ name: <span style='color:maroon;
-	background:white'>&quot;Fred&quot;</span> });&nbsp; <span style='color:green;
+	<p class="Code"><span>add({ name: <span style='color:maroon;
+	background:white'>&quot;Fred&quot;</span> });&nbsp;&nbsp;<span style='color:green;
 	background:white'>// Ok</span><br>
 	add({ favoriteColor: <span style='color:maroon;background:white'>&quot;blue&quot;</span>
-	});&nbsp; <span style='color:green;background:white'>// Error, name required</span><br>
+	});&nbsp;&nbsp;<span style='color:green;background:white'>// Error, name required</span><br>
 	add({ name: <span style='color:maroon;background:white'>&quot;Jill&quot;</span>,
 	favoriteColor: <span style='color:maroon;background:white'>&quot;green&quot;</span>
-	});&nbsp; <span style='color:green;background:white'>// Ok</span></span></p>
+	});&nbsp;&nbsp;<span style='color:green;background:white'>// Ok</span></span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript object types model the diversity
+	<p class="MsoNormal"><span>TypeScript object types model the diversity
 	of behaviors that a JavaScript object can exhibit. For example, the jQuery
 	library defines an object, ‘$’, that has methods, such as ‘get’ (which sends an
 	Ajax message), and fields, such as ‘browser’ (which gives browser vendor
@@ -272,33 +260,31 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	behavior of this function depends on the type of parameters passed to the
 	function.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The following code fragment captures a
-	small subset of jQuery behavior, just enough to use jQuery in a simple way.</span></p>
+	<p class="MsoNormal">The following code fragment captures a
+	small subset of jQuery behavior, just enough to use jQuery in a simple way.</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-			lang=EN-US> JQuery {<br>
-	&nbsp;&nbsp;&nbsp; text(content: <span style='color:blue;background:white'>string</span>);<br>
+	<p class="Code"><span style='color:blue;background:white'>interface</span><span> JQuery {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;text(content: <span style='color:blue;background:white'>string</span>);<br>
 	}<br>
 	<br>
 	<span style='color:blue;background:white'>interface</span> JQueryStatic {<br>
-	&nbsp;&nbsp;&nbsp; get(url: <span style='color:blue;background:white'>string</span>, callback:
-	(data: <span style='color:blue;background:white'>string</span>) =&gt; <span
-				style='color:blue;background:white'>any</span>);&nbsp;&nbsp; <br>
-	&nbsp;&nbsp;&nbsp; (query: <span style='color:blue;background:white'>string</span>): JQuery;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;get(url: <span style='color:blue;background:white'>string</span>, callback:
+	(data: <span style='color:blue;background:white'>string</span>) =&gt; <span style='color:blue;background:white'>any</span>);&nbsp;&nbsp;&nbsp;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;(query: <span style='color:blue;background:white'>string</span>): JQuery;&nbsp;&nbsp;&nbsp;
 	<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>declare</span><span
-			lang=EN-US> <span style='color:blue;background:white'>var</span> $: JQueryStatic;</span></p>
+	<p class="Code">
+		<span style='color:blue;background:white'>declare</span><span> <span style='color:blue;background:white'>var</span> $: JQueryStatic;</span>
+	</p>
 	
-	<p class=Code><span lang=EN-US>$.get(<span style='color:maroon;background:white'>&quot;http://mysite.org/divContent&quot;</span>,<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span> (data: <span
-				style='color:blue;background:white'>string</span>) {<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(<span style='color:maroon;background:white'>&quot;div&quot;</span>).text(data);<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+	<p class="Code"><span>$.get(<span style='color:maroon;background:white'>&quot;http://mysite.org/divContent&quot;</span>,<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>function</span> (data: <span style='color:blue;background:white'>string</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span style='color:maroon;background:white'>&quot;div&quot;</span>).text(data);<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 	);</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The ‘JQueryStatic’ interface references
+	<p class="MsoNormal"><span>The ‘JQueryStatic’ interface references
 	another interface: ‘JQuery’. This interface represents a collection of one or
 	more DOM elements. The jQuery library can perform many operations on such a
 	collection, but in this example the jQuery client only needs to know that it
@@ -307,41 +293,37 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	‘get’, that performs an Ajax get operation on the provided URL and arranges to
 	invoke the provided callback upon receipt of a response.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Finally, the ‘JQueryStatic’ interface
+	<p class="MsoNormal"><span>Finally, the ‘JQueryStatic’ interface
 	contains a bare function signature </span></p>
 	
-	<p class=Code><span lang=EN-US>(query: <span style='color:blue;background:white'>string</span>):
+	<p class="Code"><span>(query: <span style='color:blue;background:white'>string</span>):
 	JQuery;</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The bare signature indicates that instances
+	<p class="MsoNormal">The bare signature indicates that instances
 	of the interface are callable. This example illustrates that TypeScript
 	function types are just special cases of TypeScript object types. Specifically,
 	function types are object types that contain only a call signature, but no
 	properties. For this reason we can write any function type as an object type
-	literal. The following example uses both forms to describe the same type.</span></p>
+	literal. The following example uses both forms to describe the same type.</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue'>var</span><span lang=EN-US>&nbsp;f:&nbsp;{&nbsp;():&nbsp;<span
-			style='color:blue'>string</span>;&nbsp;};<span style='color:teal'><br>
-	</span><span style='color:blue'>var</span>&nbsp;sameType:&nbsp;()&nbsp;=&gt;&nbsp;<span
-			style='color:blue'>string</span>&nbsp;=&nbsp;f;<span style='color:green'> &nbsp;&nbsp;&nbsp;&nbsp;//
+	<p class="Code">
+		<span style='color:blue'>var</span><span>&nbsp;f:&nbsp;{&nbsp;():&nbsp;<span style='color:blue'>string</span>;&nbsp;};<span style='color:teal'><br>
+	</span><span style='color:blue'>var</span>&nbsp;sameType:&nbsp;()&nbsp;=&gt;&nbsp;<span style='color:blue'>string</span>&nbsp;=&nbsp;f;<span style='color:green'> &nbsp;&nbsp;&nbsp;&nbsp;//
 	Ok</span><span style='color:teal'><br>
-	</span><span style='color:blue'>var</span>&nbsp;nope:&nbsp;()&nbsp;=&gt;&nbsp;<span
-			style='color:blue'>number</span>&nbsp;=&nbsp;sameType;&nbsp; <span
-			style='color:green'>//&nbsp;Error:&nbsp;type&nbsp;mismatch</span></span></p>
+	</span><span style='color:blue'>var</span>&nbsp;nope:&nbsp;()&nbsp;=&gt;&nbsp;<span style='color:blue'>number</span>&nbsp;=&nbsp;sameType;&nbsp;&nbsp;<span style='color:green'>//&nbsp;Error:&nbsp;type&nbsp;mismatch</span></span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>We mentioned above that the ‘$’ function
+	<p class="MsoNormal"><span>We mentioned above that the ‘$’ function
 	behaves differently depending on the type of its parameter. So far, our jQuery
 	typing only captures one of these behaviors: return an object of type ‘JQuery’
 	when passed a string. To specify multiple behaviors, TypeScript supports <i>overloading</i>
 	of function signatures in object types. For example, we can add an additional
 	call signature to the ‘JQueryStatic’ interface.</span></p>
 	
-	<p class=Code><span lang=EN-US>(<span style='color:black'>ready</span>:<span
-			style='color:black'>&nbsp;</span>()<span style='color:black'>&nbsp;</span>=&gt;<span
-			style='color:black'>&nbsp;</span><span style='color:blue'>any</span>): <span
-			style='color:blue'>any</span>;</span></p>
+	<p class="Code"><span>(<span style='color:black'>ready</span>:<span style='color:black'>&nbsp;</span>()<span style='color:black'>&nbsp;</span>=&gt;<span style='color:black'>&nbsp;</span><span style='color:blue'>any</span>): <span style='color:blue'>any</span>;</span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>This signature denotes that a function may
+	<p class="MsoNormal"><span>This signature denotes that a function may
 	be passed as the parameter of the ‘$’ function. When a function is passed to
 	‘$’, the jQuery library will invoke that function when a DOM document is ready.
 	Because TypeScript supports overloading, tools can use TypeScript to show all
@@ -349,23 +331,20 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	correct documentation once a function has been called with a particular
 	signature.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>A typical client would not need to add any
+	<p class="MsoNormal">A typical client would not need to add any
 	additional typing but could just use a community-supplied typing to discover
 	(through statement completion with documentation tips) and verify (through
-	static checking) correct use of the library, as in the following screen shot.</span></p>
+	static checking) correct use of the library, as in the following screen shot.</p>
 	
-	<p class=MsoNormal style='margin-left:36.0pt'><img width=471 height=244
-													   id="Picture 7"
-													   src="img/image002.png"></p>
+	<p class="MsoNormal" style='margin-left:36.0pt'><img width=471 height=244 id="Picture 7" src="img/image002.png"></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Section </span><span
-			lang=EN-US>3.3</span><span lang=EN-US> provides additional information about
-	object types.</span></p>
+	<p class="MsoNormal">Section 3.3 provides additional information about
+	object types.</p>
 	
-	<h2><a name="_Toc364255685"><span lang=EN-US>1.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Structural Subtyping</span></a></h2>
+	<h2><a name="_Toc364255685"><span>1.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span>Structural Subtyping</a></h2>
 	
-	<p class=MsoNormal><span lang=EN-US>Object types are compared <i>structurally</i>.
+	<p class="MsoNormal"><span>Object types are compared <i>structurally</i>.
 	For example, in the code fragment below, class ‘CPoint’ matches interface ‘Point’
 	because ‘CPoint’ has all of the required members of ‘Point’. A class may
 	optionally declare that it implements an interface, so that the compiler will
@@ -373,84 +352,63 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	illustrates that an object type can match the type inferred from an object
 	literal, as long as the object literal supplies all of the required members.</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-			lang=EN-US style='color:black'>&nbsp;Point&nbsp;</span><span lang=EN-US>{<span
-			style='color:teal'><br>
-	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;x</span><span
-			style='color:teal'>:</span><span style='color:black'>&nbsp;</span><span
-			style='color:blue;background:white'>number</span>;<span style='color:teal'><br>
-	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;y</span><span
-			style='color:teal'>:</span><span style='color:black'>&nbsp;</span><span
-			style='color:blue;background:white'>number</span>;<span style='color:teal'><br>
+	<p class="Code">
+		<span style='color:blue;background:white'>interface</span><span style='color:black'>&nbsp;Point&nbsp;</span><span>{<span style='color:teal'><br>
+	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;x</span><span style='color:teal'>:</span><span style='color:black'>&nbsp;</span><span style='color:blue;background:white'>number</span>;<span style='color:teal'><br>
+	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;y</span><span style='color:teal'>:</span><span style='color:black'>&nbsp;</span><span style='color:blue;background:white'>number</span>;<span style='color:teal'><br>
 	</span>}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-			lang=EN-US style='color:black'>&nbsp;getX</span><span lang=EN-US>(<span
-			style='color:black'>p</span><span style='color:teal'>:</span><span
-			style='color:black'>&nbsp;Point</span>)<span style='color:black'>&nbsp;</span>{<span
-			style='color:teal'><br>
-	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-			style='color:blue;background:white'>return</span><span style='color:black'>&nbsp;</span>p.x;<span
-			style='color:teal'><br>
+	<p class="Code">
+		<span style='color:blue;background:white'>function</span><span style='color:black'>&nbsp;getX</span><span>(<span style='color:black'>p</span><span style='color:teal'>:</span><span style='color:black'>&nbsp;Point</span>)<span style='color:black'>&nbsp;</span>{<span style='color:teal'><br>
+	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style='color:blue;background:white'>return</span><span style='color:black'>&nbsp;</span>p.x;<span style='color:teal'><br>
 	</span>}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US style='color:black'>&nbsp;CPoint&nbsp;</span><span lang=EN-US>{<br>
-	&nbsp;&nbsp;&nbsp; x: <span style='color:blue;background:white'>number</span>;<br>
-	&nbsp;&nbsp;&nbsp; y: <span style='color:blue;background:white'>number</span>;<span
-				style='color:teal'><br>
-	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-				style='color:blue;background:white'>constructor</span>(x:<span
-				style='color:black'>&nbsp;</span><span style='color:blue;background:white'>number</span>,&nbsp;
+	<p class="Code">
+		<span style='color:blue;background:white'>class</span><span style='color:black'>&nbsp;CPoint&nbsp;</span><span>{<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;x: <span style='color:blue;background:white'>number</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;y: <span style='color:blue;background:white'>number</span>;<span style='color:teal'><br>
+	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style='color:blue;background:white'>constructor</span>(x:<span style='color:black'>&nbsp;</span><span style='color:blue;background:white'>number</span>,&nbsp;
 	y:<span style='color:black'>&nbsp;</span><span style='color:blue;background:
 	white'>number</span>)<span style='color:black'>&nbsp;</span>{<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.x = x;<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.y = y;<br>
-	&nbsp;&nbsp;&nbsp; }<span style='color:teal'><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.x = x;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.y = y;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;}<span style='color:teal'><br>
 	</span>}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:black'>getX</span><span lang=EN-US>(<span
-			style='color:blue;background:white'>new</span><span style='color:black'>&nbsp;CPoint</span>(<span
-			style='color:#A31515'>0</span>,<span style='color:black'>&nbsp;</span><span
-			style='color:#A31515'>0</span>));<span style='color:black'>&nbsp;&nbsp;</span><span
-			style='color:green'>//&nbsp;Ok,&nbsp;fields&nbsp;match</span></span></p>
+	<p class="Code">
+		<span style='color:black'>getX</span><span>(<span style='color:blue;background:white'>new</span><span style='color:black'>&nbsp;CPoint</span>(<span style='color:#A31515'>0</span>,<span style='color:black'>&nbsp;</span><span style='color:#A31515'>0</span>));<span style='color:black'>&nbsp;&nbsp;</span><span style='color:green'>//&nbsp;Ok,&nbsp;fields&nbsp;match</span></span>
+	</p>
 	
-	<p class=Code><span lang=EN-US style='color:black'>getX</span><span lang=EN-US>({&nbsp;x:<span
-			style='color:black'>&nbsp;</span><span style='color:#A31515'>0</span>,&nbsp;y:<span
-			style='color:black'>&nbsp;</span><span style='color:#A31515'>0</span>,&nbsp;color:<span
-			style='color:black'>&nbsp;</span><span style='color:#A31515'>&quot;red&quot;</span><span
-			style='color:black'>&nbsp;</span>});<span style='color:black'>&nbsp;&nbsp;</span><span
-			style='color:green'>//&nbsp;Extra&nbsp;fields&nbsp;Ok</span></span></p>
+	<p class="Code">
+		<span style='color:black'>getX</span><span>({&nbsp;x:<span style='color:black'>&nbsp;</span><span style='color:#A31515'>0</span>,&nbsp;y:<span style='color:black'>&nbsp;</span><span style='color:#A31515'>0</span>,&nbsp;color:<span style='color:black'>&nbsp;</span><span style='color:#A31515'>&quot;red&quot;</span><span style='color:black'>&nbsp;</span>});<span style='color:black'>&nbsp;&nbsp;</span><span style='color:green'>//&nbsp;Extra&nbsp;fields&nbsp;Ok</span></span>
+	</p>
 	
-	<p class=Code><span lang=EN-US>getX({&nbsp;x:<span style='color:black'>&nbsp;</span><span
-			style='color:#A31515'>0</span><span style='color:black'>&nbsp;</span>});<span
-			style='color:black'>&nbsp;&nbsp;</span><span style='color:green'>//&nbsp;Error:&nbsp;supplied&nbsp;parameter&nbsp;does&nbsp;not&nbsp;match</span></span></p>
+	<p class="Code"><span>getX({&nbsp;x:<span style='color:black'>&nbsp;</span><span style='color:#A31515'>0</span><span style='color:black'>&nbsp;</span>});<span style='color:black'>&nbsp;&nbsp;</span><span style='color:green'>//&nbsp;Error:&nbsp;supplied&nbsp;parameter&nbsp;does&nbsp;not&nbsp;match</span></span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>See Section </span><span
-			lang=EN-US>3.8</span><span lang=EN-US> for more information about type
-	comparisons.</span></p>
+	<p class="MsoNormal">See Section 3.8 for more information about type
+	comparisons.</p>
 	
-	<h2><a name="_Toc364255686"><span lang=EN-US>1.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Contextual Typing</span></a></h2>
+	<h2><a name="_Toc364255686"><span>1.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span>Contextual Typing</a></h2>
 	
-	<p class=MsoNormal><span lang=EN-US>Ordinarily, TypeScript type inference
+	<p class="MsoNormal"><span>Ordinarily, TypeScript type inference
 	proceeds “bottom-up”: from the leaves of an expression tree to its root. In the
 	following example, TypeScript infers ‘number’ as the return type of the
 	function ‘mul’ by flowing type information bottom up in the return expression.</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-			lang=EN-US> mul(a: <span style='color:blue;background:white'>number</span>, b: <span
-			style='color:blue;background:white'>number</span>) {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> a * b;<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>function</span><span> mul(a: <span style='color:blue;background:white'>number</span>, b: <span style='color:blue;background:white'>number</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>return</span> a * b;<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>For variables and parameters without a type
+	<p class="MsoNormal"><span>For variables and parameters without a type
 	annotation or a default value, TypeScript infers type ‘any’, ensuring that
 	compilers do not need non-local information about a function’s call sites to
 	infer the function’s return type. Generally, this bottom-up approach provides programmers
 	with a clear intuition about the flow of type information.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>However, in some limited contexts,
+	<p class="MsoNormal"><span>However, in some limited contexts,
 	inference proceeds “top-down” from the context of an expression. Where this
 	happens, it is called contextual typing. Contextual typing helps tools provide
 	excellent information when a programmer is using a type but may not know all of
@@ -460,183 +418,160 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	function expression is as given in the ‘get’ signature and can provide a
 	template that includes parameter names and types.</span></p>
 	
-	<p class=Code><span lang=EN-US>$.get(<span style='color:maroon;background:white'>&quot;http://mysite.org/divContent&quot;</span>,<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span> (data) {<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(<span style='color:maroon;background:white'>&quot;div&quot;</span>).text(data);&nbsp;
+	<p class="Code"><span>$.get(<span style='color:maroon;background:white'>&quot;http://mysite.org/divContent&quot;</span>,<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>function</span> (data) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span style='color:maroon;background:white'>&quot;div&quot;</span>).text(data);&nbsp;
 	<span style='color:green'>// TypeScript infers data is a string</span><br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 	);</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Contextual typing is also useful for
+	<p class="MsoNormal">Contextual typing is also useful for
 	writing out object literals. As the programmer types the object literal, the
 	contextual type provides information that enables tools to provide completion
-	for object member names.</span></p>
+	for object member names.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Section </span><span
-			lang=EN-US>4.18</span><span lang=EN-US> provides additional information about
-	contextually typed expressions.</span></p>
+	<p class="MsoNormal">Section 4.18 provides additional information about
+	contextually typed expressions.</p>
 	
-	<h2><a name="_Toc364255687"><span lang=EN-US>1.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Classes</span></a></h2>
+	<h2><a name="_Toc364255687"><span>1.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span>Classes</a></h2>
 	
-	<p class=MsoNormal><span lang=EN-US>JavaScript practice has at least two common
+	<p class="MsoNormal"><span>JavaScript practice has at least two common
 	design patterns: the module pattern and the class pattern. Roughly speaking,
 	the module pattern uses closures to hide names and to encapsulate private data,
 	while the class pattern uses prototype chains to implement many variations on
 	object-oriented inheritance mechanisms. Libraries such as ‘prototype.js’ are
 	typical of this practice.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>This section and the module section below
+	<p class="MsoNormal">This section and the module section below
 	will show how TypeScript emits consistent, idiomatic JavaScript code to
 	implement classes and modules that are closely aligned with the current ES6
 	proposal. The goal of TypeScript’s translation is to emit exactly what a
 	programmer would type when implementing a class or module unaided by a tool.
 	This section will also describe how TypeScript infers a type for each class
-	declaration. We’ll start with a simple BankAccount class.</span></p>
+	declaration. We’ll start with a simple BankAccount class.</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US> BankAccount {<br>
-	&nbsp;&nbsp;&nbsp; balance = <span style='color:maroon;background:white'>0</span>;<br>
-	&nbsp;&nbsp;&nbsp; deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance +=
+	<p class="Code"><span style='color:blue;background:white'>class</span><span> BankAccount {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;balance = <span style='color:maroon;background:white'>0</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.balance +=
 	credit;<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
-				style='color:blue;background:white'>this</span>.balance;<br>
-	&nbsp;&nbsp;&nbsp; }<br>
-	}&nbsp; </span></p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>return</span> <span style='color:blue;background:white'>this</span>.balance;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+	}&nbsp;&nbsp;</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>This class generates the following
-	JavaScript code.</span></p>
+	<p class="MsoNormal">This class generates the following
+	JavaScript code.</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-			lang=EN-US> BankAccount = (<span style='color:blue;background:white'>function</span>
+	<p class="Code">
+		<span style='color:blue;background:white'>var</span><span> BankAccount = (<span style='color:blue;background:white'>function</span>
 	() {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>function</span> BankAccount() {<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance = <span
-				style='color:maroon;background:white'>0</span>;<br>
-	&nbsp;&nbsp;&nbsp; }<br>
-	&nbsp;&nbsp;&nbsp; BankAccount.prototype.deposit = <span style='color:blue;background:white'>function</span>(credit)
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>function</span> BankAccount() {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.balance = <span style='color:maroon;background:white'>0</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;BankAccount.prototype.deposit = <span style='color:blue;background:white'>function</span>(credit)
 	{<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance +=
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.balance +=
 	credit;<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
-				style='color:blue;background:white'>this</span>.balance;<br>
-	&nbsp;&nbsp;&nbsp; };<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> BankAccount;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>return</span> <span style='color:blue;background:white'>this</span>.balance;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>return</span> BankAccount;<br>
 	})();</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>This TypeScript class declaration creates a
+	<p class="MsoNormal"><span>This TypeScript class declaration creates a
 	variable named ‘BankAccount’ whose value is the constructor function for
 	‘BankAccount’ instances. This declaration also creates an instance type of the
 	same name. If we were to write this type as an interface it would look like the
 	following.</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-			lang=EN-US> BankAccount {<br>
-	&nbsp;&nbsp;&nbsp; balance: <span style='color:blue;background:white'>number</span>;<br>
-	&nbsp;&nbsp;&nbsp; deposit(credit: <span style='color:blue;background:white'>number</span>): <span
-				style='color:blue;background:white'>number</span>;<br>
+	<p class="Code"><span style='color:blue;background:white'>interface</span><span> BankAccount {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;balance: <span style='color:blue;background:white'>number</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;deposit(credit: <span style='color:blue;background:white'>number</span>): <span style='color:blue;background:white'>number</span>;<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>If we were to write out the function type
+	<p class="MsoNormal"><span>If we were to write out the function type
 	declaration for the ‘BankAccount’ constructor variable, it would have the
 	following form.</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-			lang=EN-US> BankAccount: <span style='color:blue;background:white'>new</span>()
+	<p class="Code">
+		<span style='color:blue;background:white'>var</span><span> BankAccount: <span style='color:blue;background:white'>new</span>()
 	=&gt; BankAccount;</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The function signature is prefixed with the
+	<p class="MsoNormal"><span>The function signature is prefixed with the
 	keyword ‘new’ indicating that the ‘BankAccount’ function must be called as a
 	constructor. It is possible for a function’s type to have both call and
 	constructor signatures. For example, the type of the built-in JavaScript Date
 	object includes both kinds of signatures.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>If we want to start our bank account with
+	<p class="MsoNormal"><span>If we want to start our bank account with
 	an initial balance, we can add to the ‘BankAccount’ class a constructor
 	declaration.</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US> BankAccount {<br>
-	&nbsp;&nbsp;&nbsp; balance: <span style='color:blue;background:white'>number</span>;<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>constructor</span>(initially: <span
-				style='color:blue;background:white'>number</span>) {<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance =
+	<p class="Code"><span style='color:blue;background:white'>class</span><span> BankAccount {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;balance: <span style='color:blue;background:white'>number</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>constructor</span>(initially: <span style='color:blue;background:white'>number</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.balance =
 	initially;<br>
-	&nbsp;&nbsp;&nbsp; }<br>
-	&nbsp;&nbsp;&nbsp; deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance +=
+	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.balance +=
 	credit;<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
-				style='color:blue;background:white'>this</span>.balance;<br>
-	&nbsp;&nbsp;&nbsp; }<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>return</span> <span style='color:blue;background:white'>this</span>.balance;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>This version of the ‘BankAccount’ class
+	<p class="MsoNormal"><span>This version of the ‘BankAccount’ class
 	requires us to introduce a constructor parameter and then assign it to the ‘balance’
 	field. To simplify this common case, TypeScript accepts the following shorthand
 	syntax.</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US> BankAccount {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>constructor</span>(<span
-				style='color:blue;background:white'>public</span> balance: <span
-				style='color:blue;background:white'>number</span>) {<br>
-	&nbsp;&nbsp;&nbsp; }<br>
-	&nbsp;&nbsp;&nbsp; deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>this</span>.balance +=
+	<p class="Code"><span style='color:blue;background:white'>class</span><span> BankAccount {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>constructor</span>(<span style='color:blue;background:white'>public</span> balance: <span style='color:blue;background:white'>number</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;deposit(credit: <span style='color:blue;background:white'>number</span>) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>this</span>.balance +=
 	credit;<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>return</span> <span
-				style='color:blue;background:white'>this</span>.balance;<br>
-	&nbsp;&nbsp;&nbsp; }<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>return</span> <span style='color:blue;background:white'>this</span>.balance;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The ‘public’ keyword denotes that the
+	<p class="MsoNormal"><span>The ‘public’ keyword denotes that the
 	constructor parameter is to be retained as a field. Public is the default
 	visibility for class members, but a programmer can also specify private
 	visibility for a class member. Private visibility is a design-time construct;
 	it is enforced during static type checking but does not imply any runtime
 	enforcement.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript classes also support
+	<p class="MsoNormal"><span>TypeScript classes also support
 	inheritance, as in the following example.<i> </i></span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue'>class</span><span lang=EN-US>&nbsp;CheckingAccount&nbsp;<span
-			style='color:blue'>extends</span>&nbsp;BankAccount&nbsp;<span style='color:
+	<p class="Code">
+		<span style='color:blue'>class</span><span>&nbsp;CheckingAccount&nbsp;<span style='color:blue'>extends</span>&nbsp;BankAccount&nbsp;<span style='color:
 	teal'>{<br>
-	</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>constructor</span><span
-			style='color:teal'>(</span>balance<span style='color:teal'>:</span>&nbsp;<span
-			style='color:blue'>number</span><span style='color:teal'>)</span>&nbsp;<span
-			style='color:teal'>{<br>
-	</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>super</span><span
-			style='color:teal'>(</span>balance<span style='color:teal'>);<br>
+	</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>constructor</span><span style='color:teal'>(</span>balance<span style='color:teal'>:</span>&nbsp;<span style='color:blue'>number</span><span style='color:teal'>)</span>&nbsp;<span style='color:teal'>{<br>
+	</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>super</span><span style='color:teal'>(</span>balance<span style='color:teal'>);<br>
 	</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:teal'>}<br>
-	</span>&nbsp;&nbsp;&nbsp;&nbsp;writeCheck<span style='color:teal'>(</span>debit<span
-			style='color:teal'>:</span>&nbsp;<span style='color:blue'>number</span><span
-			style='color:teal'>)</span>&nbsp;<span style='color:teal'>{<br>
-	</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>this</span><span
-			style='color:teal'>.</span>balance&nbsp;<span style='color:teal'>-=</span>&nbsp;debit<span
-			style='color:teal'>;<br>
+	</span>&nbsp;&nbsp;&nbsp;&nbsp;writeCheck<span style='color:teal'>(</span>debit<span style='color:teal'>:</span>&nbsp;<span style='color:blue'>number</span><span style='color:teal'>)</span>&nbsp;<span style='color:teal'>{<br>
+	</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>this</span><span style='color:teal'>.</span>balance&nbsp;<span style='color:teal'>-=</span>&nbsp;debit<span style='color:teal'>;<br>
 	</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:teal'>}<br>
 	}</span></span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>In this example, the class
+	<p class="MsoNormal"><span>In this example, the class
 	‘CheckingAccount’ <i>derives</i> from class ‘BankAccount’. The constructor for
 	‘CheckingAccount’ calls the constructor for class ‘BankAccount’ using the
 	‘super’ keyword. In the emitted JavaScript code, the prototype of
 	‘CheckingAccount’ will chain to the prototype of ‘BankingAccount’. </span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript classes may also specify static
-	members. Static class members become properties of the class constructor. </span></p>
+	<p class="MsoNormal">TypeScript classes may also specify static
+	members. Static class members become properties of the class constructor. </p>
 	
-	<p class=MsoNormal><span lang=EN-US>Section </span><span
-			lang=EN-US>8</span><span lang=EN-US> provides additional information about
-	classes.</span></p>
+	<p class="MsoNormal">Section 8 provides additional information about
+	classes.</p>
 	
-	<h2><a name="_Toc364255688"><span lang=EN-US>1.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Modules</span></a></h2>
+	<h2><a name="_Toc364255688"><span>1.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span>Modules</a></h2>
 	
-	<p class=MsoNormal><span lang=EN-US>Classes and interfaces support large-scale
+	<p class="MsoNormal"><span>Classes and interfaces support large-scale
 	JavaScript development by providing a mechanism for describing how to use a
 	software component that can be separated from that component’s implementation. TypeScript
 	enforces <i>encapsulation</i> of implementation in classes at design time (by
@@ -645,34 +580,27 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	versions of JavaScript may provide <i>private names</i> which would enable
 	runtime enforcement of private members.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>In the current version of JavaScript, the
+	<p class="MsoNormal">In the current version of JavaScript, the
 	only way to enforce encapsulation at runtime is to use the module pattern:
 	encapsulate private fields and methods using closure variables. The module
 	pattern is a natural way to provide organizational structure and dynamic
 	loading options by drawing a boundary around a software component. A module can
 	also provide the ability to introduce namespaces, avoiding use of the global
-	namespace for most software components. </span></p>
+	namespace for most software components. </p>
 	
-	<p class=MsoNormal><span lang=EN-US>The following example illustrates the
-	JavaScript module pattern.</span></p>
+	<p class="MsoNormal">The following example illustrates the
+	JavaScript module pattern.</p>
 	
-	<p class=Code><span lang=EN-US style='color:teal'>(</span><span lang=EN-US
-																	style='color:blue'>function</span><span lang=EN-US style='color:teal'>(</span><span
-			lang=EN-US>exports<span style='color:teal'>)</span>&nbsp;<span
-			style='color:teal'>{<br>
-	</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>var</span>&nbsp;key&nbsp;<span
-			style='color:teal'>=</span>&nbsp;generateSecretKey<span style='color:teal'>();<br>
-	</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>function </span>sendMessage<span
-			style='color:teal'>(</span>message<span style='color:teal'>)</span>&nbsp;<span
-			style='color:teal'>{<br>
-	</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sendSecureMessage<span
-			style='color:teal'>(</span>message<span style='color:teal'>,</span>&nbsp;key<span
-			style='color:teal'>);<br>
+	<p class="Code">
+		<span style='color:teal'>(</span><span style='color:blue'>function</span><span style='color:teal'>(</span><span>exports<span style='color:teal'>)</span>&nbsp;<span style='color:teal'>{<br>
+	</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>var</span>&nbsp;key&nbsp;<span style='color:teal'>=</span>&nbsp;generateSecretKey<span style='color:teal'>();<br>
+	</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>function </span>sendMessage<span style='color:teal'>(</span>message<span style='color:teal'>)</span>&nbsp;<span style='color:teal'>{<br>
+	</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sendSecureMessage<span style='color:teal'>(</span>message<span style='color:teal'>,</span>&nbsp;key<span style='color:teal'>);<br>
 	</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:teal'>}<br>
-	&nbsp;&nbsp;&nbsp; </span>exports.sendMessage = sendMessage;<span style='color:teal'><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;</span>exports.sendMessage = sendMessage;<span style='color:teal'><br>
 	})(</span>MessageModule<span style='color:teal'>);</span></span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>This example illustrates the two essential
+	<p class="MsoNormal"><span>This example illustrates the two essential
 	elements of the module pattern: a <i>module closure</i> and a <i>module</i> <i>object</i>.
 	The module closure is a function that encapsulates the module’s implementation,
 	in this case the variable ‘key’ and the function ‘sendMessage’. The module
@@ -682,82 +610,74 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	the module object. This <i>augmentation</i> approach simplifies dynamic loading
 	of modules and also supports separation of module code into multiple files.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The example assumes that an outer lexical
+	<p class="MsoNormal"><span>The example assumes that an outer lexical
 	scope defines the functions ‘generateSecretKey’ and ‘sendSecureMessage’; it also
 	assumes that the outer scope has assigned the module object to the variable
 	‘MessageModule’.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript modules provide a mechanism for
+	<p class="MsoNormal">TypeScript modules provide a mechanism for
 	succinctly expressing the module pattern. In TypeScript, programmers can
 	combine the module pattern with the class pattern by nesting modules and classes
-	within an outer module. </span></p>
+	within an outer module. </p>
 	
-	<p class=MsoNormal><span lang=EN-US>The following example shows the definition
-	and use of a simple module.</span></p>
+	<p class="MsoNormal">The following example shows the definition
+	and use of a simple module.</p>
 	
-	<p class=Code><span lang=EN-US>module&nbsp;M&nbsp;{<br>
+	<p class="Code"><span>module&nbsp;M&nbsp;{<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;s&nbsp;=&nbsp;&quot;hello&quot;;<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;export&nbsp;function&nbsp;f()&nbsp;{<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;s;<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US>M.f();<br>
-	M.s;&nbsp;&nbsp;<span style='color:green;background:white'>// Error, </span><span
-				style='color:green'>s is not exported</span></span></p>
+	<p class="Code"><span>M.f();<br>
+	M.s;&nbsp;&nbsp;<span style='color:green;background:white'>// Error, </span><span style='color:green'>s is not exported</span></span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>In this example, variable ‘s’ is a private
+	<p class="MsoNormal"><span>In this example, variable ‘s’ is a private
 	feature of the module, but function ‘f’ is exported from the module and
 	accessible to code outside of the module. If we were to describe the effect of
 	module ‘M’ in terms of interfaces and variables, we would write</span></p>
 	
-	<p class=Code><span lang=EN-US>interface<span style='color:black'>&nbsp;M&nbsp;</span><span
-			style='color:teal'>{<br>
-	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;f</span><span
-			style='color:teal'>():</span><span style='color:black'>&nbsp;</span>string<span
-			style='color:teal'>;<br>
+	<p class="Code"><span>interface<span style='color:black'>&nbsp;M&nbsp;</span><span style='color:teal'>{<br>
+	</span><span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;f</span><span style='color:teal'>():</span><span style='color:black'>&nbsp;</span>string<span style='color:teal'>;<br>
 	}</span></span></p>
 	
-	<p class=Code><span lang=EN-US>var<span style='color:black'>&nbsp;M</span><span
-			style='color:teal'>:</span><span style='color:black'>&nbsp;M</span><span
-			style='color:teal'>;</span></span></p>
+	<p class="Code"><span>var<span style='color:black'>&nbsp;M</span><span style='color:teal'>:</span><span style='color:black'>&nbsp;M</span><span style='color:teal'>;</span></span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>The interface ‘M’ summarizes the externally
+	<p class="MsoNormal"><span>The interface ‘M’ summarizes the externally
 	visible behavior of module ‘M’. In this example, we can use the same name for
 	the interface as for the initialized variable because in TypeScript type names
 	and variable names do not conflict: each lexical scope contains a variable
-	declaration space and type declaration space (see Section </span><span lang=EN-US>2.3</span><span lang=EN-US> for more details).</span></p>
+	declaration space and type declaration space (see Section </span>2.3 for more details).
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Module ‘M’ is an example of an <i>internal</i>
-	module, because it is nested within the <i>global</i> module (see Section </span><span lang=EN-US>9</span><span lang=EN-US> for more details). The TypeScript compiler
-	emits the following JavaScript code for this module.</span></p>
+	<p class="MsoNormal"><span>Module ‘M’ is an example of an <i>internal</i>
+	module, because it is nested within the <i>global</i> module (see Section </span>9 for more details). The TypeScript compiler
+	emits the following JavaScript code for this module.</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue'>var</span><span lang=EN-US>&nbsp;M;<br>
+	<p class="Code"><span style='color:blue'>var</span><span>&nbsp;M;<br>
 	(<span style='color:blue'>function</span>(M)&nbsp;{<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>var</span>&nbsp;s&nbsp;=&nbsp;<span
-				style='color:maroon'>&quot;hello&quot;</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>var</span>&nbsp;s&nbsp;=&nbsp;<span style='color:maroon'>&quot;hello&quot;</span>;<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>function</span>&nbsp;f()&nbsp;{<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>return</span>&nbsp;s;<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;M.f&nbsp;=&nbsp;f;<br>
 	})(M||(M={}));</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>In this case, the compiler assumes that the
+	<p class="MsoNormal"><span>In this case, the compiler assumes that the
 	module object resides in global variable ‘M’, which may or may not have been
 	initialized to the desired module object.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript also supports <i>external</i>
+	<p class="MsoNormal"><span>TypeScript also supports <i>external</i>
 	modules, which are files that contain top-level <i>export</i> and <i>import </i>directives.
 	For this type of module the TypeScript compiler will emit code whose module closure
 	and module object implementation vary according to the specified dynamic
 	loading system, for example, the Asynchronous Module Definition system.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-	
 	</div>
 	
-	<span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Segoe UI","sans-serif"'><br
-			clear=all style='page-break-before:right'>
 	</span>
 	
 

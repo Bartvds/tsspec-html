@@ -2,9 +2,9 @@
 
 > Because PDF and DocX are soo 2010
 
-The official PDF and DocX are cumbersome to use, and it looks as if the team has [no interest in improving it](https://typescript.codeplex.com/workitem/2143) with a more usable HTML version.
+Exported the TypeScript Language Specification to HTML, as the official PDF and DocX are so cumbersome to use. For a request for official HTML docs see this [ticket](https://typescript.codeplex.com/workitem/2143).
 
-Browse it on: [bartvds.github.io/tsspec-html/](http://bartvds.github.io/tsspec-html/0.9.1/dist/index.html)
+Browse HTML on: [bartvds.github.io/tsspec-html](http://bartvds.github.io/tsspec-html/0.9.1/dist/index.html)
 
 ## Pages
 

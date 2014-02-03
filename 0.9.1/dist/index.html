@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf8">
-	<title></title>
+	<title>TypeScript</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -14,1052 +14,218 @@
 color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 
 </div>
-
-<ul class="menu">
-	<li><a href="index.html">Index</a></li>
-	<li><a href="introduction.html">Introduction</a></li>
-	<li><a href="basic_concepts.html">Basic Concepts</a></li>
-	<li><a href="types.html">Types</a></li>
-	<li><a href="expressions.html">Expressions</a></li>
-	<li><a href="statements.html">Statements</a></li>
-	<li><a href="functions.html">Functions</a></li>
-	<li><a href="interfaces.html">Interfaces</a></li>
-	<li><a href="classes.html">Classes</a></li>
-	<li><a href="enum.html">Enums</a></li>
-	<li><a href="internal_modules.html">Internal Modules</a></li>
-	<li><a href="external_modules.html">Source Files and External Modules</a></li>
-	<li><a href="ambient.html">Ambients</a></li>
-	<li><a href="grammar.html">Grammar</a></li>
-</ul>
-
-	<div class=WordSection2>
-	
-	<p class=MsoTocHeading><span lang=EN-US>Table of Contents</span></p>
-	
-	<p class=MsoToc1><a href="introduction.html#_Toc364255681"><span lang=EN-US>1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Introduction</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
-	
-	<p class=MsoToc2><a href="introduction.html#_Toc364255682"><span lang=EN-US>1.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Ambient Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
-	
-	<p class=MsoToc2><a href="introduction.html#_Toc364255683"><span lang=EN-US>1.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Function Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
-	
-	<p class=MsoToc2><a href="introduction.html#_Toc364255684"><span lang=EN-US>1.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Object Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
-	
-	<p class=MsoToc2><a href="introduction.html#_Toc364255685"><span lang=EN-US>1.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Structural Subtyping</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
-	
-	<p class=MsoToc2><a href="introduction.html#_Toc364255686"><span lang=EN-US>1.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Contextual Typing</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
-	
-	<p class=MsoToc2><a href="introduction.html#_Toc364255687"><span lang=EN-US>1.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Classes</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
-	
-	<p class=MsoToc2><a href="introduction.html#_Toc364255688"><span lang=EN-US>1.7</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Modules</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
-	
-	<p class=MsoToc1><a href="basic_concepts.html#_Toc364255689"><span lang=EN-US>2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Basic Concepts</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
-	
-	<p class=MsoToc2><a href="basic_concepts.html#_Toc364255690"><span lang=EN-US>2.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Grammar Conventions</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
-	
-	<p class=MsoToc2><a href="basic_concepts.html#_Toc364255691"><span lang=EN-US>2.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Namespaces and Named Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
-	
-	<p class=MsoToc2><a href="basic_concepts.html#_Toc364255692"><span lang=EN-US>2.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
-	
-	<p class=MsoToc2><a href="basic_concepts.html#_Toc364255693"><span lang=EN-US>2.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Scopes</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
-	
-	<p class=MsoToc1><a href="types.html#_Toc364255694"><span lang=EN-US>3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>19</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255695"><span lang=EN-US>3.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The Any Type</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>20</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255696"><span lang=EN-US>3.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Primitive Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>20</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255697"><span lang=EN-US>3.2.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The Number Type</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>20</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255698"><span lang=EN-US>3.2.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The Boolean Type</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255699"><span lang=EN-US>3.2.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The String Type</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255700"><span lang=EN-US>3.2.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The Void Type</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255701"><span lang=EN-US>3.2.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The Null Type</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>22</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255702"><span lang=EN-US>3.2.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The Undefined Type</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>22</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255703"><span lang=EN-US>3.2.7</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Enum Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>22</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255704"><span lang=EN-US>3.2.8</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>String Literal Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>22</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255705"><span lang=EN-US>3.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Object Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>23</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255706"><span lang=EN-US>3.3.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Named Type References</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>23</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255707"><span lang=EN-US>3.3.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Array Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>23</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255708"><span lang=EN-US>3.3.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Anonymous Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>23</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255709"><span lang=EN-US>3.3.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Members</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>23</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255710"><span lang=EN-US>3.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Type Parameters</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>24</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255711"><span lang=EN-US>3.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Named Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>25</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255712"><span lang=EN-US>3.5.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Type Parameter Lists</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>26</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255713"><span lang=EN-US>3.5.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Recursive Generic Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>26</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255714"><span lang=EN-US>3.5.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Instance Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>27</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255715"><span lang=EN-US>3.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Specifying Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>27</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255716"><span lang=EN-US>3.6.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Predefined Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>27</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255717"><span lang=EN-US>3.6.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Type References</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>28</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255718"><span lang=EN-US>3.6.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Type Queries</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>29</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255719"><span lang=EN-US>3.6.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Type Literals</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>30</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255720"><span lang=EN-US>3.7</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Object Type Literals</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>31</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255721"><span lang=EN-US>3.7.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Property Signatures</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>32</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255722"><span lang=EN-US>3.7.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Call Signatures</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>32</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255723"><span lang=EN-US>3.7.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Construct Signatures</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>35</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255724"><span lang=EN-US>3.7.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Index Signatures</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>36</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255725"><span lang=EN-US>3.7.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Method Signatures</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>36</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255726"><span lang=EN-US>3.8</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Type Relationships</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>37</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255727"><span lang=EN-US>3.8.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Type and Member Identity</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>38</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255728"><span lang=EN-US>3.8.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Subtypes and Supertypes</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>39</span></a></p>
-	
-	<p class=MsoToc3><a href="types.html#_Toc364255729"><span lang=EN-US>3.8.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Assignment Compatibility</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>40</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255730"><span lang=EN-US>3.9</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Widened Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>42</span></a></p>
-	
-	<p class=MsoToc2><a href="types.html#_Toc364255731"><span lang=EN-US>3.10</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Best Common Type</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>42</span></a></p>
-	
-	<p class=MsoToc1><a href="expressions.html#_Toc364255732"><span lang=EN-US>4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Expressions</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>43</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255733"><span lang=EN-US>4.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Values and References</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>43</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255734"><span lang=EN-US>4.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The this Keyword</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>43</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255735"><span lang=EN-US>4.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Identifiers</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>44</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255736"><span lang=EN-US>4.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Literals</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>44</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255737"><span lang=EN-US>4.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Object Literals</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>44</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255738"><span lang=EN-US>4.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Array Literals</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>46</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255739"><span lang=EN-US>4.7</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Parentheses</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>46</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255740"><span lang=EN-US>4.8</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The super Keyword</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>46</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255741"><span lang=EN-US>4.8.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Super Calls</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>46</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255742"><span lang=EN-US>4.8.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Super Property Access</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>46</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255743"><span lang=EN-US>4.9</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Function Expressions</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>47</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255744"><span lang=EN-US>4.9.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Standard Function
-		Expressions</span><span lang=EN-US style='color:windowtext;display:none;
-		text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>48</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255745"><span lang=EN-US>4.9.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Arrow Function Expressions</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>48</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255746"><span lang=EN-US>4.9.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Contextually Typed Function
-		Expressions</span><span lang=EN-US style='color:windowtext;display:none;
-		text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>49</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255747"><span lang=EN-US>4.10</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Property Access</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>50</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255748"><span lang=EN-US>4.11</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The new Operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>51</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255749"><span lang=EN-US>4.12</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Function Calls</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>52</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255750"><span lang=EN-US>4.12.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Overload Resolution</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>52</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255751"><span lang=EN-US>4.12.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Type Argument Inference</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>53</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255752"><span lang=EN-US>4.12.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Grammar Ambiguities</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>55</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255753"><span lang=EN-US>4.13</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Type Assertions</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>55</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255754"><span lang=EN-US>4.14</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Unary Operators</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>56</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255755"><span lang=EN-US>4.14.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The ++ and -- operators</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>56</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255756"><span lang=EN-US>4.14.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The +, -, and ~ operators</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>56</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255757"><span lang=EN-US>4.14.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The ! operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>57</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255758"><span lang=EN-US>4.14.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The delete Operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>57</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255759"><span lang=EN-US>4.14.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The void Operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>57</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255760"><span lang=EN-US>4.14.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The typeof Operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>57</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255761"><span lang=EN-US>4.15</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Binary Operators</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>57</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255762"><span lang=EN-US>4.15.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The *, /, %, -, &lt;&lt;,
-		&gt;&gt;, &gt;&gt;&gt;, &amp;, ^, and | operators</span><span lang=EN-US
-																	  style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>57</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255763"><span lang=EN-US>4.15.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The + operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>58</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255764"><span lang=EN-US>4.15.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The &lt;, &gt;, &lt;=, &gt;=,
-		==, !=, ===, and !== operators</span><span lang=EN-US style='color:windowtext;
-		display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>58</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255765"><span lang=EN-US>4.15.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The instanceof operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>59</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255766"><span lang=EN-US>4.15.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The in operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>59</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255767"><span lang=EN-US>4.15.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The &amp;&amp; operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>59</span></a></p>
-	
-	<p class=MsoToc3><a href="expressions.html#_Toc364255768"><span lang=EN-US>4.15.7</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>The || operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>59</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255769"><span lang=EN-US>4.16</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>The Conditional Operator</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>60</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255770"><span lang=EN-US>4.17</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Assignment Operators</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>60</span></a></p>
-	
-	<p class=MsoToc2><a href="expressions.html#_Toc364255771"><span lang=EN-US>4.18</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Contextually Typed
-		Expressions</span><span lang=EN-US style='color:windowtext;display:none;
-		text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>61</span></a></p>
-	
-	<p class=MsoToc1><a href="statements.html#_Toc364255772"><span lang=EN-US>5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Statements</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>63</span></a></p>
-	
-	<p class=MsoToc2><a href="statements.html#_Toc364255773"><span lang=EN-US>5.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Variable Statements</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>63</span></a></p>
-	
-	<p class=MsoToc2><a href="statements.html#_Toc364255774"><span lang=EN-US>5.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Return Statements</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>64</span></a></p>
-	
-	<p class=MsoToc1><a href="functions.html#_Toc364255775"><span lang=EN-US>6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Functions</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>65</span></a></p>
-	
-	<p class=MsoToc2><a href="functions.html#_Toc364255776"><span lang=EN-US>6.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Function Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>65</span></a></p>
-	
-	<p class=MsoToc2><a href="functions.html#_Toc364255777"><span lang=EN-US>6.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Function Overloads</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>65</span></a></p>
-	
-	<p class=MsoToc2><a href="functions.html#_Toc364255778"><span lang=EN-US>6.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Function Implementations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>66</span></a></p>
-	
-	<p class=MsoToc2><a href="functions.html#_Toc364255779"><span lang=EN-US>6.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Generic Functions</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>67</span></a></p>
-	
-	<p class=MsoToc2><a href="statements.html#_Toc364255780"><span lang=EN-US>6.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Code Generation</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>68</span></a></p>
-	
-	<p class=MsoToc1><a href="interfaces.html#_Toc364255781"><span lang=EN-US>7</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Interfaces</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>71</span></a></p>
-	
-	<p class=MsoToc2><a href="interfaces.html#_Toc364255782"><span lang=EN-US>7.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Interface Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>71</span></a></p>
-	
-	<p class=MsoToc2><a href="interfaces.html#_Toc364255783"><span lang=EN-US style='background:
-		white'>7.2</span><span lang=EN-US style='font-size:11.0pt;line-height:115%;
-		color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US
-																								 style='background:white'>Declaration Merging</span><span lang=EN-US
-																																						  style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>73</span></a></p>
-	
-	<p class=MsoToc2><a href="interfaces.html#_Toc364255784"><span lang=EN-US style='background:
-		white'>7.3</span><span lang=EN-US style='font-size:11.0pt;line-height:115%;
-		color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US
-																								 style='background:white'>Interfaces Extending Classes</span><span lang=EN-US
-																																								   style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>73</span></a></p>
-	
-	<p class=MsoToc2><a href="interfaces.html#_Toc364255785"><span lang=EN-US>7.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Dynamic Type Checks</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>74</span></a></p>
-	
-	<p class=MsoToc1><a href="classes.html#_Toc364255786"><span lang=EN-US>8</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Classes</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>75</span></a></p>
-	
-	<p class=MsoToc2><a href="classes.html#_Toc364255787"><span lang=EN-US>8.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Class Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>75</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255788"><span lang=EN-US>8.1.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Class Heritage Specification</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>76</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255789"><span lang=EN-US>8.1.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Class Body</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>77</span></a></p>
-	
-	<p class=MsoToc2><a href="classes.html#_Toc364255790"><span lang=EN-US>8.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Members</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>78</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255791"><span lang=EN-US>8.2.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Instance and Static Members</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>78</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255792"><span lang=EN-US>8.2.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Accessibility</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>78</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255793"><span lang=EN-US>8.2.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Inheritance and Overriding</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>78</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255794"><span lang=EN-US>8.2.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Class Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>79</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255795"><span lang=EN-US>8.2.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Constructor Function Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>80</span></a></p>
-	
-	<p class=MsoToc2><a href="classes.html#_Toc364255796"><span lang=EN-US>8.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Constructor Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>81</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255797"><span lang=EN-US>8.3.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Constructor Parameters</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>82</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255798"><span lang=EN-US style='background:
-		white'>8.3.2</span><span lang=EN-US style='font-size:11.0pt;line-height:115%;
-		color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US
-																					 style='background:white'>Super Calls</span><span lang=EN-US style='color:windowtext;
-		display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>82</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255799"><span lang=EN-US>8.3.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Automatic Constructors</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>83</span></a></p>
-	
-	<p class=MsoToc2><a href="classes.html#_Toc364255800"><span lang=EN-US>8.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Member Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>83</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255801"><span lang=EN-US>8.4.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Member Variable Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>84</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255802"><span lang=EN-US>8.4.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Member Function Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>85</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255803"><span lang=EN-US>8.4.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Member Accessor Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>86</span></a></p>
-	
-	<p class=MsoToc2><a href="classes.html#_Toc364255804"><span lang=EN-US>8.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Code Generation</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>87</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255805"><span lang=EN-US>8.5.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Classes Without Extends
-		Clauses</span><span lang=EN-US style='color:windowtext;display:none;text-decoration:
-		none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>87</span></a></p>
-	
-	<p class=MsoToc3><a href="classes.html#_Toc364255806"><span lang=EN-US>8.5.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Classes With Extends Clauses</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>89</span></a></p>
-	
-	<p class=MsoToc1><a href="enum.html#_Toc364255807"><span lang=EN-US>9</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Enums</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>93</span></a></p>
-	
-	<p class=MsoToc2><a href="enum.html#_Toc364255808"><span lang=EN-US>9.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Enum Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>93</span></a></p>
-	
-	<p class=MsoToc2><a href="enum.html#_Toc364255809"><span lang=EN-US>9.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Enum Members</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>93</span></a></p>
-	
-	<p class=MsoToc2><a href="enum.html#_Toc364255810"><span lang=EN-US style='background:
-		white'>9.3</span><span lang=EN-US style='font-size:11.0pt;line-height:115%;
-		color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US
-																								 style='background:white'>Declaration Merging</span><span lang=EN-US
-																																						  style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>95</span></a></p>
-	
-	<p class=MsoToc2><a href="enum.html#_Toc364255811"><span lang=EN-US style='background:
-		white'>9.4</span><span lang=EN-US style='font-size:11.0pt;line-height:115%;
-		color:windowtext;text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US
-																								 style='background:white'>Code Generation</span><span lang=EN-US
-																																					  style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>95</span></a></p>
-	
-	<p class=MsoToc1><a href="internal_modules.html#_Toc364255812"><span lang=EN-US>10</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Internal Modules</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>97</span></a></p>
-	
-	<p class=MsoToc2><a href="internal_modules.html#_Toc364255813"><span lang=EN-US>10.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Module Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>97</span></a></p>
-	
-	<p class=MsoToc2><a href="internal_modules.html#_Toc364255814"><span lang=EN-US>10.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Module Body</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>98</span></a></p>
-	
-	<p class=MsoToc2><a href="internal_modules.html#_Toc364255815"><span lang=EN-US>10.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Import Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>99</span></a></p>
-	
-	<p class=MsoToc2><a href="internal_modules.html#_Toc364255816"><span lang=EN-US>10.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Export Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>100</span></a></p>
-	
-	<p class=MsoToc2><a href="internal_modules.html#_Toc364255817"><span lang=EN-US>10.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Declaration Merging</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>101</span></a></p>
-	
-	<p class=MsoToc2><a href="internal_modules.html#_Toc364255818"><span lang=EN-US>10.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Code Generation</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>103</span></a></p>
-	
-	<p class=MsoToc1><a href="external_modules.html#_Toc364255819"><span lang=EN-US>11</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Source Files and External
-		Modules</span><span lang=EN-US style='color:windowtext;display:none;text-decoration:
-		none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>105</span></a></p>
-	
-	<p class=MsoToc2><a href="external_modules.html#_Toc364255820"><span lang=EN-US>11.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Source Files</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>105</span></a></p>
-	
-	<p class=MsoToc3><a href="external_modules.html#_Toc364255821"><span lang=EN-US>11.1.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Source Files Dependencies</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>106</span></a></p>
-	
-	<p class=MsoToc2><a href="external_modules.html#_Toc364255822"><span lang=EN-US>11.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>External Modules</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>107</span></a></p>
-	
-	<p class=MsoToc3><a href="external_modules.html#_Toc364255823"><span lang=EN-US>11.2.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>External Module Names</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>108</span></a></p>
-	
-	<p class=MsoToc3><a href="external_modules.html#_Toc364255824"><span lang=EN-US>11.2.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>External Import Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>109</span></a></p>
-	
-	<p class=MsoToc3><a href="external_modules.html#_Toc364255825"><span lang=EN-US>11.2.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Export Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>109</span></a></p>
-	
-	<p class=MsoToc3><a href="external_modules.html#_Toc364255826"><span lang=EN-US>11.2.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Export Assignments</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>109</span></a></p>
-	
-	<p class=MsoToc3><a href="external_modules.html#_Toc364255827"><span lang=EN-US>11.2.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>CommonJS Modules</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>110</span></a></p>
-	
-	<p class=MsoToc3><a href="external_modules.html#_Toc364255828"><span lang=EN-US>11.2.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>AMD Modules</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>111</span></a></p>
-	
-	<p class=MsoToc2><a href="external_modules.html#_Toc364255829"><span lang=EN-US>11.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Code Generation</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>112</span></a></p>
-	
-	<p class=MsoToc1><a href="ambient.html#_Toc364255830"><span lang=EN-US>12</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Ambients</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>113</span></a></p>
-	
-	<p class=MsoToc2><a href="ambient.html#_Toc364255831"><span lang=EN-US>12.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Ambient Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>113</span></a></p>
-	
-	<p class=MsoToc3><a href="ambient.html#_Toc364255832"><span lang=EN-US>12.1.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Ambient Variable Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>113</span></a></p>
-	
-	<p class=MsoToc3><a href="ambient.html#_Toc364255833"><span lang=EN-US>12.1.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Ambient Function Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>113</span></a></p>
-	
-	<p class=MsoToc3><a href="ambient.html#_Toc364255834"><span lang=EN-US>12.1.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Ambient Class Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>114</span></a></p>
-	
-	<p class=MsoToc3><a href="ambient.html#_Toc364255835"><span lang=EN-US>12.1.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Ambient Enum Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>114</span></a></p>
-	
-	<p class=MsoToc3><a href="ambient.html#_Toc364255836"><span lang=EN-US>12.1.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Ambient Module Declarations</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>115</span></a></p>
-	
-	<p class=MsoToc3><a href="ambient.html#_Toc364255837"><span lang=EN-US>12.1.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp; </span><span lang=EN-US>Ambient External Module
-		Declarations</span><span lang=EN-US style='color:windowtext;display:none;
-		text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>115</span></a></p>
-	
-	<p class=MsoToc1><a href="grammar.html#_Toc364255838"><span lang=EN-US>A</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Grammar</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'> </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>117</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255839"><span lang=EN-US>A.1</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Types</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>117</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255840"><span lang=EN-US>A.2</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Expressions</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>120</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255841"><span lang=EN-US>A.3</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Statements</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>121</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255842"><span lang=EN-US>A.4</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Functions</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>121</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255843"><span lang=EN-US>A.5</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Interfaces</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>121</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255844"><span lang=EN-US>A.6</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Classes</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>122</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255845"><span lang=EN-US>A.7</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Enums</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>123</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255846"><span lang=EN-US>A.8</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Internal Modules</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>124</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255847"><span lang=EN-US>A.9</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Programs and External
-		Modules</span><span lang=EN-US style='color:windowtext;display:none;text-decoration:
-		none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>125</span></a></p>
-	
-	<p class=MsoToc2><a href="grammar.html#_Toc364255848"><span lang=EN-US>A.10</span><span
-			lang=EN-US style='font-size:11.0pt;line-height:115%;color:windowtext;
-		text-decoration:none'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=EN-US>Ambients</span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>. </span><span
-			lang=EN-US style='color:windowtext;display:none;text-decoration:none'>126</span></a></p>
-	
-	<p><span lang=EN-US>&nbsp;</span></p>
-	
+<div class="sideMenu">
+<div class="menu">
+	<p class="MsoToc1"><a href="index.html">Index</a></p>
+	<p class="MsoToc1">1 - <a href="introduction.html">Introduction</a></p>
+	<p class="MsoToc1">2 - <a href="basic_concepts.html">Basic Concepts</a></p>
+	<p class="MsoToc1">3 - <a href="types.html">Types</a></p>
+	<p class="MsoToc1">4 - <a href="expressions.html">Expressions</a></p>
+	<p class="MsoToc1">5 - <a href="statements.html">Statements</a></p>
+	<p class="MsoToc1">6 - <a href="functions.html">Functions</a></p>
+	<p class="MsoToc1">7 - <a href="interfaces.html">Interfaces</a></p>
+	<p class="MsoToc1">8 - <a href="classes.html">Classes</a></p>
+	<p class="MsoToc1">9 - <a href="enum.html">Enums</a></p>
+	<p class="MsoToc1">10 - <a href="internal_modules.html">Internal Modules</a></p>
+	<p class="MsoToc1">11 - <a href="external_modules.html">Source Files and External Modules</a></p>
+	<p class="MsoToc1">12 - <a href="ambient.html">Ambients</a></p>
+	<p class="MsoToc1">A. - <a href="grammar.html">Grammar</a></p>
+</div>
+</div>
+	<div style="margin-left:10em;">
+		<div class="menu-introduction">
+			<p class="MsoToc1">1 - <a href="introduction.html#_Toc364255681">Introduction</a></p>
+			<p class="MsoToc2">1.1 - <a href="introduction.html#_Toc364255682">Ambient Declarations</a></p>
+			<p class="MsoToc2">1.2 - <a href="introduction.html#_Toc364255683">Function Types</a></p>
+			<p class="MsoToc2">1.3 - <a href="introduction.html#_Toc364255684">Object Types</a></p>
+			<p class="MsoToc2">1.4 - <a href="introduction.html#_Toc364255685">Structural Subtyping</a></p>
+			<p class="MsoToc2">1.5 - <a href="introduction.html#_Toc364255686">Contextual Typing</a></p>
+			<p class="MsoToc2">1.6 - <a href="introduction.html#_Toc364255687">Classes</a></p>
+			<p class="MsoToc2">1.7 - <a href="introduction.html#_Toc364255688">Modules</a></p>
+		</div>
+		<div class="menu-basic_concepts">
+			<p class="MsoToc1">2 - <a href="basic_concepts.html#_Toc364255689">Basic Concepts</a></p>
+			<p class="MsoToc2">2.1 - <a href="basic_concepts.html#_Toc364255690">Grammar Conventions</a></p>
+			<p class="MsoToc2">2.2 - <a href="basic_concepts.html#_Toc364255691">Namespaces and Named Types</a></p>
+			<p class="MsoToc2">2.3 - <a href="basic_concepts.html#_Toc364255692">Declarations</a></p>
+			<p class="MsoToc2">2.4 - <a href="basic_concepts.html#_Toc364255693">Scopes</a></p>
+		</div>
+		<div class="menu-types">
+			<p class="MsoToc1">3 - <a href="types.html#_Toc364255694">Types</a></p>
+			<p class="MsoToc2">3.1 - <a href="types.html#_Toc364255695">The Any Type</a></p>
+			<p class="MsoToc2">3.2 - <a href="types.html#_Toc364255696">Primitive Types</a></p>
+			<p class="MsoToc3">3.2.1 - <a href="types.html#_Toc364255697">The Number Type</a></p>
+			<p class="MsoToc3">3.2.2 - <a href="types.html#_Toc364255698">The Boolean Type</a></p>
+			<p class="MsoToc3">3.2.3 - <a href="types.html#_Toc364255699">The String Type</a></p>
+			<p class="MsoToc3">3.2.4 - <a href="types.html#_Toc364255700">The Void Type</a></p>
+			<p class="MsoToc3">3.2.5 - <a href="types.html#_Toc364255701">The Null Type</a></p>
+			<p class="MsoToc3">3.2.6 - <a href="types.html#_Toc364255702">The Undefined Type</a></p>
+			<p class="MsoToc3">3.2.7 - <a href="types.html#_Toc364255703">Enum Types</a></p>
+			<p class="MsoToc3">3.2.8 - <a href="types.html#_Toc364255704">String Literal Types</a></p>
+			<p class="MsoToc2">3.3 - <a href="types.html#_Toc364255705">Object Types</a></p>
+			<p class="MsoToc3">3.3.1 - <a href="types.html#_Toc364255706">Named Type References</a></p>
+			<p class="MsoToc3">3.3.2 - <a href="types.html#_Toc364255707">Array Types</a></p>
+			<p class="MsoToc3">3.3.3 - <a href="types.html#_Toc364255708">Anonymous Types</a></p>
+			<p class="MsoToc3">3.3.4 - <a href="types.html#_Toc364255709">Members</a></p>
+			<p class="MsoToc2">3.4 - <a href="types.html#_Toc364255710">Type Parameters</a></p>
+			<p class="MsoToc2">3.5 - <a href="types.html#_Toc364255711">Named Types</a></p>
+			<p class="MsoToc3">3.5.1 - <a href="types.html#_Toc364255712">Type Parameter Lists</a></p>
+			<p class="MsoToc3">3.5.2 - <a href="types.html#_Toc364255713">Recursive Generic Types</a></p>
+			<p class="MsoToc3">3.5.3 - <a href="types.html#_Toc364255714">Instance Types</a></p>
+			<p class="MsoToc2">3.6 - <a href="types.html#_Toc364255715">Specifying Types</a></p>
+			<p class="MsoToc3">3.6.1 - <a href="types.html#_Toc364255716">Predefined Types</a></p>
+			<p class="MsoToc3">3.6.2 - <a href="types.html#_Toc364255717">Type References</a></p>
+			<p class="MsoToc3">3.6.3 - <a href="types.html#_Toc364255718">Type Queries</a></p>
+			<p class="MsoToc3">3.6.4 - <a href="types.html#_Toc364255719">Type Literals</a></p>
+			<p class="MsoToc2">3.7 - <a href="types.html#_Toc364255720">Object Type Literals</a></p>
+			<p class="MsoToc3">3.7.1 - <a href="types.html#_Toc364255721">Property Signatures</a></p>
+			<p class="MsoToc3">3.7.2 - <a href="types.html#_Toc364255722">Call Signatures</a></p>
+			<p class="MsoToc3">3.7.3 - <a href="types.html#_Toc364255723">Construct Signatures</a></p>
+			<p class="MsoToc3">3.7.4 - <a href="types.html#_Toc364255724">Index Signatures</a></p>
+			<p class="MsoToc3">3.7.5 - <a href="types.html#_Toc364255725">Method Signatures</a></p>
+			<p class="MsoToc2">3.8 - <a href="types.html#_Toc364255726">Type Relationships</a></p>
+			<p class="MsoToc3">3.8.1 - <a href="types.html#_Toc364255727">Type and Member Identity</a></p>
+			<p class="MsoToc3">3.8.2 - <a href="types.html#_Toc364255728">Subtypes and Supertypes</a></p>
+			<p class="MsoToc3">3.8.3 - <a href="types.html#_Toc364255729">Assignment Compatibility</a></p>
+			<p class="MsoToc2">3.9 - <a href="types.html#_Toc364255730">Widened Types</a></p>
+			<p class="MsoToc2">3.10 - <a href="types.html#_Toc364255731">Best Common Type</a></p>
+		</div>
+		<div class="menu-expressions">
+			<p class="MsoToc1">4 - <a href="expressions.html#_Toc364255732">Expressions</a></p>
+			<p class="MsoToc2">4.1 - <a href="expressions.html#_Toc364255733">Values and References</a></p>
+			<p class="MsoToc2">4.2 - <a href="expressions.html#_Toc364255734">The this Keyword</a></p>
+			<p class="MsoToc2">4.3 - <a href="expressions.html#_Toc364255735">Identifiers</a></p>
+			<p class="MsoToc2">4.4 - <a href="expressions.html#_Toc364255736">Literals</a></p>
+			<p class="MsoToc2">4.5 - <a href="expressions.html#_Toc364255737">Object Literals</a></p>
+			<p class="MsoToc2">4.6 - <a href="expressions.html#_Toc364255738">Array Literals</a></p>
+			<p class="MsoToc2">4.7 - <a href="expressions.html#_Toc364255739">Parentheses</a></p>
+			<p class="MsoToc2">4.8 - <a href="expressions.html#_Toc364255740">The super Keyword</a></p>
+			<p class="MsoToc3">4.8.1 - <a href="expressions.html#_Toc364255741">Super Calls</a></p>
+			<p class="MsoToc3">4.8.2 - <a href="expressions.html#_Toc364255742">Super Property Access</a></p>
+			<p class="MsoToc2">4.9 - <a href="expressions.html#_Toc364255743">Function Expressions</a></p>
+			<p class="MsoToc3">4.9.1 - <a href="expressions.html#_Toc364255744">Standard Function Expressions</a></p>
+			<p class="MsoToc3">4.9.2 - <a href="expressions.html#_Toc364255745">Arrow Function Expressions</a></p>
+			<p class="MsoToc3">4.9.3 - <a href="expressions.html#_Toc364255746">Contextually Typed Function Expressions</a></p>
+			<p class="MsoToc2">4.10 - <a href="expressions.html#_Toc364255747">Property Access</a></p>
+			<p class="MsoToc2">4.11 - <a href="expressions.html#_Toc364255748">The new Operator</a></p>
+			<p class="MsoToc2">4.12 - <a href="expressions.html#_Toc364255749">Function Calls</a></p>
+			<p class="MsoToc3">4.12.1 - <a href="expressions.html#_Toc364255750">Overload Resolution</a></p>
+			<p class="MsoToc3">4.12.2 - <a href="expressions.html#_Toc364255751">Type Argument Inference</a></p>
+			<p class="MsoToc3">4.12.3 - <a href="expressions.html#_Toc364255752">Grammar Ambiguities</a></p>
+			<p class="MsoToc2">4.13 - <a href="expressions.html#_Toc364255753">Type Assertions</a></p>
+			<p class="MsoToc2">4.14 - <a href="expressions.html#_Toc364255754">Unary Operators</a></p>
+			<p class="MsoToc3">4.14.1 - <a href="expressions.html#_Toc364255755">The ++ and -- operators</a></p>
+			<p class="MsoToc3">4.14.2 - <a href="expressions.html#_Toc364255756">The +, -, and ~ operators</a></p>
+			<p class="MsoToc3">4.14.3 - <a href="expressions.html#_Toc364255757">The ! operator</a></p>
+			<p class="MsoToc3">4.14.4 - <a href="expressions.html#_Toc364255758">The delete Operator</a></p>
+			<p class="MsoToc3">4.14.5 - <a href="expressions.html#_Toc364255759">The void Operator</a></p>
+			<p class="MsoToc3">4.14.6 - <a href="expressions.html#_Toc364255760">The typeof Operator</a></p>
+			<p class="MsoToc2">4.15 - <a href="expressions.html#_Toc364255761">Binary Operators</a></p>
+			<p class="MsoToc3">4.15.1 - <a href="expressions.html#_Toc364255762">The *, /, %, -, &lt;&lt;, &gt;&gt;, &gt;&gt;&gt;, &amp;, ^, and | operators</a>
+			</p>
+			<p class="MsoToc3">4.15.2 - <a href="expressions.html#_Toc364255763">The + operator</a></p>
+			<p class="MsoToc3">4.15.3 - <a href="expressions.html#_Toc364255764">The &lt;, &gt;, &lt;=, &gt;=, ==, !=, ===, and !== operators</a></p>
+			<p class="MsoToc3">4.15.4 - <a href="expressions.html#_Toc364255765">The instanceof operator</a></p>
+			<p class="MsoToc3">4.15.5 - <a href="expressions.html#_Toc364255766">The in operator</a></p>
+			<p class="MsoToc3">4.15.6 - <a href="expressions.html#_Toc364255767">The &amp;&amp; operator</a></p>
+			<p class="MsoToc3">4.15.7 - <a href="expressions.html#_Toc364255768">The || operator</a></p>
+			<p class="MsoToc2">4.16 - <a href="expressions.html#_Toc364255769">The Conditional Operator</a></p>
+			<p class="MsoToc2">4.17 - <a href="expressions.html#_Toc364255770">Assignment Operators</a></p>
+			<p class="MsoToc2">4.18 - <a href="expressions.html#_Toc364255771">Contextually Typed Expressions</a></p>
+		</div>
+		<div class="menu-statements">
+			<p class="MsoToc1">5 - <a href="statements.html#_Toc364255772">Statements</a></p>
+			<p class="MsoToc2">5.1 - <a href="statements.html#_Toc364255773">Variable Statements</a></p>
+			<p class="MsoToc2">5.2 - <a href="statements.html#_Toc364255774">Return Statements</a></p>
+			<p class="MsoToc1">6 - <a href="functions.html#_Toc364255775">Functions</a></p>
+			<p class="MsoToc2">6.1 - <a href="functions.html#_Toc364255776">Function Declarations</a></p>
+			<p class="MsoToc2">6.2 - <a href="functions.html#_Toc364255777">Function Overloads</a></p>
+			<p class="MsoToc2">6.3 - <a href="functions.html#_Toc364255778">Function Implementations</a></p>
+			<p class="MsoToc2">6.4 - <a href="functions.html#_Toc364255779">Generic Functions</a></p>
+			<p class="MsoToc2">6.5 - <a href="statements.html#_Toc364255780">Code Generation</a></p>
+		</div>
+		<div class="menu-interfaces">
+			<p class="MsoToc1">7 - <a href="interfaces.html#_Toc364255781">Interfaces</a></p>
+			<p class="MsoToc2">7.1 - <a href="interfaces.html#_Toc364255782">Interface Declarations</a></p>
+			<p class="MsoToc2">7.2 - <a href="interfaces.html#_Toc364255783">Declaration Merging</a></p>
+			<p class="MsoToc2">7.3 - <a href="interfaces.html#_Toc364255784">Interfaces Extending Classes</a></p>
+			<p class="MsoToc2">7.4 - <a href="interfaces.html#_Toc364255785">Dynamic Type Checks</a></p>
+		</div>
+		<div class="menu-classes">
+			<p class="MsoToc1">8 - <a href="classes.html#_Toc364255786">Classes</a></p>
+			<p class="MsoToc2">8.1 - <a href="classes.html#_Toc364255787">Class Declarations</a></p>
+			<p class="MsoToc3">8.1.1 - <a href="classes.html#_Toc364255788">Class Heritage Specification</a></p>
+			<p class="MsoToc3">8.1.2 - <a href="classes.html#_Toc364255789">Class Body</a></p>
+			<p class="MsoToc2">8.2 - <a href="classes.html#_Toc364255790">Members</a></p>
+			<p class="MsoToc3">8.2.1 - <a href="classes.html#_Toc364255791">Instance and Static Members</a></p>
+			<p class="MsoToc3">8.2.2 - <a href="classes.html#_Toc364255792">Accessibility</a></p>
+			<p class="MsoToc3">8.2.3 - <a href="classes.html#_Toc364255793">Inheritance and Overriding</a></p>
+			<p class="MsoToc3">8.2.4 - <a href="classes.html#_Toc364255794">Class Types</a></p>
+			<p class="MsoToc3">8.2.5 - <a href="classes.html#_Toc364255795">Constructor Function Types</a></p>
+			<p class="MsoToc2">8.3 - <a href="classes.html#_Toc364255796">Constructor Declarations</a></p>
+			<p class="MsoToc3">8.3.1 - <a href="classes.html#_Toc364255797">Constructor Parameters</a></p>
+			<p class="MsoToc3">8.3.2 - <a href="classes.html#_Toc364255798">Super Calls</a></p>
+			<p class="MsoToc3">8.3.3 - <a href="classes.html#_Toc364255799">Automatic Constructors</a></p>
+			<p class="MsoToc2">8.4 - <a href="classes.html#_Toc364255800">Member Declarations</a></p>
+			<p class="MsoToc3">8.4.1 - <a href="classes.html#_Toc364255801">Member Variable Declarations</a></p>
+			<p class="MsoToc3">8.4.2 - <a href="classes.html#_Toc364255802">Member Function Declarations</a></p>
+			<p class="MsoToc3">8.4.3 - <a href="classes.html#_Toc364255803">Member Accessor Declarations</a></p>
+			<p class="MsoToc2">8.5 - <a href="classes.html#_Toc364255804">Code Generation</a></p>
+			<p class="MsoToc3">8.5.1 - <a href="classes.html#_Toc364255805">Classes Without Extends Clauses</a></p>
+			<p class="MsoToc3">8.5.2 - <a href="classes.html#_Toc364255806">Classes With Extends Clauses</a></p>
+		</div>
+		<div class="menu-enum">
+			<p class="MsoToc1">9 - <a href="enum.html#_Toc364255807">Enums</a></p>
+			<p class="MsoToc2">9.1 - <a href="enum.html#_Toc364255808">Enum Declarations</a></p>
+			<p class="MsoToc2">9.2 - <a href="enum.html#_Toc364255809">Enum Members</a></p>
+			<p class="MsoToc2">9.3 - <a href="enum.html#_Toc364255810">Declaration Merging</a></p>
+			<p class="MsoToc2">9.4 - <a href="enum.html#_Toc364255811">Code Generation</a></p>
+		</div>
+		<div class="menu-internal">
+			<p class="MsoToc1">10 - <a href="internal_modules.html#_Toc364255812">Internal Modules</a></p>
+			<p class="MsoToc2">10.1 - <a href="internal_modules.html#_Toc364255813">Module Declarations</a></p>
+			<p class="MsoToc2">10.2 - <a href="internal_modules.html#_Toc364255814">Module Body</a></p>
+			<p class="MsoToc2">10.3 - <a href="internal_modules.html#_Toc364255815">Import Declarations</a></p>
+			<p class="MsoToc2">10.4 - <a href="internal_modules.html#_Toc364255816">Export Declarations</a></p>
+			<p class="MsoToc2">10.5 - <a href="internal_modules.html#_Toc364255817">Declaration Merging</a></p>
+			<p class="MsoToc2">10.6 - <a href="internal_modules.html#_Toc364255818">Code Generation</a></p>
+		</div>
+		<div class="menu-external_moduless">
+			<p class="MsoToc1">11 - <a href="external_modules.html#_Toc364255819">Source Files and External Modules</a></p>
+			<p class="MsoToc2">11.1 - <a href="external_modules.html#_Toc364255820">Source Files</a></p>
+			<p class="MsoToc3">11.1.1 - <a href="external_modules.html#_Toc364255821">Source Files Dependencies</a></p>
+			<p class="MsoToc2">11.2 - <a href="external_modules.html#_Toc364255822">External Modules</a></p>
+			<p class="MsoToc3">11.2.1 - <a href="external_modules.html#_Toc364255823">External Module Names</a></p>
+			<p class="MsoToc3">11.2.2 - <a href="external_modules.html#_Toc364255824">External Import Declarations</a></p>
+			<p class="MsoToc3">11.2.3 - <a href="external_modules.html#_Toc364255825">Export Declarations</a></p>
+			<p class="MsoToc3">11.2.4 - <a href="external_modules.html#_Toc364255826">Export Assignments</a></p>
+			<p class="MsoToc3">11.2.5 - <a href="external_modules.html#_Toc364255827">CommonJS Modules</a></p>
+			<p class="MsoToc3">11.2.6 - <a href="external_modules.html#_Toc364255828">AMD Modules</a></p>
+			<p class="MsoToc2">11.3 - <a href="external_modules.html#_Toc364255829">Code Generation</a></p>
+		</div>
+		<div class="menu-ambient">
+			<p class="MsoToc1">12 - <a href="ambient.html#_Toc364255830">Ambients</a></p>
+			<p class="MsoToc2">12.1 - <a href="ambient.html#_Toc364255831">Ambient Declarations</a></p>
+			<p class="MsoToc3">12.1.1 - <a href="ambient.html#_Toc364255832">Ambient Variable Declarations</a></p>
+			<p class="MsoToc3">12.1.2 - <a href="ambient.html#_Toc364255833">Ambient Function Declarations</a></p>
+			<p class="MsoToc3">12.1.3 - <a href="ambient.html#_Toc364255834">Ambient Class Declarations</a></p>
+			<p class="MsoToc3">12.1.4 - <a href="ambient.html#_Toc364255835">Ambient Enum Declarations</a></p>
+			<p class="MsoToc3">12.1.5 - <a href="ambient.html#_Toc364255836">Ambient Module Declarations</a></p>
+			<p class="MsoToc3">12.1.6 - <a href="ambient.html#_Toc364255837">Ambient External Module Declarations</a></p>
+		</div>
+		<div class="menu-grammar">
+			<p class="MsoToc1">A - <a href="grammar.html#_Toc364255838">Grammar</a></p>
+			<p class="MsoToc2">A.1 - <a href="grammar.html#_Toc364255839">Types</a></p>
+			<p class="MsoToc2">A.2 - <a href="grammar.html#_Toc364255840">Expressions</a></p>
+			<p class="MsoToc2">A.3 - <a href="grammar.html#_Toc364255841">Statements</a></p>
+			<p class="MsoToc2">A.4 - <a href="grammar.html#_Toc364255842">Functions</a></p>
+			<p class="MsoToc2">A.5 - <a href="grammar.html#_Toc364255843">Interfaces</a></p>
+			<p class="MsoToc2">A.6 - <a href="grammar.html#_Toc364255844">Classes</a></p>
+			<p class="MsoToc2">A.7 - <a href="grammar.html#_Toc364255845">Enums</a></p>
+			<p class="MsoToc2">A.8 - <a href="grammar.html#_Toc364255846">Internal Modules</a></p>
+			<p class="MsoToc2">A.9 - <a href="grammar.html#_Toc364255847">Programs and External Modules</a></p>
+			<p class="MsoToc2">A.10 - <a href="grammar.html#_Toc364255848">Ambients</a></p>
+		</div>
 	</div>
 	
 

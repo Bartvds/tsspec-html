@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf8">
-	<title></title>
+	<title>TypeScript</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -14,298 +14,258 @@
 color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 
 </div>
-
-<ul class="menu">
-	<li><a href="index.html">Index</a></li>
-	<li><a href="introduction.html">Introduction</a></li>
-	<li><a href="basic_concepts.html">Basic Concepts</a></li>
-	<li><a href="types.html">Types</a></li>
-	<li><a href="expressions.html">Expressions</a></li>
-	<li><a href="statements.html">Statements</a></li>
-	<li><a href="functions.html">Functions</a></li>
-	<li><a href="interfaces.html">Interfaces</a></li>
-	<li><a href="classes.html">Classes</a></li>
-	<li><a href="enum.html">Enums</a></li>
-	<li><a href="internal_modules.html">Internal Modules</a></li>
-	<li><a href="external_modules.html">Source Files and External Modules</a></li>
-	<li><a href="ambient.html">Ambients</a></li>
-	<li><a href="grammar.html">Grammar</a></li>
-</ul>
-
+<div class="sideMenu">
+<div class="menu">
+	<p class="MsoToc1"><a href="index.html">Index</a></p>
+	<p class="MsoToc1">1 - <a href="introduction.html">Introduction</a></p>
+	<p class="MsoToc1">2 - <a href="basic_concepts.html">Basic Concepts</a></p>
+	<p class="MsoToc1">3 - <a href="types.html">Types</a></p>
+	<p class="MsoToc1">4 - <a href="expressions.html">Expressions</a></p>
+	<p class="MsoToc1">5 - <a href="statements.html">Statements</a></p>
+	<p class="MsoToc1">6 - <a href="functions.html">Functions</a></p>
+	<p class="MsoToc1">7 - <a href="interfaces.html">Interfaces</a></p>
+	<p class="MsoToc1">8 - <a href="classes.html">Classes</a></p>
+	<p class="MsoToc1">9 - <a href="enum.html">Enums</a></p>
+	<p class="MsoToc1">10 - <a href="internal_modules.html">Internal Modules</a></p>
+	<p class="MsoToc1">11 - <a href="external_modules.html">Source Files and External Modules</a></p>
+	<p class="MsoToc1">12 - <a href="ambient.html">Ambients</a></p>
+	<p class="MsoToc1">A. - <a href="grammar.html">Grammar</a></p>
+</div>
+</div>
+	<div class="WordSection1">
 	
-	<div class=WordSection13>
+	<h1><a name="_Toc364255819"><span>11<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>Source Files and External Modules</a></h1>
 	
-	<h1><a name="_Toc364255819"><span lang=EN-US>11<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Source Files and External Modules</span></a></h1>
-	
-	<p class=MsoNormal><span lang=EN-US>TypeScript implements external modules that
+	<p class="MsoNormal">TypeScript implements external modules that
 	are closely aligned with those proposed for ECMAScript 6 and supports code
-	generation targeting CommonJS and AMD module systems.</span></p>
+	generation targeting CommonJS and AMD module systems.</p>
 	
-	<p class=MsoNormal><i><span lang=EN-US>NOTE: TypeScript currently doesn’t
+	<p class="MsoNormal"><i>NOTE: TypeScript currently doesn’t
 	support the full proposed capabilities of the ECMAScript 6 import and export
 	syntax. We expect to align more closely on the syntax as the ECMAScript 6
-	specification evolves.</span></i></p>
+	specification evolves.</i></p>
 	
-	<h2><a name="_Toc364255820"></a><a name="_Ref354732919"><span lang="EN-US">11.1</span>&nbsp;<span
-			lang=EN-US>Source Files</span></a></h2>
+	<h2>
+		<a name="_Toc364255820"></a><a name="_Ref354732919"><span lang="EN-US">11.1</span>&nbsp;Source Files</a>
+	</h2>
 	
-	<p class=MsoNormal><span lang=EN-US>A TypeScript <b><i>program</i></b> consists
+	<p class="MsoNormal"><span>A TypeScript <b><i>program</i></b> consists
 	of one or more source files that are either <b><i>implementation source files</i></b>
 	or <b><i>declaration source files</i></b>. Source files with extension ‘.ts’ are
-	<span class=Production>ImplementationSourceFiles</span> containing statements
-	and declarations. Source files with extension ‘.d.ts’ are <span
-				class=Production>DeclarationSourceFiles</span> containing declarations only.
+	<span class="Production">ImplementationSourceFiles</span> containing statements
+	and declarations. Source files with extension ‘.d.ts’ are <span class="Production">DeclarationSourceFiles</span> containing declarations only.
 	Declaration source files are a strict subset of implementation source files.</span></p>
 	
-	<p class=Grammar><span lang=EN-US>SourceFile:<br>
+	<p class="Grammar"><span>SourceFile:<br>
 	ImplementationSourceFile<br>
 	DeclarationSourceFile</span></p>
 	
-	<p class=Grammar><span lang=EN-US>ImplementationSourceFile:<br>
+	<p class="Grammar"><span>ImplementationSourceFile:<br>
 	ImplementationElements<sub>opt</sub></span></p>
 	
-	<p class=Grammar><span lang=EN-US>ImplementationElements:<br>
+	<p class="Grammar"><span>ImplementationElements:<br>
 	ImplementationElement<br>
-	ImplementationElements&nbsp;&nbsp; ImplementationElement</span></p>
+	ImplementationElements&nbsp;&nbsp;&nbsp;ImplementationElement</span></p>
 	
-	<p class=Grammar><span lang=EN-US>ImplementationElement:<br>
+	<p class="Grammar"><span>ImplementationElement:<br>
 	ModuleElement<br>
 	ExportAssignment<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-			lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; ExternalImportDeclaration<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-			lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; AmbientDeclaration</span></p>
+	</span><span class="Terminal"><span style='font-style:normal'>export</span></span><sub>opt</sub><span>&nbsp;&nbsp;&nbsp;ExternalImportDeclaration<br>
+	</span><span class="Terminal"><span style='font-style:normal'>export</span></span><sub>opt</sub>&nbsp;&nbsp;&nbsp;AmbientDeclaration
+	</p>
 	
-	<p class=Grammar><span lang=EN-US>DeclarationSourceFile:<br>
+	<p class="Grammar"><span>DeclarationSourceFile:<br>
 	DeclarationElements<sub>opt</sub></span></p>
 	
-	<p class=Grammar><span lang=EN-US>DeclarationElements:<br>
+	<p class="Grammar"><span>DeclarationElements:<br>
 	DeclarationElement<br>
-	DeclarationElements&nbsp;&nbsp; DeclarationElement</span></p>
+	DeclarationElements&nbsp;&nbsp;&nbsp;DeclarationElement</span></p>
 	
-	<p class=Grammar><span lang=EN-US>DeclarationElement:<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-			lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; InterfaceDeclaration<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-			lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; ImportDeclaration<br>
+	<p class="Grammar"><span>DeclarationElement:<br>
+	</span><span class="Terminal"><span style='font-style:normal'>export</span></span><sub>opt</sub><span>&nbsp;&nbsp;&nbsp;InterfaceDeclaration<br>
+	</span><span class="Terminal"><span style='font-style:normal'>export</span></span><sub>opt</sub><span>&nbsp;&nbsp;&nbsp;ImportDeclaration<br>
 	ExportAssignment<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-			lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; ExternalImportDeclaration<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><sub><span
-			lang=EN-US>opt</span></sub><span lang=EN-US>&nbsp;&nbsp; AmbientDeclaration</span></p>
+	</span><span class="Terminal"><span style='font-style:normal'>export</span></span><sub>opt</sub><span>&nbsp;&nbsp;&nbsp;ExternalImportDeclaration<br>
+	</span><span class="Terminal"><span style='font-style:normal'>export</span></span><sub>opt</sub>&nbsp;&nbsp;&nbsp;AmbientDeclaration
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>When a TypeScript program is compiled, all of
+	<p class="MsoNormal">When a TypeScript program is compiled, all of
 	the program’s source files are processed together. Statements and declarations
 	in different source files can depend on each other, possibly in a circular
 	fashion. By default, a JavaScript output file is generated for each
 	implementation source file in a compilation, but no output is generated from
-	declaration source files.</span></p>
+	declaration source files.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>The source elements permitted in a TypeScript
+	<p class="MsoNormal"><span>The source elements permitted in a TypeScript
 	implementation source file are a superset of those supported by JavaScript.
-	Specifically, TypeScript extends the JavaScript grammar’s existing <span
-				class=Production>VariableDeclaration</span> (section </span><span
-			lang=EN-US>5.1</span><span lang=EN-US>) and <span class=Production>FunctionDeclaration</span>
-	(section </span><span lang=EN-US>6.1</span><span lang=EN-US>) productions, and
-	adds <span class=Production>InterfaceDeclaration</span> (section </span><span lang=EN-US>7.1</span><span lang=EN-US>), <span class=Production>ClassDeclaration</span>
-	(section </span><span lang=EN-US>8.1</span><span lang=EN-US>), <span
-			class=Production>EnumDeclaration</span> (section </span><span
-			lang=EN-US>9.1</span><span lang=EN-US>), <span class=Production>ModuleDeclaration</span>
-	(section </span><span lang=EN-US>10.1</span><span lang=EN-US>), <span
-			class=Production>ImportDeclaration</span> (section </span><span
-			lang=EN-US>10.3</span><span lang=EN-US>), <span class=Production>ExternalImportDeclaration</span>
-	(section </span><span lang=EN-US>11.2.2</span><span lang=EN-US>), <span
-			class=Production>ExportAssignment</span> (section </span><span
-			lang=EN-US>11.2.4</span><span lang=EN-US>), and<span class=Production> AmbientDeclaration</span>
-	(section </span><span lang=EN-US>12.1</span><span lang=EN-US>) productions.</span></p>
+	Specifically, TypeScript extends the JavaScript grammar’s existing <span class="Production">VariableDeclaration</span> (section </span>5.1<span>) and <span class="Production">FunctionDeclaration</span>
+	(section </span>6.1<span>) productions, and
+	adds <span class="Production">InterfaceDeclaration</span> (section </span>7.1<span>), <span class="Production">ClassDeclaration</span>
+	(section </span>8.1<span>), <span class="Production">EnumDeclaration</span> (section </span>9.1<span>), <span class="Production">ModuleDeclaration</span>
+	(section </span>10.1<span>), <span class="Production">ImportDeclaration</span> (section </span>10.3<span>), <span class="Production">ExternalImportDeclaration</span>
+	(section </span>11.2.2<span>), <span class="Production">ExportAssignment</span> (section </span>11.2.4<span>), and<span class="Production"> AmbientDeclaration</span>
+	(section </span>12.1) productions.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Declaration source files are restricted to
+	<p class="MsoNormal">Declaration source files are restricted to
 	contain declarations only. Declaration source files can be used to declare the
 	static type information associated with existing JavaScript code in an adjunct
 	manner. They are entirely optional but enable the TypeScript compiler and tools
 	to provide better verification and assistance when integrating existing
-	JavaScript code and libraries in a TypeScript application.</span></p>
+	JavaScript code and libraries in a TypeScript application.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Implementation and declaration source files
-	that contain no import or export declarations form the single <b><i>global
-			module</i></b>. Entities declared in the global module are in scope everywhere
+	<p class="MsoNormal"><span>Implementation and declaration source files
+	that contain no import or export declarations form the single <b><i>global module</i></b>. Entities declared in the global module are in scope everywhere
 	in a program. Initialization order of the source files that make up the global
 	module ultimately depends on the order in which the generated JavaScript files
 	are loaded at run-time (which, for example, may be controlled by
 	&lt;script/&gt; tags that reference the generated JavaScript files).</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Implementation and declaration source files
-	that contain at least one import or export declaration are considered separate <b><i>external
-			modules</i></b>. Entities declared in an external module are in scope only in
+	<p class="MsoNormal"><span>Implementation and declaration source files
+	that contain at least one import or export declaration are considered separate <b><i>external modules</i></b>. Entities declared in an external module are in scope only in
 	that module, but exported entities can be imported into other modules using
 	import declarations. Initialization order of external modules is determined by
 	the module loader being and is not specified by the TypeScript language.
 	However, it is generally the case that non-circularly dependent modules are
 	automatically loaded and initialized in the correct order.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>External modules can additionally be
-	declared using <span class=Production>AmbientModuleDeclarations</span> in the
+	<p class="MsoNormal"><span>External modules can additionally be
+	declared using <span class="Production">AmbientModuleDeclarations</span> in the
 	global module that directly specify the external module names as string
-	literals. This is described further in section </span><span
-			lang=EN-US>12.1.6</span><span lang=EN-US>.</span></p>
+	literals. This is described further in section </span>12.1.6.</p>
 	
-	<h3><a name="_Toc364255821"><span lang=EN-US>11.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
-	</span></span><span lang=EN-US>Source Files Dependencies</span></a></h3>
+	<h3><a name="_Toc364255821"><span>11.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;
+	</span></span>Source Files Dependencies</a></h3>
 	
-	<p class=MsoNormal><span lang=EN-US>The TypeScript compiler automatically
+	<p class="MsoNormal"><span>The TypeScript compiler automatically
 	determines a source file’s dependencies and includes those dependencies in the
 	program being compiled. The determination is made from “reference comments” and
 	external import declarations as follows:</span></p>
 	
-	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>A comment of the form /// &lt;reference
+	<p class="MsoListParagraphCxSpFirst" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span>A comment of the form /// &lt;reference
 	path=&quot;…&quot;/&gt; adds a dependency on the source file specified in the
 	path argument. The path is resolved relative to the directory of the containing
 	source file.</span></p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>An external import declaration that specifies a
-	relative external module name (section </span><span
-			lang=EN-US>11.2.1</span><span lang=EN-US>) resolves the name relative to the
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>An external import declaration that specifies a
+	relative external module name (section 11.2.1<span>) resolves the name relative to the
 	directory of the containing source file. If a source file with the resulting
 	path and file extension ‘.ts’ exists, that file is added as a dependency.
 	Otherwise, if a source file with the resulting path and file extension ‘.d.ts’
 	exists, that file is added as a dependency.</span></p>
 	
-	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>An external import declaration that specifies a
-	top-level external module name (section </span><span
-			lang=EN-US>11.2.1</span><span lang=EN-US>) resolves the name in a host
+	<p class="MsoListParagraphCxSpLast" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>An external import declaration that specifies a
+	top-level external module name (section 11.2.1<span>) resolves the name in a host
 	dependent manner (typically by resolving the name relative to a module name
 	space root or searching for the name in a series of directories). If a source
 	file with extension ‘.ts’ or ‘.d.ts’ corresponding to the reference is located,
 	that file is added as a dependency.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Any files included as dependencies in turn have
+	<p class="MsoNormal">Any files included as dependencies in turn have
 	their references analyzed in a transitive manner until all dependencies have
-	been determined.</span></p>
+	been determined.</p>
 	
-	<h2><a name="_Toc364255822"></a><a name="_Ref323816311"><span lang="EN-US">11.2</span>&nbsp;<span
-			lang=EN-US>External Modules</span></a></h2>
+	<h2>
+		<a name="_Toc364255822"></a><a name="_Ref323816311"><span lang="EN-US">11.2</span>&nbsp;External Modules</a>
+	</h2>
 	
-	<p class=MsoNormal><span lang=EN-US>External modules are separately loaded
+	<p class="MsoNormal">External modules are separately loaded
 	bodies of code referenced using external module names. External modules can be
 	likened to functions that are loaded and executed once to initialize their associated
 	module instance. Entities declared in an external module are private and
-	inaccessible elsewhere unless they are exported.</span></p>
+	inaccessible elsewhere unless they are exported.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>External modules are written as separate
+	<p class="MsoNormal"><span>External modules are written as separate
 	source files that contain at least one import or export declaration.
-	Specifically, if a source file contains at least one <span class=Production>ExternalImportDeclaration</span>
-	or <span class=Production>ExportAssignment</span>, or at least one top-level <span
-				class=Production>VariableDeclaration</span>, <span class=Production>FunctionDeclaration</span>,
-	<span class=Production>ClassDeclaration</span>, <span class=Production>InterfaceDeclaration</span>,
-	<span class=Production>EnumDeclaration</span>, <span class=Production>ModuleDeclaration</span>,
-	<span class=Production>ImportDeclaration</span>, or <span class=Production>AmbientDeclaration</span>
-	that specifies an </span><span class=CodeFragment><span lang=EN-US>export</span></span><span
-			lang=EN-US> modifier, that source file is considered an external module;
-	otherwise, the source file is considered part of the global module.</span></p>
+	Specifically, if a source file contains at least one <span class="Production">ExternalImportDeclaration</span>
+	or <span class="Production">ExportAssignment</span>, or at least one top-level <span class="Production">VariableDeclaration</span>, <span class="Production">FunctionDeclaration</span>,
+	<span class="Production">ClassDeclaration</span>, <span class="Production">InterfaceDeclaration</span>,
+	<span class="Production">EnumDeclaration</span>, <span class="Production">ModuleDeclaration</span>,
+	<span class="Production">ImportDeclaration</span>, or <span class="Production">AmbientDeclaration</span>
+	that specifies an </span><span class="CodeFragment">export</span> modifier, that source file is considered an external module;
+	otherwise, the source file is considered part of the global module.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Below is an example of two external modules
-	written in separate source files.</span></p>
+	<p class="MsoNormal">Below is an example of two external modules
+	written in separate source files.</p>
 	
-	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File main.ts:</span></p>
+	<p class="MsoNormal" style='margin-left:18.0pt'>File main.ts:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>import</span><span
-			lang=EN-US> log = <span style='color:blue'>require</span>(<span
-			style='color:maroon;background:white'>&quot;log&quot;</span>);<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>import</span><span> log = <span style='color:blue'>require</span>(<span style='color:maroon;background:white'>&quot;log&quot;</span>);<br>
 	log.message(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);</span></p>
 	
-	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File log.ts:</span></p>
+	<p class="MsoNormal" style='margin-left:18.0pt'>File log.ts:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>export</span><span
-			lang=EN-US> <span style='color:blue;background:white'>function</span>
+	<p class="Code">
+		<span style='color:blue;background:white'>export</span><span> <span style='color:blue;background:white'>function</span>
 	message(s: <span style='color:blue;background:white'>string</span>) {<br>
-	&nbsp;&nbsp;&nbsp; console.log(s);<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;console.log(s);<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The import declaration in the ‘main’ module
+	<p class="MsoNormal"><span>The import declaration in the ‘main’ module
 	references the ‘log’ module and compiling the ‘main.ts’ file causes the ‘log.ts’
 	file to also be compiled as part of the program. At run-time, the import
 	declaration loads the ‘log’ module and produces a reference to its module
 	instance through which it is possible to reference the exported function.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript supports two patterns of
-	JavaScript code generation for external modules: The </span><a
-			href="http://www.commonjs.org/specs/modules/1.0/"><span lang=EN-US
-																	style='color:windowtext;text-decoration:none'>CommonJS Modules</span></a><span
-			lang=EN-US> pattern (section </span><span lang=EN-US>11.2.5</span><span
-			lang=EN-US>), typically used by server frameworks such as node.js, and the </span><a
-			href="https://github.com/amdjs/amdjs-api/wiki/AMD"><span lang=EN-US
-																	 style='color:windowtext;text-decoration:none'>Asynchronous Module Definition</span></a><span
-			lang=EN-US> (AMD) pattern (section </span><span
-			lang=EN-US>11.2.6</span><span lang=EN-US>), an extension to CommonJS Modules
+	<p class="MsoNormal">TypeScript supports two patterns of
+	JavaScript code generation for external modules: The <a href="http://www.commonjs.org/specs/modules/1.0/"><span style='color:windowtext;text-decoration:none'>CommonJS Modules</span></a> pattern (section 11.2.5), typically used by server frameworks such as node.js, and the <a href="https://github.com/amdjs/amdjs-api/wiki/AMD"><span style='color:windowtext;text-decoration:none'>Asynchronous Module Definition</span></a> (AMD) pattern (section 11.2.6), an extension to CommonJS Modules
 	that permits asynchronous module loading, as is typical in browsers. The desired
 	module code generation pattern is selected through a compiler option and does
 	not affect the TypeScript source code. Indeed, it is possible to author
 	external modules that can be compiled for use both on the server side (e.g.
 	using node.js) and on the client side (using an AMD compliant loader) with no
-	changes to the TypeScript source code.</span></p>
+	changes to the TypeScript source code.</p>
 	
-	<h3><a name="_Toc364255823"></a><a name="_Ref324173787"><span lang=EN-US>11.2.1<span
-			style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>External
-	Module Names</span></a></h3>
+	<h3>
+		<a name="_Toc364255823"></a><a name="_Ref324173787"><span>11.2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span>External
+	Module Names</a></h3>
 	
-	<p class=MsoNormal><span lang=EN-US>External modules are identified and
+	<p class="MsoNormal">External modules are identified and
 	referenced using external module names. The following definition is copied from
-	the </span><a href="http://www.commonjs.org/specs/modules/1.0/"><span
-			lang=EN-US>CommonJS Modules</span></a><span class=MsoHyperlink><span
-			lang=EN-US> 1.0</span></span><span lang=EN-US> specification, with the term
+	the <a href="http://www.commonjs.org/specs/modules/1.0/">CommonJS Modules</a><span class="MsoHyperlink"> 1.0</span><span> specification, with the term
 	‘module identifier’ changed to ‘external module name’:</span></p>
 	
-	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>An external module name is a string of “terms”
+	<p class="MsoListParagraphCxSpFirst" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span>An external module name is a string of “terms”
 	delimited by forward slashes.</span></p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>A term must be a camelCase identifier, “.”, or
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span>A term must be a camelCase identifier, “.”, or
 	“..”.</span></p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>External module names may not have file-name
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span>External module names may not have file-name
 	extensions like “.js”.</span></p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>External module names may be “relative” or
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span>External module names may be “relative” or
 	“top-level”. An external module name is “relative” if the first term is “.” or
 	“..”.</span></p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Top-level names are resolved off the conceptual
-	module name space root.</span></p>
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>Top-level names are resolved off the conceptual
+	module name space root.</p>
 	
-	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Relative names are resolved relative to the name
-	of the module in which they occur.</span></p>
+	<p class="MsoListParagraphCxSpLast" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>Relative names are resolved relative to the name
+	of the module in which they occur.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>For purposes of resolving external module
+	<p class="MsoNormal"><span>For purposes of resolving external module
 	references, TypeScript associates a file path with every external module. The
 	file path is simply the path of the module’s source file without the file
 	extension. For example, an external module contained in the source file ‘C:\src\lib\io.ts’
 	has the file path ‘C:/src/lib/io’ and an external module contained in the source
 	file ‘C:\src\ui\editor.d.ts’ has the file path ‘C:/src/ui/editor’.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>An external module name in an import
-	declaration is resolved as follows:</span></p>
+	<p class="MsoNormal">An external module name in an import
+	declaration is resolved as follows:</p>
 	
-	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>If the import declaration specifies a relative
+	<p class="MsoListParagraphCxSpFirst" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span>If the import declaration specifies a relative
 	external module name, the name is resolved relative to the directory of the
 	referencing module’s file path. The program must contain a module with the
 	resulting file path or otherwise an error occurs. For example, in a module with
@@ -313,137 +273,124 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	‘../lib/io’ reference modules with the file paths ‘C:/src/ui/editor’ and
 	‘C:/src/lib/io’.</span></p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>If the import declaration specifies a top-level
-	external module name and the program contains an <span class=Production>AmbientExternalModuleDeclaration</span>
-	(section </span><span lang=EN-US>12.1.6</span><span lang=EN-US>) with a string
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span>If the import declaration specifies a top-level
+	external module name and the program contains an <span class="Production">AmbientExternalModuleDeclaration</span>
+	(section </span>12.1.6) with a string
 	literal that specifies that exact name, then the import declaration references
-	that ambient external module.</span></p>
+	that ambient external module.</p>
 	
-	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>If the import declaration specifies a top-level
-	external module name and the program contains no <span class=Production>AmbientExternalModuleDeclaration</span>
-	(section </span><span lang=EN-US>12.1.6</span><span lang=EN-US>) with a string
+	<p class="MsoListParagraphCxSpLast" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span><span>If the import declaration specifies a top-level
+	external module name and the program contains no <span class="Production">AmbientExternalModuleDeclaration</span>
+	(section </span>12.1.6) with a string
 	literal that specifies that exact name, the name is resolved in a host
 	dependent manner (for example by considering the name relative to a module name
-	space root). If a matching module cannot be found an error occurs.</span></p>
+	space root). If a matching module cannot be found an error occurs.</p>
 	
-	<h3><a name="_Ref323981484"></a><a name="_Ref323816296"></a><a
-			name="_Toc364255824"></a><a name="_Ref325089515"><span lang=EN-US>11.2.2<span
-			style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>External
-	Import Declarations</span></a></h3>
+	<h3>
+		<a name="_Ref323981484"></a><a name="_Ref323816296"></a><a name="_Toc364255824"></a><a name="_Ref325089515"><span>11.2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span>External
+	Import Declarations</a></h3>
 	
-	<p class=MsoNormal><span lang=EN-US>External import declarations are used to
+	<p class="MsoNormal">External import declarations are used to
 	import external modules and create local aliases by which they may be
-	referenced.</span></p>
+	referenced.</p>
 	
-	<p class=Grammar><span lang=EN-US>ExternalImportDeclaration:<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>import</span></span><span
-			lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
-																		 style='font-style:normal'>=</span></span><span lang=EN-US>&nbsp;&nbsp;
-	ExternalModuleReference&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
-																style='font-style:normal'>;</span></span></p>
+	<p class="Grammar"><span>ExternalImportDeclaration:<br>
+	</span><span class="Terminal"><span style='font-style:normal'>import</span></span>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;<span class="Terminal"><span style='font-style:normal'>=</span></span>&nbsp;&nbsp;
+	ExternalModuleReference&nbsp;&nbsp;&nbsp;<span class="Terminal"><span style='font-style:normal'>;</span></span>
+	</p>
 	
-	<p class=Grammar><span lang=EN-US>ExternalModuleReference:<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>require</span></span><span
-			lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
-	normal'>(</span></span><span lang=EN-US>&nbsp;&nbsp; StringLiteral&nbsp;&nbsp; </span><span
-			class=Terminal><span lang=EN-US style='font-style:normal'>)</span></span></p>
+	<p class="Grammar"><span>ExternalModuleReference:<br>
+	</span><span class="Terminal"><span style='font-style:normal'>require</span></span>&nbsp;&nbsp;&nbsp;<span class="Terminal"><span style='font-style:
+	normal'>(</span></span>&nbsp;&nbsp;&nbsp;StringLiteral&nbsp;&nbsp;&nbsp;<span class="Terminal"><span style='font-style:normal'>)</span></span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>The string literal specified in an <span
-			class=Production>ExternalModuleReference</span> is interpreted as an external
-	module name (section </span><span lang=EN-US>11.2.1</span><span lang=EN-US>).</span></p>
+	<p class="MsoNormal"><span>The string literal specified in an <span class="Production">ExternalModuleReference</span> is interpreted as an external
+	module name (section </span>11.2.1).</p>
 	
-	<p class=MsoNormal><span lang=EN-US>An external import declaration introduces a
+	<p class="MsoNormal">An external import declaration introduces a
 	local identifier that references a given external module. The local identifier
 	becomes an alias for, and is classified exactly like, the entity or entities exported
 	from the referenced external module. Specifically, if the referenced external
 	module contains no export assignment the identifier is classified as a module,
 	and if the referenced external module contains an export assignment the
 	identifier is classified exactly like the entity or entities named in the
-	export assignment.</span></p>
+	export assignment.</p>
 	
-	<h3><a name="_Toc364255825"><span lang=EN-US>11.2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
-	</span></span><span lang=EN-US>Export Declarations</span></a></h3>
+	<h3><a name="_Toc364255825"><span>11.2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;
+	</span></span>Export Declarations</a></h3>
 	
-	<p class=MsoNormal><span lang=EN-US>An external module that contains no export
-	assignment (section </span><span lang=EN-US>11.2.4</span><span lang=EN-US>) exports
+	<p class="MsoNormal">An external module that contains no export
+	assignment (section 11.2.4) exports
 	an entity classified as a module. Similarly to an internal module, export
-	declarations (section </span><span lang=EN-US>10.4</span><span lang=EN-US>) in
-	the external module are used to declare the members of this entity.</span></p>
+	declarations (section 10.4) in
+	the external module are used to declare the members of this entity.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Unlike a non-instantiated internal module
-	(section </span><span lang=EN-US>10.1</span><span lang=EN-US>), an external
+	<p class="MsoNormal">Unlike a non-instantiated internal module
+	(section 10.1), an external
 	module containing only interface types and non-instantiated internal modules
-	still has a module instance associated with it, albeit one with no members.</span></p>
+	still has a module instance associated with it, albeit one with no members.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>If an external module contains an export
+	<p class="MsoNormal">If an external module contains an export
 	assignment it is an error for the external module to also contain export declarations.
-	The two types of exports are mutually exclusive.</span></p>
+	The two types of exports are mutually exclusive.</p>
 	
-	<h3><a name="_Toc364255826"></a><a name="_Ref352416284"><span lang=EN-US>11.2.4<span
-			style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>Export
-	Assignments</span></a></h3>
+	<h3>
+		<a name="_Toc364255826"></a><a name="_Ref352416284"><span>11.2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span>Export
+	Assignments</a></h3>
 	
-	<p class=MsoNormal><span lang=EN-US>An export assignment designates a module
-	member as the entity to be exported in place of the external module itself.</span></p>
+	<p class="MsoNormal">An export assignment designates a module
+	member as the entity to be exported in place of the external module itself.</p>
 	
-	<p class=Grammar><span lang=EN-US>ExportAssignment:<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>export</span></span><span
-			lang=EN-US>&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US style='font-style:
-	normal'>=</span></span><span lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; </span><span
-			class=Terminal><span lang=EN-US style='font-style:normal'>;</span></span></p>
+	<p class="Grammar"><span>ExportAssignment:<br>
+	</span><span class="Terminal"><span style='font-style:normal'>export</span></span>&nbsp;&nbsp;&nbsp;<span class="Terminal"><span style='font-style:
+	normal'>=</span></span>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;<span class="Terminal"><span style='font-style:normal'>;</span></span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US>The <span class=Production>Identifier</span>
+	<p class="MsoNormal"><span>The <span class="Production">Identifier</span>
 	of an export assignment must name one or more entities declared at the top
 	level in the external module. When an external module containing an export
 	assignment is imported, the local alias introduced by the external import
 	declaration takes on all meanings of the identifier named in the export
 	assignment.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>It is an error for an external module to
-	contain more than one export assignment.</span></p>
+	<p class="MsoNormal">It is an error for an external module to
+	contain more than one export assignment.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Assume the following example resides in the
+	<p class="MsoNormal"><span>Assume the following example resides in the
 	file ‘point.ts’:</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>export</span><span
-			lang=EN-US> = Point;</span></p>
+	<p class="Code"><span style='color:blue;background:white'>export</span><span> = Point;</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US> Point {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>constructor</span>(<span
-				style='color:blue;background:white'>public</span> x: <span style='color:blue;
+	<p class="Code"><span style='color:blue;background:white'>class</span><span> Point {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>constructor</span>(<span style='color:blue;background:white'>public</span> x: <span style='color:blue;
 	background:white'>number</span>, <span style='color:blue;background:white'>public</span>
 	y: <span style='color:blue;background:white'>number</span>) { }<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue;background:white'>static</span> origin = <span
-				style='color:blue;background:white'>new</span> Point(0, 0);<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue;background:white'>static</span> origin = <span style='color:blue;background:white'>new</span> Point(0, 0);<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>When ‘point.ts’ is imported in another
+	<p class="MsoNormal"><span>When ‘point.ts’ is imported in another
 	external module, the import alias references the exported class and can be used
 	both as a type and as a constructor function:</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>import</span><span
-			lang=EN-US> Pt = <span style='color:blue;background:white'>require</span>(&quot;point&quot;);</span></p>
+	<p class="Code">
+		<span style='color:blue;background:white'>import</span><span> Pt = <span style='color:blue;background:white'>require</span>(&quot;point&quot;);</span>
+	</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-			lang=EN-US> p1 = <span style='color:blue;background:white'>new</span> Pt(10, 20);<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>var</span><span> p1 = <span style='color:blue;background:white'>new</span> Pt(10, 20);<br>
 	<span style='color:blue;background:white'>var</span> p2 = Pt.origin;</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Note that there is no requirement that the
-	import alias use the same name as the exported entity.</span></p>
+	<p class="MsoNormal">Note that there is no requirement that the
+	import alias use the same name as the exported entity.</p>
 	
-	<h3><a name="_Ref325381204"></a><a name="_Toc364255827"></a><a
-			name="_Ref352750126"></a><a name="_Ref325381235"><span lang=EN-US>11.2.5<span
-			style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>CommonJS
-	Modules</span></a></h3>
+	<h3>
+		<a name="_Ref325381204"></a><a name="_Toc364255827"></a><a name="_Ref352750126"></a><a name="_Ref325381235"><span>11.2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span>CommonJS
+	Modules</a></h3>
 	
-	<p class=MsoNormal><span lang=EN-US>The </span><a
-			href="http://www.commonjs.org/specs/modules/1.0/"><span lang=EN-US>CommonJS
-	Modules</span></a><span lang=EN-US> definition specifies a methodology for
+	<p class="MsoNormal">The <a href="http://www.commonjs.org/specs/modules/1.0/">CommonJS
+	Modules</a><span> definition specifies a methodology for
 	writing JavaScript modules with implied privacy, the ability to import other
 	modules, and the ability to explicitly export members. A CommonJS compliant
 	system provides a ‘require’ function that can be used to synchronously load
@@ -451,90 +398,86 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	‘exports’ variable to which a module can add properties to define its external
 	API.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The ‘main’ and ‘log’ example from section </span><span lang=EN-US>11.2</span><span lang=EN-US> above generates the following JavaScript
-	code when compiled for the CommonJS Modules pattern:</span></p>
+	<p class="MsoNormal">
+		<span>The ‘main’ and ‘log’ example from section </span>11.2 above generates the following JavaScript
+	code when compiled for the CommonJS Modules pattern:</p>
 	
-	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File main.js:</span></p>
+	<p class="MsoNormal" style='margin-left:18.0pt'>File main.js:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-			lang=EN-US> log = require(<span style='color:maroon;background:white'>&quot;log&quot;</span>);<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>var</span><span> log = require(<span style='color:maroon;background:white'>&quot;log&quot;</span>);<br>
 	log.message(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);</span></p>
 	
-	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File log.js:</span></p>
+	<p class="MsoNormal" style='margin-left:18.0pt'>File log.js:</p>
 	
-	<p class=Code><span lang=EN-US>exports.message = <span style='color:blue;
+	<p class="Code"><span>exports.message = <span style='color:blue;
 	background:white'>function</span>(s) {<br>
-	&nbsp;&nbsp;&nbsp; console.log(s);<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;console.log(s);<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>An external import declaration is
+	<p class="MsoNormal"><span>An external import declaration is
 	represented in the generated JavaScript as a variable initialized by a call to
 	the ‘require’ function provided by the module system host. A variable
 	declaration and ‘require’ call is emitted for a particular imported module only
-	if the imported module is referenced as a <span class=Production>PrimaryExpression</span>
+	if the imported module is referenced as a <span class="Production">PrimaryExpression</span>
 	somewhere in the body of the importing module. If an imported module is
-	referenced only as a <span class=Production>ModuleName</span>, nothing is
+	referenced only as a <span class="Production">ModuleName</span>, nothing is
 	emitted.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>An example:</span></p>
+	<p class="MsoNormal">An example:</p>
 	
-	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File geometry.ts:</span></p>
+	<p class="MsoNormal" style='margin-left:18.0pt'>File geometry.ts:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>export</span><span
-			lang=EN-US> <span style='color:blue;background:white'>interface</span> Point {
-	x: <span style='color:blue;background:white'>number</span>; y: <span
-				style='color:blue;background:white'>number</span> };</span></p>
+	<p class="Code">
+		<span style='color:blue;background:white'>export</span><span> <span style='color:blue;background:white'>interface</span> Point {
+	x: <span style='color:blue;background:white'>number</span>; y: <span style='color:blue;background:white'>number</span> };</span>
+	</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>export</span><span
-			lang=EN-US> <span style='color:blue;background:white'>function</span> point(x: <span
-			style='color:blue;background:white'>number</span>, y: <span style='color:blue;
+	<p class="Code">
+		<span style='color:blue;background:white'>export</span><span> <span style='color:blue;background:white'>function</span> point(x: <span style='color:blue;background:white'>number</span>, y: <span style='color:blue;
 	background:white'>number</span>): Point {<br>
-	&nbsp;&nbsp;&nbsp; return { x: x, y: y };<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;return { x: x, y: y };<br>
 	}</span></p>
 	
-	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File game.ts:</span></p>
+	<p class="MsoNormal" style='margin-left:18.0pt'>File game.ts:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>import</span><span
-			lang=EN-US> g = <span style='color:blue'>require</span>(<span style='color:
+	<p class="Code">
+		<span style='color:blue;background:white'>import</span><span> g = <span style='color:blue'>require</span>(<span style='color:
 	maroon;background:white'>&quot;geometry&quot;</span>);<br>
-	<span style='color:blue;background:white'>var</span> p = g.point(<span
-				style='color:maroon;background:white'>10</span>, <span style='color:maroon;
+	<span style='color:blue;background:white'>var</span> p = g.point(<span style='color:maroon;background:white'>10</span>, <span style='color:maroon;
 	background:white'>20</span>);</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The ‘game’ module references the imported
+	<p class="MsoNormal"><span>The ‘game’ module references the imported
 	‘geometry’ module in an expression (through its alias ‘g’) and a ‘require’ call
 	is therefore included in the emitted JavaScript:</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-			lang=EN-US> g = require(<span style='color:maroon;background:white'>&quot;geometry&quot;</span>);<br>
-	<span style='color:blue;background:white'>var</span> p = g.point(<span
-				style='color:maroon;background:white'>10</span>, <span style='color:maroon;
+	<p class="Code">
+		<span style='color:blue;background:white'>var</span><span> g = require(<span style='color:maroon;background:white'>&quot;geometry&quot;</span>);<br>
+	<span style='color:blue;background:white'>var</span> p = g.point(<span style='color:maroon;background:white'>10</span>, <span style='color:maroon;
 	background:white'>20</span>);</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Had the ‘game’ module instead been written
+	<p class="MsoNormal"><span>Had the ‘game’ module instead been written
 	to only reference ‘geometry’ in a type position</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>import</span><span
-			lang=EN-US> g = <span style='color:blue'>require</span>(<span style='color:
+	<p class="Code">
+		<span style='color:blue;background:white'>import</span><span> g = <span style='color:blue'>require</span>(<span style='color:
 	maroon;background:white'>&quot;geometry&quot;</span>);<br>
-	<span style='color:blue;background:white'>var</span> p: g.Point = { x: <span
-				style='color:maroon;background:white'>10</span>, y: <span style='color:maroon;
+	<span style='color:blue;background:white'>var</span> p: g.Point = { x: <span style='color:maroon;background:white'>10</span>, y: <span style='color:maroon;
 	background:white'>20</span> };</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>the emitted JavaScript would have no
+	<p class="MsoNormal"><span>the emitted JavaScript would have no
 	dependency on the ‘geometry’ module and would simply be</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-			lang=EN-US> p = { x: <span style='color:maroon;background:white'>10</span>, y: <span
-			style='color:maroon;background:white'>20</span> };</span></p>
+	<p class="Code">
+		<span style='color:blue;background:white'>var</span><span> p = { x: <span style='color:maroon;background:white'>10</span>, y: <span style='color:maroon;background:white'>20</span> };</span>
+	</p>
 	
-	<h3><a name="_Toc364255828"></a><a name="_Ref325471838"><span lang=EN-US>11.2.6<span
-			style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-US>AMD
-	Modules</span></a></h3>
+	<h3>
+		<a name="_Toc364255828"></a><a name="_Ref325471838"><span>11.2.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;</span></span>AMD
+	Modules</a></h3>
 	
-	<p class=MsoNormal><span lang=EN-US>The </span><a
-			href="https://github.com/amdjs/amdjs-api/wiki/AMD"><span lang=EN-US>Asynchronous
-	Module Definition</span></a><span lang=EN-US> (AMD) specification extends the
+	<p class="MsoNormal">The <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">Asynchronous
+	Module Definition</a><span> (AMD) specification extends the
 	CommonJS Modules specification with a pattern for authoring asynchronously
 	loadable modules with associated dependencies. Using the AMD pattern, modules
 	are emitted as calls to a global ‘define’ function taking an array of
@@ -545,44 +488,41 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	callback function passing resolved module instances as arguments in the order
 	they were listed in the dependency array.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The “main” and “log” example from above
+	<p class="MsoNormal"><span>The “main” and “log” example from above
 	generates the following JavaScript code when compiled for the AMD pattern.</span></p>
 	
-	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File main.js:</span></p>
+	<p class="MsoNormal" style='margin-left:18.0pt'>File main.js:</p>
 	
-	<p class=Code><span lang=EN-US>define([<span style='color:maroon;background:
+	<p class="Code"><span>define([<span style='color:maroon;background:
 	white'>&quot;require&quot;</span>, <span style='color:maroon;background:white'>&quot;exports&quot;</span>,
-	<span style='color:maroon;background:white'>&quot;log&quot;</span>], <span
-				style='color:blue;background:white'>function</span>(require, exports, log) {<br>
-	&nbsp;&nbsp;&nbsp; log.message(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);<br>
+	<span style='color:maroon;background:white'>&quot;log&quot;</span>], <span style='color:blue;background:white'>function</span>(require, exports, log) {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;log.message(<span style='color:maroon;background:white'>&quot;hello&quot;</span>);<br>
 	}</span></p>
 	
-	<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US>File log.js:</span></p>
+	<p class="MsoNormal" style='margin-left:18.0pt'>File log.js:</p>
 	
-	<p class=Code><span lang=EN-US>define([<span style='color:maroon;background:
+	<p class="Code"><span>define([<span style='color:maroon;background:
 	white'>&quot;require&quot;</span>, <span style='color:maroon;background:white'>&quot;exports&quot;</span>],
 	<span style='color:blue;background:white'>function</span>(require, exports) {<br>
-	&nbsp;&nbsp;&nbsp; exports.message = <span style='color:blue;background:white'>function</span>(s)
+	&nbsp;&nbsp;&nbsp;&nbsp;exports.message = <span style='color:blue;background:white'>function</span>(s)
 	{<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(s);<br>
-	&nbsp;&nbsp;&nbsp; }<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(s);<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The special ‘require’ and ‘exports’ dependencies
+	<p class="MsoNormal"><span>The special ‘require’ and ‘exports’ dependencies
 	are always present. Additional entries are added to the dependencies array and
 	the parameter list as required to represent imported external modules. Similar
 	to the code generation for CommonJS Modules, a dependency entry is generated
 	for a particular imported module only if the imported module is referenced as a
-	<span class=Production>PrimaryExpression</span> somewhere in the body of the
-	importing module. If an imported module is referenced only as a <span
-				class=Production>ModuleName</span>, no dependency is generated for that module.</span></p>
+	<span class="Production">PrimaryExpression</span> somewhere in the body of the
+	importing module. If an imported module is referenced only as a <span class="Production">ModuleName</span>, no dependency is generated for that module.</span>
+	</p>
 	
-	<h2><a name="_Toc364255829"><span lang="EN-US">11.3</span>&nbsp;<span lang=EN-US>Code
-	Generation</span></a></h2>
+	<h2><a name="_Toc364255829"><span lang="EN-US">11.3</span>&nbsp;Code
+	Generation</a></h2>
 	
-	<p class=MsoNormal><i><span lang=EN-US>TODO: Finish this section.</span></i></p>
-	
-	<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+	<p class="MsoNormal"><i>TODO: Finish this section.</i></p>
 	
 	</div>
 	

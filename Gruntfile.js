@@ -6,7 +6,8 @@ module.exports = function (grunt) {
 	var top = grunt.file.read('0.9.1/parts/top.html');
 	var bottom = grunt.file.read('0.9.1/parts/bottom.html');
 	var menu = grunt.file.read('0.9.1/parts/menu.html');
-	top += menu;
+	var index = grunt.file.read('0.9.1/parts/index.html');
+	top += '<div class="sideMenu">' + menu + /*'\n\n' + index +*/'</div>';
 
 	grunt.initConfig({
 		wrap: {

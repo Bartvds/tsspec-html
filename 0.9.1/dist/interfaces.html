@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf8">
-	<title></title>
+	<title>TypeScript</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -14,266 +14,247 @@
 color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 
 </div>
-
-<ul class="menu">
-	<li><a href="index.html">Index</a></li>
-	<li><a href="introduction.html">Introduction</a></li>
-	<li><a href="basic_concepts.html">Basic Concepts</a></li>
-	<li><a href="types.html">Types</a></li>
-	<li><a href="expressions.html">Expressions</a></li>
-	<li><a href="statements.html">Statements</a></li>
-	<li><a href="functions.html">Functions</a></li>
-	<li><a href="interfaces.html">Interfaces</a></li>
-	<li><a href="classes.html">Classes</a></li>
-	<li><a href="enum.html">Enums</a></li>
-	<li><a href="internal_modules.html">Internal Modules</a></li>
-	<li><a href="external_modules.html">Source Files and External Modules</a></li>
-	<li><a href="ambient.html">Ambients</a></li>
-	<li><a href="grammar.html">Grammar</a></li>
-</ul>
-
-	<div class=WordSection9>
+<div class="sideMenu">
+<div class="menu">
+	<p class="MsoToc1"><a href="index.html">Index</a></p>
+	<p class="MsoToc1">1 - <a href="introduction.html">Introduction</a></p>
+	<p class="MsoToc1">2 - <a href="basic_concepts.html">Basic Concepts</a></p>
+	<p class="MsoToc1">3 - <a href="types.html">Types</a></p>
+	<p class="MsoToc1">4 - <a href="expressions.html">Expressions</a></p>
+	<p class="MsoToc1">5 - <a href="statements.html">Statements</a></p>
+	<p class="MsoToc1">6 - <a href="functions.html">Functions</a></p>
+	<p class="MsoToc1">7 - <a href="interfaces.html">Interfaces</a></p>
+	<p class="MsoToc1">8 - <a href="classes.html">Classes</a></p>
+	<p class="MsoToc1">9 - <a href="enum.html">Enums</a></p>
+	<p class="MsoToc1">10 - <a href="internal_modules.html">Internal Modules</a></p>
+	<p class="MsoToc1">11 - <a href="external_modules.html">Source Files and External Modules</a></p>
+	<p class="MsoToc1">12 - <a href="ambient.html">Ambients</a></p>
+	<p class="MsoToc1">A. - <a href="grammar.html">Grammar</a></p>
+</div>
+</div>
+	<div class="WordSection1">
 	
-	<h1><a name="_Toc364255781"><span lang=EN-US>7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Interfaces</span></a></h1>
+	<h1><a name="_Toc364255781"><span>7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>Interfaces</a></h1>
 	
-	<p class=MsoNormal><span lang=EN-US>Interfaces provide the ability to name and
+	<p class="MsoNormal">Interfaces provide the ability to name and
 	parameterize object types and to compose existing named object types into new
-	ones.</span></p>
+	ones.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Interfaces have no run-time
+	<p class="MsoNormal"><span>Interfaces have no run-time
 	representation—they are purely a compile-time construct. Interfaces are
 	particularly useful for documenting and validating the required shape of
 	properties, objects passed as parameters, and objects returned from functions.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>Because TypeScript has a structural type
+	<p class="MsoNormal">Because TypeScript has a structural type
 	system, an interface type with a particular set of members is considered
 	identical to, and can be substituted for, another interface type or object type
-	literal with an identical set of members (see section </span><span
-			lang=EN-US>3.8.1</span><span lang=EN-US>).</span></p>
+	literal with an identical set of members (see section 3.8.1).</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Class declarations may reference interfaces
+	<p class="MsoNormal">Class declarations may reference interfaces
 	in their implements clause to validate that they provide an implementation of
-	the interfaces.</span></p>
+	the interfaces.</p>
 	
-	<h2><a name="_Toc364255782"></a><a name="_Ref325089130"><span lang=EN-US>7.1<span
-			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
-			lang=EN-US>Interface Declarations</span></a></h2>
+	<h2>
+		<a name="_Toc364255782"></a><a name="_Ref325089130"><span>7.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span>Interface Declarations</a>
+	</h2>
 	
-	<p class=MsoNormal><span lang=EN-US>An interface declaration declares a new
-	named type (section </span><span lang=EN-US>3.5</span><span lang=EN-US>) by
-	introducing a type name in the containing module.</span></p>
+	<p class="MsoNormal">An interface declaration declares a new
+	named type (section 3.5) by
+	introducing a type name in the containing module.</p>
 	
-	<p class=Grammar><span lang=EN-US>InterfaceDeclaration:<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>interface</span></span><span
-			lang=EN-US>&nbsp;&nbsp; Identifier&nbsp;&nbsp; TypeParameters<sub>opt</sub>&nbsp;&nbsp;
-	InterfaceExtendsClause<sub>opt</sub>&nbsp;&nbsp; ObjectType</span></p>
+	<p class="Grammar"><span>InterfaceDeclaration:<br>
+	</span><span class="Terminal"><span style='font-style:normal'>interface</span></span><span>&nbsp;&nbsp;&nbsp;Identifier&nbsp;&nbsp;&nbsp;TypeParameters<sub>opt</sub>&nbsp;&nbsp;
+	InterfaceExtendsClause<sub>opt</sub>&nbsp;&nbsp;&nbsp;ObjectType</span></p>
 	
-	<p class=Grammar><span lang=EN-US>InterfaceExtendsClause:<br>
-	</span><span class=Terminal><span lang=EN-US style='font-style:normal'>extends</span></span><span
-			lang=EN-US>&nbsp;&nbsp; ClassOrInterfaceTypeList</span></p>
+	<p class="Grammar"><span>InterfaceExtendsClause:<br>
+	</span><span class="Terminal"><span style='font-style:normal'>extends</span></span>&nbsp;&nbsp;&nbsp;ClassOrInterfaceTypeList
+	</p>
 	
-	<p class=Grammar><span lang=EN-US>ClassOrInterfaceTypeList:<br>
+	<p class="Grammar"><span>ClassOrInterfaceTypeList:<br>
 	ClassOrInterfaceType<br>
-	ClassOrInterfaceTypeList&nbsp;&nbsp; </span><span class=Terminal><span lang=EN-US
-																 style='font-style:normal'>,</span></span><span lang=EN-US>&nbsp;&nbsp;
-	ClassOrInterfaceType</span></p>
+	ClassOrInterfaceTypeList&nbsp;&nbsp;&nbsp;</span><span class="Terminal"><span style='font-style:normal'>,</span></span>&nbsp;&nbsp;
+	ClassOrInterfaceType</p>
 	
-	<p class=Grammar><span lang=EN-US>ClassOrInterfaceType:<br>
+	<p class="Grammar"><span>ClassOrInterfaceType:<br>
 	TypeReference</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>The <span class=Production>Identifier</span>
+	<p class="MsoNormal"><span>The <span class="Production">Identifier</span>
 	of an interface declaration may not be one of the predefined type names
-	(section </span><span lang=EN-US>3.6.1</span><span lang=EN-US>).</span></p>
+	(section </span>3.6.1).</p>
 	
-	<p class=MsoNormal><span lang=EN-US>An interface may optionally have type
-	parameters (section </span><span lang=EN-US>3.5.1</span><span lang=EN-US>) that
+	<p class="MsoNormal">An interface may optionally have type
+	parameters (section 3.5.1<span>) that
 	serve as placeholders for actual types to be provided when the interface is
-	referenced in type references. An interface with type parameters is called a <b><i>generic
-			interface</i></b>. The type parameters of a generic interface declaration are
-	in scope in the entire declaration and may be referenced in the <span
-				class=Production>InterfaceExtendsClause</span> and <span class=Production>ObjectType</span>
+	referenced in type references. An interface with type parameters is called a <b><i>generic interface</i></b>. The type parameters of a generic interface declaration are
+	in scope in the entire declaration and may be referenced in the <span class="Production">InterfaceExtendsClause</span> and <span class="Production">ObjectType</span>
 	body.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>An interface can inherit from zero or more <b><i>base
-		types</i></b> which are specified in the <span class=Production>InterfaceExtendsClause</span>.
+	<p class="MsoNormal"><span>An interface can inherit from zero or more <b><i>base types</i></b> which are specified in the <span class="Production">InterfaceExtendsClause</span>.
 	The base types must be type references to class or interface types.</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>An interface has the members specified in
-	the <span class=Production>ObjectType</span> of its declaration and furthermore
+	<p class="MsoNormal"><span>An interface has the members specified in
+	the <span class="Production">ObjectType</span> of its declaration and furthermore
 	inherits all base type members that aren’t hidden by declarations in the interface:</span></p>
 	
-	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>A property declaration hides a public base type
-	property with the same name.</span></p>
+	<p class="MsoListParagraphCxSpFirst" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>A property declaration hides a public base type
+	property with the same name.</p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>A call signature declaration hides a base type
-	call signature that is identical when return types are ignored.</span></p>
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>A call signature declaration hides a base type
+	call signature that is identical when return types are ignored.</p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>A construct signature declaration hides a base type
-	construct signature that is identical when return types are ignored.</span></p>
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>A construct signature declaration hides a base type
+	construct signature that is identical when return types are ignored.</p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>A string index signature declaration hides a
-	base type string index signature.</span></p>
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>A string index signature declaration hides a
+	base type string index signature.</p>
 	
-	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>A numeric index signature declaration hides a
-	base type numeric index signature.</span></p>
+	<p class="MsoListParagraphCxSpLast" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>A numeric index signature declaration hides a
+	base type numeric index signature.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>The following constraints must be satisfied
-	by an interface declaration or otherwise a compile-time error occurs:</span></p>
+	<p class="MsoNormal">The following constraints must be satisfied
+	by an interface declaration or otherwise a compile-time error occurs:</p>
 	
-	<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>An interface declaration may not, directly or
+	<p class="MsoListParagraphCxSpFirst" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>An interface declaration may not, directly or
 	indirectly, specify a base type that originates in the same declaration. In
 	other words an interface cannot, directly or indirectly, be a base type of
-	itself, regardless of type arguments.</span></p>
+	itself, regardless of type arguments.</p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>An interface cannot declare a property with the
-	same name as an inherited private property.</span></p>
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>An interface cannot declare a property with the
+	same name as an inherited private property.</p>
 	
-	<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
-			lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Inherited properties with the same name must be identical
-	(section </span><span lang=EN-US>3.8.1</span><span lang=EN-US>).</span></p>
+	<p class="MsoListParagraphCxSpMiddle" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>Inherited properties with the same name must be identical
+	(section 3.8.1).</p>
 	
-	<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US
-																		style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>The instance type (section </span><span lang=EN-US>3.5.3</span><span lang=EN-US>) of the declared interface must be a subtype
-	(section </span><span lang=EN-US>3.8.2</span><span lang=EN-US>) of each of the
-	base type references.</span></p>
+	<p class="MsoListParagraphCxSpLast" style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span>The instance type (section 3.5.3) of the declared interface must be a subtype
+	(section 3.8.2) of each of the
+	base type references.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>An interface is permitted to inherit
+	<p class="MsoNormal">An interface is permitted to inherit
 	identical members from multiple base types and will in that case only contain
-	one occurrence of each particular member.</span></p>
+	one occurrence of each particular member.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>Below is an example of two interfaces that
-	contain properties with the same name but different types:</span></p>
+	<p class="MsoNormal">Below is an example of two interfaces that
+	contain properties with the same name but different types:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-			lang=EN-US style='background:white'> Mover {<br>
-	&nbsp;&nbsp;&nbsp; move(): <span style='color:blue'>void</span>;<br>
-	&nbsp;&nbsp;&nbsp; getStatus(): { speed: <span style='color:blue'>number</span>; };<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>interface</span><span style='background:white'> Mover {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;move(): <span style='color:blue'>void</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;getStatus(): { speed: <span style='color:blue'>number</span>; };<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-			lang=EN-US style='background:white'> Shaker {<br>
-	&nbsp;&nbsp;&nbsp; shake(): <span style='color:blue'>void</span>;<br>
-	&nbsp;&nbsp;&nbsp; getStatus(): { frequency: <span style='color:blue'>number</span>; };<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>interface</span><span style='background:white'> Shaker {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;shake(): <span style='color:blue'>void</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;getStatus(): { frequency: <span style='color:blue'>number</span>; };<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US style='background:white'>An interface that
+	<p class="MsoNormal"><span style='background:white'>An interface that
 	extends ‘Mover’ and ‘Shaker’ must declare a new ‘getStatus’ property as it
 	would otherwise inherit two ‘getStatus’ properties with different types. The
 	new ‘getStatus’ property must be declared such that the resulting ‘MoverShaker’
 	is a subtype of both ‘Mover’ and ‘Shaker’:</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-			lang=EN-US style='background:white'> MoverShaker <span style='color:blue'>extends</span>
+	<p class="Code">
+		<span style='color:blue;background:white'>interface</span><span style='background:white'> MoverShaker <span style='color:blue'>extends</span>
 	Mover, Shaker {<br>
-	&nbsp;&nbsp;&nbsp; getStatus(): { speed: <span style='color:blue'>number</span>; frequency: <span
-				style='color:blue'>number</span>; };<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;getStatus(): { speed: <span style='color:blue'>number</span>; frequency: <span style='color:blue'>number</span>; };<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US style='background:white'>Since function and
+	<p class="MsoNormal">Since function and
 	constructor types are just object types containing call and construct
 	signatures, interfaces can be used to declare named function and constructor
-	types. For example:</span></p>
+	types. For example:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-			lang=EN-US style='background:white'> StringComparer { (a: <span
-			style='color:blue'>string</span>, b: <span style='color:blue'>string</span>): <span
-			style='color:blue'>number</span>; }</span></p>
+	<p class="Code">
+		<span style='color:blue;background:white'>interface</span><span style='background:white'> StringComparer { (a: <span style='color:blue'>string</span>, b: <span style='color:blue'>string</span>): <span style='color:blue'>number</span>; }</span>
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US style='background:white'>This declares type
+	<p class="MsoNormal"><span style='background:white'>This declares type
 	‘StringComparer’ to be a function type taking two strings and returning a
 	number.</span></p>
 	
-	<h2><a name="_Toc364255783"></a><a name="_Ref352748707"><span lang=EN-US
-																  style='background:white'>7.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US style='background:white'>Declaration Merging</span></a></h2>
+	<h2>
+		<a name="_Toc364255783"></a><a name="_Ref352748707"><span style='background:white'>7.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span>Declaration Merging</a></h2>
 	
-	<p class=MsoNormal><span lang=EN-US>Interfaces are “open-ended” and interface
+	<p class="MsoNormal"><span>Interfaces are “open-ended” and interface
 	declarations with the same qualified name relative to a common root (as defined
-	in section </span><span lang=EN-US>2.3</span><span lang=EN-US>) contribute to a
-	single interface.</span></p>
+	in section </span>2.3) contribute to a
+	single interface.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>When a generic interface has multiple
+	<p class="MsoNormal">When a generic interface has multiple
 	declarations, all declarations must have identical type parameter lists, i.e.
-	identical type parameter names with identical constraints in identical order.</span></p>
+	identical type parameter names with identical constraints in identical order.</p>
 	
-	<p class=MsoNormal><span lang=EN-US>In an interface with multiple declarations,
-	the </span><span class=CodeFragment><span lang=EN-US>extends</span></span><span
-			lang=EN-US> clauses are merged into a single set of base types and the bodies
-	of the interface declarations are merged into a single object type.</span></p>
+	<p class="MsoNormal">In an interface with multiple declarations,
+	the <span class="CodeFragment">extends</span> clauses are merged into a single set of base types and the bodies
+	of the interface declarations are merged into a single object type.</p>
 	
-	<h2><a name="_Toc364255784"><span lang=EN-US style='background:white'>7.3<span
-			style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
-			lang=EN-US style='background:white'>Interfaces Extending Classes</span></a></h2>
+	<h2>
+		<a name="_Toc364255784"><span style='background:white'>7.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;</span></span>Interfaces Extending Classes</a>
+	</h2>
 	
-	<p class=MsoNormal><span lang=EN-US style='background:white'>When an interface type
+	<p class="MsoNormal">When an interface type
 	extends a class type it inherits the members of the class but not their
 	implementations. It is as if the interface had declared all of the members of
 	the class without providing an implementation. Interfaces inherit even the
 	private members of a base class. When a class containing private members is the
 	base type of an interface type, that interface type can only be implemented by
-	that class or a descendant class. For example:</span></p>
+	that class or a descendant class. For example:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US style='background:white'> Control {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue'>private</span> state: <span style='color:blue'>any</span>;<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>class</span><span style='background:white'> Control {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>private</span> state: <span style='color:blue'>any</span>;<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>interface</span><span
-			lang=EN-US style='background:white'> SelectableControl <span style='color:blue'>extends</span>
+	<p class="Code">
+		<span style='color:blue;background:white'>interface</span><span style='background:white'> SelectableControl <span style='color:blue'>extends</span>
 	Control {<br>
-	&nbsp;&nbsp;&nbsp; select(): <span style='color:blue'>void</span>;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;select(): <span style='color:blue'>void</span>;<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US style='background:white'> Button <span style='color:blue'>extends</span>
+	<p class="Code">
+		<span style='color:blue;background:white'>class</span><span style='background:white'> Button <span style='color:blue'>extends</span>
 	Control {<br>
-	&nbsp;&nbsp;&nbsp; select() { }<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;select() { }<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US style='background:white'> TextBox <span style='color:blue'>extends</span>
+	<p class="Code">
+		<span style='color:blue;background:white'>class</span><span style='background:white'> TextBox <span style='color:blue'>extends</span>
 	Control {<br>
-	&nbsp;&nbsp;&nbsp; select() { }<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;select() { }<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US style='background:white'> Image <span style='color:blue'>extends</span>
+	<p class="Code">
+		<span style='color:blue;background:white'>class</span><span style='background:white'> Image <span style='color:blue'>extends</span>
 	Control {<br>
 	}</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>class</span><span
-			lang=EN-US style='background:white'> Location {<br>
-	&nbsp;&nbsp;&nbsp; select() { }<br>
+	<p class="Code">
+		<span style='color:blue;background:white'>class</span><span style='background:white'> Location {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;select() { }<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US style='background:white'>In the above example,
+	<p class="MsoNormal"><span style='background:white'>In the above example,
 	‘SelectableControl’ contains all of the members of ‘Control’, including the
 	private ‘state’ property. Since ‘state’ is a private member it is only possible
 	for descendants of ‘Control’ to implement ‘SelectableControl’. This is because
 	only descendants of ‘Control’ will have a ‘state’ private member that originates
 	in the same declaration, which is a requirement for private members to be
-	compatible (section </span><span
-			lang=EN-US style='background:white'>3.8</span><span lang=EN-US
-																style='background:white'>).</span></p>
+	compatible (section </span>3.8).
+	</p>
 	
-	<p class=MsoNormal><span lang=EN-US style='background:white'>Within the
+	<p class="MsoNormal"><span style='background:white'>Within the
 	‘Control’ class it is possible to access the ‘state’ private member through an
 	instance of ‘SelectableControl’. Effectively, a ‘SelectableControl’ acts like a
 	‘Control’ that is known to have a ‘select’ method. The ‘Button’ and ‘TextBox’
@@ -281,36 +262,33 @@ color:#4F81BD;letter-spacing:-4.0pt'>TypeScript</span></p>
 	‘Control’ and have a ‘select’ method), but the ‘Image’ and ‘Location’ classes
 	are not.</span></p>
 	
-	<h2><a name="_Toc364255785"><span lang=EN-US>7.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-	</span></span><span lang=EN-US>Dynamic Type Checks</span></a></h2>
+	<h2><a name="_Toc364255785"><span>7.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+	</span></span>Dynamic Type Checks</a></h2>
 	
-	<p class=MsoNormal><span lang=EN-US>TypeScript does not provide a direct mechanism
+	<p class="MsoNormal">TypeScript does not provide a direct mechanism
 	for dynamically testing whether an object implements a particular interface.
 	Instead, TypeScript code can use the JavaScript technique of checking whether
 	an appropriate set of members are present on the object. For example, given the
-	declarations in section </span><span lang=EN-US>7.1</span><span lang=EN-US>,
+	declarations in section 7.1<span>,
 	the following is a dynamic check for the ‘MoverShaker’ interface:</span></p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>var</span><span
-			lang=EN-US style='background:white'> obj: <span style='color:blue'>any</span> =
+	<p class="Code"><span style='color:blue;background:white'>var</span><span style='background:white'> obj: <span style='color:blue'>any</span> =
 	getSomeObject();<br>
 	<span style='color:blue'>if</span> (obj &amp;&amp; obj.move &amp;&amp;
 	obj.shake &amp;&amp; obj.getStatus) {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue'>var</span> moverShaker = &lt;MoverShaker&gt; obj;<br>
-	&nbsp;&nbsp;&nbsp; ...<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>var</span> moverShaker = &lt;MoverShaker&gt; obj;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;...<br>
 	}</span></p>
 	
-	<p class=MsoNormal><span lang=EN-US>If such a check is used often it can be
-	abstracted into a function:</span></p>
+	<p class="MsoNormal">If such a check is used often it can be
+	abstracted into a function:</p>
 	
-	<p class=Code><span lang=EN-US style='color:blue;background:white'>function</span><span
-			lang=EN-US style='background:white'> asMoverShaker(obj: <span style='color:
+	<p class="Code">
+		<span style='color:blue;background:white'>function</span><span style='background:white'> asMoverShaker(obj: <span style='color:
 	blue'>any</span>): MoverShaker {<br>
-	&nbsp;&nbsp;&nbsp; <span style='color:blue'>return</span> obj &amp;&amp; obj.move &amp;&amp;
+	&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:blue'>return</span> obj &amp;&amp; obj.move &amp;&amp;
 	obj.shake &amp;&amp; obj.getStatus ? obj : <span style='color:blue'>null</span>;<br>
 	}</span></p>
-	
-	<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
 	
 	</div>
 	
